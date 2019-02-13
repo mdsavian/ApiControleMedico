@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ApiControleMedico.Modelos.NaoPersistidos;
+using ApiControleMedico.Uteis;
 using iTextSharp.text;
 using iTextSharp.text.pdf.parser;
 
@@ -19,53 +21,96 @@ namespace ApiControleMedico.Negocio
 
     public static class ImportadorRelatorioUnimedNegocio
     {
-        public static void ProcessarArquivoPdf(string strPath)
+
+        private static int _llx;
+        private static readonly int _urx = 600;
+
+        public static List<DadosRelatorioUnimed> ProcessarArquivoPdf(string strPath)
         {
+            List<DadosRelatorioUnimed> dados = new List<DadosRelatorioUnimed>();
+
             using (PdfReader reader = new PdfReader(strPath))
             {
-                StringBuilder text = new StringBuilder();
 
                 for (int i = 1; i <= reader.NumberOfPages; i++)
                 {
-                    var datas = Data(reader, i);
-                    var datasa = Data(reader, i);
+                    _llx = i != 1 ? 25 : 85;
+                    var primeirasColunas = PrimeirasColunas(reader, i);
                     var nomePaciente = NomePaciente(reader, i);
                     var tipoPlano = TipoPlano(reader, i);
-                    var servico = Servico(reader, i);
                     var movimento = Movimento(reader, i);
-                    
+                    var servico = Servico(reader, i);
+                    var ultimasColunas = UltimasColunas(reader, i);
 
-                    ProcessarDadosPagina(nomePaciente, tipoPlano, servico, movimento);
+                    dados.AddRange(ProcessarDadosPagina(primeirasColunas, nomePaciente, tipoPlano, movimento, servico, ultimasColunas));
                 }
             }
+
+            return dados;
         }
 
 
-        private static void ProcessarDadosPagina(string[] nomePaciente, string[] tipoPlano, string[] servico, string[] movimento)
+        private static List<DadosRelatorioUnimed> ProcessarDadosPagina(string[] primeirasColunas, string[] nomePaciente, string[] tipoPlano, string[] movimento, string[] servico, string[] ultimasColunas)
         {
-            for (var i = 0; i <= nomePaciente.Length; i++)
+            List<DadosRelatorioUnimed> dados = new List<DadosRelatorioUnimed>();
+            for (var i = 0; i < nomePaciente.Length; i++)
             {
+                var primeirasColunasSplit = primeirasColunas[i].Split(' ');
+                var ultimasColunasSplit = ultimasColunas[i].Split(' ');
+                try
+                {
+                    dados.Add(new DadosRelatorioUnimed
+                    {
+                        Data = $"{primeirasColunasSplit[0]} {primeirasColunasSplit[1]}".ToDateTime(),
+                        Documento = primeirasColunasSplit[4].ToLong(),
+                        Carteira = primeirasColunasSplit[5].ToLong(),
+                        Beneficiario = nomePaciente[i],
+                        TipoPlano = tipoPlano[i],
+                        CodigoMovimento = movimento[i].ToLong(),
+                        Servico = i < nomePaciente.Length - 1? TratarTextoServico(servico[i], servico[i + 1]) : servico[i],
+                        Quantidade = ultimasColunasSplit[0].ToDecimal(),
+                        ValorProduto = ultimasColunasSplit[1].ToDecimal(),
+                        ValorParticipacao = ultimasColunasSplit[2].ToDecimal(),
+                        PrevPagamento = ultimasColunasSplit[3].ToDecimal(),
+
+
+                    });
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Houve um erro ao processar os dados {ex.Message}");
+                }
 
             }
+            return dados;
         }
 
-        private static string[] Data(PdfReader reader, int pagina)
+        private static string TratarTextoServico(string s, string s1)
         {
-            pagina = 1;
+            if (s.Contains('(') && !s.Contains(')') && s1.Contains(')') && !s1.Contains('('))
+                return s + s1;
+
+            return s;
+        }
+
+
+        private static string[] PrimeirasColunas(PdfReader reader, int pagina)
+        {
+
             RenderFilter[] filters = new RenderFilter[1];
             LocationTextExtractionStrategy regionFilter = new LocationTextExtractionStrategy();
-            filters[0] = new RegionTextRenderFilter(new Rectangle(85, 25, 600, 210));
+            filters[0] = new RegionTextRenderFilter(new Rectangle(_llx, 30, _urx, 150));
             FilteredTextRenderListener strategy = new FilteredTextRenderListener(regionFilter, filters);
-
             string result = PdfTextExtractor.GetTextFromPage(reader, pagina, strategy);
             return result.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
         }
 
         private static string[] NomePaciente(PdfReader reader, int pagina)
         {
+            PrimeirasColunas(reader, pagina);
             RenderFilter[] filters = new RenderFilter[1];
             LocationTextExtractionStrategy regionFilter = new LocationTextExtractionStrategy();
-            filters[0] = new RegionTextRenderFilter(new Rectangle(85, 300, 600, 315));
+            filters[0] = new RegionTextRenderFilter(new Rectangle(_llx, 300, _urx, 315));
             FilteredTextRenderListener strategy = new FilteredTextRenderListener(regionFilter, filters);
             string result = PdfTextExtractor.GetTextFromPage(reader, pagina, strategy);
             return result.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
@@ -74,8 +119,9 @@ namespace ApiControleMedico.Negocio
         private static string[] TipoPlano(PdfReader reader, int pagina)
         {
             RenderFilter[] filters = new RenderFilter[1];
+
             LocationTextExtractionStrategy regionFilter = new LocationTextExtractionStrategy();
-            filters[0] = new RegionTextRenderFilter(new Rectangle(85, 400, 600, 425));
+            filters[0] = new RegionTextRenderFilter(new Rectangle(_llx, 400, _urx, 425));
             FilteredTextRenderListener strategy = new FilteredTextRenderListener(regionFilter, filters);
             string result = PdfTextExtractor.GetTextFromPage(reader, pagina, strategy);
             return result.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
@@ -85,10 +131,9 @@ namespace ApiControleMedico.Negocio
         {
             RenderFilter[] filters = new RenderFilter[1];
             LocationTextExtractionStrategy regionFilter = new LocationTextExtractionStrategy();
-            filters[0] = new RegionTextRenderFilter(new Rectangle(85, 500, 600, 535));
+            filters[0] = new RegionTextRenderFilter(new Rectangle(_llx, 500, _urx, 535));
             FilteredTextRenderListener strategy = new FilteredTextRenderListener(regionFilter, filters);
             string result = PdfTextExtractor.GetTextFromPage(reader, pagina, strategy);
-
             return result.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
         }
 
@@ -96,12 +141,22 @@ namespace ApiControleMedico.Negocio
         {
             RenderFilter[] filters = new RenderFilter[1];
             LocationTextExtractionStrategy regionFilter = new LocationTextExtractionStrategy();
-            filters[0] = new RegionTextRenderFilter(new Rectangle(85, 600, 600, 645));
+            filters[0] = new RegionTextRenderFilter(new Rectangle(_llx, 600, _urx, 645));
             FilteredTextRenderListener strategy = new FilteredTextRenderListener(regionFilter, filters);
             string result = PdfTextExtractor.GetTextFromPage(reader, pagina, strategy);
             return result.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
         }
-        
-        
+
+        private static string[] UltimasColunas(PdfReader reader, int pagina)
+        {
+            var filters = new RenderFilter[1];
+            filters[0] = new RegionTextRenderFilter(new Rectangle(_llx, 705, _urx, 805));
+            var regionFilter = new LocationTextExtractionStrategy();
+            var strategy = new FilteredTextRenderListener(regionFilter, filters);
+            var result = PdfTextExtractor.GetTextFromPage(reader, pagina, strategy);
+            return result.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+        }
+
+
     }
 }

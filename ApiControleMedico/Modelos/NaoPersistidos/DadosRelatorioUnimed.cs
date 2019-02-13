@@ -6,17 +6,18 @@ using MongoDB.Bson;
 
 namespace ApiControleMedico.Modelos.NaoPersistidos
 {
-    public class DadosRelatorio
+    public class DadosRelatorioUnimed
     {
-        private DateTime Data { get; set; }
-        private long Documento { get; set; }
-        private long Carteira { get; set; }
-        private string Beneficiario { get; set; }
-        private string TipoPlano { get; set; }
-        private long CodigoMovimento { get; set; }
-        private string Servico { get; set; }
-        private decimal Quantidade { get; set; }
-        private decimal ValorProduto { get; set; }
-        private decimal ValorParticipacao { get; set; }
+        public DateTime Data { get; set; }
+        public long Documento { get; set; }
+        public long Carteira { get; set; }
+        public string Beneficiario { get; set; }
+        public string TipoPlano { get; set; }
+        public long CodigoMovimento { get; set; }
+        public string Servico { get; set; }
+        public decimal Quantidade { get; set; }
+        public decimal ValorProduto { get; set; }
+        public decimal ValorParticipacao { get; set; }
+        public decimal PrevPagamento { get; set; }
     }
 }
