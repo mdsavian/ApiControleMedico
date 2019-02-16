@@ -26,8 +26,7 @@ namespace ApiControleMedico.Repositorio
         {
             return await GetOneAsync(collection, new TContext {Id = id});
         }
-
-       
+        
         public async Task<IEnumerable<TCollection>> GetManyAsync(IMongoCollection<TCollection> collection,
             IEnumerable<TContext> contexts)
         {

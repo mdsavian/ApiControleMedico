@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos.NaoPersistidos;
 using ApiControleMedico.Negocio;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Path = System.IO.Path;

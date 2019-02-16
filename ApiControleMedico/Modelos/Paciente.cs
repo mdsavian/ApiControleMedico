@@ -22,8 +22,6 @@ namespace ApiControleMedico.Modelos
         public int EstadoCivil { get; set; }
         [BsonElement("TipoSanguineo")]
         public int TipoSanguineo { get; set; }
-        [BsonElement("Imagem")]
-        public string Imagem { get; set; } //modificar
         [BsonElement("Ocupacao")]
         public string Ocupacao { get; set; } //virará tabela
         //segundo folder
@@ -43,10 +41,16 @@ namespace ApiControleMedico.Modelos
         public long CartaoNacionalSaude { get; set; }
         [BsonElement("DataValidadeCartao")]
         public DateTime DataValidadeCartao { get; set; }
+        [BsonElement("TipoPlano")]
+        public string TipoPlano { get; set; } // modificar objeto
+         
 
+        public Paciente()
+        {
+            this.Ativo = true;
+            this.AceitaReceberSms = true;
 
-
-
+        }
 
 
     }

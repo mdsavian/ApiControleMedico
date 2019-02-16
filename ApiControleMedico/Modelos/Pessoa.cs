@@ -25,7 +25,8 @@ namespace ApiControleMedico.Modelos
         public string Email { get; set; }
         [BsonElement("Ativo")]
         public bool Ativo { get; set; }
-
+        [BsonElement("Imagem")]
+        public string Imagem { get; set; } //modificar
 
         //terceiro folder
         [BsonElement("Cep")]

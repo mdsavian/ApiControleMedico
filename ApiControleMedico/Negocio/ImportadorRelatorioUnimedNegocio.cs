@@ -1,10 +1,8 @@
 ﻿using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos.NaoPersistidos;
+using ApiControleMedico.Services;
 using ApiControleMedico.Uteis;
 using iTextSharp.text;
 using iTextSharp.text.pdf.parser;
@@ -45,10 +43,14 @@ namespace ApiControleMedico.Negocio
                     dados.AddRange(ProcessarDadosPagina(primeirasColunas, nomePaciente, tipoPlano, movimento, servico, ultimasColunas));
                 }
             }
-
+            new DadosRelatorioService().ValidarDados(dados);
             return dados;
         }
 
+        private static void ValidaDados (List<DadosRelatorioUnimed> dados)
+        {
+
+        }
 
         private static List<DadosRelatorioUnimed> ProcessarDadosPagina(string[] primeirasColunas, string[] nomePaciente, string[] tipoPlano, string[] movimento, string[] servico, string[] ultimasColunas)
         {
@@ -72,8 +74,7 @@ namespace ApiControleMedico.Negocio
                         ValorProduto = ultimasColunasSplit[1].ToDecimal(),
                         ValorParticipacao = ultimasColunasSplit[2].ToDecimal(),
                         PrevPagamento = ultimasColunasSplit[3].ToDecimal(),
-
-
+                        Convenio = "UNIMED"
                     });
                 }
                 catch (Exception ex)

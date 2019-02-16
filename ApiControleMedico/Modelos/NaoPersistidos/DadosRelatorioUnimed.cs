@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MongoDB.Bson;
 
 namespace ApiControleMedico.Modelos.NaoPersistidos
 {
@@ -19,5 +15,6 @@ namespace ApiControleMedico.Modelos.NaoPersistidos
         public decimal ValorProduto { get; set; }
         public decimal ValorParticipacao { get; set; }
         public decimal PrevPagamento { get; set; }
+        public string Convenio { get; set; }
     }
 }

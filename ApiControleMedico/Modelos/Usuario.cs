@@ -10,7 +10,7 @@ namespace ApiControleMedico.Modelos
     [Serializable, JsonObject]
     [BsonDiscriminator(Required = true)]
     [BsonKnownTypes(typeof(Usuario))]
-    public class Usuario : Pessoa
+    public class Usuario
     {
         [BsonElement("TipoUsuario")]
         public TipoUsuario TipoUsuario { get; set; }
@@ -31,5 +31,8 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("Token")]
         public string Token{ get; set; }
+
+        [BsonElement("MedicoId")]
+        public string MedicoId{ get; set; }
     }
 }

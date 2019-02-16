@@ -2,8 +2,6 @@
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
-using Microsoft.Extensions.Configuration;
-using MongoDB.Bson;
 
 namespace ApiControleMedico.Services
 {
@@ -15,7 +13,6 @@ namespace ApiControleMedico.Services
         public PacienteService()
         {
             Pacientes = new DbContexto<Paciente>("paciente");
-            
         }
 
         public async Task<IEnumerable<Paciente>> GetAllAsync()
