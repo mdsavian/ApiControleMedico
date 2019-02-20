@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.NaoPersistidos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -13,7 +14,7 @@ namespace ApiControleMedico.Services
     public class DadosRelatorioService
     {
         protected readonly DbContexto<Paciente> Pacientes;
-        protected readonly EntidadeNegocio<Paciente, Paciente> PacienteNegocio = new EntidadeNegocio<Paciente, Paciente>();
+        protected readonly EntidadeNegocio<Paciente> PacienteNegocio = new EntidadeNegocio<Paciente>();
 
         public DadosRelatorioService()
         {
@@ -23,26 +24,29 @@ namespace ApiControleMedico.Services
         public async void ValidarDados(List<DadosRelatorioUnimed> dados)
         {
             var builder = Builders<Paciente>.Filter;
-
+            List<Paciente> novosPacientes = new List<Paciente>();
             foreach (var dado in dados)
             {
-                var filter = builder.Eq("nomecompleto", dado.Beneficiario) & builder.Eq("NumeroCartao", dado.Carteira);
+                var filter = builder.Eq("NomeCompleto", dado.Beneficiario) & builder.Eq("NumeroCartao", dado.Carteira);
 
                 var paciente = await Pacientes.Collection.Find(filter).FirstOrDefaultAsync();
 
                 if (paciente == null)
                 {
-                    paciente = new Paciente
+                    novosPacientes.Add(new Paciente
                     {
-                        NomeCompleto = dado.Beneficiario,
+                        Id = ObjectId.GenerateNewId().ToString(),
+                        NomeCompleto = dado.Beneficiario.ToUpper(),
                         NumeroCartao = dado.Carteira,
                         Convenio = dado.Convenio,
                         TipoPlano = dado.TipoPlano
-                    };
+                    });
 
-                    Pacientes.Collection.InsertOne(paciente);
+
                 }
             }
+            if (novosPacientes.HasItems())
+                await Pacientes.Collection.InsertManyAsync(novosPacientes);
         }
     }
 }

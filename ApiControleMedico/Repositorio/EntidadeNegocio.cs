@@ -8,29 +8,28 @@ using MongoDB.Driver;
 
 namespace ApiControleMedico.Repositorio
 {
-    public class EntidadeNegocio<TCollection, TContext>
-        where TCollection : Entidade
+    public class EntidadeNegocio<TContext>
         where TContext : Entidade, new()
     {
-        public async Task<IEnumerable<TCollection>> GetAllAsync(IMongoCollection<TCollection> collection)
+        public async Task<IEnumerable<TContext>> GetAllAsync(IMongoCollection<TContext> collection)
         {
             return await collection.Find(f => true).ToListAsync();
         }
 
-        public async Task<TCollection> GetOneAsync(IMongoCollection<TCollection> collection, TContext context)
+        public async Task<TContext> GetOneAsync(IMongoCollection<TContext> collection, TContext context)
         {
             return await collection.Find(new BsonDocument("_id", context.Id)).FirstOrDefaultAsync();
         }
 
-        public async Task<TCollection> GetOneAsync(IMongoCollection<TCollection> collection, string id)
+        public async Task<TContext> GetOneAsync(IMongoCollection<TContext> collection, string id)
         {
             return await GetOneAsync(collection, new TContext {Id = id});
         }
         
-        public async Task<IEnumerable<TCollection>> GetManyAsync(IMongoCollection<TCollection> collection,
+        public async Task<IEnumerable<TContext>> GetManyAsync(IMongoCollection<TContext> collection,
             IEnumerable<TContext> contexts)
         {
-            var list = new List<TCollection>();
+            var list = new List<TContext>();
             foreach (var context in contexts)
             {
                 var doc = await GetOneAsync(collection, context);
@@ -41,10 +40,10 @@ namespace ApiControleMedico.Repositorio
             return list;
         }
 
-        public async Task<IEnumerable<TCollection>> GetManyAsync(IMongoCollection<TCollection> collection,
+        public async Task<IEnumerable<TContext>> GetManyAsync(IMongoCollection<TContext> collection,
             IEnumerable<string> ids)
         {
-            var list = new List<TCollection>();
+            var list = new List<TContext>();
             foreach (var id in ids)
             {
                 var doc = await GetOneAsync(collection, id);
@@ -55,12 +54,12 @@ namespace ApiControleMedico.Repositorio
             return list;
         }
 
-        public async Task SaveOneAsync(IMongoCollection<TCollection> collection, TCollection context)
+        public async Task SaveOneAsync(IMongoCollection<TContext> collection, TContext context)
         {
             await collection.InsertOneAsync(context);
         }
 
-        public async Task<bool> RemoveOneAsync(IMongoCollection<TCollection> collection, TContext context)
+        public async Task<bool> RemoveOneAsync(IMongoCollection<TContext> collection, TContext context)
         {
             if (context == null) return false;
 
@@ -68,12 +67,12 @@ namespace ApiControleMedico.Repositorio
             return true;
         }
 
-        public async Task<bool> RemoveOneAsync(IMongoCollection<TCollection> collection, string id)
+        public async Task<bool> RemoveOneAsync(IMongoCollection<TContext> collection, string id)
         {
             return await RemoveOneAsync(collection, new TContext {Id = id});
         }
 
-        public async Task<bool> RemoveManyAsync(IMongoCollection<TCollection> collection,
+        public async Task<bool> RemoveManyAsync(IMongoCollection<TContext> collection,
             IEnumerable<TContext> contexts)
         {
             foreach (var context in contexts)
@@ -81,7 +80,7 @@ namespace ApiControleMedico.Repositorio
             return true;
         }
 
-        public async Task<bool> RemoveManyAsync(IMongoCollection<TCollection> collection,
+        public async Task<bool> RemoveManyAsync(IMongoCollection<TContext> collection,
             IEnumerable<string> ids)
         {
             foreach (var id in ids)

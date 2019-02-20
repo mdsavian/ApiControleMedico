@@ -11,7 +11,7 @@ namespace ApiControleMedico.Services
     public class LoginService : ILogic<Usuario>
     {
         protected readonly DbContexto<Usuario> Usuarios;
-        protected readonly EntidadeNegocio<Usuario, Usuario> UsuarioNegocio = new EntidadeNegocio<Usuario, Usuario>();
+        protected readonly EntidadeNegocio<Usuario> UsuarioNegocio = new EntidadeNegocio<Usuario>();
 
         public LoginService()
         {

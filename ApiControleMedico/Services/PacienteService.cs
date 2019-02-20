@@ -8,7 +8,7 @@ namespace ApiControleMedico.Services
     public class PacienteService : ILogic<Paciente>
     {
         protected readonly DbContexto<Paciente> Pacientes;
-        protected readonly EntidadeNegocio<Paciente, Paciente> PacienteNegocio = new EntidadeNegocio<Paciente, Paciente>();
+        protected readonly EntidadeNegocio<Paciente> PacienteNegocio = new EntidadeNegocio<Paciente>();
 
         public PacienteService()
         {
