@@ -20,9 +20,10 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpGet]
-        public bool Get()
+        public List<Medico> Get()
         {
-            return true;
+            var medicos = _medicoService.GetAllAsync();
+            return medicos.Result.ToList();
         }
 
         [HttpPost]

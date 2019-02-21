@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace ApiControleMedico.Services
 {
@@ -43,6 +45,10 @@ namespace ApiControleMedico.Services
 
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
+            if (string.IsNullOrEmpty(medico.Id))
+            {
+                medico.Id = ObjectId.GenerateNewId().ToString();
+            }
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
             return medico;
         }
