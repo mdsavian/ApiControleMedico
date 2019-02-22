@@ -27,7 +27,12 @@ namespace ApiControleMedico.Controllers
             return lista.Result.ToList();
         }
 
-        [HttpGet]
+        [HttpPost]
+        public ActionResult<Convenio> Salvar(Convenio convenio)
+        {
+            return _convenioService.SaveOneAsync(convenio).Result;
+        }
+
         public ActionResult<List<ConvenioMedico>> ConvenioMedico(string medicoId)
         {
             return _convenioMedicoService.BuscarConvenioMedico(medicoId);
