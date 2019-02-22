@@ -23,6 +23,8 @@ namespace ApiControleMedico
             services.AddScoped<UsuarioService>();
             services.AddScoped<LoginService>();
             services.AddScoped<MedicoService>();
+            services.AddScoped<ConvenioService>();
+            services.AddScoped<ConvenioMedicoService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors(options =>

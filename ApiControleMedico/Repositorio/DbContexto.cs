@@ -21,6 +21,8 @@ namespace ApiControleMedico.Repositorio
             RegisterMapIfNeeded<Pessoa>();
             RegisterMapIfNeeded<Usuario>();
             RegisterMapIfNeeded<Medico>();
+            RegisterMapIfNeeded<Convenio>();
+            RegisterMapIfNeeded<ConvenioMedico>();
         }
 
         // Check to see if map is registered before registering class map

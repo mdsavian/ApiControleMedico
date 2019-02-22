@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
 
 namespace ApiControleMedico.Modelos
 {
@@ -6,5 +7,8 @@ namespace ApiControleMedico.Modelos
     {
         [BsonElement("Crm")]
         public string Crm { get; set; }
+
+        [BsonElement("Convenios")]
+        public List<ConvenioMedico> Convenios { get; set; }
     }
 }
