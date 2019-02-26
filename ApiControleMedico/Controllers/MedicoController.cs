@@ -32,5 +32,11 @@ namespace ApiControleMedico.Controllers
             var medicoRetorno =  _medicoService.SaveOneAsync(medico);
             return medicoRetorno.Result;
         }
+
+        [HttpGet, Route("buscarPorId/{medicoId}")]
+        public ActionResult<Medico> BuscarPorId(string medicoId)
+        {
+            return _medicoService.GetOneAsync(medicoId).Result;
+        }
     }
 }
