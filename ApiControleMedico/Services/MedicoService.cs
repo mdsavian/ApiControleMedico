@@ -49,6 +49,8 @@ namespace ApiControleMedico.Services
             if (string.IsNullOrEmpty(medico.Id))
             {
                 medico.Id = ObjectId.GenerateNewId().ToString();
+
+                new UsuarioService().CriarNovoUsuarioMedico(medico);
             }
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
             return medico;

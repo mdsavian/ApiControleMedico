@@ -35,6 +35,7 @@ namespace ApiControleMedico
                         .AllowAnyHeader()
                         .AllowCredentials());
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,10 +49,10 @@ namespace ApiControleMedico
             {
                 app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
             app.UseCors("CorsPolicy");
             app.UseMvc();
+            app.UseHttpsRedirection();
+            
         }
     }
 }

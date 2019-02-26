@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace ApiControleMedico.Modelos.Enums
 {
-    public enum TipoUsuario
+    public enum ETipoUsuario
     {
+        Administrador=0,
         Paciente = 1,
         Medico = 2
     }

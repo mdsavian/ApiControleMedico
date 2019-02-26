@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
+using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
@@ -17,25 +20,27 @@ namespace ApiControleMedico.Services
         {
             Usuarios = new DbContexto<Usuario>("usuario");
 
-            ValidaUsuarioAdministrador();
         }
 
-        private void ValidaUsuarioAdministrador()
+        private Usuario TratarUsuarioAdministrador(Usuario usuario)
         {
-            if (Usuarios.Collection.Find(c => c.Login == "admin").FirstOrDefault() == null)
+            if (Criptografia.Compara(usuario.Senha, Criptografia.Codifica("1234")))
             {
-                var usuario = new Usuario
-                {
-                    Login = "admin",
-                    Senha = Criptografia.Codifica("1234"),
-                    Ativo = true
-                };
-                Usuarios.Collection.InsertOne(usuario);
+                usuario.Token = $"{DateTime.Now}{usuario.Login}{Guid.NewGuid()}";
+                usuario.Ativo = true;
+                usuario.TipoUsuario = ETipoUsuario.Administrador;
+
+                return usuario;
             }
+
+            return usuario;
         }
 
         public Usuario ValidarLogin(Usuario usuario)
         {
+            if (usuario.Login.Equals("admin"))
+                return TratarUsuarioAdministrador(usuario);
+
             var usuarioBanco = Usuarios.Collection.Find(c => c.Login == usuario.Login && c.Ativo).FirstOrDefault();
             if (usuarioBanco != null && Criptografia.Compara(usuario.Senha, usuarioBanco.Senha))
             {
@@ -46,6 +51,7 @@ namespace ApiControleMedico.Services
             return null;
 
         }
+
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
             var usuarios = await UsuarioNegocio.GetAllAsync(Usuarios.Collection);

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
+using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 
@@ -71,6 +73,22 @@ namespace ApiControleMedico.Services
         public Task<bool> RemoveManyAsync(IEnumerable<string> ids)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void CriarNovoUsuarioMedico(Medico medico)
+        {
+            var usuario = new Usuario
+            {
+                Ativo = true,
+                Id = ObjectId.GenerateNewId().ToString(),
+                Login = medico.Email,
+                Senha = Criptografia.Codifica("1234"),
+                PermissaoAdministrador = true,
+                MedicoId = medico.Id,
+                TipoUsuario = ETipoUsuario.Medico,
+                VisualizaValoresRelatorios = true
+            };
+            Usuarios.Collection.InsertOne(usuario);
         }
     }
 }

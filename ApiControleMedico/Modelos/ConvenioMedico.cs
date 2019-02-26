@@ -14,5 +14,7 @@ namespace ApiControleMedico.Modelos
         [BsonElement("MedicoId")]
         public string MedicoId { get; set; }
 
+        [BsonElement("Medico")]
+        public Medico Medico { get; set; }
     }
 }

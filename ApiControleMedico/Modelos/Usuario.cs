@@ -13,7 +13,7 @@ namespace ApiControleMedico.Modelos
     public class Usuario : Entidade
     {
         [BsonElement("TipoUsuario")]
-        public TipoUsuario TipoUsuario { get; set; }
+        public ETipoUsuario TipoUsuario { get; set; }
 
         [BsonElement("Login")]
         [BsonDefaultValue("")]
