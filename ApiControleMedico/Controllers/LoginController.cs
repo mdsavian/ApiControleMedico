@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
+using ApiControleMedico.Uteis;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiControleMedico.Controllers
@@ -31,9 +33,16 @@ namespace ApiControleMedico.Controllers
             return _loginService.ValidarLogin(usuario);
         }
 
-        [HttpGet, Route("/validaUsuario/{token}")]
-        public ActionResult<bool> ValidaUsuario(string token)
+        [HttpPost, Route("validaUsuario/")]
+        public ActionResult<bool> ValidaUsuario(Usuario usuario)
         {
+            if (!string.IsNullOrEmpty(usuario.Token))
+            {
+                var datahora = usuario.Token.Substring(0, 19).ToDateTime();
+
+                if (DateTime.Now.Subtract(datahora).TotalMinutes < 180)
+                    return true;
+            }
             return false;
 
         }
