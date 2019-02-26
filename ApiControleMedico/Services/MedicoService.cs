@@ -4,10 +4,11 @@ using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
-    public class MedicoService : ILogic<Medico>
+    public class MedicoService 
     {
         protected readonly DbContexto<Medico> Medicos;
         protected readonly EntidadeNegocio<Medico> MedicoNegocio = new EntidadeNegocio<Medico>();
@@ -29,9 +30,10 @@ namespace ApiControleMedico.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<Medico> GetOneAsync(string id)
+        public Medico GetOneAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return Medicos.Collection.Find(c => c.Id == id).First();
+
         }
 
         public Task<Medico> GetManyAsync(IEnumerable<Medico> medicos)
