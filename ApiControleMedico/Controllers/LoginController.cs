@@ -33,8 +33,8 @@ namespace ApiControleMedico.Controllers
             return _loginService.ValidarLogin(usuario);
         }
 
-        [HttpGet, Route("validaUsuario/{token}")]
-        public ActionResult<bool> ValidaUsuario(string token)
+        [HttpPost, Route("validaUsuario")]
+        public ActionResult<bool> ValidaUsuario(Usuario usuario)
         {
             if (!string.IsNullOrEmpty(usuario.Token))
             {

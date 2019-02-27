@@ -11,7 +11,6 @@ C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2.1\ApiControleMedico.pdb
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.dll
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.pdb
-C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csprojAssemblyReference.cache
 C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2.1\ApiControleMedico.deps.json
 C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2.1\ApiControleMedico.runtimeconfig.json
 C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2.1\ApiControleMedico.runtimeconfig.dev.json
@@ -26,3 +25,4 @@ C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\Api
 C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.RazorTargetAssemblyInfo.cache
 C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.dll
 C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.pdb
+C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csprojAssemblyReference.cache

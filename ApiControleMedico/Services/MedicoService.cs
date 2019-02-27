@@ -67,10 +67,10 @@ namespace ApiControleMedico.Services
         {
             throw new System.NotImplementedException();
         }
-
-        public Task<bool> RemoveOneAsync(string id)
+        
+        public bool RemoveOneAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return Medicos.Collection.DeleteOne(c => c.Id == id).DeletedCount == 1;
         }
 
         public Task<bool> RemoveManyAsync(IEnumerable<Medico> medicos)

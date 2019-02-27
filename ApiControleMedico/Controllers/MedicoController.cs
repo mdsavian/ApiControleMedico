@@ -36,7 +36,13 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("buscarPorId/{medicoId}")]
         public ActionResult<Medico> BuscarPorId(string medicoId)
         {
-            return _medicoService.GetOneAsync(medicoId).Result;
+            return _medicoService.GetOneAsync(medicoId);
+        }
+
+        [HttpPost, Route("excluirPorId/{medicoId}")]
+        public ActionResult<bool> ExcluirPorId(string medicoId)
+        {
+            return _medicoService.RemoveOneAsync(medicoId);
         }
     }
 }
