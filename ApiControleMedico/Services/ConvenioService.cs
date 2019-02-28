@@ -46,10 +46,6 @@ namespace ApiControleMedico.Services
 
         public async Task<Convenio> SaveOneAsync(Convenio convenio)
         {
-            if (string.IsNullOrEmpty(convenio.Id))
-            {
-                convenio.Id = ObjectId.GenerateNewId().ToString();
-            }
             await ConvenioNegocio.SaveOneAsync(Convenios.Collection, convenio);
             return convenio;
         }

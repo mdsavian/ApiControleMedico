@@ -26,8 +26,7 @@ namespace ApiControleMedico.Services
 
         public async Task<IEnumerable<ConvenioMedico>> GetAllAsync()
         {
-            var convenioMedicos = await ConvenioMedicoNegocio.GetAllAsync(ConvenioMedicos.Collection);
-            return convenioMedicos;
+            return await ConvenioMedicoNegocio.GetAllAsync(ConvenioMedicos.Collection);
         }
 
         public Task<ConvenioMedico> GetOneAsync(ConvenioMedico convenioMedico)

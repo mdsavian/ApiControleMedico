@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using MongoDB.Bson;
@@ -56,7 +57,15 @@ namespace ApiControleMedico.Repositorio
 
         public async Task SaveOneAsync(IMongoCollection<TContext> collection, TContext context)
         {
-            await collection.InsertOneAsync(context);
+            if (string.IsNullOrEmpty(context.Id))
+            {
+                context.Id = ObjectId.GenerateNewId().ToString();
+                await collection.InsertOneAsync(context);
+            }
+            else
+            {
+                await collection.ReplaceOneAsync(c => c.Id == context.Id, context);
+            }
         }
 
         public async Task<bool> RemoveOneAsync(IMongoCollection<TContext> collection, TContext context)

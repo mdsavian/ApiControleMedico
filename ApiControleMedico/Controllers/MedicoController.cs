@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace ApiControleMedico.Controllers
 {
@@ -29,6 +30,13 @@ namespace ApiControleMedico.Controllers
         [HttpPost]
         public ActionResult<Medico> Salvar(Medico medico)
         {
+            medico.Convenios.Add(new ConvenioMedico
+            {
+                ConvenioId = "5c7034386f341e38b0f6b53e",
+                MedicoId = medico.Id,
+                Id = ObjectId.GenerateNewId().ToString(),
+
+            });
             var medicoRetorno =  _medicoService.SaveOneAsync(medico);
             return medicoRetorno.Result;
         }
@@ -36,13 +44,13 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("buscarPorId/{medicoId}")]
         public ActionResult<Medico> BuscarPorId(string medicoId)
         {
-            return _medicoService.GetOneAsync(medicoId);
+            return _medicoService.GetOneAsync(medicoId).Result;
         }
 
         [HttpPost, Route("excluirPorId/{medicoId}")]
         public ActionResult<bool> ExcluirPorId(string medicoId)
         {
-            return _medicoService.RemoveOneAsync(medicoId);
+            return _medicoService.RemoveOneAsync(medicoId).Result;
         }
     }
 }

@@ -8,7 +8,7 @@ using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
-    public class MedicoService 
+    public class MedicoService : ILogic<Medico>
     {
         protected readonly DbContexto<Medico> Medicos;
         protected readonly EntidadeNegocio<Medico> MedicoNegocio = new EntidadeNegocio<Medico>();
@@ -30,9 +30,9 @@ namespace ApiControleMedico.Services
             throw new System.NotImplementedException();
         }
 
-        public Medico GetOneAsync(string id)
+        public Task<Medico> GetOneAsync(string id)
         {
-            return Medicos.Collection.Find(c => c.Id == id).First();
+            return MedicoNegocio.GetOneAsync(Medicos.Collection, id);
 
         }
 
@@ -48,13 +48,9 @@ namespace ApiControleMedico.Services
 
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
-            if (string.IsNullOrEmpty(medico.Id))
-            {
-                medico.Id = ObjectId.GenerateNewId().ToString();
 
-                new UsuarioService().CriarNovoUsuarioMedico(medico);
-            }
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
+
             return medico;
         }
 
@@ -67,10 +63,10 @@ namespace ApiControleMedico.Services
         {
             throw new System.NotImplementedException();
         }
-        
-        public bool RemoveOneAsync(string id)
+
+        public Task<bool> RemoveOneAsync(string id)
         {
-            return Medicos.Collection.DeleteOne(c => c.Id == id).DeletedCount == 1;
+            return MedicoNegocio.RemoveOneAsync(Medicos.Collection, id);
         }
 
         public Task<bool> RemoveManyAsync(IEnumerable<Medico> medicos)
