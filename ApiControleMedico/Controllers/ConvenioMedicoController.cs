@@ -31,7 +31,7 @@ namespace ApiControleMedico.Controllers
             return _convenioMedicoService.SaveOneAsync(convenio).Result;
         }
 
-        [Route("conveniodoMedico/{medicoId}")]
+        [HttpGet,Route("convenioDoMedico/{medicoId}")]
         public ActionResult<List<ConvenioMedico>> ConvenioDoMedico(string medicoId)
         {
             var xx = _convenioMedicoService.BuscarConvenioMedico(medicoId);

@@ -48,7 +48,7 @@ namespace ApiControleMedico.Services
 
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
-            await new ConvenioMedicoService().SaveManyAsync(medico.Convenios);
+            //await new ConvenioMedicoService().SaveManyAsync(medico.Convenios);
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
 
             return medico;

@@ -15,7 +15,7 @@ namespace ApiControleMedico.Services
 
         public ConvenioMedicoService()
         {
-            ConvenioMedicos = new DbContexto<ConvenioMedico>("convenioMedico");
+            ConvenioMedicos = new DbContexto<ConvenioMedico>("conveniomedico");
         }
 
         public List<ConvenioMedico> BuscarConvenioMedico(string medicoId)

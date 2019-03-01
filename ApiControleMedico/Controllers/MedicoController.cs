@@ -30,13 +30,6 @@ namespace ApiControleMedico.Controllers
         [HttpPost]
         public ActionResult<Medico> Salvar(Medico medico)
         {
-            medico.Convenios.Add(new ConvenioMedico
-            {
-                ConvenioId = "5c7034386f341e38b0f6b53e",
-                MedicoId = medico.Id,
-                Id = ObjectId.GenerateNewId().ToString(),
-
-            });
             var medicoRetorno =  _medicoService.SaveOneAsync(medico);
             return medicoRetorno.Result;
         } 

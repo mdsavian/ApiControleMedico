@@ -9,6 +9,6 @@ namespace ApiControleMedico.Modelos
         public string Crm { get; set; }
 
         [BsonElement("Convenios")]
-        public List<ConvenioMedico> Convenios { get; set; }
+        public List<Convenio> Convenios { get; set; }
     }
 }
