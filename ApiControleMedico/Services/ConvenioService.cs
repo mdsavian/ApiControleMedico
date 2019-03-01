@@ -50,7 +50,7 @@ namespace ApiControleMedico.Services
             return convenio;
         }
 
-        public Task<Convenio> SaveManyAsync(IEnumerable<Convenio> convenios)
+        public Task<IEnumerable<Convenio>> SaveManyAsync(IEnumerable<Convenio> convenios)
         {
             throw new System.NotImplementedException();
         }

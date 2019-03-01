@@ -55,6 +55,24 @@ namespace ApiControleMedico.Repositorio
             return list;
         }
 
+        public async Task<IEnumerable<TContext>> SaveManyAsync(IMongoCollection<TContext> collection, IEnumerable<TContext> collectionToInsert)
+        {
+            foreach (var context in collectionToInsert)
+            {
+                if (string.IsNullOrEmpty(context.Id))
+                {
+                    context.Id = ObjectId.GenerateNewId().ToString();
+                    await collection.InsertOneAsync(context);
+                }
+                else
+                {
+                    await collection.ReplaceOneAsync(c => c.Id == context.Id, context);
+                }
+            }
+
+            return collectionToInsert;
+        }
+
         public async Task SaveOneAsync(IMongoCollection<TContext> collection, TContext context)
         {
             if (string.IsNullOrEmpty(context.Id))

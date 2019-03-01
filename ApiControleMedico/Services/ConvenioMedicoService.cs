@@ -51,17 +51,15 @@ namespace ApiControleMedico.Services
 
         public async Task<ConvenioMedico> SaveOneAsync(ConvenioMedico convenioMedico)
         {
-            if (string.IsNullOrEmpty(convenioMedico.Id))
-            {
-                convenioMedico.Id = ObjectId.GenerateNewId().ToString();
-            }
             await ConvenioMedicoNegocio.SaveOneAsync(ConvenioMedicos.Collection, convenioMedico);
             return convenioMedico;
         }
 
-        public Task<ConvenioMedico> SaveManyAsync(IEnumerable<ConvenioMedico> convenioMedicos)
+        public async Task<IEnumerable<ConvenioMedico>> SaveManyAsync(IEnumerable<ConvenioMedico> convenioMedicos)
         {
-            throw new System.NotImplementedException();
+            await ConvenioMedicoNegocio.SaveManyAsync(ConvenioMedicos.Collection, convenioMedicos);
+
+            return convenioMedicos;
         }
 
         public Task<bool> RemoveOneAsync(ConvenioMedico convenioMedico)

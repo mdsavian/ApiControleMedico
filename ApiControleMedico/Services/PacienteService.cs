@@ -48,7 +48,7 @@ namespace ApiControleMedico.Services
             return context;
         }
 
-        public Task<Paciente> SaveManyAsync(IEnumerable<Paciente> contexts)
+        public Task<IEnumerable<Paciente>> SaveManyAsync(IEnumerable<Paciente> contexts)
         {
             throw new System.NotImplementedException();
         }

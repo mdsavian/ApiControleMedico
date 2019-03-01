@@ -83,7 +83,7 @@ namespace ApiControleMedico.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<Usuario> SaveManyAsync(IEnumerable<Usuario> contexts)
+        public Task<IEnumerable<Usuario>> SaveManyAsync(IEnumerable<Usuario> contexts)
         {
             throw new System.NotImplementedException();
         }

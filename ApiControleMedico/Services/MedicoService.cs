@@ -12,7 +12,7 @@ namespace ApiControleMedico.Services
     {
         protected readonly DbContexto<Medico> Medicos;
         protected readonly EntidadeNegocio<Medico> MedicoNegocio = new EntidadeNegocio<Medico>();
-        protected readonly EntidadeNegocio<Convenio> ConvenioNegocio = new EntidadeNegocio<Convenio>();
+        protected readonly EntidadeNegocio<ConvenioMedico> ConvenioMedicoNegocio = new EntidadeNegocio<ConvenioMedico>();
 
         public MedicoService()
         {
@@ -48,13 +48,13 @@ namespace ApiControleMedico.Services
 
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
-
+            await new ConvenioMedicoService().SaveManyAsync(medico.Convenios);
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
 
             return medico;
         }
 
-        public Task<Medico> SaveManyAsync(IEnumerable<Medico> medicos)
+        public Task<IEnumerable<Medico>> SaveManyAsync(IEnumerable<Medico> medicos)
         {
             throw new System.NotImplementedException();
         }

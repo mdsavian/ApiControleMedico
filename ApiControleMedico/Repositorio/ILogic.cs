@@ -11,7 +11,7 @@ namespace ApiControleMedico.Repositorio
         Task<T> GetManyAsync(IEnumerable<T> contexts);
         Task<T> GetManyAsync(IEnumerable<string> ids);
         Task<T> SaveOneAsync(T Context);
-        Task<T> SaveManyAsync(IEnumerable<T> contexts);
+        Task<IEnumerable<T>> SaveManyAsync(IEnumerable<T> contexts);
         Task<bool> RemoveOneAsync(T context);
         Task<bool> RemoveOneAsync(string id);
         Task<bool> RemoveManyAsync(IEnumerable<T> contexts);
