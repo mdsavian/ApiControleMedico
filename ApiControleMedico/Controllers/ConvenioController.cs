@@ -12,12 +12,10 @@ namespace ApiControleMedico.Controllers
     public class ConvenioController : Controller
     {
         private readonly ConvenioService _convenioService;
-        private readonly ConvenioMedicoService _convenioMedicoService;
 
-        public ConvenioController(ConvenioService convenioService, ConvenioMedicoService convenioMedicoService)
+        public ConvenioController(ConvenioService convenioService)
         {
             _convenioService = convenioService;
-            _convenioMedicoService = convenioMedicoService;
         }
 
         [HttpGet]
@@ -25,6 +23,13 @@ namespace ApiControleMedico.Controllers
         {
             var lista = _convenioService.GetAllAsync();
             return lista.Result.ToList();
+        }
+
+        [HttpGet, Route("TodosFiltrandoMedico/{medicoId}")]
+        public ActionResult<List<Convenio>> TodosFiltrandoMedico(string medicoId)
+        {
+            var lista = _convenioService.TodosFiltrandoMedico(medicoId);
+            return lista;
         }
 
         [HttpPost]

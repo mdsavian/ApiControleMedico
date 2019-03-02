@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
@@ -11,7 +14,6 @@ namespace ApiControleMedico.Services
     {
         protected readonly DbContexto<Convenio> Convenios;
         protected readonly EntidadeNegocio<Convenio> ConvenioNegocio = new EntidadeNegocio<Convenio>();
-        protected readonly EntidadeNegocio<ConvenioMedico> ConvenioMedicoNegocio = new EntidadeNegocio<ConvenioMedico>();
 
         public ConvenioService()
         {
@@ -73,6 +75,24 @@ namespace ApiControleMedico.Services
         public Task<bool> RemoveManyAsync(IEnumerable<string> ids)
         {
             throw new System.NotImplementedException();
+        }
+
+        public List<Convenio> TodosFiltrandoMedico(string medicoId)
+        {
+            var conveniosMedicos = new MedicoService().GetOneAsync(medicoId).Result.Convenios;
+            try
+            {
+                var filter = Builders<Convenio>.Filter.Nin(c=> c.Id, conveniosMedicos.Select(c=> c.Id));
+                var convenios = Convenios.Collection.Find(filter).ToList();
+                return convenios;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return Convenios.Collection.Find(c => true).ToList();
+
         }
     }
 }

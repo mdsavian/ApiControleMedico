@@ -40,7 +40,7 @@ namespace ApiControleMedico.Controllers
             return _medicoService.GetOneAsync(medicoId).Result;
         }
 
-        [HttpPost, Route("excluirPorId/{medicoId}")]
+        [HttpDelete, Route("excluirPorId/{medicoId}")]
         public ActionResult<bool> ExcluirPorId(string medicoId)
         {
             return _medicoService.RemoveOneAsync(medicoId).Result;

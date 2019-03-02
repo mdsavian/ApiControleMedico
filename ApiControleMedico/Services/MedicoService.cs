@@ -12,7 +12,6 @@ namespace ApiControleMedico.Services
     {
         protected readonly DbContexto<Medico> Medicos;
         protected readonly EntidadeNegocio<Medico> MedicoNegocio = new EntidadeNegocio<Medico>();
-        protected readonly EntidadeNegocio<ConvenioMedico> ConvenioMedicoNegocio = new EntidadeNegocio<ConvenioMedico>();
 
         public MedicoService()
         {
