@@ -123,4 +123,10 @@
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

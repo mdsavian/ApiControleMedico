@@ -56,6 +56,7 @@ namespace ApiControleMedico
 
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseCors("CorsPolicy");
 
