@@ -28,3 +28,5 @@ C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\Api
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csprojAssemblyReference.cache
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2.1\appsettings.json
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2.1\appsettings.json
+C:\temp\TesteApi\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
