@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,6 +25,16 @@ namespace ApiControleMedico.Extensions
         public static void ConfigureIISIntegration(this IServiceCollection services)
         {
             services.Configure<IISOptions>(options => { options.ForwardClientCertificate = false; });
+        }
+
+        public static void RegistraServices(this IServiceCollection services)
+        {
+            services.AddScoped<PacienteService>();
+            services.AddScoped<UsuarioService>();
+            services.AddScoped<LoginService>();
+            services.AddScoped<MedicoService>();
+            services.AddScoped<ConvenioService>();
+            services.AddScoped<EnderecoService>();
         }
     }
 }

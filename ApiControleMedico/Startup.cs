@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using ApiControleMedico.Extensions;
-using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -22,12 +21,7 @@ namespace ApiControleMedico
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<PacienteService>();
-            services.AddScoped<UsuarioService>();
-            services.AddScoped<LoginService>();
-            services.AddScoped<MedicoService>();
-            services.AddScoped<ConvenioService>();
-
+            services.RegistraServices();
             services.ConfigureIISIntegration();
             services.ConfigureCors();
 
