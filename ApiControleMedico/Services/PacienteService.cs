@@ -28,7 +28,7 @@ namespace ApiControleMedico.Services
 
         public Task<Paciente> GetOneAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return PacienteNegocio.GetOneAsync(Pacientes.Collection, id);
         }
 
         public Task<Paciente> GetManyAsync(IEnumerable<Paciente> contexts)
@@ -60,7 +60,7 @@ namespace ApiControleMedico.Services
 
         public Task<bool> RemoveOneAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return PacienteNegocio.RemoveOneAsync(Pacientes.Collection, id);
         }
 
         public Task<bool> RemoveManyAsync(IEnumerable<Paciente> contexts)

@@ -11,7 +11,7 @@ namespace ApiControleMedico.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class PacienteController : Controller
-    {
+    {   
         private readonly PacienteService _pacienteService;
 
         public PacienteController(PacienteService pacienteService)
@@ -19,19 +19,30 @@ namespace ApiControleMedico.Controllers
             _pacienteService = pacienteService;
         }
 
-        private async Task<List<Paciente>> BuscaAll()
+        [HttpGet]
+        public List<Paciente> Get()
         {
-            var xx = await _pacienteService.GetAllAsync();
-
-            return xx.ToList();
+            var pacientes = _pacienteService.GetAllAsync();
+            return pacientes.Result.ToList();
         }
 
-        [HttpGet]
-        public ActionResult<List<Paciente>> Get()
+        [HttpPost]
+        public ActionResult<Paciente> Salvar(Paciente paciente)
         {
-            var xx = BuscaAll();
-            xx.Wait();
-            return xx.Result;
+            var pacienteRetorno = _pacienteService.SaveOneAsync(paciente);
+            return pacienteRetorno.Result;
+        }
+
+        [HttpGet, Route("buscarPorId/{pacienteId}")]
+        public ActionResult<Paciente> BuscarPorId(string pacienteId)
+        {
+            return _pacienteService.GetOneAsync(pacienteId).Result;
+        }
+
+        [HttpDelete, Route("excluirPorId/{pacienteId}")]
+        public ActionResult<bool> ExcluirPorId(string pacienteId)
+        {
+            return _pacienteService.RemoveOneAsync(pacienteId).Result;
         }
     }
 }
