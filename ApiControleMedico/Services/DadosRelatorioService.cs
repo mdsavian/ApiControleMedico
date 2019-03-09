@@ -38,7 +38,7 @@ namespace ApiControleMedico.Services
                         Id = ObjectId.GenerateNewId().ToString(),
                         NomeCompleto = dado.Beneficiario.ToUpper(),
                         NumeroCartao = dado.Carteira,
-                        Convenio = dado.Convenio,
+                        //Convenio = dado.Convenio,
                         TipoPlano = dado.TipoPlano
                     });
 

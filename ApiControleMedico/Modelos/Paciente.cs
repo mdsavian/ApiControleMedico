@@ -19,22 +19,22 @@ namespace ApiControleMedico.Modelos
         [BsonElement("NomeMae")]
         public string NomeMae { get; set; }
         [BsonElement("EstadoCivil")]
-        public int EstadoCivil { get; set; }
+        public string EstadoCivil { get; set; }
         [BsonElement("TipoSanguineo")]
-        public int TipoSanguineo { get; set; }
+        public string TipoSanguineo { get; set; }
         [BsonElement("Ocupacao")]
-        public string Ocupacao { get; set; } //virará tabela
+        public string Ocupacao { get; set; } 
         //segundo folder
         [BsonElement("Telefone")]
         public string Telefone { get; set; }
         [BsonElement("AceitaReceberSms")]
-        public bool AceitaReceberSms { get; set; } // initial yes
+        public bool AceitaReceberSms { get; set; } 
         [BsonElement("Responsavel")]
         public string Responsavel { get; set; }
 
         //quarto folder
         [BsonElement("Convenio")]
-        public string Convenio { get; set; } // modificar objeto
+        public Convenio Convenio { get; set; } 
         [BsonElement("NumeroCartao")]
         public long NumeroCartao { get; set; }
         [BsonElement("CartaoNacionalSaude")]
@@ -42,7 +42,7 @@ namespace ApiControleMedico.Modelos
         [BsonElement("DataValidadeCartao")]
         public DateTime DataValidadeCartao { get; set; }
         [BsonElement("TipoPlano")]
-        public string TipoPlano { get; set; } // modificar objeto
+        public string TipoPlano { get; set; }
          
 
         public Paciente()
