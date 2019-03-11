@@ -32,10 +32,29 @@ namespace ApiControleMedico.Controllers
             return lista;
         }
 
+        [HttpGet, Route("buscarMedicosPorConvenio/{convenioId}")]
+        public ActionResult<List<Medico>> BuscarMedicosPorConvenio(string convenioId)
+        {
+            var lista = _convenioService.BuscarMedicosPorConvenio(convenioId);
+            return lista;
+        }
+
+        [HttpGet, Route("buscarPorId/{convenioId}")]
+        public ActionResult<Convenio> BuscarPorId(string convenioId)
+        {
+            return _convenioService.GetOneAsync(convenioId).Result;
+        }
+
         [HttpPost]
         public ActionResult<Convenio> Salvar(Convenio convenio)
         {
             return _convenioService.SaveOneAsync(convenio).Result;
+        }
+
+        [HttpDelete, Route("excluirPorId/{convenioId}")]
+        public ActionResult<bool> ExcluirPorId(string convenioId)
+        {
+            return _convenioService.RemoveOneAsync(convenioId).Result;
         }
     }
 }

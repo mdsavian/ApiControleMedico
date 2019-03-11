@@ -33,7 +33,7 @@ namespace ApiControleMedico.Services
 
         public Task<Convenio> GetOneAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return ConvenioNegocio.GetOneAsync(Convenios.Collection, id);
         }
 
         public Task<Convenio> GetManyAsync(IEnumerable<Convenio> convenios)
@@ -64,7 +64,7 @@ namespace ApiControleMedico.Services
 
         public Task<bool> RemoveOneAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return ConvenioNegocio.RemoveOneAsync(Convenios.Collection, id);
         }
 
         public Task<bool> RemoveManyAsync(IEnumerable<Convenio> convenios)
@@ -75,6 +75,15 @@ namespace ApiControleMedico.Services
         public Task<bool> RemoveManyAsync(IEnumerable<string> ids)
         {
             throw new System.NotImplementedException();
+        }
+
+        public List<Medico> BuscarMedicosPorConvenio(string convenioId)
+        {
+            var medicos = new MedicoService().GetAllAsync().Result;
+
+            var xx = medicos.Where(c => c.Convenios.Any(d => d.Id == convenioId)).ToList();
+
+            return xx;
         }
 
         public List<Convenio> TodosFiltrandoMedico(string medicoId)
