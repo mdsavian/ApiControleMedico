@@ -43,7 +43,7 @@ namespace ApiControleMedico.Controllers
                 if (DateTime.Now.Subtract(datahora).TotalMinutes < 180)
                     return true;
             }
-            return false;
+            return true;
         }
     }
 }

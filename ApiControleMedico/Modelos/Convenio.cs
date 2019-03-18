@@ -13,6 +13,7 @@ namespace ApiControleMedico.Modelos
         public string NomeConvenio { get; set; }
         [BsonElement("DiasRetorno")]
         public int DiasRetorno { get; set; }
-
+        [BsonElement("Ativo")]
+        public bool Ativo { get; set; }
     }
 }
