@@ -11,7 +11,7 @@ using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
-    public class LoginService : ILogic<Usuario>
+    public class LoginService
     {
         protected readonly DbContexto<Usuario> Usuarios;
         protected readonly EntidadeNegocio<Usuario> UsuarioNegocio = new EntidadeNegocio<Usuario>();
@@ -56,56 +56,6 @@ namespace ApiControleMedico.Services
         {
             var usuarios = await UsuarioNegocio.GetAllAsync(Usuarios.Collection);
             return usuarios;
-        }
-
-        public Task<Usuario> GetOneAsync(Usuario context)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Usuario> GetOneAsync(string id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Usuario> GetManyAsync(IEnumerable<Usuario> contexts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Usuario> GetManyAsync(IEnumerable<string> ids)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Usuario> SaveOneAsync(Usuario Context)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<IEnumerable<Usuario>> SaveManyAsync(IEnumerable<Usuario> contexts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveOneAsync(Usuario context)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveOneAsync(string id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveManyAsync(IEnumerable<Usuario> contexts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveManyAsync(IEnumerable<string> ids)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

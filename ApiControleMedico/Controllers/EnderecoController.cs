@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ApiControleMedico.Modelos;
-using ApiControleMedico.Modelos.NaoPersistidos;
+﻿using ApiControleMedico.Modelos.NaoPersistidos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
 

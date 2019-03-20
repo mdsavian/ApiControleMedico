@@ -10,7 +10,7 @@ using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
-    public class ConvenioService : ILogic<Convenio>
+    public class ConvenioService
     {
         protected readonly DbContexto<Convenio> Convenios;
         protected readonly EntidadeNegocio<Convenio> ConvenioNegocio = new EntidadeNegocio<Convenio>();
@@ -26,24 +26,9 @@ namespace ApiControleMedico.Services
             return convenios;
         }
 
-        public Task<Convenio> GetOneAsync(Convenio convenio)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Task<Convenio> GetOneAsync(string id)
         {
             return ConvenioNegocio.GetOneAsync(Convenios.Collection, id);
-        }
-
-        public Task<Convenio> GetManyAsync(IEnumerable<Convenio> convenios)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Convenio> GetManyAsync(IEnumerable<string> ids)
-        {
-            throw new System.NotImplementedException();
         }
 
         public async Task<Convenio> SaveOneAsync(Convenio convenio)
@@ -52,29 +37,10 @@ namespace ApiControleMedico.Services
             return convenio;
         }
 
-        public Task<IEnumerable<Convenio>> SaveManyAsync(IEnumerable<Convenio> convenios)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveOneAsync(Convenio convenio)
-        {
-            throw new System.NotImplementedException();
-        }
 
         public Task<bool> RemoveOneAsync(string id)
         {
             return ConvenioNegocio.RemoveOneAsync(Convenios.Collection, id);
-        }
-
-        public Task<bool> RemoveManyAsync(IEnumerable<Convenio> convenios)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveManyAsync(IEnumerable<string> ids)
-        {
-            throw new System.NotImplementedException();
         }
 
         public List<Medico> BuscarMedicosPorConvenio(string convenioId)
@@ -91,13 +57,13 @@ namespace ApiControleMedico.Services
             var conveniosMedicos = new MedicoService().GetOneAsync(medicoId).Result.Convenios;
             try
             {
-                var filter = Builders<Convenio>.Filter.Nin(c=> c.Id, conveniosMedicos.Select(c=> c.Id));
+                var filter = Builders<Convenio>.Filter.Nin(c => c.Id, conveniosMedicos.Select(c => c.Id));
                 var convenios = Convenios.Collection.Find(filter).ToList();
                 return convenios;
             }
             catch (Exception ex)
             {
-                
+
             }
 
             return Convenios.Collection.Find(c => true).ToList();

@@ -10,5 +10,8 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("Convenios")]
         public List<Convenio> Convenios { get; set; }
+
+        [BsonElement("Usuario")]
+        public Usuario Usuario { get; set; }
     }
 }

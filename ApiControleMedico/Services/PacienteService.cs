@@ -5,7 +5,7 @@ using ApiControleMedico.Repositorio;
 
 namespace ApiControleMedico.Services
 {
-    public class PacienteService : ILogic<Paciente>
+    public class PacienteService
     {
         protected readonly DbContexto<Paciente> Pacientes;
         protected readonly EntidadeNegocio<Paciente> PacienteNegocio = new EntidadeNegocio<Paciente>();
@@ -21,24 +21,9 @@ namespace ApiControleMedico.Services
             return pacientes;
         }
 
-        public Task<Paciente> GetOneAsync(Paciente context)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Task<Paciente> GetOneAsync(string id)
         {
             return PacienteNegocio.GetOneAsync(Pacientes.Collection, id);
-        }
-
-        public Task<Paciente> GetManyAsync(IEnumerable<Paciente> contexts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Paciente> GetManyAsync(IEnumerable<string> ids)
-        {
-            throw new System.NotImplementedException();
         }
 
         public async Task<Paciente> SaveOneAsync(Paciente context)
@@ -48,29 +33,9 @@ namespace ApiControleMedico.Services
             return context;
         }
 
-        public Task<IEnumerable<Paciente>> SaveManyAsync(IEnumerable<Paciente> contexts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveOneAsync(Paciente context)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Task<bool> RemoveOneAsync(string id)
         {
             return PacienteNegocio.RemoveOneAsync(Pacientes.Collection, id);
-        }
-
-        public Task<bool> RemoveManyAsync(IEnumerable<Paciente> contexts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> RemoveManyAsync(IEnumerable<string> ids)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
