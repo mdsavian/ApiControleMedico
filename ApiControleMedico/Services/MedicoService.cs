@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Services
 {
@@ -29,7 +30,11 @@ namespace ApiControleMedico.Services
 
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
+            if (medico.Id.IsNullOrWhiteSpace())
+                new UsuarioService().CriarNovoUsuarioMedico(medico);
+
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
+            
             return medico;
         }
         

@@ -32,7 +32,7 @@ namespace ApiControleMedico.Services
                 Ativo = true,
                 Id = ObjectId.GenerateNewId().ToString(),
                 Login = medico.Email,
-                Senha = Criptografia.Codifica("1234"),
+                Senha = Criptografia.Codifica("@medico1234"),
                 PermissaoAdministrador = true,
                 Medico = medico,
                 TipoUsuario = ETipoUsuario.Medico,
@@ -50,11 +50,11 @@ namespace ApiControleMedico.Services
                 Ativo = true,
                 Id = ObjectId.GenerateNewId().ToString(),
                 Login = funcionario.Email,
-                Senha = Criptografia.Codifica("1234"),
-                PermissaoAdministrador = true,
+                Senha = Criptografia.Codifica("@usuario1234"),
+                PermissaoAdministrador = false,
                 Funcionario = funcionario,
-                TipoUsuario = ETipoUsuario.Medico,
-                VisualizaValoresRelatorios = true
+                TipoUsuario = ETipoUsuario.Comum,
+                VisualizaValoresRelatorios = false
             };
             Usuarios.Collection.InsertOne(usuario);
 

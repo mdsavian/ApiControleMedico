@@ -26,11 +26,12 @@ namespace ApiControleMedico.Services
             return FuncionarioNegocio.GetOneAsync(Funcionarios.Collection, id);
         }
 
-        public async Task<Funcionario> SaveOneAsync(Funcionario context)
+        public async Task<Funcionario> SaveOneAsync(Funcionario funcionario)
         {
-            await FuncionarioNegocio.SaveOneAsync(Funcionarios.Collection, context);
+            await FuncionarioNegocio.SaveOneAsync(Funcionarios.Collection, funcionario);
+            new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
 
-            return context;
+            return funcionario;
         }
 
         public Task<bool> RemoveOneAsync(string id)
