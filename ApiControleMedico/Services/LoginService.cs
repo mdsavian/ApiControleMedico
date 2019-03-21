@@ -24,7 +24,7 @@ namespace ApiControleMedico.Services
 
         private Usuario TratarUsuarioAdministrador(Usuario usuario)
         {
-            if (Criptografia.Compara(usuario.Senha, Criptografia.Codifica("1234")))
+            if (Criptografia.Compara(usuario.Senha, Criptografia.Codifica("@adm1234")))
             {
                 usuario.Token = $"{DateTime.Now}{usuario.Login}{Guid.NewGuid()}";
                 usuario.Ativo = true;
