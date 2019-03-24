@@ -25,22 +25,20 @@ namespace ApiControleMedico.Services
             return usuarios;
         }
 
-        public void CriarNovoUsuarioMedico(Medico medico)
+        public async Task<Usuario> CriarNovoUsuarioMedico(Medico medico)
         {
             var usuario = new Usuario
             {
                 Ativo = true,
-                Id = ObjectId.GenerateNewId().ToString(),
                 Login = medico.Email,
                 Senha = Criptografia.Codifica("@medico1234"),
                 PermissaoAdministrador = true,
-                Medico = medico,
                 TipoUsuario = ETipoUsuario.Medico,
                 VisualizaValoresRelatorios = true
             };
-            ContextoUsuario.Collection.InsertOne(usuario);
 
-            medico.Usuario = usuario;
+            await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+            return usuario;
         }
 
         public async Task<Usuario> CriarNovoUsuarioFuncionario(Funcionario funcionario)
@@ -51,12 +49,11 @@ namespace ApiControleMedico.Services
                 Login = funcionario.Email,
                 Senha = Criptografia.Codifica("@usuario1234"),
                 PermissaoAdministrador = false,
-                Funcionario = funcionario,
                 TipoUsuario = ETipoUsuario.Comum,
                 VisualizaValoresRelatorios = false
             };
 
-            //await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+            await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
             return usuario;
         }
     }

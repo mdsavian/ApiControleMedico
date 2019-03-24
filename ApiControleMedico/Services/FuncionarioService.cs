@@ -30,6 +30,12 @@ namespace ApiControleMedico.Services
 
         public async Task<Funcionario> SaveOneAsync(Funcionario funcionario)
         {
+            if (funcionario.Id.IsNullOrWhiteSpace())
+            {
+                var usuario = new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
+                funcionario.Usuario = usuario.Result;
+            }
+
             await FuncionarioNegocio.SaveOneAsync(Funcionarios.Collection, funcionario);
             return funcionario;
         }

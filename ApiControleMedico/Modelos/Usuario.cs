@@ -32,12 +32,6 @@ namespace ApiControleMedico.Modelos
         [BsonElement("UltimoLogin")]
         public string UltimoLogin{ get; set; }
 
-        [BsonElement("Medico")]
-        public Medico Medico{ get; set; }
-
-        [BsonElement("Funcionario")]
-        public Funcionario Funcionario { get; set; }
-
         [BsonElement("Ativo")]
         public bool Ativo { get; set; }
     }
