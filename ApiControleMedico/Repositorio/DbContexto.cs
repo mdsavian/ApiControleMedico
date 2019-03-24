@@ -7,13 +7,14 @@ using MongoDB.Driver;
 
 namespace ApiControleMedico.Repositorio
 {
-    public class DbContexto<T>
+    public class DbContexto<T> : IDisposable
     {
-        public IMongoDatabase Database { get; }
-        public IMongoCollection<T> Collection { get; }
+        public IMongoDatabase Database { get; set; }
+        public IMongoCollection<T> Collection { get; set; }
+        public IClientSessionHandle Session { get; set; }
 
 
-        public DbContexto(string collectionName)
+        public DbContexto(string collectionName, bool abreSecao = false)
         {
             //Conexão com produção
             //string connectionString =
@@ -28,17 +29,23 @@ namespace ApiControleMedico.Repositorio
 
             //conexão debug
             var client = new MongoClient("mongodb://localhost:27017");
-            Database = client.GetDatabase("ControleMedicoDb");
+            if (abreSecao)
+            {
+                Session = client.StartSession();
+                Database = Session.Client.GetDatabase("ControleMedicoDb");
+            }
+            else
+            {
+                Database = client.GetDatabase("ControleMedicoDb");
+            }
+            Collection = Database.GetCollection<T>(collectionName);
             
-            //Database.RunCommand({ shardCollection: "yourCollection", key: { rateId: "_id" } } )
-
             RegisterMapIfNeeded<Paciente>(collectionName);
             RegisterMapIfNeeded<Pessoa>(collectionName);
             RegisterMapIfNeeded<Usuario>(collectionName);
             RegisterMapIfNeeded<Medico>(collectionName);
             RegisterMapIfNeeded<Convenio>(collectionName);
             
-            Collection = Database.GetCollection<T>(collectionName);
         }
         
 
@@ -59,5 +66,9 @@ namespace ApiControleMedico.Repositorio
             }
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

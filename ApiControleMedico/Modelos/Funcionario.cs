@@ -22,5 +22,11 @@ namespace ApiControleMedico.Modelos
         [BsonElement("Usuario")]
         public Usuario Usuario { get; set; }
 
+        [BsonElement("PermissaoAdministrador")]
+        public bool PermissaoAdministrador { get; set; }
+
+        [BsonElement("VisualizaValoresRelatorios")]
+        public bool VisualizaValoresRelatorios { get; set; }
+
     }
 }

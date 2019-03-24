@@ -11,20 +11,20 @@ namespace ApiControleMedico.Services
 {
     public class UsuarioService
     {
-        protected readonly DbContexto<Usuario> Usuarios;
+        protected readonly DbContexto<Usuario> ContextoUsuario;
         protected readonly EntidadeNegocio<Usuario> UsuarioNegocio = new EntidadeNegocio<Usuario>();
 
         public UsuarioService()
         {
-            Usuarios = new DbContexto<Usuario>("usuario");
+            ContextoUsuario = new DbContexto<Usuario>("usuario");
         }
 
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
-            var usuarios = await UsuarioNegocio.GetAllAsync(Usuarios.Collection);
+            var usuarios = await UsuarioNegocio.GetAllAsync(ContextoUsuario.Collection);
             return usuarios;
         }
-        
+
         public void CriarNovoUsuarioMedico(Medico medico)
         {
             var usuario = new Usuario
@@ -38,17 +38,16 @@ namespace ApiControleMedico.Services
                 TipoUsuario = ETipoUsuario.Medico,
                 VisualizaValoresRelatorios = true
             };
-            Usuarios.Collection.InsertOne(usuario);
+            ContextoUsuario.Collection.InsertOne(usuario);
 
             medico.Usuario = usuario;
         }
 
-        public void CriarNovoUsuarioFuncionario(Funcionario funcionario)
+        public async Task<Usuario> CriarNovoUsuarioFuncionario(Funcionario funcionario)
         {
             var usuario = new Usuario
             {
                 Ativo = true,
-                Id = ObjectId.GenerateNewId().ToString(),
                 Login = funcionario.Email,
                 Senha = Criptografia.Codifica("@usuario1234"),
                 PermissaoAdministrador = false,
@@ -56,9 +55,9 @@ namespace ApiControleMedico.Services
                 TipoUsuario = ETipoUsuario.Comum,
                 VisualizaValoresRelatorios = false
             };
-            Usuarios.Collection.InsertOne(usuario);
 
-            funcionario.Usuario = usuario;
+            //await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+            return usuario;
         }
     }
 }

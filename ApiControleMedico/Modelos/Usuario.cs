@@ -29,8 +29,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("VisualizaValoresRelatorios")]
         public bool VisualizaValoresRelatorios { get; set; }
 
-        [BsonElement("Token")]
-        public string Token{ get; set; }
+        [BsonElement("UltimoLogin")]
+        public string UltimoLogin{ get; set; }
 
         [BsonElement("Medico")]
         public Medico Medico{ get; set; }

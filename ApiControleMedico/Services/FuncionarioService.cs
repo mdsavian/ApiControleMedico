@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Services
 {
@@ -29,8 +31,6 @@ namespace ApiControleMedico.Services
         public async Task<Funcionario> SaveOneAsync(Funcionario funcionario)
         {
             await FuncionarioNegocio.SaveOneAsync(Funcionarios.Collection, funcionario);
-            new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
-
             return funcionario;
         }
 

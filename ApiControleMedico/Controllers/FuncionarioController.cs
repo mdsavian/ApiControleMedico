@@ -30,6 +30,7 @@ namespace ApiControleMedico.Controllers
         public ActionResult<Funcionario> Salvar(Funcionario funcionario)
         {
             var funcionarioRetorno = _funcionarioService.SaveOneAsync(funcionario);
+
             return funcionarioRetorno.Result;
         }
 
