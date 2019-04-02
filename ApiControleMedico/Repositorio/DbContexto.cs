@@ -45,6 +45,7 @@ namespace ApiControleMedico.Repositorio
             RegisterMapIfNeeded<Usuario>(collectionName);
             RegisterMapIfNeeded<Medico>(collectionName);
             RegisterMapIfNeeded<Convenio>(collectionName);
+            RegisterMapIfNeeded<Especialidade>(collectionName);
             
         }
         

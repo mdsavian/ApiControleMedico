@@ -30,3 +30,5 @@ C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.RazorTargetAssemblyInfo.cache
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.dll
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.pdb
+C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.Resource.resources
+C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csproj.GenerateResource.cache

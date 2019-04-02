@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
+using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
@@ -30,11 +31,16 @@ namespace ApiControleMedico.Services
 
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
-            if (medico.Id.IsNullOrWhiteSpace())
-                new UsuarioService().CriarNovoUsuarioMedico(medico);
+            var usuarioService = new UsuarioService();
 
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
-            
+
+            var usuario = await usuarioService.CriarNovoUsuarioMedico(medico);
+
+            medico.Usuario = usuario;
+            await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
+
+
             return medico;
         }
         
@@ -44,5 +50,9 @@ namespace ApiControleMedico.Services
         }
 
 
+        public Medico BuscarMedicoUsuario(Usuario usuario)
+        {
+            return Medicos.Collection.Find(c => c.Usuario.Id == usuario.Id).FirstOrDefault();
+        }
     }
 }

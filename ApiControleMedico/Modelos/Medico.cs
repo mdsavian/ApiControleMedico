@@ -13,5 +13,8 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("Usuario")]
         public Usuario Usuario { get; set; }
+
+        [BsonElement("Especialidade")]
+        public Especialidade Especialidade { get; set; }
     }
 }

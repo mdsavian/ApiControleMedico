@@ -1,11 +1,13 @@
 ﻿using System.IO;
 using ApiControleMedico.Extensions;
+using ApiControleMedico.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace ApiControleMedico
 {
@@ -22,11 +24,12 @@ namespace ApiControleMedico
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegistraServices();
+            
             services.ConfigureIISIntegration();
             services.ConfigureCors();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            new DadosFixos().AlimentarTabelas();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -37,6 +37,7 @@ namespace ApiControleMedico.Extensions
             services.AddScoped<MedicoService>();
             services.AddScoped<ConvenioService>();
             services.AddScoped<EnderecoService>();
+            services.AddScoped<EspecialidadeService>();
         }
     }
 }

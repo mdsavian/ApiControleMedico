@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 
 namespace ApiControleMedico.Controllers
 {
@@ -44,6 +42,12 @@ namespace ApiControleMedico.Controllers
         public ActionResult<bool> ExcluirPorId(string medicoId)
         {
             return _medicoService.RemoveOneAsync(medicoId).Result;
+        }
+
+        [HttpPost, Route("buscarMedicoUsuario")]
+        public ActionResult<Medico> BuscarMedicoUsuario(Usuario usuario)
+        {
+            return _medicoService.BuscarMedicoUsuario(usuario);
         }
     }
 }

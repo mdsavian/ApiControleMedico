@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
@@ -36,6 +40,13 @@ namespace ApiControleMedico.Services
         public Task<bool> RemoveOneAsync(string id)
         {
             return PacienteNegocio.RemoveOneAsync(Pacientes.Collection, id);
+        }
+
+        public ActionResult<List<Paciente>> TodosGestantesFiltrandoMedico(string medicoId)
+        {
+            // falar com samir para ver se o paciente vai ser relacionado com o médico
+
+            return Pacientes.Collection.Find(c => !string.IsNullOrEmpty(c.DiaGestacao) && !string.IsNullOrEmpty(c.SemanaGestacao)).ToList().OrderByDescending(c=> c.SemanaGestacao).ToList();
         }
     }
 }

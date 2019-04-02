@@ -1,4 +1,5 @@
 ﻿using System;
+using ApiControleMedico.Modelos.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
@@ -43,15 +44,16 @@ namespace ApiControleMedico.Modelos
         public DateTime DataValidadeCartao { get; set; }
         [BsonElement("TipoPlano")]
         public string TipoPlano { get; set; }
-         
+        [BsonElement("SemanaGestacao")]
+        public string SemanaGestacao { get; set; }
+        [BsonElement("DiaGestacao")]
+        public string DiaGestacao { get; set; }
+
 
         public Paciente()
         {
             this.Ativo = true;
             this.AceitaReceberSms = true;
-
         }
-
-
     }
 }

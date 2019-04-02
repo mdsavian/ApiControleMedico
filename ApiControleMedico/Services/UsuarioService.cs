@@ -6,6 +6,7 @@ using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
@@ -27,15 +28,22 @@ namespace ApiControleMedico.Services
 
         public async Task<Usuario> CriarNovoUsuarioMedico(Medico medico)
         {
-            var usuario = new Usuario
+            var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
+                .FirstOrDefault();
+
+            if (usuario == null)
             {
-                Ativo = true,
-                Login = medico.Email,
-                Senha = Criptografia.Codifica("@medico1234"),
-                PermissaoAdministrador = true,
-                TipoUsuario = ETipoUsuario.Medico,
-                VisualizaValoresRelatorios = true
-            };
+                usuario = new Usuario
+                {
+                    Ativo = true,
+                    Login = medico.Email,
+                    Senha = Criptografia.Codifica("@medico1234"),
+                    PermissaoAdministrador = true,
+                    TipoUsuario = ETipoUsuario.Medico,
+                    VisualizaValoresRelatorios = true,
+                    MedicoId = medico.Id
+                };
+            }
 
             await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
             return usuario;
