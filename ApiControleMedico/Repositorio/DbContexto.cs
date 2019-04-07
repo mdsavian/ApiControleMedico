@@ -13,7 +13,6 @@ namespace ApiControleMedico.Repositorio
         public IMongoCollection<T> Collection { get; set; }
         public IClientSessionHandle Session { get; set; }
 
-
         public DbContexto(string collectionName, bool abreSecao = false)
         {
             //Conexão com produção
@@ -39,16 +38,16 @@ namespace ApiControleMedico.Repositorio
                 Database = client.GetDatabase("ControleMedicoDb");
             }
             Collection = Database.GetCollection<T>(collectionName);
-            
+
             RegisterMapIfNeeded<Paciente>(collectionName);
             RegisterMapIfNeeded<Pessoa>(collectionName);
             RegisterMapIfNeeded<Usuario>(collectionName);
             RegisterMapIfNeeded<Medico>(collectionName);
             RegisterMapIfNeeded<Convenio>(collectionName);
             RegisterMapIfNeeded<Especialidade>(collectionName);
-            
+
         }
-        
+
 
         // Check to see if map is registered before registering class map
         // This is for the sake of the polymorphic types that we are using so Mongo knows how to deserialize
@@ -69,7 +68,7 @@ namespace ApiControleMedico.Repositorio
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Session?.Dispose();
         }
     }
 }
