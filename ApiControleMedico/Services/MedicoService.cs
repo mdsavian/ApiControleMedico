@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
+using ApiControleMedico.Negocio;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
 using MongoDB.Driver;
@@ -29,9 +30,26 @@ namespace ApiControleMedico.Services
 
         }
 
+        public async Task<Medico> SalvarConfiguracaoAgenda(Medico medico)
+        {
+
+            var usuarioService = new UsuarioService();
+
+            await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
+
+            var usuario = await usuarioService.CriarNovoUsuarioMedico(medico);
+
+            medico.Usuario = usuario;
+            await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
+
+
+            return medico;
+        }
+
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
             var usuarioService = new UsuarioService();
+            medico.ConfiguracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
 
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
 
@@ -55,4 +73,6 @@ namespace ApiControleMedico.Services
             return Medicos.Collection.Find(c => c.Usuario.Id == usuario.Id).FirstOrDefault();
         }
     }
+
+   
 }
