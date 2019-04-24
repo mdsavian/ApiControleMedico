@@ -26,7 +26,7 @@ namespace ApiControleMedico.Negocio
 
             foreach (var dias in configurados.Where(c=> !c.SegundoHorarioInicial.IsNullOrWhiteSpace()).ToList())
             {
-                var intervaloInicial = new TimeSpan(dias.PrimeiroHorarioFinal.Substring(0,2).ToInt(), dias.PrimeiroHorarioFinal.Substring(2, 2).ToInt() + 1,0);
+                var intervaloInicial = new TimeSpan(dias.PrimeiroHorarioFinal.Substring(0,2).ToInt(), dias.PrimeiroHorarioFinal.Substring(2, 2).ToInt(),0);
                 var intervaloFinal = new TimeSpan(dias.SegundoHorarioInicial.Substring(0, 2).ToInt(), dias.SegundoHorarioInicial.Substring(2, 2).ToInt() - 1, 0);
 
                 dias.HorarioInicioIntervalo = $"{intervaloInicial.Hours:00}{intervaloInicial.Minutes:00}";

@@ -6,15 +6,12 @@ namespace ApiControleMedico.Modelos
 {
     [Serializable, JsonObject]
     [BsonDiscriminator(Required = true)]
-    [BsonKnownTypes(typeof(Servico))]
+    [BsonKnownTypes(typeof(Local))]
 
-    public class Servico : Entidade
+    public class Local : Entidade
     {
         [BsonElement("Descricao")]
         public string Descricao { get; set; }
-
-        [BsonElement("Cor")]
-        public string Cor { get; set; }
 
     }
 }
