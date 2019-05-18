@@ -64,5 +64,11 @@ namespace ApiControleMedico.Services
             await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
             return usuario;
         }
+
+        public Task<bool> RemoveOneAsync(string id)
+        {
+            return UsuarioNegocio.RemoveOneAsync(ContextoUsuario.Collection, id);
+        }
+
     }
 }

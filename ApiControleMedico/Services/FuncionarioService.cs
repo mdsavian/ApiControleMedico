@@ -42,6 +42,10 @@ namespace ApiControleMedico.Services
 
         public Task<bool> RemoveOneAsync(string id)
         {
+            var usuarioService = new UsuarioService();
+            var medico = FuncionarioNegocio.GetOneAsync(Funcionarios.Collection, id).Result;
+            usuarioService.RemoveOneAsync(medico.Usuario.Id);
+
             return FuncionarioNegocio.RemoveOneAsync(Funcionarios.Collection, id);
         }
     }

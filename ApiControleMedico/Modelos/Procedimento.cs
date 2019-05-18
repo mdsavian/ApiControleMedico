@@ -13,8 +13,11 @@ namespace ApiControleMedico.Modelos
         [BsonElement("Descricao")]
         public string Descricao { get; set; }
 
-        [BsonElement("Cor")]
-        public string Cor { get; set; }
+        [BsonElement("CorFundo")]
+        public string CorFundo { get; set; }
+
+        [BsonElement("CorLetra")]
+        public string CorLetra { get; set; }
 
     }
 }

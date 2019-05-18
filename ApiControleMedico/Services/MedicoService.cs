@@ -30,26 +30,11 @@ namespace ApiControleMedico.Services
 
         }
 
-        public async Task<Medico> SalvarConfiguracaoAgenda(Medico medico)
-        {
-
-            var usuarioService = new UsuarioService();
-
-            await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
-
-            var usuario = await usuarioService.CriarNovoUsuarioMedico(medico);
-
-            medico.Usuario = usuario;
-            await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
-
-
-            return medico;
-        }
-
         public async Task<Medico> SaveOneAsync(Medico medico)
         {
             var usuarioService = new UsuarioService();
-            medico.ConfiguracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
+            if (medico.ConfiguracaoAgenda.ConfiguracaoAgendaDias.Count > 0)
+                medico.ConfiguracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
 
             await MedicoNegocio.SaveOneAsync(Medicos.Collection, medico);
 
@@ -64,6 +49,10 @@ namespace ApiControleMedico.Services
         
         public Task<bool> RemoveOneAsync(string id)
         {
+            var usuarioService = new UsuarioService();
+            var medico = MedicoNegocio.GetOneAsync(Medicos.Collection, id).Result;
+            usuarioService.RemoveOneAsync(medico.Usuario.Id);
+
             return MedicoNegocio.RemoveOneAsync(Medicos.Collection, id);
         }
 

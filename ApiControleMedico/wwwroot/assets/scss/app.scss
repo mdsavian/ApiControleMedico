@@ -29,6 +29,97 @@ Global Styles
     
 }
 
+.ps .ps__scrollbar-y-rail {
+    left: 3px;
+    right: auto;
+}
+
+.modal-holder{
+    animation-name: example;
+    animation-duration: 0.3s;
+  }
+  
+@keyframes example {
+    0%   {transform: scale(0.5)}
+    100% {transform: scale(1)}
+}
+
+.modal-error {		
+     color: #434e65;    
+}
+
+.modal-error .modal-header {
+    background: #e85e6c;
+    border-bottom: none;   
+    position: relative;
+    text-align: center;    
+    border-radius: 5px 5px 0 0;
+    padding: 15px;
+}
+.modal-error h4 {
+    text-align: center;
+    font-size: 36px;
+    margin: 10px 0;
+}
+.modal-error .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    text-shadow: none;
+    opacity: 0.5;
+}
+.modal-error .close:hover {
+    opacity: 0.8;
+}
+
+.modal-error .form-control, .modal-error .btn {
+    min-height: 40px;
+    border-radius: 3px; 
+}
+
+
+.modal-error .icon-box {
+    color: #fff;		
+    width: 95px;
+    height: 95px;
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 9;
+    border: 5px solid #fff;
+    padding: 15px;
+    text-align: center;
+}
+.modal-error .icon-box i {
+    font-size: 58px;
+    margin: -2px 0 0 -2px;
+}
+.modal-error .p{
+    font-size: 25px;
+}
+
+.modal-error .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #eeb711;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 6px 20px;
+    min-width: 150px;
+    border: none;
+}
+.modal-error .btn:hover, .modal-error .btn:focus {
+    background: #eda645;
+    outline: none;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+} 
+
 body {
     background: $sidebar;
     font-family: $bodyfont;
@@ -71,9 +162,6 @@ html body .mdi:before,
 html body .mdi-set {
     line-height: initial;
 }
-
-
-
 
 
 /*******************

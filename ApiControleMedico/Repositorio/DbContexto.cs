@@ -15,27 +15,26 @@ namespace ApiControleMedico.Repositorio
 
         public DbContexto(string collectionName, bool abreSecao = false)
         {
-            //Conexão com produção
-            //string connectionString =
-            //    @"mongodb://controlemedico:DJdM5g8hFGmg1CtqWVwSw2Vw7kkv83aVGK0LTwagzpagUftQCorpWh8URLpd1EFNASBj2gPBhSJ0oFCzioBkfg==@controlemedico.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
-            //MongoClientSettings settings = MongoClientSettings.FromUrl(
-            //    new MongoUrl(connectionString)
-            //);
+            var producao = false;
 
-            //settings.SslSettings =
-            //    new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
-            //var client = new MongoClient(settings);
+            
+            string connectionString = producao ? @"mongodb://controlemedico01:controlemedico@mongodb.controlemedico.kinghost.net:27017/controlemedico01" : "mongodb://localhost:27017";
+            var nomeBase = producao ? "controlemedico01" : "ControleMedicoDb";
 
-            //conexão debug
-            var client = new MongoClient("mongodb://localhost:27017");
+            MongoClientSettings settings = MongoClientSettings.FromUrl(
+                new MongoUrl(connectionString)
+            );
+
+            var client = new MongoClient(settings);
+            
             if (abreSecao)
             {
                 Session = client.StartSession();
-                Database = Session.Client.GetDatabase("ControleMedicoDb");
+                Database = Session.Client.GetDatabase(nomeBase);
             }
             else
             {
-                Database = client.GetDatabase("ControleMedicoDb");
+                Database = client.GetDatabase(nomeBase);
             }
             Collection = Database.GetCollection<T>(collectionName);
 
