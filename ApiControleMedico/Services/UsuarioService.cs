@@ -1,7 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web.Http;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
+using ApiControleMedico.Modelos.NaoPersistidos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
 using Microsoft.Extensions.Configuration;
@@ -70,5 +75,21 @@ namespace ApiControleMedico.Services
             return UsuarioNegocio.RemoveOneAsync(ContextoUsuario.Collection, id);
         }
 
+        public async Task<Usuario> AlterarSenha(AlteraSenha alteraSenha)
+        {
+            var usuario = ContextoUsuario.Collection.Find(c => c.Id == alteraSenha.UsuarioId).FirstOrDefault();
+
+            if (usuario != null)
+            {
+                if (!Criptografia.Compara(alteraSenha.SenhaAtual, usuario.Senha))
+                    return null;
+
+                usuario.Senha = Criptografia.Codifica(alteraSenha.ConfirmacaoNovaSenha);
+                await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+
+                return usuario;
+            }
+            return null;
+        }
     }
 }

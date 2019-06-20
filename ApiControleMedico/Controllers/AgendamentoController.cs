@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
@@ -11,7 +12,7 @@ namespace ApiControleMedico.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class AgendamentoController : Controller
-    {   
+    {
         private readonly AgendamentoService _agendamentoService;
 
         public AgendamentoController(AgendamentoService agendamentoService)
@@ -43,6 +44,12 @@ namespace ApiControleMedico.Controllers
         public ActionResult<bool> ExcluirPorId(string agendamentoId)
         {
             return _agendamentoService.RemoveOneAsync(agendamentoId).Result;
+        }
+
+        [HttpGet, Route("buscarAgendamentosMedico")]
+        public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario)
+        {
+            return _agendamentoService.BuscarAgendamentoMedico(medicoId, data, tipoCalendario);
         }
     }
 }

@@ -15,9 +15,9 @@ namespace ApiControleMedico.Uteis
             return Crypter.MD5.Crypt(senha);
         }
 
-        public static bool Compara(string senha, string hash)
+        public static bool Compara(string senhaAComparar, string hash)
         {
-            return Crypter.CheckPassword(senha, hash);
+            return Crypter.CheckPassword(senhaAComparar, hash);
         }
     }
 }

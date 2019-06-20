@@ -11,10 +11,12 @@ namespace ApiControleMedico.Modelos
 
     public class Agendamento : Entidade
     {
-        [BsonElement("DataAgendamentoInicial")]
-        public DateTime DataAgendamentoInicial { get; set; }
-        [BsonElement("DataAgendamentoFinal")]
-        public DateTime DataAgendamentoFinal { get; set; }
+        [BsonElement("DataAgendamento")]
+        public string DataAgendamento { get; set; }
+        [BsonElement("HoraInicial")]
+        public string HoraInicial { get; set; }
+        [BsonElement("HoraFinal")]
+        public string HoraFinal { get; set; }
         [BsonElement("Observacao")]
         public string Observacao { get; set; }
         [BsonElement("Paciente")]
@@ -23,6 +25,8 @@ namespace ApiControleMedico.Modelos
         public Medico Medico { get; set; }
         [BsonElement("TipoAgendamento")]
         public ETipoAgendamento TipoAgendamento { get; set; }
+        [BsonElement("SituacaoAgendamento")]
+        public ESituacaoAgendamento SituacaoAgendamento{ get; set; }
         [BsonElement("Exame")]
         public Exame Exame { get; set; }
         [BsonElement("Local")]
@@ -33,8 +37,10 @@ namespace ApiControleMedico.Modelos
         public Convenio Convenio { get; set; }
         [BsonElement("Procedimento")]
         public Procedimento Procedimento { get; set; }
-        [BsonElement("Cor")]
-        public Procedimento Cor{ get; set; }
+        [BsonElement("CorFundo")]
+        public string CorFundo{ get; set; }
+        [BsonElement("CorLetra")]
+        public string CorLetra { get; set; }
 
     }
 }

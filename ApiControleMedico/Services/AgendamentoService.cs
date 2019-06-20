@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
@@ -40,5 +44,27 @@ namespace ApiControleMedico.Services
             return AgendamentoNegocio.RemoveOneAsync(ContextoAgendamentos.Collection, id);
         }
 
+        public List<Agendamento> BuscarAgendamentoMedico(string medicoId, string data, string tipoCalendario)
+        {
+            try
+            {
+                var inicioSemana = data.ToDateTime();
+                var fimSemana = inicioSemana;
+
+                if (tipoCalendario == "week")
+                {
+                    inicioSemana = data.ToDateTime().InicioDaSemana();
+                    fimSemana = inicioSemana.AddDays(6);
+                }
+
+                return ContextoAgendamentos.Collection.Find(c =>
+                    c.Medico.Id == medicoId).ToList().Where(c=> c.DataAgendamento.ToDateTime() >= inicioSemana &&
+                    c.DataAgendamento.ToDateTime() <= fimSemana).ToList();
+            }
+            catch (Exception ex)
+            {
+                return new List<Agendamento>();
+            }
+        }
     }
 }

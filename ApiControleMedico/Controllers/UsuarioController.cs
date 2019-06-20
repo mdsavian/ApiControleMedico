@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
+using ApiControleMedico.Modelos.NaoPersistidos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,19 +20,24 @@ namespace ApiControleMedico.Controllers
             _usuarioService = usuarioService;
         }
 
+        [HttpPost, Route("alterarSenha")]
+        public ActionResult<Usuario> AlterarSenha(AlteraSenha alteraSenha)
+        {
+            return _usuarioService.AlterarSenha(alteraSenha).Result;
+        }
         private async Task<List<Usuario>> BuscaAll()
         {
-            var xx = await _usuarioService.GetAllAsync();
+            var todosUsuarios = await _usuarioService.GetAllAsync();
 
-            return xx.ToList();
+            return todosUsuarios.ToList();
         }
 
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
-            var xx = BuscaAll();
-            xx.Wait();
-            return xx.Result;
+            var todosUsuarios = BuscaAll();
+            todosUsuarios.Wait();
+            return todosUsuarios.Result;
         }
     }
 }
