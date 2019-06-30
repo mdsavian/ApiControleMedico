@@ -43,30 +43,30 @@ namespace ApiControleMedico.Services
                     Ativo = true,
                     Login = medico.Email,
                     Senha = Criptografia.Codifica("@medico1234"),
-                    PermissaoAdministrador = true,
                     TipoUsuario = ETipoUsuario.Medico,
-                    VisualizaValoresRelatorios = true,
                     MedicoId = medico.Id
                 };
+                await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
             }
-
-            await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
             return usuario;
         }
 
         public async Task<Usuario> CriarNovoUsuarioFuncionario(Funcionario funcionario)
         {
-            var usuario = new Usuario
-            {
-                Ativo = true,
-                Login = funcionario.Email,
-                Senha = Criptografia.Codifica("@usuario1234"),
-                PermissaoAdministrador = false,
-                TipoUsuario = ETipoUsuario.Comum,
-                VisualizaValoresRelatorios = false
-            };
+            var usuario = ContextoUsuario.Collection.Find(c => c.Login == funcionario.Email && c.FuncionarioId == funcionario.Id).FirstOrDefault();
 
-            await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+            if (usuario == null)
+            {
+                usuario = new Usuario
+                {
+                    Ativo = true,
+                    Login = funcionario.Email,
+                    Senha = Criptografia.Codifica("@usuario1234"),
+                    TipoUsuario = ETipoUsuario.Comum,
+                    FuncionarioId = funcionario.Id
+                };
+                await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+            }
             return usuario;
         }
 

@@ -44,6 +44,7 @@ namespace ApiControleMedico.Extensions
             services.AddScoped<CirurgiaService>();
             services.AddScoped<ExameService>();
             services.AddScoped<AgendamentoService>();
+            services.AddScoped<ClinicaService>();
         }
     }
 }

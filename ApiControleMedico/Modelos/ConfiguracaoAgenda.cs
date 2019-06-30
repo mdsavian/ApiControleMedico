@@ -13,6 +13,10 @@ namespace ApiControleMedico.Modelos
         [BsonElement("UltimoHorario")]
         public string UltimoHorario { get; set; }
 
+        [BsonElement("ClinicasId")]
+        public List<string> ClinicasId { get; set; }
+        public List<Clinica> Clinicas { get; set; }
+
         [BsonElement("ConfiguracaoAgendaDias")]
         public List<ConfiguracaoAgendaDias> ConfiguracaoAgendaDias { get; set; }
 

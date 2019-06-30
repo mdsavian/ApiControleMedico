@@ -17,9 +17,9 @@ namespace ApiControleMedico.Repositorio
         {
             var producao = false;
 
-            
-            string connectionString = producao ? @"mongodb://controlemedico01:controlemedico@mongodb.controlemedico.kinghost.net:27017/controlemedico01" : "mongodb://localhost:27017";
-            var nomeBase = producao ? "controlemedico01" : "ControleMedicoDb";
+             
+            string connectionString = producao ? @"mongodb://controlemedico02:controlemedico@mongodb.controlemedico.kinghost.net:27017/controlemedico02" : "mongodb://localhost:27017";
+            var nomeBase = producao ? "controlemedico02" : "ControleMedicoDb";
 
             MongoClientSettings settings = MongoClientSettings.FromUrl(
                 new MongoUrl(connectionString)

@@ -38,6 +38,13 @@ namespace ApiControleMedico.Controllers
             return _medicoService.GetOneAsync(medicoId).Result;
         }
 
+        [HttpGet, Route("todosFiltrandoMedico/{medicoId}")]
+        public ActionResult<List<Medico>> TodosFiltrandoMedico(string medicoId)
+        {
+            return _medicoService.TodosFiltrandoMedico(medicoId).Result;
+        }
+
+
         [HttpDelete, Route("excluirPorId/{medicoId}")]
         public ActionResult<bool> ExcluirPorId(string medicoId)
         {

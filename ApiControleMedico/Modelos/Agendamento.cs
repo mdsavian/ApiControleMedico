@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ApiControleMedico.Modelos.Enums;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
@@ -41,6 +42,9 @@ namespace ApiControleMedico.Modelos
         public string CorFundo{ get; set; }
         [BsonElement("CorLetra")]
         public string CorLetra { get; set; }
+        [BsonElement("ClinicasId")]
+        public List<string> ClinicasId { get; set; }
+        public List<Clinica> Clinicas { get; set; }
 
     }
 }

@@ -20,5 +20,12 @@ namespace ApiControleMedico.Modelos
         [BsonElement("ConfiguracaoAgenda")]
         public ConfiguracaoAgenda ConfiguracaoAgenda { get; set; }
 
+        [BsonElement("Administrador")]
+        public bool Administrador { get; set; }
+        
+        [BsonElement("ClinicasId")]
+        public List<string> ClinicasId { get; set; }
+        public List<Clinica> Clinicas { get; set; }
+
     }
 }

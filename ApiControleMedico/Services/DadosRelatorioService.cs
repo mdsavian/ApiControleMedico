@@ -13,27 +13,27 @@ namespace ApiControleMedico.Services
 {
     public class DadosRelatorioService
     {
-        protected readonly DbContexto<Paciente> Pacientes;
+        protected readonly DbContexto<Paciente> ContextoPacientes;
         protected readonly EntidadeNegocio<Paciente> PacienteNegocio = new EntidadeNegocio<Paciente>();
 
         public DadosRelatorioService()
         {
-            Pacientes = new DbContexto<Paciente>("paciente");
+            ContextoPacientes = new DbContexto<Paciente>("paciente");
         }
 
         public async void ValidarDados(List<DadosRelatorioUnimed> dados)
         {
             var builder = Builders<Paciente>.Filter;
-            List<Paciente> novosPacientes = new List<Paciente>();
+            List<Paciente> novosContextoPacientes = new List<Paciente>();
             foreach (var dado in dados)
             {
                 var filter = builder.Eq("NomeCompleto", dado.Beneficiario) & builder.Eq("NumeroCartao", dado.Carteira);
 
-                var paciente = await Pacientes.Collection.Find(filter).FirstOrDefaultAsync();
+                var paciente = await ContextoPacientes.Collection.Find(filter).FirstOrDefaultAsync();
 
                 if (paciente == null)
                 {
-                    novosPacientes.Add(new Paciente
+                    novosContextoPacientes.Add(new Paciente
                     {
                         Id = ObjectId.GenerateNewId().ToString(),
                         NomeCompleto = dado.Beneficiario.ToUpper(),
@@ -45,8 +45,8 @@ namespace ApiControleMedico.Services
 
                 }
             }
-            if (novosPacientes.HasItems())
-                await Pacientes.Collection.InsertManyAsync(novosPacientes);
+            if (novosContextoPacientes.HasItems())
+                await ContextoPacientes.Collection.InsertManyAsync(novosContextoPacientes);
         }
     }
 }

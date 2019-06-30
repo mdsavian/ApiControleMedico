@@ -10,35 +10,35 @@ namespace ApiControleMedico.Services
 {
     public class ConvenioService
     {
-        protected readonly DbContexto<Convenio> Convenios;
+        protected readonly DbContexto<Convenio> ContextoConvenio;
         protected readonly EntidadeNegocio<Convenio> ConvenioNegocio = new EntidadeNegocio<Convenio>();
 
         public ConvenioService()
         {
-            Convenios = new DbContexto<Convenio>("convenio");
+            ContextoConvenio = new DbContexto<Convenio>("convenio");
         }
 
         public async Task<IEnumerable<Convenio>> GetAllAsync()
         {
-            var convenios = await ConvenioNegocio.GetAllAsync(Convenios.Collection);
+            var convenios = await ConvenioNegocio.GetAllAsync(ContextoConvenio.Collection);
             return convenios;
         }
 
         public Task<Convenio> GetOneAsync(string id)
         {
-            return ConvenioNegocio.GetOneAsync(Convenios.Collection, id);
+            return ConvenioNegocio.GetOneAsync(ContextoConvenio.Collection, id);
         }
 
         public async Task<Convenio> SaveOneAsync(Convenio convenio)
         {
-            await ConvenioNegocio.SaveOneAsync(Convenios.Collection, convenio);
+            await ConvenioNegocio.SaveOneAsync(ContextoConvenio.Collection, convenio);
             return convenio;
         }
 
 
         public Task<bool> RemoveOneAsync(string id)
         {
-            return ConvenioNegocio.RemoveOneAsync(Convenios.Collection, id);
+            return ConvenioNegocio.RemoveOneAsync(ContextoConvenio.Collection, id);
         }
 
         public List<Medico> BuscarMedicosPorConvenio(string convenioId)
@@ -56,7 +56,7 @@ namespace ApiControleMedico.Services
             try
             {
                 var filter = Builders<Convenio>.Filter.Nin(c => c.Id, conveniosMedicos.Select(c => c.Id));
-                var convenios = Convenios.Collection.Find(filter).ToList();
+                var convenios = ContextoConvenio.Collection.Find(filter).ToList();
                 return convenios;
             }
             catch (Exception ex)
@@ -64,7 +64,7 @@ namespace ApiControleMedico.Services
 
             }
 
-            return Convenios.Collection.Find(c => true).ToList();
+            return ContextoConvenio.Collection.Find(c => true).ToList();
 
         }
     }

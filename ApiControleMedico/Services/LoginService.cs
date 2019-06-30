@@ -11,12 +11,12 @@ namespace ApiControleMedico.Services
 {
     public class LoginService
     {
-        protected readonly DbContexto<Usuario> Usuarios;
+        protected readonly DbContexto<Usuario> ContextoUsuarios;
         protected readonly EntidadeNegocio<Usuario> UsuarioNegocio = new EntidadeNegocio<Usuario>();
 
         public LoginService()
         {
-            Usuarios = new DbContexto<Usuario>("usuario");
+            ContextoUsuarios = new DbContexto<Usuario>("usuario");
 
         }
 
@@ -39,7 +39,7 @@ namespace ApiControleMedico.Services
             if (usuario.Login.Equals("admin"))
                 return TratarUsuarioAdministrador(usuario);
 
-            var usuarioBanco = Usuarios.Collection.Find(c => c.Login == usuario.Login && c.Ativo).FirstOrDefault();
+            var usuarioBanco = ContextoUsuarios.Collection.Find(c => c.Login == usuario.Login && c.Ativo).FirstOrDefault();
             if (usuarioBanco != null && Criptografia.Compara(usuario.Senha, usuarioBanco.Senha))
             {
                 usuarioBanco.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
@@ -52,7 +52,7 @@ namespace ApiControleMedico.Services
 
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
-            var usuarios = await UsuarioNegocio.GetAllAsync(Usuarios.Collection);
+            var usuarios = await UsuarioNegocio.GetAllAsync(ContextoUsuarios.Collection);
             return usuarios;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ApiControleMedico.Modelos.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -23,12 +24,6 @@ namespace ApiControleMedico.Modelos
         [BsonDefaultValue("")]
         public string Senha { get; set; }
 
-        [BsonElement("PermissaoAdministrador")]
-        public bool PermissaoAdministrador { get; set; }
-
-        [BsonElement("VisualizaValoresRelatorios")]
-        public bool VisualizaValoresRelatorios { get; set; }
-
         [BsonElement("UltimoLogin")]
         public string UltimoLogin{ get; set; }
 
@@ -40,5 +35,9 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("FuncionarioId")]
         public string FuncionarioId { get; set; }
+        
+        [BsonElement("ClinicasId")]
+        public List<string> ClinicasId { get; set; }
+        public List<Clinica> Clinicas { get; set; }
     }
 }
