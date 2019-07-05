@@ -36,8 +36,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("FuncionarioId")]
         public string FuncionarioId { get; set; }
         
-        [BsonElement("ClinicasId")]
-        public List<string> ClinicasId { get; set; }
-        public List<Clinica> Clinicas { get; set; }
+        //[BsonElement("ClinicasId")]
+        //public List<string> ClinicasId { get; set; }
+        //public List<Clinica> Clinicas { get; set; }
     }
 }

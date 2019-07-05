@@ -10,7 +10,10 @@ namespace ApiControleMedico.Modelos
 
     public class Funcionario : Pessoa
     {
-        [BsonElement("Oficio")]
+        [BsonElement("OficioId")]
+        public string OficioId { get; set; }
+
+        [BsonIgnore]
         public Oficio Oficio { get; set; }
 
         [BsonElement("DataAdmissao")]
@@ -19,7 +22,10 @@ namespace ApiControleMedico.Modelos
         [BsonElement("DataDemissao")]
         public DateTime DataDemissao { get; set; }
 
-        [BsonElement("Usuario")]
+        [BsonElement("UsuarioId")]
+        public string UsuarioId { get; set; }
+
+        [BsonIgnore]
         public Usuario Usuario { get; set; }
 
         [BsonElement("PermissaoAdministrador")]

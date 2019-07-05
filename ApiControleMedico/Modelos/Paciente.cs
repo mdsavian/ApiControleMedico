@@ -12,7 +12,7 @@ namespace ApiControleMedico.Modelos
     [BsonKnownTypes(typeof(Paciente))]
     public class Paciente : Pessoa
     {
-        //Primeiro folder
+        
         [BsonElement("NomeConjugue")]
         public string NomeConjugue { get; set; }
         [BsonElement("NomePai")]
@@ -25,7 +25,7 @@ namespace ApiControleMedico.Modelos
         public string TipoSanguineo { get; set; }
         [BsonElement("Ocupacao")]
         public string Ocupacao { get; set; } 
-        //segundo folder
+        
         [BsonElement("Telefone")]
         public string Telefone { get; set; }
         [BsonElement("AceitaReceberSms")]
@@ -33,9 +33,13 @@ namespace ApiControleMedico.Modelos
         [BsonElement("Responsavel")]
         public string Responsavel { get; set; }
 
-        //quarto folder
-        [BsonElement("Convenio")]
+
+        [BsonElement("ConvenioId")]
+        public string ConvenioId { get; set; }
+
+        [BsonIgnore]
         public Convenio Convenio { get; set; } 
+
         [BsonElement("NumeroCartao")]
         public long NumeroCartao { get; set; }
         [BsonElement("CartaoNacionalSaude")]

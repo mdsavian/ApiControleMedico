@@ -8,24 +8,33 @@ namespace ApiControleMedico.Modelos
         [BsonElement("Crm")]
         public string Crm { get; set; }
 
-        [BsonElement("Convenios")]
-        public List<Convenio> Convenios { get; set; }
+        [BsonElement("ConveniosId")]
+        public List<string> ConveniosId { get; set; }
+        
+        [BsonElement("UsuarioId")]
+        public string UsuarioId { get; set; }
 
-        [BsonElement("Usuario")]
-        public Usuario Usuario { get; set; }
+        [BsonElement("EspecialidadeId")]
+        public string EspecialidadeId { get; set; }
 
-        [BsonElement("Especialidade")]
-        public Especialidade Especialidade { get; set; }
-
-        [BsonElement("ConfiguracaoAgenda")]
-        public ConfiguracaoAgenda ConfiguracaoAgenda { get; set; }
+        [BsonElement("ConfiguracaoAgendaId")]
+        public string ConfiguracaoAgendaId { get; set; }
 
         [BsonElement("Administrador")]
         public bool Administrador { get; set; }
         
         [BsonElement("ClinicasId")]
         public List<string> ClinicasId { get; set; }
-        public List<Clinica> Clinicas { get; set; }
 
+        [BsonIgnore]
+        public List<Clinica> Clinicas { get; set; }
+        [BsonIgnore]
+        public List<Convenio> Convenios { get; set; }
+        [BsonIgnore]
+        public ConfiguracaoAgenda ConfiguracaoAgenda { get; set; }
+        [BsonIgnore]
+        public Especialidade Especialidade { get; set; }
+        [BsonIgnore]
+        public Usuario Usuario { get; set; }
     }
 }
