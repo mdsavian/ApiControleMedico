@@ -43,11 +43,18 @@ namespace ApiControleMedico.Services
 
         public List<Medico> BuscarMedicosPorConvenio(string convenioId)
         {
-            var medicos = new MedicoService().GetAllAsync().Result;
+            List<Medico> medicos = new List<Medico>();
+            try
+            {
+                medicos = new MedicoService().GetAllAsync().Result.ToList();
+                medicos = medicos.Where(c => c.ConveniosId != null && c.ConveniosId.Contains(convenioId)).ToList();
+            }
+            catch (Exception ex)
+            {
 
-            var xx = medicos.Where(c => c.Convenios.Any(d => d.Id == convenioId)).ToList();
+            }
 
-            return xx;
+            return medicos;
         }
 
         public List<Convenio> TodosFiltrandoMedico(string medicoId)

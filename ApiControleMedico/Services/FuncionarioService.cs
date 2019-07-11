@@ -33,7 +33,7 @@ namespace ApiControleMedico.Services
             await FuncionarioNegocio.SaveOneAsync(ContextoFuncionarios.Collection, funcionario);
 
             var usuario = await new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
-            funcionario.Usuario = usuario;
+            funcionario.UsuarioId = usuario.Id;
 
             await FuncionarioNegocio.SaveOneAsync(ContextoFuncionarios.Collection, funcionario);
             return funcionario;

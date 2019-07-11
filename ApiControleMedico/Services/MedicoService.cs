@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
@@ -31,18 +32,36 @@ namespace ApiControleMedico.Services
 
         }
 
-        public async Task<Medico> SaveOneAsync(Medico medico)
+        public async Task<Medico> SalvarConfiguracaoMedico(Medico medico)
         {
-            var usuarioService = new UsuarioService();
-            if (medico.ConfiguracaoAgenda.ConfiguracaoAgendaDias.Count > 0)
-                medico.ConfiguracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
+
+            if (medico.ConfiguracaoAgenda?.ConfiguracaoAgendaDias.Count > 0)
+            {
+                var configuracaoAgenda = await AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
+                medico.ConfiguracaoAgendaId = configuracaoAgenda.Id;
+                medico.ConfiguracaoAgenda = configuracaoAgenda;
+            }
 
             await MedicoNegocio.SaveOneAsync(ContextoMedicos.Collection, medico);
 
-            var usuario = await usuarioService.CriarNovoUsuarioMedico(medico);
 
-            medico.Usuario = usuario;
+            return medico;
+        }
+
+        public async Task<Medico> SaveOneAsync(Medico medico)
+        { 
+
             await MedicoNegocio.SaveOneAsync(ContextoMedicos.Collection, medico);
+
+            if (medico.UsuarioId.IsNullOrWhiteSpace())
+            {
+                var usuarioService = new UsuarioService();
+
+                var usuario = await usuarioService.CriarNovoUsuarioMedico(medico);
+
+                medico.UsuarioId = usuario.Id;
+                await MedicoNegocio.SaveOneAsync(ContextoMedicos.Collection, medico);
+            }
 
 
             return medico;
@@ -50,11 +69,21 @@ namespace ApiControleMedico.Services
 
         public Task<bool> RemoveOneAsync(string id)
         {
-            var usuarioService = new UsuarioService();
-            var medico = MedicoNegocio.GetOneAsync(ContextoMedicos.Collection, id).Result;
-            usuarioService.RemoveOneAsync(medico.Usuario.Id);
+            try
+            {
+                var usuarioService = new UsuarioService();
+                var medico = MedicoNegocio.GetOneAsync(ContextoMedicos.Collection, id).Result;
+                if (!medico.UsuarioId.IsNullOrWhiteSpace())
+                    usuarioService.RemoveOneAsync(medico.UsuarioId);
 
-            return MedicoNegocio.RemoveOneAsync(ContextoMedicos.Collection, id);
+                return MedicoNegocio.RemoveOneAsync(ContextoMedicos.Collection, id);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
         }
 
 
@@ -72,6 +101,14 @@ namespace ApiControleMedico.Services
 
             return ContextoMedicos.Collection.Find(c => c.Id == medicoId).ToList();
 
+        }
+
+        public ConfiguracaoAgenda BuscarConfiguracaoAgenda(string configuracaoAgendaId)
+        {
+            using (var contexto = new DbContexto<ConfiguracaoAgenda>("configuracaoAgenda"))
+            {
+                return contexto.Collection.Find(c => c.Id == configuracaoAgendaId).FirstOrDefault();
+            }
         }
     }
 

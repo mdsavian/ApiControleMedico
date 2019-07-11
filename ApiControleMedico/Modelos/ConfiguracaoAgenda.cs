@@ -17,11 +17,7 @@ namespace ApiControleMedico.Modelos
         public List<string> ClinicasId { get; set; }
         [BsonIgnore]
         public List<Clinica> Clinicas { get; set; }
-
-        [BsonElement("ConfiguracaoAgendaDiasId")]
-        public List<string> ConfiguracaoAgendaDiasId { get; set; }
-
-        [BsonIgnore]
+        
         public List<ConfiguracaoAgendaDias> ConfiguracaoAgendaDias { get; set; }
 
         [BsonElement("ConfiguracaoMinutosAgenda")]

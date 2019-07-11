@@ -45,8 +45,6 @@ namespace ApiControleMedico.Repositorio
             RegisterMapIfNeeded<Convenio>(collectionName);
             RegisterMapIfNeeded<Especialidade>(collectionName);
             RegisterMapIfNeeded<ConfiguracaoAgenda>(collectionName);
-            RegisterMapIfNeeded<ConfiguracaoAgendaDias>(collectionName);
-
         }
 
 

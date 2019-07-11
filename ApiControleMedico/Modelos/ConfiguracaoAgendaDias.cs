@@ -2,7 +2,7 @@
 
 namespace ApiControleMedico.Modelos
 {
-    public class ConfiguracaoAgendaDias : Entidade
+    public class ConfiguracaoAgendaDias
     {
         [BsonElement("Dia")]
         public int Dia { get; set;}

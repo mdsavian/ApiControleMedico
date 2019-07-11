@@ -9,8 +9,8 @@ namespace ApiControleMedico.Modelos
     [BsonKnownTypes(typeof(Convenio))]
     public class Convenio : Entidade
     {
-        [BsonElement("NomeConvenio")]
-        public string NomeConvenio { get; set; }
+        [BsonElement("Descricao")]
+        public string Descricao { get; set; }
         [BsonElement("DiasRetorno")]
         public int DiasRetorno { get; set; }
         [BsonElement("Ativo")]

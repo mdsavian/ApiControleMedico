@@ -33,8 +33,12 @@ namespace ApiControleMedico.Services
 
         public async Task<Usuario> CriarNovoUsuarioMedico(Medico medico)
         {
-            var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
-                .FirstOrDefault();
+            using (var contexto = new DbContexto<Usuario>("usuario"))
+            {
+
+            }
+                var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
+                    .FirstOrDefault();
 
             if (usuario == null)
             {
