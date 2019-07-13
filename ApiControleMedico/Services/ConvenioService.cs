@@ -18,27 +18,27 @@ namespace ApiControleMedico.Services
             ContextoConvenio = new DbContexto<Convenio>("convenio");
         }
 
-        public async Task<IEnumerable<Convenio>> GetAllAsync()
+        public  IEnumerable<Convenio> GetAll()
         {
-            var convenios = await ConvenioNegocio.GetAllAsync(ContextoConvenio.Collection);
+            var convenios = ConvenioNegocio.GetAll(ContextoConvenio.Collection);
             return convenios;
         }
 
-        public Task<Convenio> GetOneAsync(string id)
+        public Convenio GetOne(string id)
         {
-            return ConvenioNegocio.GetOneAsync(ContextoConvenio.Collection, id);
+            return ConvenioNegocio.GetOne(ContextoConvenio.Collection, id);
         }
 
-        public async Task<Convenio> SaveOneAsync(Convenio convenio)
+        public Convenio SaveOne(Convenio convenio)
         {
-            await ConvenioNegocio.SaveOneAsync(ContextoConvenio.Collection, convenio);
+            ConvenioNegocio.SaveOne(ContextoConvenio.Collection, convenio);
             return convenio;
         }
 
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return ConvenioNegocio.RemoveOneAsync(ContextoConvenio.Collection, id);
+            return ConvenioNegocio.RemoveOne(ContextoConvenio.Collection, id);
         }
 
         public List<Medico> BuscarMedicosPorConvenio(string convenioId)
@@ -46,7 +46,7 @@ namespace ApiControleMedico.Services
             List<Medico> medicos = new List<Medico>();
             try
             {
-                medicos = new MedicoService().GetAllAsync().Result.ToList();
+                medicos = new MedicoService().GetAll().Result.ToList();
                 medicos = medicos.Where(c => c.ConveniosId != null && c.ConveniosId.Contains(convenioId)).ToList();
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace ApiControleMedico.Services
 
         public List<Convenio> TodosFiltrandoMedico(string medicoId)
         {
-            var conveniosMedicos = new MedicoService().GetOneAsync(medicoId).Result.Convenios;
+            var conveniosMedicos = new MedicoService().GetOne(medicoId).Result.Convenios;
             try
             {
                 var filter = Builders<Convenio>.Filter.Nin(c => c.Id, conveniosMedicos.Select(c => c.Id));

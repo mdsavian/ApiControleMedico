@@ -29,7 +29,6 @@ namespace ApiControleMedico.Services
         public Task<Medico> GetOneAsync(string id)
         {
             return MedicoNegocio.GetOneAsync(ContextoMedicos.Collection, id);
-
         }
 
         public async Task<Medico> SalvarConfiguracaoMedico(Medico medico)

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
@@ -15,27 +16,26 @@ namespace ApiControleMedico.Services
             ContextoConfiguracaoAgenda = new DbContexto<ConfiguracaoAgenda>("configuracaoAgenda");
         }
 
-        public async Task<IEnumerable<ConfiguracaoAgenda>> GetAllAsync()
+        public IEnumerable<ConfiguracaoAgenda> GetAll()
         {
-            var configuracaoAgendas = await ConfiguracaoAgendaNegocio.GetAllAsync(ContextoConfiguracaoAgenda.Collection);
-            return configuracaoAgendas;
+            return ConfiguracaoAgendaNegocio.GetAll(ContextoConfiguracaoAgenda.Collection).ToList();
         }
 
-        public Task<ConfiguracaoAgenda> GetOneAsync(string id)
+        public ConfiguracaoAgenda GetOne(string id)
         {
-            return ConfiguracaoAgendaNegocio.GetOneAsync(ContextoConfiguracaoAgenda.Collection, id);
+            return ConfiguracaoAgendaNegocio.GetOne(ContextoConfiguracaoAgenda.Collection, id);
         }
 
-        public async Task<ConfiguracaoAgenda> SaveOneAsync(ConfiguracaoAgenda configuracaoAgenda)
+        public ConfiguracaoAgenda SaveOne(ConfiguracaoAgenda configuracaoAgenda)
         {
-            await ConfiguracaoAgendaNegocio.SaveOneAsync(ContextoConfiguracaoAgenda.Collection, configuracaoAgenda);
+            ConfiguracaoAgendaNegocio.SaveOne(ContextoConfiguracaoAgenda.Collection, configuracaoAgenda);
             return configuracaoAgenda;
         }
 
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return ConfiguracaoAgendaNegocio.RemoveOneAsync(ContextoConfiguracaoAgenda.Collection, id);
+            return ConfiguracaoAgendaNegocio.RemoveOne(ContextoConfiguracaoAgenda.Collection, id);
         }
     }
 }

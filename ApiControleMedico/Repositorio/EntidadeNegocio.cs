@@ -1,7 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using MongoDB.Bson;
@@ -12,28 +10,28 @@ namespace ApiControleMedico.Repositorio
     public class EntidadeNegocio<TContext>
         where TContext : Entidade, new()
     {
-        public async Task<IEnumerable<TContext>> GetAllAsync(IMongoCollection<TContext> collection)
+        public IEnumerable<TContext> GetAll(IMongoCollection<TContext> collection)
         {
-            return await collection.Find(f => true).ToListAsync();
+            return collection.Find(f => true).ToList();
         }
 
-        public async Task<TContext> GetOneAsync(IMongoCollection<TContext> collection, TContext context)
+        public TContext GetOne(IMongoCollection<TContext> collection, TContext context)
         {
-            return await collection.Find(new BsonDocument("_id", context.Id)).FirstOrDefaultAsync();
+            return collection.Find(new BsonDocument("_id", context.Id)).FirstOrDefault();
         }
 
-        public async Task<TContext> GetOneAsync(IMongoCollection<TContext> collection, string id)
+        public TContext GetOne(IMongoCollection<TContext> collection, string id)
         {
-            return await GetOneAsync(collection, new TContext {Id = id});
+            return GetOne(collection, new TContext {Id = id});
         }
         
-        public async Task<IEnumerable<TContext>> GetManyAsync(IMongoCollection<TContext> collection,
+        public IEnumerable<TContext> GetMany(IMongoCollection<TContext> collection,
             IEnumerable<TContext> contexts)
         {
             var list = new List<TContext>();
             foreach (var context in contexts)
             {
-                var doc = await GetOneAsync(collection, context);
+                var doc = GetOne(collection, context);
                 if (doc == null) continue;
                 list.Add(doc);
             }
@@ -41,13 +39,13 @@ namespace ApiControleMedico.Repositorio
             return list;
         }
 
-        public async Task<IEnumerable<TContext>> GetManyAsync(IMongoCollection<TContext> collection,
+        public IEnumerable<TContext> GetMany(IMongoCollection<TContext> collection,
             IEnumerable<string> ids)
         {
             var list = new List<TContext>();
             foreach (var id in ids)
             {
-                var doc = await GetOneAsync(collection, id);
+                var doc =  GetOne(collection, id);
                 if (doc == null) continue;
                 list.Add(doc);
             }
@@ -55,63 +53,63 @@ namespace ApiControleMedico.Repositorio
             return list;
         }
 
-        public async Task<IEnumerable<TContext>> SaveManyAsync(IMongoCollection<TContext> collection, IEnumerable<TContext> collectionToInsert)
+        public IEnumerable<TContext> SaveMany(IMongoCollection<TContext> collection, IEnumerable<TContext> collectionToInsert)
         {
             foreach (var context in collectionToInsert)
             {
                 if (string.IsNullOrEmpty(context.Id))
                 {
                     context.Id = ObjectId.GenerateNewId().ToString();
-                    await collection.InsertOneAsync(context);
+                    collection.InsertOne(context);
                 }
                 else
                 {
-                    await collection.ReplaceOneAsync(c => c.Id == context.Id, context);
+                    collection.ReplaceOne(c => c.Id == context.Id, context);
                 }
             }
 
             return collectionToInsert;
         }
 
-        public async Task SaveOneAsync(IMongoCollection<TContext> collection, TContext context)
+        public void SaveOne(IMongoCollection<TContext> collection, TContext context)
         {
             if (string.IsNullOrEmpty(context.Id))
             {
                 context.Id = ObjectId.GenerateNewId().ToString();
-                await collection.InsertOneAsync(context);
+                collection.InsertOne(context);
             }
             else
             {
-                await collection.ReplaceOneAsync(c => c.Id == context.Id, context);
+                collection.ReplaceOne(c => c.Id == context.Id, context);
             }
         }
 
-        public async Task<bool> RemoveOneAsync(IMongoCollection<TContext> collection, TContext context)
+        public bool RemoveOne(IMongoCollection<TContext> collection, TContext context)
         {
             if (context == null) return false;
 
-            await collection.DeleteOneAsync(new BsonDocument("_id", context.Id));           
+            collection.DeleteOne(new BsonDocument("_id", context.Id));           
             return true;
         }
 
-        public async Task<bool> RemoveOneAsync(IMongoCollection<TContext> collection, string id)
+        public bool RemoveOne(IMongoCollection<TContext> collection, string id)
         {
-            return await RemoveOneAsync(collection, new TContext {Id = id});
+            return RemoveOne(collection, new TContext {Id = id});
         }
 
-        public async Task<bool> RemoveManyAsync(IMongoCollection<TContext> collection,
+        public bool RemoveMany(IMongoCollection<TContext> collection,
             IEnumerable<TContext> contexts)
         {
             foreach (var context in contexts)
-                await RemoveOneAsync(collection, context);
+                RemoveOne(collection, context);
             return true;
         }
 
-        public async Task<bool> RemoveManyAsync(IMongoCollection<TContext> collection,
+        public bool RemoveMany(IMongoCollection<TContext> collection,
             IEnumerable<string> ids)
         {
             foreach (var id in ids)
-                await RemoveOneAsync(collection, id);
+                RemoveOne(collection, id);
             return true;
         }
     }
