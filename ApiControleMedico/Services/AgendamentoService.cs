@@ -21,27 +21,27 @@ namespace ApiControleMedico.Services
             ContextoAgendamentos = new DbContexto<Agendamento>("agendamento");
         }
 
-        public async Task<IEnumerable<Agendamento>> GetAllAsync()
+        public IEnumerable<Agendamento> GetAll()
         {
-            var agendamentos = await AgendamentoNegocio.GetAllAsync(ContextoAgendamentos.Collection);
+            var agendamentos = AgendamentoNegocio.GetAll(ContextoAgendamentos.Collection);
             return agendamentos;
         }
 
-        public Task<Agendamento> GetOneAsync(string id)
+        public Agendamento GetOne(string id)
         {
-            return AgendamentoNegocio.GetOneAsync(ContextoAgendamentos.Collection, id);
+            return AgendamentoNegocio.GetOne(ContextoAgendamentos.Collection, id);
         }
 
-        public async Task<Agendamento> SaveOneAsync(Agendamento context)
+        public Agendamento SaveOne(Agendamento context)
         {
-            await AgendamentoNegocio.SaveOneAsync(ContextoAgendamentos.Collection, context);
+            AgendamentoNegocio.SaveOne(ContextoAgendamentos.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return AgendamentoNegocio.RemoveOneAsync(ContextoAgendamentos.Collection, id);
+            return AgendamentoNegocio.RemoveOne(ContextoAgendamentos.Collection, id);
         }
 
         public List<Agendamento> BuscarAgendamentoMedico(string medicoId, string data, string tipoCalendario)
@@ -58,7 +58,7 @@ namespace ApiControleMedico.Services
                 }
 
                 return ContextoAgendamentos.Collection.Find(c =>
-                    c.Medico.Id == medicoId).ToList().Where(c=> c.DataAgendamento.ToDateTime() >= inicioSemana &&
+                    c.Medico.Id == medicoId).ToList().Where(c => c.DataAgendamento.ToDateTime() >= inicioSemana &&
                     c.DataAgendamento.ToDateTime() <= fimSemana).ToList();
             }
             catch (Exception ex)

@@ -15,27 +15,27 @@ namespace ApiControleMedico.Services
             ContextoOficios = new DbContexto<Oficio>("oficio");
         }
 
-        public async Task<IEnumerable<Oficio>> GetAllAsync()
+        public IEnumerable<Oficio> GetAll()
         {
-            var oficios = await OficioNegocio.GetAllAsync(ContextoOficios.Collection);
+            var oficios = OficioNegocio.GetAll(ContextoOficios.Collection);
             return oficios;
         }
 
-        public Task<Oficio> GetOneAsync(string id)
+        public Oficio GetOne(string id)
         {
-            return OficioNegocio.GetOneAsync(ContextoOficios.Collection, id);
+            return OficioNegocio.GetOne(ContextoOficios.Collection, id);
         }
 
-        public async Task<Oficio> SaveOneAsync(Oficio context)
+        public Oficio SaveOne(Oficio context)
         {
-            await OficioNegocio.SaveOneAsync(ContextoOficios.Collection, context);
+            OficioNegocio.SaveOne(ContextoOficios.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return OficioNegocio.RemoveOneAsync(ContextoOficios.Collection, id);
+            return OficioNegocio.RemoveOne(ContextoOficios.Collection, id);
         }
     }
 }

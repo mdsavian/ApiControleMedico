@@ -17,30 +17,30 @@ namespace ApiControleMedico.Services
             ContextoLocals = new DbContexto<Local>("local");
         }
 
-        public async Task<IEnumerable<Local>> GetAllAsync()
+        public IEnumerable<Local> GetAll()
         {
-            var locals = await LocalNegocio.GetAllAsync(ContextoLocals.Collection);
+            var locals = LocalNegocio.GetAll(ContextoLocals.Collection);
             return locals;
         }
 
-        public Task<Local> GetOneAsync(string id)
+        public Local GetOne(string id)
         {
-            return LocalNegocio.GetOneAsync(ContextoLocals.Collection, id);
+            return LocalNegocio.GetOne(ContextoLocals.Collection, id);
         }
 
-        public async Task<Local> SaveOneAsync(Local context)
+        public Local SaveOne(Local context)
         {
-            await LocalNegocio.SaveOneAsync(ContextoLocals.Collection, context);
+            LocalNegocio.SaveOne(ContextoLocals.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return LocalNegocio.RemoveOneAsync(ContextoLocals.Collection, id);
+            return LocalNegocio.RemoveOne(ContextoLocals.Collection, id);
         }
 
-        public async void SaveManyAsync(Collection<Local> locals)
+        public void SaveMany(Collection<Local> locals)
         {
             foreach (var local in locals)
             {
@@ -48,7 +48,7 @@ namespace ApiControleMedico.Services
                         .FirstOrDefault() != null)
                     continue;
 
-                await LocalNegocio.SaveOneAsync(ContextoLocals.Collection, local);
+                LocalNegocio.SaveOne(ContextoLocals.Collection, local);
             }
         }
     }

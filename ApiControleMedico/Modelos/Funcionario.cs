@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
@@ -33,6 +34,12 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("VisualizaValoresRelatorios")]
         public bool VisualizaValoresRelatorios { get; set; }
+
+        [BsonElement("ClinicasId")]
+        public List<string> ClinicasId { get; set; }
+
+        [BsonIgnore]
+        public List<Clinica> Clinicas { get; set; }
 
     }
 }

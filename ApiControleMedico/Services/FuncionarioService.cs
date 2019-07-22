@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
-using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Services
 {
@@ -17,35 +15,35 @@ namespace ApiControleMedico.Services
             ContextoFuncionarios = new DbContexto<Funcionario>("funcionario");
         }
 
-        public async Task<IEnumerable<Funcionario>> GetAllAsync()
+        public IEnumerable<Funcionario> GetAll()
         {
-            var funcionarios = await FuncionarioNegocio.GetAllAsync(ContextoFuncionarios.Collection);
+            var funcionarios = FuncionarioNegocio.GetAll(ContextoFuncionarios.Collection);
             return funcionarios;
         }
 
-        public Task<Funcionario> GetOneAsync(string id)
+        public Funcionario GetOne(string id)
         {
-            return FuncionarioNegocio.GetOneAsync(ContextoFuncionarios.Collection, id);
+            return FuncionarioNegocio.GetOne(ContextoFuncionarios.Collection, id);
         }
 
-        public async Task<Funcionario> SaveOneAsync(Funcionario funcionario)
+        public Funcionario SaveOne(Funcionario funcionario)
         {
-            await FuncionarioNegocio.SaveOneAsync(ContextoFuncionarios.Collection, funcionario);
+            FuncionarioNegocio.SaveOne(ContextoFuncionarios.Collection, funcionario);
 
-            var usuario = await new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
+            var usuario = new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
             funcionario.UsuarioId = usuario.Id;
 
-            await FuncionarioNegocio.SaveOneAsync(ContextoFuncionarios.Collection, funcionario);
+            FuncionarioNegocio.SaveOne(ContextoFuncionarios.Collection, funcionario);
             return funcionario;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
             var usuarioService = new UsuarioService();
-            var medico = FuncionarioNegocio.GetOneAsync(ContextoFuncionarios.Collection, id).Result;
-            usuarioService.RemoveOneAsync(medico.Usuario.Id);
+            var medico = FuncionarioNegocio.GetOne(ContextoFuncionarios.Collection, id);
+            usuarioService.RemoveOne(medico.Usuario.Id);
 
-            return FuncionarioNegocio.RemoveOneAsync(ContextoFuncionarios.Collection, id);
+            return FuncionarioNegocio.RemoveOne(ContextoFuncionarios.Collection, id);
         }
     }
 }

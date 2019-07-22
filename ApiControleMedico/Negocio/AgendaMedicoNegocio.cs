@@ -9,7 +9,7 @@ namespace ApiControleMedico.Negocio
 {
     public static class AgendaMedicoNegocio
     {
-        public static async Task<ConfiguracaoAgenda> ConfigurarAgendaMedico(ConfiguracaoAgenda medicoConfiguracaoAgenda)
+        public static ConfiguracaoAgenda ConfigurarAgendaMedico(ConfiguracaoAgenda medicoConfiguracaoAgenda)
         {
 
             medicoConfiguracaoAgenda.DiasNaoConfigurados = medicoConfiguracaoAgenda.ConfiguracaoAgendaDias.Where(c => !c.Configurado).Select(c => c.Dia).ToArray();
@@ -36,7 +36,7 @@ namespace ApiControleMedico.Negocio
             using (var contexto = new DbContexto<ConfiguracaoAgenda>("configuracaoAgenda"))
             {
                 var configNegocio = new EntidadeNegocio<ConfiguracaoAgenda>();
-                await configNegocio.SaveOneAsync(contexto.Collection, medicoConfiguracaoAgenda);
+                configNegocio.SaveOne(contexto.Collection, medicoConfiguracaoAgenda);
             }
             return medicoConfiguracaoAgenda;
 

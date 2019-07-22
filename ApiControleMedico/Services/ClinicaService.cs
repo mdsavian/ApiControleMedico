@@ -17,27 +17,27 @@ namespace ApiControleMedico.Services
             ContextoClinicas = new DbContexto<Clinica>("clinica");
         }
 
-        public async Task<IEnumerable<Clinica>> GetAllAsync()
+        public IEnumerable<Clinica> GetAll()
         {
-            var clinicas = await ClinicaNegocio.GetAllAsync(ContextoClinicas.Collection);
+            var clinicas =  ClinicaNegocio.GetAll(ContextoClinicas.Collection);
             return clinicas;
         }
 
-        public Task<Clinica> GetOneAsync(string id)
+        public Clinica GetOne(string id)
         {
-            return ClinicaNegocio.GetOneAsync(ContextoClinicas.Collection, id);
+            return ClinicaNegocio.GetOne(ContextoClinicas.Collection, id);
         }
 
-        public async Task<Clinica> SaveOneAsync(Clinica context)
+        public Clinica SaveOne(Clinica context)
         {
-            await ClinicaNegocio.SaveOneAsync(ContextoClinicas.Collection, context);
+            ClinicaNegocio.SaveOne(ContextoClinicas.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return ClinicaNegocio.RemoveOneAsync(ContextoClinicas.Collection, id);
+            return ClinicaNegocio.RemoveOne(ContextoClinicas.Collection, id);
         }
     }
 }

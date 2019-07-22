@@ -19,34 +19,34 @@ namespace ApiControleMedico.Services
             ContextoPacientes = new DbContexto<Paciente>("paciente");
         }
 
-        public async Task<IEnumerable<Paciente>> GetAllAsync()
+        public IEnumerable<Paciente> GetAll()
         {
-            var pacientes = await PacienteNegocio.GetAllAsync(ContextoPacientes.Collection);
+            var pacientes = PacienteNegocio.GetAll(ContextoPacientes.Collection);
             return pacientes;
         }
 
-        public Task<Paciente> GetOneAsync(string id)
+        public Paciente GetOne(string id)
         {
-            return PacienteNegocio.GetOneAsync(ContextoPacientes.Collection, id);
+            return PacienteNegocio.GetOne(ContextoPacientes.Collection, id);
         }
 
-        public async Task<Paciente> SaveOneAsync(Paciente context)
+        public Paciente SaveOne(Paciente context)
         {
-            await PacienteNegocio.SaveOneAsync(ContextoPacientes.Collection, context);
+            PacienteNegocio.SaveOne(ContextoPacientes.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return PacienteNegocio.RemoveOneAsync(ContextoPacientes.Collection, id);
+            return PacienteNegocio.RemoveOne(ContextoPacientes.Collection, id);
         }
 
         public ActionResult<List<Paciente>> TodosGestantesFiltrandoMedico(string medicoId)
         {
             // falar com samir para ver se o paciente vai ser relacionado com o médico
 
-            return ContextoPacientes.Collection.Find(c => !string.IsNullOrEmpty(c.DiaGestacao) && !string.IsNullOrEmpty(c.SemanaGestacao)).ToList().OrderByDescending(c=> c.SemanaGestacao).ToList();
+            return ContextoPacientes.Collection.Find(c => !string.IsNullOrEmpty(c.DiaGestacao) && !string.IsNullOrEmpty(c.SemanaGestacao)).ToList().OrderByDescending(c => c.SemanaGestacao).ToList();
         }
     }
 }

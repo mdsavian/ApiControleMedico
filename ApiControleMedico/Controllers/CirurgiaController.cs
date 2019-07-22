@@ -22,27 +22,27 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Cirurgia> Get()
         {
-            var cirurgias = _cirurgiaService.GetAllAsync();
-            return cirurgias.Result.ToList();
+            var cirurgias = _cirurgiaService.GetAll();
+            return cirurgias.ToList();
         }
 
         [HttpPost]
         public ActionResult<Cirurgia> Salvar(Cirurgia cirurgia)
         {
-            var cirurgiaRetorno = _cirurgiaService.SaveOneAsync(cirurgia);
-            return cirurgiaRetorno.Result;
+            var cirurgiaRetorno = _cirurgiaService.SaveOne(cirurgia);
+            return cirurgiaRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{cirurgiaId}")]
         public ActionResult<Cirurgia> BuscarPorId(string cirurgiaId)
         {
-            return _cirurgiaService.GetOneAsync(cirurgiaId).Result;
+            return _cirurgiaService.GetOne(cirurgiaId);
         }
 
         [HttpDelete, Route("excluirPorId/{cirurgiaId}")]
         public ActionResult<bool> ExcluirPorId(string cirurgiaId)
         {
-            return _cirurgiaService.RemoveOneAsync(cirurgiaId).Result;
+            return _cirurgiaService.RemoveOne(cirurgiaId);
         }
     }
 }

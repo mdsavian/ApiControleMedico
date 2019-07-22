@@ -46,7 +46,7 @@ namespace ApiControleMedico.Services
             List<Medico> medicos = new List<Medico>();
             try
             {
-                medicos = new MedicoService().GetAll().Result.ToList();
+                medicos = new MedicoService().GetAll().ToList();
                 medicos = medicos.Where(c => c.ConveniosId != null && c.ConveniosId.Contains(convenioId)).ToList();
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace ApiControleMedico.Services
 
         public List<Convenio> TodosFiltrandoMedico(string medicoId)
         {
-            var conveniosMedicos = new MedicoService().GetOne(medicoId).Result.Convenios;
+            var conveniosMedicos = new MedicoService().GetOne(medicoId).Convenios;
             try
             {
                 var filter = Builders<Convenio>.Filter.Nin(c => c.Id, conveniosMedicos.Select(c => c.Id));

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using MongoDB.Driver;
@@ -17,30 +16,30 @@ namespace ApiControleMedico.Services
             ContextoCirurgias = new DbContexto<Cirurgia>("cirurgia");
         }
 
-        public async Task<IEnumerable<Cirurgia>> GetAllAsync()
+        public IEnumerable<Cirurgia> GetAll()
         {
-            var cirurgias = await CirurgiaNegocio.GetAllAsync(ContextoCirurgias.Collection);
+            var cirurgias = CirurgiaNegocio.GetAll(ContextoCirurgias.Collection);
             return cirurgias;
         }
 
-        public Task<Cirurgia> GetOneAsync(string id)
+        public Cirurgia GetOne(string id)
         {
-            return CirurgiaNegocio.GetOneAsync(ContextoCirurgias.Collection, id);
+            return CirurgiaNegocio.GetOne(ContextoCirurgias.Collection, id);
         }
 
-        public async Task<Cirurgia> SaveOneAsync(Cirurgia context)
+        public Cirurgia SaveOne(Cirurgia context)
         {
-            await CirurgiaNegocio.SaveOneAsync(ContextoCirurgias.Collection, context);
+            CirurgiaNegocio.SaveOne(ContextoCirurgias.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return CirurgiaNegocio.RemoveOneAsync(ContextoCirurgias.Collection, id);
+            return CirurgiaNegocio.RemoveOne(ContextoCirurgias.Collection, id);
         }
 
-        public async void SaveManyAsync(Collection<Cirurgia> cirurgias)
+        public void SaveMany(Collection<Cirurgia> cirurgias)
         {
             foreach (var cirurgia in cirurgias)
             {
@@ -48,7 +47,7 @@ namespace ApiControleMedico.Services
                         .FirstOrDefault() != null)
                     continue;
 
-                await CirurgiaNegocio.SaveOneAsync(ContextoCirurgias.Collection, cirurgia);
+                CirurgiaNegocio.SaveOne(ContextoCirurgias.Collection, cirurgia);
             }
         }
     }

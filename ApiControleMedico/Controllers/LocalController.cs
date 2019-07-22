@@ -22,27 +22,27 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Local> Get()
         {
-            var locals = _localService.GetAllAsync();
-            return locals.Result.ToList();
+            var locals = _localService.GetAll();
+            return locals.ToList();
         }
 
         [HttpPost]
         public ActionResult<Local> Salvar(Local local)
         {
-            var localRetorno = _localService.SaveOneAsync(local);
-            return localRetorno.Result;
+            var localRetorno = _localService.SaveOne(local);
+            return localRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{localId}")]
         public ActionResult<Local> BuscarPorId(string localId)
         {
-            return _localService.GetOneAsync(localId).Result;
+            return _localService.GetOne(localId);
         }
 
         [HttpDelete, Route("excluirPorId/{localId}")]
         public ActionResult<bool> ExcluirPorId(string localId)
         {
-            return _localService.RemoveOneAsync(localId).Result;
+            return _localService.RemoveOne(localId);
         }
     }
 }

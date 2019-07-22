@@ -38,7 +38,7 @@ namespace ApiControleMedico.Repositorio
                         });
                 }
 
-                new EspecialidadeService().SaveManyAsync(especialidades);
+                new EspecialidadeService().SaveMany(especialidades);
             }
         }
     }

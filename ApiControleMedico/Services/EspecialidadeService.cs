@@ -17,30 +17,30 @@ namespace ApiControleMedico.Services
             ContextoEspecialidades = new DbContexto<Especialidade>("especialidade");
         }
 
-        public async Task<IEnumerable<Especialidade>> GetAllAsync()
+        public IEnumerable<Especialidade> GetAll()
         {
-            var especialidades = await EspecialidadeNegocio.GetAllAsync(ContextoEspecialidades.Collection);
+            var especialidades = EspecialidadeNegocio.GetAll(ContextoEspecialidades.Collection);
             return especialidades;
         }
 
-        public Task<Especialidade> GetOneAsync(string id)
+        public Especialidade GetOne(string id)
         {
-            return EspecialidadeNegocio.GetOneAsync(ContextoEspecialidades.Collection, id);
+            return EspecialidadeNegocio.GetOne(ContextoEspecialidades.Collection, id);
         }
 
-        public async Task<Especialidade> SaveOneAsync(Especialidade context)
+        public Especialidade SaveOne(Especialidade context)
         {
-            await EspecialidadeNegocio.SaveOneAsync(ContextoEspecialidades.Collection, context);
+            EspecialidadeNegocio.SaveOne(ContextoEspecialidades.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return EspecialidadeNegocio.RemoveOneAsync(ContextoEspecialidades.Collection, id);
+            return EspecialidadeNegocio.RemoveOne(ContextoEspecialidades.Collection, id);
         }
 
-        public async void SaveManyAsync(Collection<Especialidade> especialidades)
+        public void SaveMany(Collection<Especialidade> especialidades)
         {
             foreach (var especialidade in especialidades)
             {
@@ -48,7 +48,7 @@ namespace ApiControleMedico.Services
                         .FirstOrDefault() != null)
                     continue;
 
-                await EspecialidadeNegocio.SaveOneAsync(ContextoEspecialidades.Collection, especialidade);
+                EspecialidadeNegocio.SaveOne(ContextoEspecialidades.Collection, especialidade);
             }
         }
     }

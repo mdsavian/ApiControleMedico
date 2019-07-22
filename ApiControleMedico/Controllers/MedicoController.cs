@@ -21,28 +21,28 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Medico> Get()
         {
-            var medicos = _medicoService.GetAllAsync();
-            return medicos.Result.ToList();
+            var medicos = _medicoService.GetAll();
+            return medicos.ToList();
         }
 
         [HttpPost]
         public ActionResult<Medico> Salvar(Medico medico)
         {
-            var medicoRetorno =  _medicoService.SaveOneAsync(medico);
-            return medicoRetorno.Result;
+            var medicoRetorno =  _medicoService.SaveOne(medico);
+            return medicoRetorno;
         }
 
         [HttpPost, Route("salvarConfiguracaoAgendaMedico")]
         public ActionResult<Medico> SalvarConfiguracaoMedico(Medico medico)
         {
             var medicoRetorno = _medicoService.SalvarConfiguracaoMedico(medico);
-            return medicoRetorno.Result;
+            return medicoRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{medicoId}")]
         public ActionResult<Medico> BuscarPorId(string medicoId)
         {
-            return _medicoService.GetOneAsync(medicoId).Result;
+            return _medicoService.GetOne(medicoId);
         }
 
         [HttpGet, Route("buscarConfiguracaoAgendaMedico/{configuracaoAgendaId}")]
@@ -54,7 +54,7 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("todosFiltrandoMedico/{medicoId}")]
         public ActionResult<List<Medico>> TodosFiltrandoMedico(string medicoId)
         {
-            return _medicoService.TodosFiltrandoMedico(medicoId).Result;
+            return _medicoService.TodosFiltrandoMedico(medicoId);
         }
 
 
@@ -62,7 +62,7 @@ namespace ApiControleMedico.Controllers
         public ActionResult<bool> ExcluirPorId(string medicoId
         )
         {
-            return _medicoService.RemoveOneAsync(medicoId).Result;
+            return _medicoService.RemoveOne(medicoId);
         }
 
         [HttpPost, Route("buscarMedicoUsuario")]

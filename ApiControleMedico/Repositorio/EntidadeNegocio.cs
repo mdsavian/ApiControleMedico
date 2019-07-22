@@ -22,9 +22,9 @@ namespace ApiControleMedico.Repositorio
 
         public TContext GetOne(IMongoCollection<TContext> collection, string id)
         {
-            return GetOne(collection, new TContext {Id = id});
+            return GetOne(collection, new TContext { Id = id });
         }
-        
+
         public IEnumerable<TContext> GetMany(IMongoCollection<TContext> collection,
             IEnumerable<TContext> contexts)
         {
@@ -45,7 +45,7 @@ namespace ApiControleMedico.Repositorio
             var list = new List<TContext>();
             foreach (var id in ids)
             {
-                var doc =  GetOne(collection, id);
+                var doc = GetOne(collection, id);
                 if (doc == null) continue;
                 list.Add(doc);
             }
@@ -88,13 +88,13 @@ namespace ApiControleMedico.Repositorio
         {
             if (context == null) return false;
 
-            collection.DeleteOne(new BsonDocument("_id", context.Id));           
+            collection.DeleteOne(new BsonDocument("_id", context.Id));
             return true;
         }
 
         public bool RemoveOne(IMongoCollection<TContext> collection, string id)
         {
-            return RemoveOne(collection, new TContext {Id = id});
+            return RemoveOne(collection, new TContext { Id = id });
         }
 
         public bool RemoveMany(IMongoCollection<TContext> collection,

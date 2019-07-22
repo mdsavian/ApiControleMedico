@@ -22,27 +22,27 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Exame> Get()
         {
-            var exames = _exameService.GetAllAsync();
-            return exames.Result.ToList();
+            var exames = _exameService.GetAll();
+            return exames.ToList();
         }
 
         [HttpPost]
         public ActionResult<Exame> Salvar(Exame exame)
         {
-            var exameRetorno = _exameService.SaveOneAsync(exame);
-            return exameRetorno.Result;
+            var exameRetorno = _exameService.SaveOne(exame);
+            return exameRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{exameId}")]
         public ActionResult<Exame> BuscarPorId(string exameId)
         {
-            return _exameService.GetOneAsync(exameId).Result;
+            return _exameService.GetOne(exameId);
         }
 
         [HttpDelete, Route("excluirPorId/{exameId}")]
         public ActionResult<bool> ExcluirPorId(string exameId)
         {
-            return _exameService.RemoveOneAsync(exameId).Result;
+            return _exameService.RemoveOne(exameId);
         }
     }
 }

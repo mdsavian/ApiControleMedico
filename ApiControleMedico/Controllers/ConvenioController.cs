@@ -21,8 +21,8 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public ActionResult<List<Convenio>> Get()
         {
-            var lista = _convenioService.GetAllAsync();
-            return lista.Result.ToList();
+            var lista = _convenioService.GetAll();
+            return lista.ToList();
         }
 
         [HttpGet, Route("TodosFiltrandoMedico/{medicoId}")]
@@ -42,19 +42,19 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("buscarPorId/{convenioId}")]
         public ActionResult<Convenio> BuscarPorId(string convenioId)
         {
-            return _convenioService.GetOneAsync(convenioId).Result;
+            return _convenioService.GetOne(convenioId);
         }
 
         [HttpPost]
         public ActionResult<Convenio> Salvar(Convenio convenio)
         {
-            return _convenioService.SaveOneAsync(convenio).Result;
+            return _convenioService.SaveOne(convenio);
         }
 
         [HttpDelete, Route("excluirPorId/{convenioId}")]
         public ActionResult<bool> ExcluirPorId(string convenioId)
         {
-            return _convenioService.RemoveOneAsync(convenioId).Result;
+            return _convenioService.RemoveOne(convenioId);
         }
     }
 }

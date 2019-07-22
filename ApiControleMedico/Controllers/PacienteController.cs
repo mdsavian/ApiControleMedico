@@ -22,21 +22,21 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Paciente> Get()
         {
-            var pacientes = _pacienteService.GetAllAsync();
-            return pacientes.Result.ToList();
+            var pacientes = _pacienteService.GetAll();
+            return pacientes.ToList();
         }
 
         [HttpPost]
         public ActionResult<Paciente> Salvar(Paciente paciente)
         {
-            var pacienteRetorno = _pacienteService.SaveOneAsync(paciente);
-            return pacienteRetorno.Result;
+            var pacienteRetorno = _pacienteService.SaveOne(paciente);
+            return pacienteRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{pacienteId}")]
         public ActionResult<Paciente> BuscarPorId(string pacienteId)
         {
-            return _pacienteService.GetOneAsync(pacienteId).Result;
+            return _pacienteService.GetOne(pacienteId);
         }
 
         [HttpGet, Route("TodosGestantesFiltrandoMedico/{medicoId}")]
@@ -48,7 +48,7 @@ namespace ApiControleMedico.Controllers
         [HttpDelete, Route("excluirPorId/{pacienteId}")]
         public ActionResult<bool> ExcluirPorId(string pacienteId)
         {
-            return _pacienteService.RemoveOneAsync(pacienteId).Result;
+            return _pacienteService.RemoveOne(pacienteId);
         }
     }
 }

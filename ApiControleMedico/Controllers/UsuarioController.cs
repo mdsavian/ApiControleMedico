@@ -23,11 +23,11 @@ namespace ApiControleMedico.Controllers
         [HttpPost, Route("alterarSenha")]
         public ActionResult<Usuario> AlterarSenha(AlteraSenha alteraSenha)
         {
-            return _usuarioService.AlterarSenha(alteraSenha).Result;
+            return _usuarioService.AlterarSenha(alteraSenha);
         }
-        private async Task<List<Usuario>> BuscaAll()
+        private List<Usuario> BuscaAll()
         {
-            var todosUsuarios = await _usuarioService.GetAllAsync();
+            var todosUsuarios = _usuarioService.GetAll();
 
             return todosUsuarios.ToList();
         }
@@ -35,9 +35,8 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
-            var todosUsuarios = BuscaAll();
-            todosUsuarios.Wait();
-            return todosUsuarios.Result;
+            var todosUsuarios = BuscaAll();            
+            return todosUsuarios;
         }
     }
 }

@@ -25,20 +25,20 @@ namespace ApiControleMedico.Services
             ContextoUsuario = new DbContexto<Usuario>("usuario");
         }
 
-        public async Task<IEnumerable<Usuario>> GetAllAsync()
+        public IEnumerable<Usuario> GetAll()
         {
-            var usuarios = await UsuarioNegocio.GetAllAsync(ContextoUsuario.Collection);
+            var usuarios = UsuarioNegocio.GetAll(ContextoUsuario.Collection);
             return usuarios;
         }
 
-        public async Task<Usuario> CriarNovoUsuarioMedico(Medico medico)
+        public Usuario CriarNovoUsuarioMedico(Medico medico)
         {
             using (var contexto = new DbContexto<Usuario>("usuario"))
             {
 
             }
-                var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
-                    .FirstOrDefault();
+            var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
+                .FirstOrDefault();
 
             if (usuario == null)
             {
@@ -50,12 +50,12 @@ namespace ApiControleMedico.Services
                     TipoUsuario = ETipoUsuario.Medico,
                     MedicoId = medico.Id
                 };
-                await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+                UsuarioNegocio.SaveOne(ContextoUsuario.Collection, usuario);
             }
             return usuario;
         }
 
-        public async Task<Usuario> CriarNovoUsuarioFuncionario(Funcionario funcionario)
+        public Usuario CriarNovoUsuarioFuncionario(Funcionario funcionario)
         {
             var usuario = ContextoUsuario.Collection.Find(c => c.Login == funcionario.Email && c.FuncionarioId == funcionario.Id).FirstOrDefault();
 
@@ -69,17 +69,17 @@ namespace ApiControleMedico.Services
                     TipoUsuario = ETipoUsuario.Comum,
                     FuncionarioId = funcionario.Id
                 };
-                await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+                UsuarioNegocio.SaveOne(ContextoUsuario.Collection, usuario);
             }
             return usuario;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return UsuarioNegocio.RemoveOneAsync(ContextoUsuario.Collection, id);
+            return UsuarioNegocio.RemoveOne(ContextoUsuario.Collection, id);
         }
 
-        public async Task<Usuario> AlterarSenha(AlteraSenha alteraSenha)
+        public Usuario AlterarSenha(AlteraSenha alteraSenha)
         {
             var usuario = ContextoUsuario.Collection.Find(c => c.Id == alteraSenha.UsuarioId).FirstOrDefault();
 
@@ -89,7 +89,7 @@ namespace ApiControleMedico.Services
                     return null;
 
                 usuario.Senha = Criptografia.Codifica(alteraSenha.ConfirmacaoNovaSenha);
-                await UsuarioNegocio.SaveOneAsync(ContextoUsuario.Collection, usuario);
+                UsuarioNegocio.SaveOne(ContextoUsuario.Collection, usuario);
 
                 return usuario;
             }

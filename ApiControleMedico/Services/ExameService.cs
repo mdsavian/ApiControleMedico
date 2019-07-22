@@ -17,30 +17,30 @@ namespace ApiControleMedico.Services
             ContextoExames = new DbContexto<Exame>("exame");
         }
 
-        public async Task<IEnumerable<Exame>> GetAllAsync()
+        public IEnumerable<Exame> GetAll()
         {
-            var exames = await ExameNegocio.GetAllAsync(ContextoExames.Collection);
+            var exames = ExameNegocio.GetAll(ContextoExames.Collection);
             return exames;
         }
 
-        public Task<Exame> GetOneAsync(string id)
+        public Exame GetOne(string id)
         {
-            return ExameNegocio.GetOneAsync(ContextoExames.Collection, id);
+            return ExameNegocio.GetOne(ContextoExames.Collection, id);
         }
 
-        public async Task<Exame> SaveOneAsync(Exame context)
+        public Exame SaveOne(Exame context)
         {
-            await ExameNegocio.SaveOneAsync(ContextoExames.Collection, context);
+            ExameNegocio.SaveOne(ContextoExames.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return ExameNegocio.RemoveOneAsync(ContextoExames.Collection, id);
+            return ExameNegocio.RemoveOne(ContextoExames.Collection, id);
         }
 
-        public async void SaveManyAsync(Collection<Exame> exames)
+        public void SaveMany(Collection<Exame> exames)
         {
             foreach (var exame in exames)
             {
@@ -48,7 +48,7 @@ namespace ApiControleMedico.Services
                         .FirstOrDefault() != null)
                     continue;
 
-                await ExameNegocio.SaveOneAsync(ContextoExames.Collection, exame);
+                ExameNegocio.SaveOne(ContextoExames.Collection, exame);
             }
         }
     }

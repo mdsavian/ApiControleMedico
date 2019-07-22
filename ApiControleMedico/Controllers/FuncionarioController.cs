@@ -21,28 +21,28 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Funcionario> Get()
         {
-            var funcionarios = _funcionarioService.GetAllAsync();
-            return funcionarios.Result.ToList();
+            var funcionarios = _funcionarioService.GetAll();
+            return funcionarios.ToList();
         }
 
         [HttpPost]
         public ActionResult<Funcionario> Salvar(Funcionario funcionario)
         {
-            var funcionarioRetorno = _funcionarioService.SaveOneAsync(funcionario);
+            var funcionarioRetorno = _funcionarioService.SaveOne(funcionario);
 
-            return funcionarioRetorno.Result;
+            return funcionarioRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{funcionarioId}")]
         public ActionResult<Funcionario> BuscarPorId(string funcionarioId)
         {
-            return _funcionarioService.GetOneAsync(funcionarioId).Result;
+            return _funcionarioService.GetOne(funcionarioId);
         }
 
         [HttpDelete, Route("excluirPorId/{funcionarioId}")]
         public ActionResult<bool> ExcluirPorId(string funcionarioId)
         {
-            return _funcionarioService.RemoveOneAsync(funcionarioId).Result;
+            return _funcionarioService.RemoveOne(funcionarioId);
         }
     }
 }

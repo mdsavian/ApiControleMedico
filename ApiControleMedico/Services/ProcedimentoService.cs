@@ -17,30 +17,30 @@ namespace ApiControleMedico.Services
             ContextoProcedimentos = new DbContexto<Procedimento>("procedimento");
         }
 
-        public async Task<IEnumerable<Procedimento>> GetAllAsync()
+        public IEnumerable<Procedimento> GetAll()
         {
-            var procedimentos = await ProcedimentoNegocio.GetAllAsync(ContextoProcedimentos.Collection);
+            var procedimentos = ProcedimentoNegocio.GetAll(ContextoProcedimentos.Collection);
             return procedimentos;
         }
 
-        public Task<Procedimento> GetOneAsync(string id)
+        public Procedimento GetOne(string id)
         {
-            return ProcedimentoNegocio.GetOneAsync(ContextoProcedimentos.Collection, id);
+            return ProcedimentoNegocio.GetOne(ContextoProcedimentos.Collection, id);
         }
 
-        public async Task<Procedimento> SaveOneAsync(Procedimento context)
+        public Procedimento SaveOne(Procedimento context)
         {
-            await ProcedimentoNegocio.SaveOneAsync(ContextoProcedimentos.Collection, context);
+            ProcedimentoNegocio.SaveOne(ContextoProcedimentos.Collection, context);
 
             return context;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
-            return ProcedimentoNegocio.RemoveOneAsync(ContextoProcedimentos.Collection, id);
+            return ProcedimentoNegocio.RemoveOne(ContextoProcedimentos.Collection, id);
         }
 
-        public async void SaveManyAsync(Collection<Procedimento> procedimentos)
+        public void SaveMany(Collection<Procedimento> procedimentos)
         {
             foreach (var procedimento in procedimentos)
             {
@@ -48,7 +48,7 @@ namespace ApiControleMedico.Services
                         .FirstOrDefault() != null)
                     continue;
 
-                await ProcedimentoNegocio.SaveOneAsync(ContextoProcedimentos.Collection, procedimento);
+                ProcedimentoNegocio.SaveOne(ContextoProcedimentos.Collection, procedimento);
             }
         }
     }

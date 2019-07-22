@@ -37,14 +37,6 @@ namespace ApiControleMedico.Repositorio
                 Database = client.GetDatabase(nomeBase);
             }
             Collection = Database.GetCollection<T>(collectionName);
-
-            RegisterMapIfNeeded<Paciente>(collectionName);
-            RegisterMapIfNeeded<Pessoa>(collectionName);
-            RegisterMapIfNeeded<Usuario>(collectionName);
-            RegisterMapIfNeeded<Medico>(collectionName);
-            RegisterMapIfNeeded<Convenio>(collectionName);
-            RegisterMapIfNeeded<Especialidade>(collectionName);
-            RegisterMapIfNeeded<ConfiguracaoAgenda>(collectionName);
         }
 
 

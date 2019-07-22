@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Repositorio;
@@ -50,9 +49,9 @@ namespace ApiControleMedico.Services
 
         }
 
-        public async Task<IEnumerable<Usuario>> GetAllAsync()
+        public IEnumerable<Usuario> GetAll()
         {
-            var usuarios = await UsuarioNegocio.GetAllAsync(ContextoUsuarios.Collection);
+            var usuarios = UsuarioNegocio.GetAll(ContextoUsuarios.Collection);
             return usuarios;
         }
     }

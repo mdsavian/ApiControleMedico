@@ -21,68 +21,68 @@ namespace ApiControleMedico.Services
             ContextoMedicos = new DbContexto<Medico>("medico");
         }
 
-        public async Task<IEnumerable<Medico>> GetAllAsync()
+        public IEnumerable<Medico> GetAll()
         {
-            return await MedicoNegocio.GetAllAsync(ContextoMedicos.Collection);
+            return MedicoNegocio.GetAll(ContextoMedicos.Collection);
         }
 
-        public Task<Medico> GetOneAsync(string id)
+        public Medico GetOne(string id)
         {
-            return MedicoNegocio.GetOneAsync(ContextoMedicos.Collection, id);
+            return MedicoNegocio.GetOne(ContextoMedicos.Collection, id);
         }
 
-        public async Task<Medico> SalvarConfiguracaoMedico(Medico medico)
+        public Medico SalvarConfiguracaoMedico(Medico medico)
         {
 
             if (medico.ConfiguracaoAgenda?.ConfiguracaoAgendaDias.Count > 0)
             {
-                var configuracaoAgenda = await AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
+                var configuracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
                 medico.ConfiguracaoAgendaId = configuracaoAgenda.Id;
                 medico.ConfiguracaoAgenda = configuracaoAgenda;
             }
 
-            await MedicoNegocio.SaveOneAsync(ContextoMedicos.Collection, medico);
+            MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
 
 
             return medico;
         }
 
-        public async Task<Medico> SaveOneAsync(Medico medico)
-        { 
+        public Medico SaveOne(Medico medico)
+        {
 
-            await MedicoNegocio.SaveOneAsync(ContextoMedicos.Collection, medico);
+            MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
 
             if (medico.UsuarioId.IsNullOrWhiteSpace())
             {
                 var usuarioService = new UsuarioService();
 
-                var usuario = await usuarioService.CriarNovoUsuarioMedico(medico);
+                var usuario = usuarioService.CriarNovoUsuarioMedico(medico);
 
                 medico.UsuarioId = usuario.Id;
-                await MedicoNegocio.SaveOneAsync(ContextoMedicos.Collection, medico);
+                MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
             }
 
 
             return medico;
         }
 
-        public Task<bool> RemoveOneAsync(string id)
+        public bool RemoveOne(string id)
         {
             try
             {
                 var usuarioService = new UsuarioService();
-                var medico = MedicoNegocio.GetOneAsync(ContextoMedicos.Collection, id).Result;
+                var medico = MedicoNegocio.GetOne(ContextoMedicos.Collection, id);
                 if (!medico.UsuarioId.IsNullOrWhiteSpace())
-                    usuarioService.RemoveOneAsync(medico.UsuarioId);
+                    usuarioService.RemoveOne(medico.UsuarioId);
 
-                return MedicoNegocio.RemoveOneAsync(ContextoMedicos.Collection, id);
+                return MedicoNegocio.RemoveOne(ContextoMedicos.Collection, id);
             }
             catch (Exception ex)
             {
 
             }
 
-            return null;
+            return false;
         }
 
 
@@ -91,12 +91,12 @@ namespace ApiControleMedico.Services
             return ContextoMedicos.Collection.Find(c => c.Usuario.Id == usuario.Id).FirstOrDefault();
         }
 
-        public async Task<ActionResult<List<Medico>>> TodosFiltrandoMedico(string medicoId)
+        public ActionResult<List<Medico>> TodosFiltrandoMedico(string medicoId)
         {
-            var medico = await this.GetOneAsync(medicoId);
+            var medico = this.GetOne(medicoId);
 
             if (medico.Administrador)
-                return MedicoNegocio.GetAllAsync(ContextoMedicos.Collection).Result.ToList(); // where clinica == clinica
+                return MedicoNegocio.GetAll(ContextoMedicos.Collection).ToList(); // where clinica == clinica
 
             return ContextoMedicos.Collection.Find(c => c.Id == medicoId).ToList();
 

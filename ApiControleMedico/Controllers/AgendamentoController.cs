@@ -23,27 +23,27 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public List<Agendamento> Get()
         {
-            var agendamentos = _agendamentoService.GetAllAsync();
-            return agendamentos.Result.ToList();
+            var agendamentos = _agendamentoService.GetAll();
+            return agendamentos.ToList();
         }
 
         [HttpPost]
         public ActionResult<Agendamento> Salvar(Agendamento agendamento)
         {
-            var agendamentoRetorno = _agendamentoService.SaveOneAsync(agendamento);
-            return agendamentoRetorno.Result;
+            var agendamentoRetorno = _agendamentoService.SaveOne(agendamento);
+            return agendamentoRetorno;
         }
 
         [HttpGet, Route("buscarPorId/{agendamentoId}")]
         public ActionResult<Agendamento> BuscarPorId(string agendamentoId)
         {
-            return _agendamentoService.GetOneAsync(agendamentoId).Result;
+            return _agendamentoService.GetOne(agendamentoId);
         }
 
         [HttpDelete, Route("excluirPorId/{agendamentoId}")]
         public ActionResult<bool> ExcluirPorId(string agendamentoId)
         {
-            return _agendamentoService.RemoveOneAsync(agendamentoId).Result;
+            return _agendamentoService.RemoveOne(agendamentoId);
         }
 
         [HttpGet, Route("buscarAgendamentosMedico")]
