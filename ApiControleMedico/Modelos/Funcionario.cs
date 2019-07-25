@@ -35,11 +35,20 @@ namespace ApiControleMedico.Modelos
         [BsonElement("VisualizaValoresRelatorios")]
         public bool VisualizaValoresRelatorios { get; set; }
 
+        [BsonElement("VisualizaAgenda")]
+        public bool VisualizaAgenda { get; set; }
+
         [BsonElement("ClinicasId")]
         public List<string> ClinicasId { get; set; }
 
         [BsonIgnore]
         public List<Clinica> Clinicas { get; set; }
+
+        [BsonElement("MedicosId")]
+        public List<string> MedicosId { get; set; }
+
+        [BsonIgnore]
+        public List<Medico> Medicos { get; set; }
 
     }
 }

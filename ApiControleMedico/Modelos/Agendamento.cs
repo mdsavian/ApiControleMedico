@@ -44,14 +44,14 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("ClinicasId")] public List<string> ClinicasId { get; set; }
 
-        [BsonIgnore] public Medico Medico { get; set; }
-        [BsonIgnore] public Paciente Paciente { get; set; }
-        [BsonIgnore] public List<Clinica> Clinicas { get; set; }
-        [BsonIgnore] public Exame Exame { get; set; }
-        [BsonIgnore] public Local Local { get; set; }
-        [BsonIgnore] public Cirurgia Cirurgia { get; set; }
-        [BsonIgnore] public Convenio Convenio { get; set; }
-        [BsonIgnore] public Procedimento Procedimento { get; set; }
+        //[BsonIgnore] public Medico Medico { get; set; }
+        //[BsonIgnore] public Paciente Paciente { get; set; }
+        //[BsonIgnore] public List<Clinica> Clinicas { get; set; }
+        //[BsonIgnore] public Exame Exame { get; set; }
+        //[BsonIgnore] public Local Local { get; set; }
+        //[BsonIgnore] public Cirurgia Cirurgia { get; set; }
+        //[BsonIgnore] public Convenio Convenio { get; set; }
+        //[BsonIgnore] public Procedimento Procedimento { get; set; }
 
 
     }

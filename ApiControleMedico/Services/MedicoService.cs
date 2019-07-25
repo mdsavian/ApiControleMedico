@@ -88,7 +88,7 @@ namespace ApiControleMedico.Services
 
         public Medico BuscarMedicoUsuario(Usuario usuario)
         {
-            return ContextoMedicos.Collection.Find(c => c.Usuario.Id == usuario.Id).FirstOrDefault();
+            return ContextoMedicos.Collection.Find(c => c.UsuarioId == usuario.Id).FirstOrDefault();
         }
 
         public ActionResult<List<Medico>> TodosFiltrandoMedico(string medicoId)

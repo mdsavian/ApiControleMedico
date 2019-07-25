@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Services
 {
@@ -29,9 +30,11 @@ namespace ApiControleMedico.Services
         public Funcionario SaveOne(Funcionario funcionario)
         {
             FuncionarioNegocio.SaveOne(ContextoFuncionarios.Collection, funcionario);
-
-            var usuario = new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
-            funcionario.UsuarioId = usuario.Id;
+            if (funcionario.UsuarioId.IsNullOrWhiteSpace())
+            {
+                var usuario = new UsuarioService().CriarNovoUsuarioFuncionario(funcionario);
+                funcionario.UsuarioId = usuario.Id;
+            }
 
             FuncionarioNegocio.SaveOne(ContextoFuncionarios.Collection, funcionario);
             return funcionario;
@@ -40,8 +43,8 @@ namespace ApiControleMedico.Services
         public bool RemoveOne(string id)
         {
             var usuarioService = new UsuarioService();
-            var medico = FuncionarioNegocio.GetOne(ContextoFuncionarios.Collection, id);
-            usuarioService.RemoveOne(medico.Usuario.Id);
+            var func = FuncionarioNegocio.GetOne(ContextoFuncionarios.Collection, id);
+            usuarioService.RemoveOne(func.UsuarioId);
 
             return FuncionarioNegocio.RemoveOne(ContextoFuncionarios.Collection, id);
         }

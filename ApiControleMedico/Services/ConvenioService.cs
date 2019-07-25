@@ -59,7 +59,10 @@ namespace ApiControleMedico.Services
 
         public List<Convenio> TodosFiltrandoMedico(string medicoId)
         {
-            var conveniosMedicos = new MedicoService().GetOne(medicoId).Convenios;
+            var conveniosMedicosId = new MedicoService().GetOne(medicoId).ConveniosId;
+
+            var conveniosMedicos = new ConvenioService().GetAll().AsQueryable().Where(c => conveniosMedicosId.Contains(c.Id));
+            
             try
             {
                 var filter = Builders<Convenio>.Filter.Nin(c => c.Id, conveniosMedicos.Select(c => c.Id));

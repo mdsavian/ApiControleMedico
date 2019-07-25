@@ -58,7 +58,7 @@ namespace ApiControleMedico.Services
                 }
 
                 return ContextoAgendamentos.Collection.Find(c =>
-                    c.Medico.Id == medicoId).ToList().Where(c => c.DataAgendamento.ToDateTime() >= inicioSemana &&
+                    c.MedicoId == medicoId).ToList().Where(c => c.DataAgendamento.ToDateTime() >= inicioSemana &&
                     c.DataAgendamento.ToDateTime() <= fimSemana).ToList();
             }
             catch (Exception ex)

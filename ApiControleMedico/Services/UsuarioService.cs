@@ -33,10 +33,6 @@ namespace ApiControleMedico.Services
 
         public Usuario CriarNovoUsuarioMedico(Medico medico)
         {
-            using (var contexto = new DbContexto<Usuario>("usuario"))
-            {
-
-            }
             var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
                 .FirstOrDefault();
 
