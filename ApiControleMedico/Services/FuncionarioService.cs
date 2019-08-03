@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiControleMedico.Services
 {
@@ -47,6 +48,22 @@ namespace ApiControleMedico.Services
             usuarioService.RemoveOne(func.UsuarioId);
 
             return FuncionarioNegocio.RemoveOne(ContextoFuncionarios.Collection, id);
+        }
+
+        public Funcionario BuscarComMedicos(string funcionarioId)
+        {
+            var funcionario = FuncionarioNegocio.GetOne(ContextoFuncionarios.Collection, funcionarioId);
+
+            if (funcionario.MedicosId.HasItems())
+            {
+                var medicoService = new MedicoService();
+                funcionario.Medicos = new List<Medico>();
+
+                foreach (var medicoId in funcionario.MedicosId)
+                    funcionario.Medicos.Add(medicoService.GetOne(medicoId));
+            }
+
+            return funcionario;
         }
     }
 }
