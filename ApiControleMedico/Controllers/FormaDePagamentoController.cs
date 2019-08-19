@@ -20,7 +20,7 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpGet]
-        public List<FormaDePagamento> Get()
+        public List<FormaDePagamento> Get() 
         {
             var formaDePagamentos = _formaDePagamentoService.GetAll();
             return formaDePagamentos.ToList();

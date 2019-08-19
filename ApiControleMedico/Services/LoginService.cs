@@ -39,6 +39,7 @@ namespace ApiControleMedico.Services
                 return TratarUsuarioAdministrador(usuario);
 
             var usuarioBanco = ContextoUsuarios.Collection.Find(c => c.Login == usuario.Login && c.Ativo).FirstOrDefault();
+            
             if (usuarioBanco != null && Criptografia.Compara(usuario.Senha, usuarioBanco.Senha))
             {
                 usuarioBanco.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
@@ -46,7 +47,12 @@ namespace ApiControleMedico.Services
             }
 
             return null;
+        }
 
+        public bool ValidarSenha(Usuario usuario)
+        {
+            var usuarioBanco = ContextoUsuarios.Collection.Find(c => c.Login == usuario.Login && c.Ativo).FirstOrDefault();
+            return usuarioBanco != null && Criptografia.Compara(usuario.Senha, usuarioBanco.Senha);
         }
 
         public IEnumerable<Usuario> GetAll()

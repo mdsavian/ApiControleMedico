@@ -33,6 +33,13 @@ namespace ApiControleMedico.Controllers
             return _loginService.ValidarLogin(usuario);
         }
 
+
+        [HttpPost, Route("validaSenha")]
+        public ActionResult<bool> ValidaSenha(Usuario usuario)
+        {
+            return _loginService.ValidarSenha(usuario);
+        }
+
         [HttpPost, Route("validaUsuario")]
         public ActionResult<bool> ValidaUsuario(Usuario usuario)
         {
