@@ -13,6 +13,9 @@ namespace ApiControleMedico.Modelos
         [BsonElement("DataAbertura")]
         public string DataAbertura { get; set; }
 
+        [BsonElement("HoraAbertura")]
+        public string HoraAbertura { get; set; }
+
         [BsonElement("DataFechamento")]
         public string DataFechamento { get; set; }
 

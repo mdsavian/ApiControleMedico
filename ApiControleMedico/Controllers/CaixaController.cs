@@ -39,10 +39,17 @@ namespace ApiControleMedico.Controllers
             return _caixaService.GetOne(caixaId);
         }
 
-        [HttpGet, Route("validarCaixaAbertoFuncionario/{funcionarioId}")]
-        public ActionResult<bool> ValidarCaixaAbertoFuncionario(string funcionarioId)
+
+        [HttpGet, Route("retornarTodosCaixasAbertos/")]
+        public ActionResult<List<Caixa>> RetornarTodosCaixasAbertos()
         {
-            return _caixaService.ValidarCaixaAbertoFuncionario(funcionarioId);
+            return _caixaService.RetornarTodosCaixasAbertos();
+        }
+
+        [HttpGet, Route("retornarCaixaAbertoFuncionario/{funcionarioId}")]
+        public ActionResult<Caixa> RetornarCaixaAbertoFuncionario(string funcionarioId)
+        {
+            return _caixaService.RetornarCaixaAbertoFuncionario(funcionarioId);
         }
 
         [HttpDelete, Route("excluirPorId/{caixaId}")]

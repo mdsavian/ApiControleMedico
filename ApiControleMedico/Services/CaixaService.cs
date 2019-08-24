@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
@@ -37,21 +39,23 @@ namespace ApiControleMedico.Services
             return context;
         }
 
-        public bool ValidarCaixaAbertoFuncionario(string funcionarioId)
+        public Caixa RetornarCaixaAbertoFuncionario(string funcionarioId)
         {
-            var caixa = ContextoCaixas.Collection.Find(c =>
+            return ContextoCaixas.Collection.Find(c =>
                     c.FuncionarioId == funcionarioId && (c.DataFechamento == null || c.DataFechamento == string.Empty))
                 .FirstOrDefault();
 
-                return ContextoCaixas.Collection.Find(c =>
-                           c.FuncionarioId == funcionarioId && (c.DataFechamento == null || c.DataFechamento == string.Empty)).FirstOrDefault() !=
-                       null;
-          
         }
 
         public bool RemoveOne(string id)
         {
             return CaixaNegocio.RemoveOne(ContextoCaixas.Collection, id);
+        }
+
+        public List<Caixa> RetornarTodosCaixasAbertos()
+        {
+            return ContextoCaixas.Collection.AsQueryable()
+                .Where(c => c.DataFechamento == null || c.DataFechamento == string.Empty).ToList();
         }
     }
 }
