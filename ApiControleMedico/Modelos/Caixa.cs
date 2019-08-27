@@ -27,5 +27,11 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("TrocoFechamento")]
         public decimal TrocoFechamento { get; set; }
+
+        [BsonElement("UsuarioFechamentoId")]
+        public string UsuarioFechamentoId;
+
+        [BsonElement("UsuarioAberturaId")]
+        public string UsuarioAberturaId;
     }
 }

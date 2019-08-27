@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Collections.Generic;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Modelos.NaoPersistidos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
-using Microsoft.Extensions.Configuration;
-using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
@@ -30,7 +23,7 @@ namespace ApiControleMedico.Services
             var usuarios = UsuarioNegocio.GetAll(ContextoUsuario.Collection);
             return usuarios;
         }
-
+        
         public Usuario CriarNovoUsuarioMedico(Medico medico)
         {
             var usuario = ContextoUsuario.Collection.Find(c => c.Login == medico.Email && c.MedicoId == medico.Id)
@@ -90,6 +83,11 @@ namespace ApiControleMedico.Services
                 return usuario;
             }
             return null;
+        }
+
+        public Usuario GetOne(string id)
+        {
+            return UsuarioNegocio.GetOne(ContextoUsuario.Collection, id);
         }
     }
 }

@@ -42,11 +42,10 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("CorLetra")] public string CorLetra { get; set; }
 
-        [BsonElement("ClinicasId")] public List<string> ClinicasId { get; set; }
+        [BsonElement("ClinicaId")] public string ClinicaId { get; set; }
 
         [BsonElement("Medico")] public Medico Medico { get; set; }
         [BsonElement("Paciente")] public Paciente Paciente { get; set; }
-        [BsonElement("Clinicas")] public List<Clinica> Clinicas { get; set; }
         [BsonElement("Exame")] public Exame Exame { get; set; }
         [BsonElement("Local")] public Local Local { get; set; }
         [BsonElement("Cirurgia")] public Cirurgia Cirurgia { get; set; }

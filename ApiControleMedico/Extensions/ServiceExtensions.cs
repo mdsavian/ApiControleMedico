@@ -30,6 +30,7 @@ namespace ApiControleMedico.Extensions
         public static void RegistraServices(this IServiceCollection services)
         {
             services.AddScoped<PacienteService>();
+            services.AddScoped<AppService>();
             services.AddScoped<CaixaService>();
             services.AddScoped<OficioService>();
             services.AddScoped<FuncionarioService>();
