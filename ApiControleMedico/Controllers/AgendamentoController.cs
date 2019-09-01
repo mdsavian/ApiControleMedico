@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace ApiControleMedico.Controllers
 {
@@ -32,7 +31,7 @@ namespace ApiControleMedico.Controllers
         {
             var agendamentoRetorno = _agendamentoService.SaveOne(agendamento);
             return agendamentoRetorno;
-        }
+        }       
 
         [HttpGet, Route("buscarPorId/{agendamentoId}")]
         public ActionResult<Agendamento> BuscarPorId(string agendamentoId)
@@ -48,7 +47,7 @@ namespace ApiControleMedico.Controllers
 
         [HttpGet, Route("buscarAgendamentosMedico")]
         public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario)
-        {
+        { 
             return _agendamentoService.BuscarAgendamentoMedico(medicoId, data, tipoCalendario);
         }
     }

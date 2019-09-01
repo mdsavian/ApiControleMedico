@@ -1,4 +1,5 @@
 ﻿using System;
+using ApiControleMedico.Modelos.Enums;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
@@ -15,6 +16,8 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("DiasRecebimento")]
         public int DiasRecebimento { get; set; }
-
+                
+        [BsonElement("TipoPagamento")]
+        public EVistaPrazo TipoPagamento { get; set; }
     }
 }
