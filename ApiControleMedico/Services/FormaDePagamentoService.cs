@@ -40,7 +40,7 @@ namespace ApiControleMedico.Services
             return FormaDePagamentoNegocio.RemoveOne(ContextoFormaDePagamentos.Collection, id);
         }
 
-        public void SaveMany(Collection<FormaDePagamento> formaDePagamentos)
+        public void SalvarDadosFixos(Collection<FormaDePagamento> formaDePagamentos)
         {
             foreach (var formaDePagamento in formaDePagamentos)
             {

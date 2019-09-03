@@ -48,13 +48,13 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("Pagamentos")] public List<AgendamentoPagamento> Pagamentos{ get; set; }
 
-        [BsonElement("Medico")] public Medico Medico { get; set; }
-        [BsonElement("Paciente")] public Paciente Paciente { get; set; }
-        [BsonElement("Exame")] public Exame Exame { get; set; }
-        [BsonElement("Local")] public Local Local { get; set; }
-        [BsonElement("Cirurgia")] public Cirurgia Cirurgia { get; set; }
-        [BsonElement("Convenio")] public Convenio Convenio { get; set; }
-        [BsonElement("Procedimento")] public Procedimento Procedimento { get; set; }
+        [BsonIgnore] public Medico Medico { get; set; }
+        [BsonIgnore] public Paciente Paciente { get; set; }
+        [BsonIgnore] public Exame Exame { get; set; }
+        [BsonIgnore] public Local Local { get; set; }
+        [BsonIgnore] public Cirurgia Cirurgia { get; set; }
+        [BsonIgnore] public Convenio Convenio { get; set; }
+        [BsonIgnore] public Procedimento Procedimento { get; set; }
 
 
     }

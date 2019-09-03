@@ -7,9 +7,13 @@
 
   <ItemGroup>
     <None Remove="Resources\especialidades.csv" />
+    <None Remove="Resources\formaDePagamento.csv" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\formaDePagamento.csv">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\especialidades.csv">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

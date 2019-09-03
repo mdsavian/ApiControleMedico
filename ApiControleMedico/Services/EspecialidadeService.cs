@@ -40,7 +40,7 @@ namespace ApiControleMedico.Services
             return EspecialidadeNegocio.RemoveOne(ContextoEspecialidades.Collection, id);
         }
 
-        public void SaveMany(Collection<Especialidade> especialidades)
+        public void SalvarDadosFixos(Collection<Especialidade> especialidades)
         {
             foreach (var especialidade in especialidades)
             {

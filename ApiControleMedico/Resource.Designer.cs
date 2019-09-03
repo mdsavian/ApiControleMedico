@@ -61,33 +61,33 @@ namespace ApiControleMedico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Acupuntura;
-        ///Administra‡Æo em sa£de;
-        ///Alergia e imunologia;
-        ///Alergia e imunologia pedi trica;
-        ///Anestesiologia;
-        ///Angiologia;
-        ///Angiorradiologia e cirurgia endovascular;
-        ///Atendimento ao queimado;
-        ///Cancerologia;
-        ///Cardiologia;
-        ///Cardiologia pedi trica;
-        ///Cirurgia bari trica;
-        ///Cirurgia cardiovascular;
-        ///Cirurgia crƒnio-maxilo-facial;
-        ///Cirurgia da mÆo;
-        ///Cirurgia de cabe‡a e pesco‡o;
-        ///Cirurgia do aparelho digestivo;
-        ///Cirurgia do trauma;
-        ///Cirurgia geral;
-        ///Cirurgia pedi trica;
-        ///Cirurgia pl stica;
-        ///Cirurgia tor cica;
-        ///Ci [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Acupuntura                                    ;
+        ///Alergia e imunologia                          ;
+        ///Anestesiologia                                ;
+        ///Angiologia                                    ;
+        ///Cancerologia                                  ;
+        ///Cardiologia                                   ;
+        ///Cirurgia cardiovascular                       ;
+        ///Cirurgia da mão                               ;
+        ///Cirurgia de cabeça e pescoço                  ;
+        ///Cirurgia do aparelho digestivo                ;
+        ///Cirurgia geral         [rest of string was truncated]&quot;;.
         /// </summary>
         public static string especialidades {
             get {
                 return ResourceManager.GetString("especialidades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DESCRIÇÃO;TIPO;DIAS;
+        ///DINHEIRO;1;1;
+        ///CARTÃO À VISTA;1;1
+        ///CARTÃO À PRAZO;2;30.
+        /// </summary>
+        public static string formaDePagamento {
+            get {
+                return ResourceManager.GetString("formaDePagamento", resourceCulture);
             }
         }
     }
