@@ -70,5 +70,17 @@ namespace ApiControleMedico.Controllers
         {
             return _medicoService.BuscarMedicoUsuario(usuario);
         }
+
+        [HttpGet, Route("BuscarMedicoConvenio/{convenioId}")]
+        public List<Medico> BuscarMedicoConvenio(string convenioId)
+        {
+            return _medicoService.BuscarMedicoConvenio(convenioId);
+        }
+
+        [HttpGet, Route("BuscarMedicoEspecialidade/{especialidadeId}")]
+        public List<Medico> BuscarMedicoEspecialidade(string especialidadeId)
+        {
+            return _medicoService.BuscarMedicoEspecialidade(especialidadeId);
+        }
     }
 }

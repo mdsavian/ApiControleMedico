@@ -22,6 +22,8 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("PacienteId")] public string PacienteId { get; set; }
 
+        [BsonElement("FuncionarioId")] public string FuncionarioId { get; set; }
+
         [BsonElement("MedicoId ")] public string MedicoId { get; set; }
 
         [BsonElement("TipoAgendamento")] public ETipoAgendamento TipoAgendamento { get; set; }

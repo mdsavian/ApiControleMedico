@@ -10,7 +10,7 @@ namespace ApiControleMedico.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class FuncionarioController : Controller
-    {   
+    {
         private readonly FuncionarioService _funcionarioService;
 
         public FuncionarioController(FuncionarioService funcionarioService)
@@ -51,6 +51,12 @@ namespace ApiControleMedico.Controllers
         public ActionResult<bool> ExcluirPorId(string funcionarioId)
         {
             return _funcionarioService.RemoveOne(funcionarioId);
+        }
+
+        [HttpGet, Route("buscarPorOficio/{oficioId}")]
+        public ActionResult<List<Funcionario>> BuscarPorOficio(string oficioId)
+        {
+            return _funcionarioService.BuscarPorOficio(oficioId);
         }
     }
 }

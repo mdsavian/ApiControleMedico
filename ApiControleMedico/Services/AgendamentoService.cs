@@ -66,5 +66,45 @@ namespace ApiControleMedico.Services
                 return new List<Agendamento>();
             }
         }
+
+        internal List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.FuncionarioId == funcionarioId).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentosCirurgia(string cirurgiaId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.CirurgiaId == cirurgiaId).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentosExame(string exameId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.ExameId == exameId).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentosProcedimento(string procedimentoId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.ProcedimentoId == procedimentoId).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentosLocal(string localId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.LocalId == localId).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentosPaciente(string pacienteId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.PacienteId == pacienteId).ToList();
+        }
+
+        internal List<Agendamento> BuscarPagamentoAgendamentoForma(string formaPagamentoId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.Pagamentos.Any(d=> d.FormaPagamentoId == formaPagamentoId)).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentoMedicoExcluir(string medicoId)
+        {            
+            return ContextoAgendamentos.Collection.AsQueryable().Where(c => c.MedicoId == medicoId).Take(5).ToList();
+        }
     }
 }

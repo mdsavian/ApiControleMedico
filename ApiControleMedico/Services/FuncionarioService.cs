@@ -4,6 +4,7 @@ using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
 {
@@ -64,6 +65,11 @@ namespace ApiControleMedico.Services
             }
 
             return funcionario;
+        }
+
+        public List<Funcionario> BuscarPorOficio(string oficioId)
+        {
+            return ContextoFuncionarios.Collection.Find(c => c.OficioId == oficioId).ToList();           
         }
     }
 }

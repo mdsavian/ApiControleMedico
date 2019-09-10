@@ -85,6 +85,15 @@ namespace ApiControleMedico.Services
             return false;
         }
 
+        internal List<Medico> BuscarMedicoConvenio(string convenioId)
+        {
+            return ContextoMedicos.Collection.AsQueryable().Where(c => c.ConveniosId.Contains(convenioId)).ToList();
+        }
+
+        internal List<Medico> BuscarMedicoEspecialidade(string especialidadeId)
+        {
+            return ContextoMedicos.Collection.AsQueryable().Where(c => c.EspecialidadeId == especialidadeId).ToList();
+        }
 
         public Medico BuscarMedicoUsuario(Usuario usuario)
         {
