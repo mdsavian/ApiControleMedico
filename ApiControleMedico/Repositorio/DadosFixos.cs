@@ -14,11 +14,15 @@ namespace ApiControleMedico.Repositorio
 
             AlimentaTabelaEspecialidade();
             AlimentaTabelaFormaPagamento();
-
         }
 
         private void AlimentaTabelaFormaPagamento()
         {
+            var formaService = new FormaDePagamentoService();
+
+            if (formaService.GetAll().HasItems())
+                return;
+
             var csvForma = Resource.formaDePagamento;
             using (var reader = new StringReader(csvForma))
             {
@@ -39,11 +43,16 @@ namespace ApiControleMedico.Repositorio
                         });
                 }
 
-                new FormaDePagamentoService().SalvarDadosFixos(formas);
+                formaService.SalvarDadosFixos(formas);
             }
         }
         private void AlimentaTabelaEspecialidade()
         {
+            var especialidadeService = new EspecialidadeService();
+
+            if (especialidadeService.GetAll().HasItems())
+                return;
+
             var csvEspecialidades = Resource.especialidades;
             using (var reader = new StringReader(csvEspecialidades))
             {
@@ -61,7 +70,7 @@ namespace ApiControleMedico.Repositorio
                         });
                 }
 
-                new EspecialidadeService().SalvarDadosFixos(especialidades);
+                especialidadeService.SalvarDadosFixos(especialidades);
             }
         }
     }

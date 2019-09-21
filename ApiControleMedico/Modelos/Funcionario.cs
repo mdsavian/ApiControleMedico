@@ -50,5 +50,8 @@ namespace ApiControleMedico.Modelos
         [BsonIgnore]
         public List<Medico> Medicos { get; set; }
 
+        [BsonElement("FotoId")]
+        public string FotoId { get; set; }
+
     }
 }

@@ -44,7 +44,10 @@ namespace ApiControleMedico.Negocio
                 }
             }
             new DadosRelatorioService().ValidarDados(dados);
+            System.IO.File.Delete(strPath);
             return dados;
+            
+
         }
 
         private static void ValidaDados (List<DadosRelatorioUnimed> dados)

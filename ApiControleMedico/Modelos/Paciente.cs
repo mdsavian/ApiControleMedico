@@ -24,22 +24,17 @@ namespace ApiControleMedico.Modelos
         [BsonElement("TipoSanguineo")]
         public string TipoSanguineo { get; set; }
         [BsonElement("Ocupacao")]
-        public string Ocupacao { get; set; } 
-        
+        public string Ocupacao { get; set; }         
         [BsonElement("Telefone")]
         public string Telefone { get; set; }
         [BsonElement("AceitaReceberSms")]
         public bool AceitaReceberSms { get; set; } 
         [BsonElement("Responsavel")]
         public string Responsavel { get; set; }
-
-
         [BsonElement("ConvenioId")]
         public string ConvenioId { get; set; }
-
         [BsonIgnore]
         public Convenio Convenio { get; set; } 
-
         [BsonElement("NumeroCartao")]
         public long NumeroCartao { get; set; }
         [BsonElement("CartaoNacionalSaude")]
@@ -52,6 +47,8 @@ namespace ApiControleMedico.Modelos
         public string SemanaGestacao { get; set; }
         [BsonElement("DiaGestacao")]
         public string DiaGestacao { get; set; }
+        [BsonElement("FotoId")]
+        public string FotoId { get; set; }
 
 
         public Paciente()

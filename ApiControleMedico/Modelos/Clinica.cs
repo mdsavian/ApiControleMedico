@@ -34,5 +34,8 @@ namespace ApiControleMedico.Modelos
         public string Ie { get; set; }
         [BsonElement("Im")]
         public string Im { get; set; }
+
+        [BsonElement("LogoId")]
+        public string LogoId { get; set; }
     }
 }

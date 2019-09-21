@@ -23,7 +23,6 @@ C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\bin\Debug\netcoreapp2
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csproj.CoreCompileInputs.cache
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.RazorAssemblyInfo.cache
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.RazorAssemblyInfo.cs
-C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.AssemblyInfoInputs.cache
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.AssemblyInfo.cs
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.RazorTargetAssemblyInfo.cache
@@ -31,4 +30,5 @@ C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.pdb
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.Resource.resources
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csproj.GenerateResource.cache
+C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\temp\ControleMedico\ApiControleMedico\ApiControleMedico\obj\Debug\netcoreapp2.1\ApiControleMedico.csprojAssemblyReference.cache

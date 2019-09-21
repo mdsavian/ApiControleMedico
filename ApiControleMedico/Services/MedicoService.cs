@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
@@ -7,7 +8,9 @@ using ApiControleMedico.Negocio;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.GridFS;
 
 namespace ApiControleMedico.Services
 {
@@ -117,6 +120,50 @@ namespace ApiControleMedico.Services
             {
                 return contexto.Collection.Find(c => c.Id == configuracaoAgendaId).FirstOrDefault();
             }
+        }
+
+        public void SalvarFoto(string medicoId, string nomeArquivo, string caminhoArquivo)
+        {
+            var gridFs = new GridFSBucket(ContextoMedicos.Database);
+            string idFoto = "";
+
+            var medico = ContextoMedicos.Collection.Find(c => c.Id == medicoId).FirstOrDefault();
+            if (medico != null)
+            {
+                if (!string.IsNullOrEmpty(medico.FotoId))
+                    gridFs.DeleteAsync(new ObjectId(medico.FotoId));
+
+                using (var foto = File.OpenRead(caminhoArquivo))
+                {
+                    var task = Task.Run(() =>
+                    {
+                        return gridFs.UploadFromStreamAsync(nomeArquivo, foto);
+                    });
+                    idFoto = task.Result.ToString();
+                }
+
+                medico.FotoId = idFoto;
+                MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
+
+            }
+        }
+
+        public byte[] DownloadFoto(string medicoId)
+        {
+            var gridFs = new GridFSBucket(ContextoMedicos.Database);
+            try
+            {
+                var task = gridFs.DownloadAsBytesByNameAsync($"medico-{medicoId}.jpeg");
+                Task.WaitAll(task);
+                var bytes = task.Result;
+                return bytes;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
         }
     }
 

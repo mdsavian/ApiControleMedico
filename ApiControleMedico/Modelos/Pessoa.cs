@@ -15,8 +15,8 @@ namespace ApiControleMedico.Modelos
         public DateTime DataNascimento { get; set; }
         [BsonElement("Rg")]
         public string Rg { get; set; }
-        [BsonElement("Cpf")]
-        public string Cpf { get; set; }
+        [BsonElement("CpfCnpj")]
+        public string CpfCnpj { get; set; }
         [BsonElement("Genero")]
         public int Genero { get; set; }
         [BsonElement("Celular")]
@@ -25,10 +25,8 @@ namespace ApiControleMedico.Modelos
         public string Email { get; set; }
         [BsonElement("Ativo")]
         public bool Ativo { get; set; }
-        [BsonElement("Imagem")]
-        public string Imagem { get; set; } //modificar
 
-        //terceiro folder
+        
         [BsonElement("Cep")]
         public string Cep { get; set; }
         [BsonElement("Endereco")]
