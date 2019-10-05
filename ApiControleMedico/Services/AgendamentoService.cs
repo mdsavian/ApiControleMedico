@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
-using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
