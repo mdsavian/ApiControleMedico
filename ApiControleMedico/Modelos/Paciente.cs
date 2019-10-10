@@ -41,6 +41,8 @@ namespace ApiControleMedico.Modelos
         public long CartaoNacionalSaude { get; set; }
         [BsonElement("DataValidadeCartao")]
         public DateTime DataValidadeCartao { get; set; }
+        [BsonElement("DataUltimaMenstruacao")]
+        public DateTime DataUltimaMenstruacao { get; set; }
         [BsonElement("TipoPlano")]
         public string TipoPlano { get; set; }
         [BsonElement("SemanaGestacao")]
