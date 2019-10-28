@@ -25,13 +25,6 @@ namespace ApiControleMedico.Controllers
             return lista.ToList();
         }
 
-        //[HttpGet, Route("TodosFiltrandoMedico/{medicoId}")]
-        //public ActionResult<List<ContaPagar>> TodosFiltrandoMedico(string medicoId)
-        //{
-        //    var lista = _contaPagarService.TodosFiltrandoMedico(medicoId);
-        //    return lista;
-        //}
-
         [HttpGet, Route("buscarContaPagarPorFornecedor/{fornecedorId}")]
         public ActionResult<List<ContaPagar>> buscarContaPagarPorFornecedor(string fornecedorId)
         {

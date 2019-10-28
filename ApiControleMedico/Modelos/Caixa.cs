@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace ApiControleMedico.Modelos
 {
@@ -11,13 +12,13 @@ namespace ApiControleMedico.Modelos
         public string FuncionarioId{ get; set; }
 
         [BsonElement("DataAbertura")]
-        public string DataAbertura { get; set; }
+        public DateTime DataAbertura { get; set; }
 
         [BsonElement("HoraAbertura")]
         public string HoraAbertura { get; set; }
 
         [BsonElement("DataFechamento")]
-        public string DataFechamento { get; set; }
+        public DateTime? DataFechamento { get; set; }
 
         [BsonElement("HoraFechamento")]
         public string HoraFechamento { get; set; }

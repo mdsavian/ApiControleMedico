@@ -4,11 +4,10 @@ using System;
 
 namespace ApiControleMedico.Modelos
 {
-    public class ContaPagarPagamento
+    public class ContaReceberPagamento
     {    
         [BsonElement("DataPagamento")]
         public DateTime DataPagamento { get; set; }
-
         [BsonElement("Valor")]
         public decimal Valor { get; set; }
         [BsonElement("FormaPagamentoId")]

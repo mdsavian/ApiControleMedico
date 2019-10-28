@@ -46,12 +46,12 @@ namespace ApiControleMedico.Services
             try
             {
                 var inicioSemana = data.ToDateTime();
-                var fimSemana = inicioSemana;
+                var fimSemana = inicioSemana.AddHours(23).AddMinutes(59).AddSeconds(59);
 
                 if (tipoCalendario == "week")
                 {
                     inicioSemana = data.ToDateTime().InicioDaSemana();
-                    fimSemana = inicioSemana.AddDays(6);
+                    fimSemana = inicioSemana.AddDays(6).AddHours(23).AddMinutes(59).AddSeconds(59);
                 }
 
                 return ContextoAgendamentos.Collection.Find(c =>

@@ -18,10 +18,10 @@ namespace ApiControleMedico.Modelos
         public Oficio Oficio { get; set; }
 
         [BsonElement("DataAdmissao")]
-        public DateTime DataAdmissao { get; set; }
+        public DateTime? DataAdmissao { get; set; }
 
         [BsonElement("DataDemissao")]
-        public DateTime DataDemissao { get; set; }
+        public DateTime? DataDemissao { get; set; }
 
         [BsonElement("UsuarioId")]
         public string UsuarioId { get; set; }

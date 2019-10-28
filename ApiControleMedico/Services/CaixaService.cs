@@ -42,7 +42,7 @@ namespace ApiControleMedico.Services
         public Caixa RetornarCaixaAbertoFuncionario(string funcionarioId)
         {
             return ContextoCaixas.Collection.Find(c =>
-                    c.FuncionarioId == funcionarioId && (c.DataFechamento == null || c.DataFechamento == string.Empty))
+                    c.FuncionarioId == funcionarioId && !c.DataFechamento.HasValue)
                 .FirstOrDefault();
 
         }
@@ -55,7 +55,7 @@ namespace ApiControleMedico.Services
         public List<Caixa> RetornarTodosCaixasAbertos()
         {
             return ContextoCaixas.Collection.AsQueryable()
-                .Where(c => c.DataFechamento == null || c.DataFechamento == string.Empty).ToList();
+                .Where(c => !c.DataFechamento.HasValue).ToList();
         }
     }
 }

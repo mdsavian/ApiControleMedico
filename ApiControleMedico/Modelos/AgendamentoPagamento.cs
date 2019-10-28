@@ -1,12 +1,12 @@
 ﻿using ApiControleMedico.Modelos.Enums;
 using MongoDB.Bson.Serialization.Attributes;
-
+using System;
 
 namespace ApiControleMedico.Modelos
 {
     public class AgendamentoPagamento
     {
-        [BsonElement("Data")] public string Data { get; set; }
+        [BsonElement("Data")] public DateTime Data { get; set; }
 
         [BsonElement("CaixaId")] public string CaixaId { get; set; }
 

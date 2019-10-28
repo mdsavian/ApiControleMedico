@@ -12,7 +12,7 @@ namespace ApiControleMedico.Modelos
 
     public class Agendamento : Entidade
     {
-        [BsonElement("DataAgendamento")] public string DataAgendamento { get; set; }
+        [BsonElement("DataAgendamento")] public DateTime DataAgendamento { get; set; }
 
         [BsonElement("HoraInicial")] public string HoraInicial { get; set; }
 

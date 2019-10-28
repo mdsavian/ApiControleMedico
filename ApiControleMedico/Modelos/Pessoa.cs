@@ -12,7 +12,7 @@ namespace ApiControleMedico.Modelos
         [BsonElement("NomeCompleto")]
         public string NomeCompleto { get; set; }
         [BsonElement("DataNascimento")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
         [BsonElement("Rg")]
         public string Rg { get; set; }
         [BsonElement("CpfCnpj")]
