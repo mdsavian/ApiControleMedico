@@ -19,34 +19,39 @@ namespace ApiControleMedico.Services
 
         }
 
-        private Usuario TratarUsuarioAdministrador(Usuario usuario)
+        private Usuario TratarUsuarioAdministrador(string login, string senha)
         {
-            if (Criptografia.Compara(usuario.Senha, Criptografia.Codifica("@adm1234")))
+            if (Criptografia.Compara(senha, Criptografia.Codifica("@adm1234")))
             {
-                usuario.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
-                usuario.Ativo = true;
-                usuario.TipoUsuario = ETipoUsuario.Administrador;
-
-                return usuario;
+                return new Usuario
+                {
+                    Login = login,
+                    Senha = senha,
+                    UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora(),
+                    Ativo = true,
+                    TipoUsuario = ETipoUsuario.Administrador
+                };                
             }
 
             return null;
         }
 
-        public Usuario ValidarLogin(Usuario usuario)
+        public Usuario ValidarLogin(string login, string senha)
         {
-            if (usuario.Login.Equals("admin"))
-                return TratarUsuarioAdministrador(usuario);
+            if (login.Equals("admin"))
+                return TratarUsuarioAdministrador(login, senha);
 
-            var usuarioBanco = ContextoUsuarios.Collection.Find(c => c.Login == usuario.Login && c.Ativo).FirstOrDefault();
-            
-            if (usuarioBanco != null && Criptografia.Compara(usuario.Senha, usuarioBanco.Senha))
-            {
-                usuarioBanco.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
-                return usuarioBanco;
+            var usuario = ContextoUsuarios.Collection.Find(c => c.Login == login && c.Ativo).FirstOrDefault();
+
+            if (usuario != null)
+            {   
+                if (Criptografia.Compara(senha, usuario.Senha))
+                {
+                    usuario.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
+                    usuario = new UsuarioService().BuscarUsuarioComModelos(usuario.Id);
+                }
             }
-
-            return null;
+            return usuario;
         }
 
         public bool ValidarSenha(Usuario usuario)

@@ -57,6 +57,11 @@ namespace ApiControleMedico.Controllers
             return _medicoService.TodosFiltrandoMedico(medicoId);
         }
 
+        [HttpGet, Route("buscarMedicosPorUsuario/")]
+        public ActionResult<List<Medico>> BuscarMedicosPorUsuario([FromQuery]string usuarioId, [FromQuery] string clinicaId)
+        {
+            return _medicoService.BuscarMedicosPorUsuario(usuarioId, clinicaId);
+        }
 
         [HttpDelete, Route("excluirPorId/{medicoId}")]
         public ActionResult<bool> ExcluirPorId(string medicoId

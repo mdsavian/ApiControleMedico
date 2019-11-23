@@ -3,104 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
-using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Services
 {
-    public class ContaReceberService
+    public class ContaPagarService
     {
-        protected readonly DbContexto<ContaReceber> ContextoContaRecebers;
-        protected readonly EntidadeNegocio<ContaReceber> ContaReceberNegocio = new EntidadeNegocio<ContaReceber>();
+        protected readonly DbContexto<ContaPagar> ContextoContasPagar;
+        protected readonly EntidadeNegocio<ContaPagar> ContaPagarNegocio = new EntidadeNegocio<ContaPagar>();
 
-        public ContaReceberService()
+        public ContaPagarService()
         {
-            ContextoContaRecebers = new DbContexto<ContaReceber>("contaReceber");
+            ContextoContasPagar = new DbContexto<ContaPagar>("contaPagar");
         }
 
-        public IEnumerable<ContaReceber> GetAll()
+        public IEnumerable<ContaPagar> GetAll()
         {
-            var contaRecebers = ContaReceberNegocio.GetAll(ContextoContaRecebers.Collection).ToList();
-            contaRecebers.AddRange(this.BuscarAgendamentosParaListagem());
-            return contaRecebers;
+            var contaPagars = ContaPagarNegocio.GetAll(ContextoContasPagar.Collection);
+            return contaPagars;
         }
 
-        public ContaReceber GetOne(string id)
+        public ContaPagar GetOne(string id)
         {
-            return ContaReceberNegocio.GetOne(ContextoContaRecebers.Collection, id);
+            return ContaPagarNegocio.GetOne(ContextoContasPagar.Collection, id);
         }
 
-        public ContaReceber SaveOne(ContaReceber context)
+        public ContaPagar SaveOne(ContaPagar context)
         {
-            ContaReceberNegocio.SaveOne(ContextoContaRecebers.Collection, context);
+            ContaPagarNegocio.SaveOne(ContextoContasPagar.Collection, context);
 
             return context;
         }
 
-        private List<ContaReceber> BuscarAgendamentosParaListagem()
+        public List<ContaPagar> buscarContaPagarPorFornecedor(string fornecedorId)
         {
-            var lista = new List<ContaReceber>();
-
-            var agendamentos = new AgendamentoService().GetAll().Where(c => c.ContemPagamentos).ToList();
-
-            foreach (var agendamento in agendamentos)
-            {
-                var contaReceber = new ContaReceber
-                {
-                    AgendamentoId = agendamento.Id,
-                    DataEmissao = agendamento.DataAgendamento,
-                    DataVencimento = agendamento.DataAgendamento.AddDays(30),
-                    ClinicaId = agendamento.ClinicaId,
-                    Valor = agendamento.Pagamentos.Sum(c => c.Valor),
-                    ValorTotal = agendamento.Pagamentos.Sum(c => c.Valor),
-                    PacienteId = agendamento.PacienteId,
-                    NumeroDocumento = agendamento.Id,
-                    Pagamentos = new List<ContaReceberPagamento>()
-                };
-
-                foreach (var pagamento in agendamento.Pagamentos)
-                {
-                    var i = 0;
-                    contaReceber.Pagamentos.Add(new ContaReceberPagamento
-                    {
-                        Codigo = i++,
-                        DataPagamento = agendamento.DataAgendamento,
-                        FormaPagamentoId = pagamento.FormaPagamentoId,
-                        Parcela = pagamento.Parcela,
-                        Valor = pagamento.Valor,
-                        VistaPrazo = pagamento.VistaPrazo,
-                        UsuarioId = pagamento.UsuarioId
-                    });
-                }
-
-                if (!string.IsNullOrWhiteSpace(agendamento.ExameId))
-                {
-                    contaReceber.TipoContaDescricao = new ExameService().GetOne(agendamento.ExameId)?.Descricao;
-                }
-                else if (!string.IsNullOrWhiteSpace(agendamento.CirurgiaId))
-                {
-                    contaReceber.TipoContaDescricao = new CirurgiaService().GetOne(agendamento.CirurgiaId)?.Descricao;
-                }
-                else if (!string.IsNullOrWhiteSpace(agendamento.ProcedimentoId))
-                {
-                    contaReceber.TipoContaDescricao = new ProcedimentoService().GetOne(agendamento.ProcedimentoId)?.Descricao;
-                }
-                else 
-                {
-                    contaReceber.TipoContaDescricao = agendamento.TipoAgendamento.ToString();
-                }
-
-                lista.Add(contaReceber);
-
-            }
-
-
-            return lista;
+            return ContextoContasPagar.Collection.AsQueryable().Where(c => c.FornecedorId == fornecedorId).Take(5).ToList();
         }
 
         public bool RemoveOne(string id)
         {
-            return ContaReceberNegocio.RemoveOne(ContextoContaRecebers.Collection, id);
+            return ContaPagarNegocio.RemoveOne(ContextoContasPagar.Collection, id);
+        }
+
+        internal List<ContaPagar> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId)
+        {
+            return ContextoContasPagar.Collection.Find(c => c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)).ToList();
         }
     }
 }

@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
+using ApiControleMedico.Uteis;
+
 
 namespace ApiControleMedico.Controllers
 {
@@ -43,5 +46,9 @@ namespace ApiControleMedico.Controllers
         {
             return _contaReceberService.RemoveOne(contaReceberId);
         }
+
+        [HttpGet, Route("TodosPorPeriodo")]
+        public List<ContaReceber> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId)
+        { return _contaReceberService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId); }
     }
 }

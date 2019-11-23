@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Modelos.NaoPersistidos;
@@ -41,6 +42,32 @@ namespace ApiControleMedico.Services
                 };
                 UsuarioNegocio.SaveOne(ContextoUsuario.Collection, usuario);
             }
+            return usuario;
+        }
+
+        internal Usuario BuscarUsuarioComModelos(string usuarioId)
+        {
+            var usuario = ContextoUsuario.Collection.Find(c => c.Id == usuarioId).FirstOrDefault();
+
+            if (usuario != null)
+            {
+                if (!usuario.FuncionarioId.IsNullOrWhiteSpace())
+                {
+                    using (var contextoFuncionario = new DbContexto<Funcionario>("funcionario"))
+                    {
+                        usuario.Funcionario = contextoFuncionario.Collection.Find(c => c.Id == usuario.FuncionarioId).First();
+                    }
+                }
+                else if (!usuario.MedicoId.IsNullOrWhiteSpace())
+                {
+                    using (var contextoMedico = new DbContexto<Medico>("medico"))
+                    {
+                        usuario.Medico = contextoMedico.Collection.Find(c => c.Id == usuario.MedicoId).First();
+                    }
+                }
+            }
+
+
             return usuario;
         }
 

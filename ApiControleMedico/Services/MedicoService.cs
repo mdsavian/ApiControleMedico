@@ -69,6 +69,36 @@ namespace ApiControleMedico.Services
             return medico;
         }
 
+        internal List<Medico> BuscarMedicosPorUsuario(string usuarioId, string clinicaId)
+        {
+            var listaMedicos = new List<Medico>();
+            var usuario = new UsuarioService().GetOne(usuarioId);
+
+            if (!usuario.FuncionarioId.IsNullOrWhiteSpace())
+            {
+                var funcionario = new FuncionarioService().GetOne(usuario.FuncionarioId);
+                if (funcionario.MedicosId.HasItems())
+                    return ContextoMedicos.Collection.AsQueryable().Where(c => funcionario.MedicosId.Contains(c.Id) && c.ClinicasId.Contains(clinicaId)).ToList();
+                
+            }
+            else if (!usuario.MedicoId.IsNullOrWhiteSpace())
+            {
+                var medico = ContextoMedicos.Collection.Find(c => c.Id == usuario.MedicoId).FirstOrDefault();
+
+                if (medico != null)
+                {
+                    if (medico.Administrador)
+                        return ContextoMedicos.Collection.AsQueryable().Where(c => c.ClinicasId.Contains(clinicaId)).ToList();
+                    else
+                    {
+                        listaMedicos.Add(medico);
+                    }
+                }                    
+            }                
+
+            return listaMedicos;
+        }
+
         public bool RemoveOne(string id)
         {
             try

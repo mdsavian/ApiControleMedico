@@ -16,7 +16,6 @@ namespace ApiControleMedico.Repositorio
         public DbContexto(string collectionName, bool abreSecao = false)
         {
             var producao = false;
-
              
             string connectionString = producao ? @"mongodb://controlemedico02:controlemedico@mongodb.controlemedico.kinghost.net:27017/controlemedico02" : "mongodb://localhost:27017";
             var nomeBase = producao ? "controlemedico02" : "ControleMedicoDb";

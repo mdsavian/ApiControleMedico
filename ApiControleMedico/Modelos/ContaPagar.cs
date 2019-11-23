@@ -10,6 +10,8 @@ namespace ApiControleMedico.Modelos
         public string ClinicaId { get; set; }
         [BsonElement("FornecedorId")]
         public string FornecedorId { get; set; }
+        [BsonElement("MedicoId")]
+        public string MedicoId { get; set; }
         [BsonElement("UsuarioId")]
         public string UsuarioId { get; set; }
         [BsonElement("DataEmissao")]
@@ -31,7 +33,7 @@ namespace ApiControleMedico.Modelos
         [BsonElement("ValorTotal")]
         public decimal ValorTotal { get; set; }
         [BsonElement("TipoContaPagar")]
-        public string TipoContaPagar { get; set; }
+        public int TipoContaPagar { get; set; }
         [BsonElement("Observacao")]
         public string Observacao { get; set; }
 

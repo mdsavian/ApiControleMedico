@@ -28,11 +28,17 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Usuario> Login(Usuario usuario)
+        public bool Login()
         {
-            return _loginService.ValidarLogin(usuario);
+            return true;
         }
 
+        [HttpGet, Route("validarLogin/")]
+        public ActionResult<Usuario> ValidarLogin([FromQuery]string login, [FromQuery]string senha)
+        {
+            var xx = _loginService.ValidarLogin(login, senha);
+            return _loginService.ValidarLogin(login,senha);
+        }
 
         [HttpPost, Route("validaSenha")]
         public ActionResult<bool> ValidaSenha(Usuario usuario)

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Controllers
 {
@@ -31,72 +32,59 @@ namespace ApiControleMedico.Controllers
         {
             var agendamentoRetorno = _agendamentoService.SaveOne(agendamento);
             return agendamentoRetorno;
-        }       
+        }
 
         [HttpGet, Route("buscarPorId/{agendamentoId}")]
         public ActionResult<Agendamento> BuscarPorId(string agendamentoId)
-        {
-            return _agendamentoService.GetOne(agendamentoId);
-        }
+        { return _agendamentoService.GetOne(agendamentoId); }
 
         [HttpDelete, Route("excluirPorId/{agendamentoId}")]
         public ActionResult<bool> ExcluirPorId(string agendamentoId)
-        {
-            return _agendamentoService.RemoveOne(agendamentoId);
-        }
+        { return _agendamentoService.RemoveOne(agendamentoId); }
 
         [HttpGet, Route("buscarAgendamentosMedico")]
         public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario)
-        { 
-            return _agendamentoService.BuscarAgendamentoMedico(medicoId, data, tipoCalendario);
-        }
+        { return _agendamentoService.BuscarAgendamentoMedico(medicoId, data, tipoCalendario); }
 
         [HttpGet, Route("buscarAgendamentosPaciente/{pacienteId}")]
         public List<Agendamento> BuscarAgendamentosPaciente(string pacienteId)
-        {
-            return _agendamentoService.BuscarAgendamentosPaciente(pacienteId);
-        }
+        { return _agendamentoService.BuscarAgendamentosPaciente(pacienteId); }
 
         [HttpGet, Route("buscarAgendamentosFuncionario/{funcionarioId}")]
         public List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
-        {
-            return _agendamentoService.BuscarAgendamentosFuncionario(funcionarioId);
-        }
+        { return _agendamentoService.BuscarAgendamentosFuncionario(funcionarioId); }
+
+        [HttpGet, Route("buscarAgendamentosCaixa")]
+        public List<Agendamento> BuscarAgendamentosCaixa([FromQuery] string caixaId, [FromQuery] string clinicaId)
+        { return _agendamentoService.BuscarAgendamentosCaixa(caixaId, clinicaId); }
 
         [HttpGet, Route("buscarAgendamentosCirurgia/{cirurgiaId}")]
         public List<Agendamento> BuscarAgendamentosCirurgia(string cirurgiaId)
-        {
-            return _agendamentoService.BuscarAgendamentosCirurgia(cirurgiaId);
-        }
+        { return _agendamentoService.BuscarAgendamentosCirurgia(cirurgiaId); }
 
         [HttpGet, Route("buscarAgendamentosExame/{exameId}")]
         public List<Agendamento> BuscarAgendamentosExame(string exameId)
-        {
-            return _agendamentoService.BuscarAgendamentosExame(exameId);
-        }
+        { return _agendamentoService.BuscarAgendamentosExame(exameId); }
 
         [HttpGet, Route("buscarAgendamentosProcedimento/{procedimentoId}")]
         public List<Agendamento> BuscarAgendamentosProcedimento(string procedimentoId)
-        {
-            return _agendamentoService.BuscarAgendamentosProcedimento(procedimentoId);
-        }
+        { return _agendamentoService.BuscarAgendamentosProcedimento(procedimentoId); }
 
         [HttpGet, Route("buscarAgendamentosLocal/{localId}")]
         public List<Agendamento> BuscarAgendamentosLocal(string localId)
-        {
-            return _agendamentoService.BuscarAgendamentosLocal(localId);
-        }
+        { return _agendamentoService.BuscarAgendamentosLocal(localId); }
 
         [HttpGet, Route("buscarPagamentoAgendamentoForma/{formaPagamentoId}")]
         public List<Agendamento> BuscarPagamentoAgendamentoForma(string formaPagamentoId)
-        {
-            return _agendamentoService.BuscarPagamentoAgendamentoForma(formaPagamentoId);
-        }
+        { return _agendamentoService.BuscarPagamentoAgendamentoForma(formaPagamentoId); }
 
         [HttpGet, Route("BuscarAgendamentoMedicoExcluir/{medicoId}")]
         public List<Agendamento> BuscarAgendamentoMedicoExcluir(string medicoId)
-        {
-            return _agendamentoService.BuscarAgendamentoMedicoExcluir(medicoId);
-        }
+        { return _agendamentoService.BuscarAgendamentoMedicoExcluir(medicoId); }
+
+        
+        [HttpGet, Route("TodosPorPeriodo")]
+        public List<Agendamento> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId)
+        { return _agendamentoService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId); }
     }
 }

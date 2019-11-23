@@ -61,6 +61,20 @@ namespace ApiControleMedico {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lissandra Cavalheiro Maioli;NAO MARCAR;01/11/2019 07:00;Consulta;-;Particular;NÆo confirmado;NÇO;-
+        ///Sharon Moura Reisdorfer;MARINA KOPPE SOARES;01/11/2019 08:15;Consulta;-;marco sa£de;Finalizado;NÇO;
+        ///Sharon Moura Reisdorfer;MICHELE SCHEER;01/11/2019 08:20;Consulta;-;unimed federa‡ƒo;Finalizado;NÇO;-
+        ///Sharon Moura Reisdorfer;MILENA MENEGAZ;01/11/2019 08:30;Consulta;-;UNIMED NORDESTE;Finalizado;NÇO;
+        ///Sharon Moura Reisdorfer;MARILIZA GAMBATO;01/11/2019 08:30;Consulta;-;UNIMED NORDESTE;Finalizado;SIM;
+        ///Fernand [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string agendas_novembro_importacao {
+            get {
+                return ResourceManager.GetString("agendas_novembro_importacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acupuntura                                    ;
         ///Alergia e imunologia                          ;
         ///Anestesiologia                                ;

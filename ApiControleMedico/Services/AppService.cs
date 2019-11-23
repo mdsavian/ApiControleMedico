@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Services
 {
@@ -28,10 +29,12 @@ namespace ApiControleMedico.Services
                 var medico = new MedicoService().GetOne(usuario.MedicoId);
                 clinicasId = medico.ClinicasId;
             }
-
-            foreach (var idClinica in clinicasId)
+            if (clinicasId != null && clinicasId.HasItems())
             {
-                clinicas.Add(clinicaService.GetOne(idClinica));
+                foreach (var idClinica in clinicasId)
+                {
+                    clinicas.Add(clinicaService.GetOne(idClinica));
+                }
             }
 
             return clinicas;

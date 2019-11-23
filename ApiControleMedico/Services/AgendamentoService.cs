@@ -64,6 +64,47 @@ namespace ApiControleMedico.Services
             }
         }
 
+        public List<Agendamento> BuscarAgendamentosCaixa(string caixaId, string clinicaId)
+        {
+            var agendamentos = ContextoAgendamentos.Collection.Find(c => c.ClinicaId == clinicaId && c.Pagamentos.Any(d => d.CaixaId == caixaId)).ToList().OrderByDescending(c => c.DataAgendamento).ThenByDescending(c => c.HoraInicial).ToList();
+
+            var contextoPaciente = new DbContexto<Paciente>("paciente");
+            var contextoMedico = new DbContexto<Medico>("medico");
+            var contextoConvenio= new DbContexto<Convenio>("convenio");
+            foreach (var agendamento in agendamentos)
+            {
+                agendamento.Paciente = contextoPaciente.Collection.Find(c => c.Id == agendamento.PacienteId).FirstOrDefault();
+                agendamento.Medico = contextoMedico.Collection.Find(c => c.Id == agendamento.MedicoId).FirstOrDefault();
+                agendamento.Convenio = contextoConvenio.Collection.Find(c => c.Id == agendamento.ConvenioId).FirstOrDefault();
+
+                agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+            }
+            contextoPaciente.Dispose();
+            contextoMedico.Dispose();
+            return agendamentos;
+        }
+
+        public string RetornarDescricaoAgendamento(Agendamento agendamento)
+        {
+
+            if (!string.IsNullOrWhiteSpace(agendamento.ExameId))
+                return new ExameService().GetOne(agendamento.ExameId)?.Descricao;
+
+            else if (!string.IsNullOrWhiteSpace(agendamento.CirurgiaId))
+                return new CirurgiaService().GetOne(agendamento.CirurgiaId)?.Descricao;
+
+            else if (!string.IsNullOrWhiteSpace(agendamento.ProcedimentoId))
+                return new ProcedimentoService().GetOne(agendamento.ProcedimentoId)?.Descricao;
+            else
+                return agendamento.TipoAgendamento.ToString();
+
+        }
+
+        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)).ToList();
+        }
+
         internal List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
         {
             return ContextoAgendamentos.Collection.Find(c => c.FuncionarioId == funcionarioId).ToList();
@@ -96,11 +137,11 @@ namespace ApiControleMedico.Services
 
         internal List<Agendamento> BuscarPagamentoAgendamentoForma(string formaPagamentoId)
         {
-            return ContextoAgendamentos.Collection.Find(c => c.Pagamentos.Any(d=> d.FormaPagamentoId == formaPagamentoId)).ToList();
+            return ContextoAgendamentos.Collection.Find(c => c.Pagamentos.Any(d => d.FormaPagamentoId == formaPagamentoId)).ToList();
         }
 
         internal List<Agendamento> BuscarAgendamentoMedicoExcluir(string medicoId)
-        {            
+        {
             return ContextoAgendamentos.Collection.AsQueryable().Where(c => c.MedicoId == medicoId).Take(5).ToList();
         }
     }

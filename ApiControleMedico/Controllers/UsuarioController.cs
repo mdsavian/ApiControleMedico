@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
@@ -35,8 +36,16 @@ namespace ApiControleMedico.Controllers
         [HttpGet]
         public ActionResult<List<Usuario>> Get()
         {
-            var todosUsuarios = BuscaAll();            
+            var todosUsuarios = BuscaAll();
             return todosUsuarios;
         }
+
+        [HttpGet, Route("buscarUsuarioComModelos/{usuarioId}")]
+        public ActionResult<Usuario> BuscarUsuarioComModelos(string usuarioId)
+        {
+            var usuario = _usuarioService.BuscarUsuarioComModelos(usuarioId);
+            return usuario;
+        }
+       
     }
 }

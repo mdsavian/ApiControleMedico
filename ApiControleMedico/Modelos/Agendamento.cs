@@ -50,6 +50,8 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("Pagamentos")] public List<AgendamentoPagamento> Pagamentos{ get; set; }
 
+        [BsonIgnore] public string TipoAgendamentoDescricao { get; set; }
+
         [BsonIgnore] public Medico Medico { get; set; }
         [BsonIgnore] public Paciente Paciente { get; set; }
         [BsonIgnore] public Exame Exame { get; set; }
