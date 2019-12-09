@@ -15,16 +15,20 @@ namespace ApiControleMedico.Services
     public class PacienteService
     {
         protected readonly DbContexto<Paciente> contextoPacientes;
+        protected readonly DbContexto<Agendamento> ContextoAgendamentos;
+
         protected readonly EntidadeNegocio<Paciente> PacienteNegocio = new EntidadeNegocio<Paciente>();
 
         public PacienteService()
         {
             contextoPacientes = new DbContexto<Paciente>("paciente");
+            ContextoAgendamentos = new DbContexto<Agendamento>("agendamento");
+
         }
 
         public IEnumerable<Paciente> GetAll()
         {
-            var pacientes = PacienteNegocio.GetAll(contextoPacientes.Collection);
+            var pacientes = PacienteNegocio.GetAll(contextoPacientes.Collection).OrderBy(c=> c.NomeCompleto).ToList();
             return pacientes;
         }
 
@@ -47,7 +51,10 @@ namespace ApiControleMedico.Services
 
         public ActionResult<List<Paciente>> TodosGestantesFiltrandoMedico(string medicoId)
         {
-            return contextoPacientes.Collection.Find(c => !string.IsNullOrEmpty(c.DiaGestacao) && !string.IsNullOrEmpty(c.SemanaGestacao)).ToList().OrderByDescending(c => c.SemanaGestacao).ToList();
+            var pacientesId = ContextoAgendamentos.Collection.AsQueryable().Where(c => c.MedicoId == medicoId).Select(c => c.PacienteId).ToList();
+            var pacientesGestantes = contextoPacientes.Collection.Find(c => !string.IsNullOrEmpty(c.DiaGestacao) && !string.IsNullOrEmpty(c.SemanaGestacao) && pacientesId.Contains(c.Id)).ToList().OrderByDescending(c => c.SemanaGestacao).ToList();
+            
+            return pacientesGestantes;
         }
 
         public string SalvarFoto(string pacienteId, string nomeArquivo, string caminhoArquivo)

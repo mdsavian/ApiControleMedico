@@ -36,7 +36,6 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("validarLogin/")]
         public ActionResult<Usuario> ValidarLogin([FromQuery]string login, [FromQuery]string senha)
         {
-            var xx = _loginService.ValidarLogin(login, senha);
             return _loginService.ValidarLogin(login,senha);
         }
 

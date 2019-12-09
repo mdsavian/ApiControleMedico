@@ -61,20 +61,9 @@ namespace ApiControleMedico.Services
         {
             var conveniosMedicosId = new MedicoService().GetOne(medicoId).ConveniosId;
 
-            var conveniosMedicos = new ConvenioService().GetAll().AsQueryable().Where(c => conveniosMedicosId.Contains(c.Id));
-            
-            try
-            {
-                var filter = Builders<Convenio>.Filter.Nin(c => c.Id, conveniosMedicos.Select(c => c.Id));
-                var convenios = ContextoConvenio.Collection.Find(filter).ToList();
-                return convenios;
-            }
-            catch (Exception ex)
-            {
+            var conveniosMedicos = new ConvenioService().GetAll().AsQueryable().Where(c => conveniosMedicosId.Contains(c.Id)).ToList();         
 
-            }
-
-            return ContextoConvenio.Collection.Find(c => true).ToList();
+            return conveniosMedicos;
 
         }
     }

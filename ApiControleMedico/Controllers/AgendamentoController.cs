@@ -62,6 +62,10 @@ namespace ApiControleMedico.Controllers
         public List<Agendamento> BuscarAgendamentosCirurgia(string cirurgiaId)
         { return _agendamentoService.BuscarAgendamentosCirurgia(cirurgiaId); }
 
+        [HttpGet, Route("buscarAgendamentosConvenio/{convenioId}")]
+        public List<Agendamento> BuscarAgendamentosConvenio(string convenioId)
+        { return _agendamentoService.BuscarAgendamentosConvenio(convenioId); }
+
         [HttpGet, Route("buscarAgendamentosExame/{exameId}")]
         public List<Agendamento> BuscarAgendamentosExame(string exameId)
         { return _agendamentoService.BuscarAgendamentosExame(exameId); }

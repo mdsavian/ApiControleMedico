@@ -57,10 +57,16 @@ namespace ApiControleMedico.Controllers
             return _medicoService.TodosFiltrandoMedico(medicoId);
         }
 
-        [HttpGet, Route("buscarMedicosPorUsuario/")]
-        public ActionResult<List<Medico>> BuscarMedicosPorUsuario([FromQuery]string usuarioId, [FromQuery] string clinicaId)
+        [HttpGet, Route("validarDeleteConvenioMedico/")]
+        public ActionResult<bool> ValidarDeleteConvenioMedico([FromQuery]string medicoId, [FromQuery] string convenioId)
         {
-            return _medicoService.BuscarMedicosPorUsuario(usuarioId, clinicaId);
+            return _medicoService.ValidarDeleteConvenioMedico(medicoId, convenioId);
+        }
+
+        [HttpGet, Route("buscarMedicosPorUsuario/")]
+        public ActionResult<List<Medico>> BuscarMedicosPorUsuario([FromQuery]string usuarioId, [FromQuery] string clinicaId, [FromQuery]bool carregarEspecialidade)
+        {
+            return _medicoService.BuscarMedicosPorUsuario(usuarioId, clinicaId, carregarEspecialidade);
         }
 
         [HttpDelete, Route("excluirPorId/{medicoId}")]
@@ -68,12 +74,6 @@ namespace ApiControleMedico.Controllers
         )
         {
             return _medicoService.RemoveOne(medicoId);
-        }
-
-        [HttpPost, Route("buscarMedicoUsuario")]
-        public ActionResult<Medico> BuscarMedicoUsuario(Usuario usuario)
-        {
-            return _medicoService.BuscarMedicoUsuario(usuario);
         }
 
         [HttpGet, Route("BuscarMedicoConvenio/{convenioId}")]

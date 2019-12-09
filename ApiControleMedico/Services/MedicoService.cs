@@ -17,11 +17,14 @@ namespace ApiControleMedico.Services
     public class MedicoService
     {
         protected readonly DbContexto<Medico> ContextoMedicos;
+        protected readonly DbContexto<Agendamento> ContextoAgendamentos;
         protected readonly EntidadeNegocio<Medico> MedicoNegocio = new EntidadeNegocio<Medico>();
 
         public MedicoService()
         {
             ContextoMedicos = new DbContexto<Medico>("medico");
+            ContextoAgendamentos = new DbContexto<Agendamento>("agendamento");
+
         }
 
         public IEnumerable<Medico> GetAll()
@@ -36,7 +39,6 @@ namespace ApiControleMedico.Services
 
         public Medico SalvarConfiguracaoMedico(Medico medico)
         {
-
             if (medico.ConfiguracaoAgenda?.ConfiguracaoAgendaDias.Count > 0)
             {
                 var configuracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
@@ -64,12 +66,21 @@ namespace ApiControleMedico.Services
                 medico.UsuarioId = usuario.Id;
                 MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
             }
-
-
+            
             return medico;
         }
 
-        internal List<Medico> BuscarMedicosPorUsuario(string usuarioId, string clinicaId)
+        internal Especialidade CarregarEspecialidadeMedico(Medico medico)
+        {
+            var especialidadeService = new EspecialidadeService();
+
+            if (!medico.EspecialidadeId.IsNullOrWhiteSpace())
+                return especialidadeService.GetOne(medico.EspecialidadeId);
+
+            return null;
+        }
+
+        internal List<Medico> BuscarMedicosPorUsuario(string usuarioId, string clinicaId, bool carregarEspecialidade)
         {
             var listaMedicos = new List<Medico>();
             var usuario = new UsuarioService().GetOne(usuarioId);
@@ -78,25 +89,53 @@ namespace ApiControleMedico.Services
             {
                 var funcionario = new FuncionarioService().GetOne(usuario.FuncionarioId);
                 if (funcionario.MedicosId.HasItems())
-                    return ContextoMedicos.Collection.AsQueryable().Where(c => funcionario.MedicosId.Contains(c.Id) && c.ClinicasId.Contains(clinicaId)).ToList();
-                
+                {
+                    var medicos = ContextoMedicos.Collection.AsQueryable().Where(c => funcionario.MedicosId.Contains(c.Id) && c.ClinicasId.Contains(clinicaId)).ToList();
+
+                    if (carregarEspecialidade)
+                    {
+                        foreach (var medico in medicos)
+                            medico.Especialidade = this.CarregarEspecialidadeMedico(medico);
+                    }
+
+                    return medicos;
+                }
+
             }
             else if (!usuario.MedicoId.IsNullOrWhiteSpace())
             {
-                var medico = ContextoMedicos.Collection.Find(c => c.Id == usuario.MedicoId).FirstOrDefault();
+                var medicoUsuario = ContextoMedicos.Collection.Find(c => c.Id == usuario.MedicoId && c.ClinicasId.Contains(clinicaId)).FirstOrDefault();
 
-                if (medico != null)
+                if (medicoUsuario != null)
                 {
-                    if (medico.Administrador)
-                        return ContextoMedicos.Collection.AsQueryable().Where(c => c.ClinicasId.Contains(clinicaId)).ToList();
+                    if (medicoUsuario.Administrador)
+                    {
+                        var medicos = ContextoMedicos.Collection.AsQueryable().Where(c => c.ClinicasId.Contains(clinicaId)).ToList();
+
+                        if (carregarEspecialidade)
+                        {
+                            foreach (var medicEspecialidade in medicos)
+                                medicEspecialidade.Especialidade = this.CarregarEspecialidadeMedico(medicEspecialidade);
+                        }
+
+                        return medicos;
+                    }
                     else
                     {
-                        listaMedicos.Add(medico);
+                        if (carregarEspecialidade)
+                            medicoUsuario.Especialidade = this.CarregarEspecialidadeMedico(medicoUsuario);
+
+                        listaMedicos.Add(medicoUsuario);
                     }
-                }                    
-            }                
+                }
+            }
 
             return listaMedicos;
+        }
+
+        internal ActionResult<bool> ValidarDeleteConvenioMedico(string medicoId, string convenioId)
+        {
+            return ContextoAgendamentos.Collection.AsQueryable().FirstOrDefault(c => c.MedicoId == medicoId && c.ConvenioId == convenioId) != null;
         }
 
         public bool RemoveOne(string id)
@@ -126,11 +165,6 @@ namespace ApiControleMedico.Services
         internal List<Medico> BuscarMedicoEspecialidade(string especialidadeId)
         {
             return ContextoMedicos.Collection.AsQueryable().Where(c => c.EspecialidadeId == especialidadeId).ToList();
-        }
-
-        public Medico BuscarMedicoUsuario(Usuario usuario)
-        {
-            return ContextoMedicos.Collection.Find(c => c.UsuarioId == usuario.Id).FirstOrDefault();
         }
 
         public ActionResult<List<Medico>> TodosFiltrandoMedico(string medicoId)

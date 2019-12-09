@@ -29,11 +29,15 @@ namespace ApiControleMedico.Services
             return AgendamentoNegocio.GetOne(ContextoAgendamentos.Collection, id);
         }
 
-        public Agendamento SaveOne(Agendamento context)
+        public Agendamento SaveOne(Agendamento agendamento)
         {
-            AgendamentoNegocio.SaveOne(ContextoAgendamentos.Collection, context);
 
-            return context;
+            var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
+            agendamento.DataAgendamento = new DateTimeOffset(agendamento.DataAgendamento).ToOffset(offset).DateTime;
+
+            AgendamentoNegocio.SaveOne(ContextoAgendamentos.Collection, agendamento);
+
+            return agendamento;
         }
 
         public bool RemoveOne(string id)
@@ -54,9 +58,13 @@ namespace ApiControleMedico.Services
                     fimSemana = inicioSemana.AddDays(6).AddHours(23).AddMinutes(59).AddSeconds(59);
                 }
 
-                return ContextoAgendamentos.Collection.Find(c =>
-                    c.MedicoId == medicoId).ToList().Where(c => c.DataAgendamento.ToDateTime() >= inicioSemana &&
-                    c.DataAgendamento.ToDateTime() <= fimSemana).ToList();
+                var xo = ContextoAgendamentos.Collection.AsQueryable().Where(c =>
+                    c.MedicoId == medicoId && c.DataAgendamento >= inicioSemana &&
+                    c.DataAgendamento <= fimSemana).ToList();
+
+                return ContextoAgendamentos.Collection.AsQueryable().Where(c =>
+                    c.MedicoId == medicoId && c.DataAgendamento >= inicioSemana &&
+                    c.DataAgendamento <= fimSemana).ToList();
             }
             catch (Exception ex)
             {
@@ -118,6 +126,11 @@ namespace ApiControleMedico.Services
         internal List<Agendamento> BuscarAgendamentosExame(string exameId)
         {
             return ContextoAgendamentos.Collection.Find(c => c.ExameId == exameId).ToList();
+        }
+
+        internal List<Agendamento> BuscarAgendamentosConvenio(string convenioId)
+        {
+            return ContextoAgendamentos.Collection.Find(c => c.ConvenioId == convenioId).ToList();
         }
 
         internal List<Agendamento> BuscarAgendamentosProcedimento(string procedimentoId)

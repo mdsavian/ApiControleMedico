@@ -28,6 +28,7 @@ namespace ApiControleMedico
             services.ConfigureIISIntegration();
             services.ConfigureCors();
 
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             new DadosFixos().AlimentarTabelas();
         }
