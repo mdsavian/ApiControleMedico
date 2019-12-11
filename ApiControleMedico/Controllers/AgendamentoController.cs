@@ -44,7 +44,7 @@ namespace ApiControleMedico.Controllers
 
         [HttpGet, Route("buscarAgendamentosMedico")]
         public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario)
-        { return _agendamentoService.BuscarAgendamentoMedico(medicoId, data, tipoCalendario); }
+        { return _agendamentoService.BuscarAgendamentosMedico(medicoId, data, tipoCalendario); }
 
         [HttpGet, Route("buscarAgendamentosPaciente/{pacienteId}")]
         public List<Agendamento> BuscarAgendamentosPaciente(string pacienteId)

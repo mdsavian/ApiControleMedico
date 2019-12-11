@@ -45,7 +45,7 @@ namespace ApiControleMedico.Services
             return AgendamentoNegocio.RemoveOne(ContextoAgendamentos.Collection, id);
         }
 
-        public List<Agendamento> BuscarAgendamentoMedico(string medicoId, string data, string tipoCalendario)
+        public List<Agendamento> BuscarAgendamentosMedico(string medicoId, string data, string tipoCalendario)
         {
             try
             {
@@ -57,13 +57,10 @@ namespace ApiControleMedico.Services
                     inicioSemana = data.ToDateTime().InicioDaSemana();
                     fimSemana = inicioSemana.AddDays(6).AddHours(23).AddMinutes(59).AddSeconds(59);
                 }
-
-                var xo = ContextoAgendamentos.Collection.AsQueryable().Where(c =>
-                    c.MedicoId == medicoId && c.DataAgendamento >= inicioSemana &&
-                    c.DataAgendamento <= fimSemana).ToList();
+                var medicosId = medicoId.Split(",");
 
                 return ContextoAgendamentos.Collection.AsQueryable().Where(c =>
-                    c.MedicoId == medicoId && c.DataAgendamento >= inicioSemana &&
+                    medicosId.Contains(c.MedicoId) && c.DataAgendamento >= inicioSemana &&
                     c.DataAgendamento <= fimSemana).ToList();
             }
             catch (Exception ex)

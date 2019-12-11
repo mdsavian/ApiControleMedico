@@ -46,6 +46,11 @@ namespace ApiControleMedico.Controllers
             return _funcionarioService.BuscarComMedicos(funcionarioId);
         }
 
+        [HttpGet, Route("validarDeleteMedicoFuncionario/")]
+        public ActionResult<bool> ValidarDeleteMedicoFuncionario([FromQuery]string funcionarioId, [FromQuery]string medicoId)
+        {
+            return _funcionarioService.ValidarDeleteMedicoFuncionario(funcionarioId, medicoId);
+        }        
 
         [HttpDelete, Route("excluirPorId/{funcionarioId}")]
         public ActionResult<bool> ExcluirPorId(string funcionarioId)

@@ -39,6 +39,12 @@ namespace ApiControleMedico.Controllers
             return medicoRetorno;
         }
 
+        [HttpGet, Route("todos")]
+        public List<Medico> Todos([FromQuery] bool carregarEspecialidade)
+        {
+            return _medicoService.Todos(carregarEspecialidade);
+        }
+
         [HttpGet, Route("buscarPorId/{medicoId}")]
         public ActionResult<Medico> BuscarPorId(string medicoId)
         {

@@ -66,7 +66,7 @@ namespace ApiControleMedico.Services
                 medico.UsuarioId = usuario.Id;
                 MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
             }
-            
+
             return medico;
         }
 
@@ -78,6 +78,19 @@ namespace ApiControleMedico.Services
                 return especialidadeService.GetOne(medico.EspecialidadeId);
 
             return null;
+        }
+
+        public List<Medico> Todos(bool carregarEspecialidade)
+        {
+            var medicos = ContextoMedicos.Collection.AsQueryable().ToList();
+
+            if (carregarEspecialidade)
+            {
+                foreach (var medico in medicos)
+                    medico.Especialidade = this.CarregarEspecialidadeMedico(medico);
+            }
+
+            return medicos;
         }
 
         internal List<Medico> BuscarMedicosPorUsuario(string usuarioId, string clinicaId, bool carregarEspecialidade)

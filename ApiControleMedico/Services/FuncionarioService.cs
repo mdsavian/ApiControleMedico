@@ -46,6 +46,14 @@ namespace ApiControleMedico.Services
             return funcionario;
         }
 
+        public bool ValidarDeleteMedicoFuncionario(string funcionarioId, string medicoId)
+        {
+            using (var contextoAgendamento = new DbContexto<Agendamento>("agendamento"))
+            {
+                return contextoAgendamento.Collection.Find(c => c.MedicoId == medicoId && c.FuncionarioId == funcionarioId).FirstOrDefault() == null;
+            }
+        }
+
         public bool RemoveOne(string id)
         {
             var usuarioService = new UsuarioService();
