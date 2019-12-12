@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
@@ -20,11 +22,32 @@ namespace ApiControleMedico.Services
             ContextoClinicas = new DbContexto<Clinica>("clinica");
         }
 
-        public IEnumerable<Clinica> GetAll()
+        public List<Clinica> GetAll()
         {
-            var clinicas =  ClinicaNegocio.GetAll(ContextoClinicas.Collection);
-            return clinicas;
+            var clinicas = ClinicaNegocio.GetAll(ContextoClinicas.Collection);
+            return clinicas.ToList();
         }
+
+        public List<Clinica> BuscarPorUsuario(string usuarioId)
+        {
+            var usuario = new UsuarioService().GetOne(usuarioId);
+
+            if (!usuario.FuncionarioId.IsNullOrWhiteSpace())
+            {
+                var funcionario = new FuncionarioService().GetOne(usuario.FuncionarioId);
+                if (funcionario.ClinicasId.HasItems())
+                    return ContextoClinicas.Collection.Find(c => funcionario.ClinicasId.Contains(c.Id)).ToList();
+            }
+            else if (!usuario.MedicoId.IsNullOrWhiteSpace())
+            {
+                var medico = new MedicoService().GetOne(usuario.MedicoId);
+                if (medico.ClinicasId.HasItems())
+                    return ContextoClinicas.Collection.Find(c => medico.ClinicasId.Contains(c.Id)).ToList();
+            }
+
+            return new List<Clinica>();
+        }
+
 
         public Clinica GetOne(string id)
         {

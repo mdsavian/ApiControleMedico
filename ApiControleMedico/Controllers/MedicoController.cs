@@ -32,12 +32,12 @@ namespace ApiControleMedico.Controllers
             return medicoRetorno;
         }
 
-        [HttpPost, Route("salvarConfiguracaoAgendaMedico")]
-        public ActionResult<Medico> SalvarConfiguracaoMedico(Medico medico)
-        {
-            var medicoRetorno = _medicoService.SalvarConfiguracaoMedico(medico);
-            return medicoRetorno;
-        }
+        //[HttpPost, Route("salvarConfiguracaoAgendaMedico")]
+        //public ActionResult<Medico> SalvarConfiguracaoMedico(Medico medico)
+        //{
+        //    var medicoRetorno = _medicoService.SalvarConfiguracaoMedico(medico);
+        //    return medicoRetorno;
+        //}
 
         [HttpGet, Route("todos")]
         public List<Medico> Todos([FromQuery] bool carregarEspecialidade)
@@ -51,10 +51,10 @@ namespace ApiControleMedico.Controllers
             return _medicoService.GetOne(medicoId);
         }
 
-        [HttpGet, Route("buscarConfiguracaoAgendaMedico/{configuracaoAgendaId}")]
-        public ActionResult<ConfiguracaoAgenda> BuscarConfiguracaoAgendaMedico(string configuracaoAgendaId)
+        [HttpGet, Route("buscarConfiguracaoAgenda/")]
+        public ActionResult<ConfiguracaoAgenda> BuscarConfiguracaoAgendaMedico([FromQuery]string medicoId, [FromQuery] string clinicaId)
         {
-            return _medicoService.BuscarConfiguracaoAgenda(configuracaoAgendaId);
+            return _medicoService.BuscarConfiguracaoAgenda(medicoId, clinicaId);
         }
 
         [HttpGet, Route("todosFiltrandoMedico/{medicoId}")]

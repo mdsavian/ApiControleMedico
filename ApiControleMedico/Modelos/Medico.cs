@@ -17,8 +17,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("EspecialidadeId")]
         public string EspecialidadeId { get; set; }
 
-        [BsonElement("ConfiguracaoAgendaId")]
-        public string ConfiguracaoAgendaId { get; set; }
+        //[BsonElement("ConfiguracaoAgendaId")]
+        //public string ConfiguracaoAgendaId { get; set; }
 
         [BsonElement("Administrador")]
         public bool Administrador { get; set; }

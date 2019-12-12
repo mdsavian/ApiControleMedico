@@ -39,6 +39,12 @@ namespace ApiControleMedico.Controllers
             return _clinicaService.GetOne(clinicaId);
         }
 
+        [HttpGet, Route("BuscarPorUsuario/{usuarioId}")]
+        public ActionResult<List<Clinica>> BuscarPorUsuario(string usuarioId)
+        {
+            return _clinicaService.BuscarPorUsuario(usuarioId);
+        }
+
         [HttpDelete, Route("excluirPorId/{clinicaId}")]
         public ActionResult<bool> ExcluirPorId(string clinicaId)
         {

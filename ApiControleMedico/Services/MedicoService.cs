@@ -29,7 +29,7 @@ namespace ApiControleMedico.Services
 
         public IEnumerable<Medico> GetAll()
         {
-            return MedicoNegocio.GetAll(ContextoMedicos.Collection);
+            return MedicoNegocio.GetAll(ContextoMedicos.Collection).OrderBy(c=> c.NomeCompleto).ToList();
         }
 
         public Medico GetOne(string id)
@@ -37,20 +37,20 @@ namespace ApiControleMedico.Services
             return MedicoNegocio.GetOne(ContextoMedicos.Collection, id);
         }
 
-        public Medico SalvarConfiguracaoMedico(Medico medico)
-        {
-            if (medico.ConfiguracaoAgenda?.ConfiguracaoAgendaDias.Count > 0)
-            {
-                var configuracaoAgenda = AgendaMedicoNegocio.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
-                medico.ConfiguracaoAgendaId = configuracaoAgenda.Id;
-                medico.ConfiguracaoAgenda = configuracaoAgenda;
-            }
+        //public Medico SalvarConfiguracaoMedico(Medico medico)
+        //{
+        //    if (medico.ConfiguracaoAgenda?.ConfiguracaoAgendaDias.Count > 0)
+        //    {
+        //        var configuracaoAgenda = ConfiguracaoAgendaService.ConfigurarAgendaMedico(medico.ConfiguracaoAgenda);
+        //        medico.ConfiguracaoAgendaId = configuracaoAgenda.Id;
+        //        medico.ConfiguracaoAgenda = configuracaoAgenda;
+        //    }
 
-            MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
+        //    MedicoNegocio.SaveOne(ContextoMedicos.Collection, medico);
 
 
-            return medico;
-        }
+        //    return medico;
+        //}
 
         public Medico SaveOne(Medico medico)
         {
@@ -191,11 +191,11 @@ namespace ApiControleMedico.Services
 
         }
 
-        public ConfiguracaoAgenda BuscarConfiguracaoAgenda(string configuracaoAgendaId)
+        public ConfiguracaoAgenda BuscarConfiguracaoAgenda(string medicoId, string clinicaId)
         {
             using (var contexto = new DbContexto<ConfiguracaoAgenda>("configuracaoAgenda"))
             {
-                return contexto.Collection.Find(c => c.Id == configuracaoAgendaId).FirstOrDefault();
+                return contexto.Collection.Find(c => c.MedicoId == medicoId && c.ClinicaId == clinicaId).FirstOrDefault();
             }
         }
 
