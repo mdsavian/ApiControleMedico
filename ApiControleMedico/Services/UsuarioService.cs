@@ -45,7 +45,7 @@ namespace ApiControleMedico.Services
             return usuario;
         }
 
-        internal Usuario BuscarUsuarioComModelos(string usuarioId)
+        internal Usuario BuscarUsuarioComModelos(string usuarioId, string senhaDigitada)
         {
             var usuario = ContextoUsuario.Collection.Find(c => c.Id == usuarioId).FirstOrDefault();
 
@@ -56,6 +56,7 @@ namespace ApiControleMedico.Services
                     using (var contextoFuncionario = new DbContexto<Funcionario>("funcionario"))
                     {
                         usuario.Funcionario = contextoFuncionario.Collection.Find(c => c.Id == usuario.FuncionarioId).First();
+                        usuario.SenhaPadrao = Criptografia.Compara(senhaDigitada, Criptografia.Codifica("@usuario1234"));
                     }
                 }
                 else if (!usuario.MedicoId.IsNullOrWhiteSpace())
@@ -63,6 +64,7 @@ namespace ApiControleMedico.Services
                     using (var contextoMedico = new DbContexto<Medico>("medico"))
                     {
                         usuario.Medico = contextoMedico.Collection.Find(c => c.Id == usuario.MedicoId).First();
+                        usuario.SenhaPadrao = Criptografia.Compara(senhaDigitada, Criptografia.Codifica("@medico1234"));
                     }
                 }
             }

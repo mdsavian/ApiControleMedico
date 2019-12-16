@@ -14090,11 +14090,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\ControleMedico\\apicontrolemedico\\ApiControleMedico\\ApiControleMedico.csproj",
+      "projectUniqueName": "C:\\temp\\ControleMedico\\ApiControleMedico\\ApiControleMedico\\ApiControleMedico.csproj",
       "projectName": "ApiControleMedico",
-      "projectPath": "C:\\temp\\ControleMedico\\apicontrolemedico\\ApiControleMedico\\ApiControleMedico.csproj",
+      "projectPath": "C:\\temp\\ControleMedico\\ApiControleMedico\\ApiControleMedico\\ApiControleMedico.csproj",
       "packagesPath": "C:\\Users\\mdsavian\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\ControleMedico\\apicontrolemedico\\ApiControleMedico\\obj\\",
+      "outputPath": "C:\\temp\\ControleMedico\\ApiControleMedico\\ApiControleMedico\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

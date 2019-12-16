@@ -46,18 +46,20 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpPost, Route("validaUsuario")]
-        public ActionResult<bool> ValidaUsuario(Usuario usuario)
+        public ActionResult<Usuario> ValidaUsuario(Usuario usuario)
         {
             if (!string.IsNullOrEmpty(usuario.UltimoLogin))
             {
                 var datahora = usuario.UltimoLogin.ToDateTime();
 
-                if (DateTime.Now.FormatarDiaMesAnoHora().ToDateTime().Subtract(datahora).TotalMinutes > 180)
+                if (DateTime.Now.FormatarDiaMesAnoHora().ToDateTime().Subtract(datahora).TotalMinutes > 180)                
+                    usuario.SessaoAtiva = false;
+                else
                 {
-                    return false;
-                }
+                    usuario.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
+                }                
             }
-            return true;
+            return usuario;
         }
     }
 }

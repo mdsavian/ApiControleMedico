@@ -34,6 +34,12 @@ namespace ApiControleMedico.Modelos
         [BsonElement("FuncionarioId")]
         public string FuncionarioId { get; set; }
 
+        [BsonElement("SessaoAtiva")]
+        public bool SessaoAtiva { get; set; }
+
+        [BsonIgnore]
+        public bool SenhaPadrao { get; set; }
+
         [BsonIgnore]
         public Medico Medico { get; set; }
 

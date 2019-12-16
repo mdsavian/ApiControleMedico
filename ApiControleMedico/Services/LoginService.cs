@@ -29,6 +29,7 @@ namespace ApiControleMedico.Services
                     Senha = senha,
                     UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora(),
                     Ativo = true,
+                    SessaoAtiva = true,
                     TipoUsuario = ETipoUsuario.Administrador
                 };                
             }
@@ -44,12 +45,14 @@ namespace ApiControleMedico.Services
             var usuario = ContextoUsuarios.Collection.Find(c => c.Login == login && c.Ativo).FirstOrDefault();
 
             if (usuario != null)
-            {   
+            {
                 if (Criptografia.Compara(senha, usuario.Senha))
                 {
+                    usuario = new UsuarioService().BuscarUsuarioComModelos(usuario.Id, senha);
                     usuario.UltimoLogin = DateTime.Now.FormatarDiaMesAnoHora();
-                    usuario = new UsuarioService().BuscarUsuarioComModelos(usuario.Id);
+                    usuario.SessaoAtiva = true;
                 }
+                else return null;
             }
             return usuario;
         }
