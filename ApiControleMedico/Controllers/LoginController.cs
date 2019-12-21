@@ -52,7 +52,7 @@ namespace ApiControleMedico.Controllers
             {
                 var datahora = usuario.UltimoLogin.ToDateTime();
 
-                if (DateTime.Now.FormatarDiaMesAnoHora().ToDateTime().Subtract(datahora).TotalMinutes > 180)                
+                if (DateTime.Now.FormatarDiaMesAnoHora().ToDateTime().Subtract(datahora).TotalMinutes > 300) //5 horas                
                     usuario.SessaoAtiva = false;
                 else
                 {

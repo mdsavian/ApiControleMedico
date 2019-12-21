@@ -51,6 +51,9 @@ namespace ApiControleMedico.Modelos
         public string DiaGestacao { get; set; }
         [BsonElement("FotoId")]
         public string FotoId { get; set; }
+        [BsonElement("Prontuario")]
+        public string Prontuario { get; set; }
+
 
 
         public Paciente()

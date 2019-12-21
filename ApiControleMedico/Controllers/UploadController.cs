@@ -69,7 +69,6 @@ namespace ApiControleMedico.Controllers
                 if (!Directory.Exists(newPath))
                     Directory.CreateDirectory(newPath);
 
-
                 if (file.Length > 0)
                 {
                     string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
