@@ -21,10 +21,11 @@ namespace ApiControleMedico.Controllers
             _contaReceberService = contaReceberService;
         }
 
-        [HttpGet]
-        public ActionResult<List<ContaReceber>> Get()
+        [HttpGet, Route("Todos")]
+        public List<ContaReceber> Todos([FromQuery] string usuarioId, [FromQuery] string clinicaId)
         {
-            var lista = _contaReceberService.GetAll();
+            var medicos = new MedicoService().BuscarMedicosPorUsuario(usuarioId, clinicaId, false).Select(c=> c.Id);
+            var lista = _contaReceberService.GetAll().Where(c=> c.ClinicaId == clinicaId && (c.MedicoId == "" || medicos.Contains(c.MedicoId)));
             return lista.ToList();
         }
 
@@ -34,6 +35,11 @@ namespace ApiControleMedico.Controllers
             return _contaReceberService.GetOne(contaReceberId);
         }
 
+        [HttpGet, Route("buscarPorAgendamento/{agendamentoId}")]
+        public ActionResult<ContaReceber> BuscarPorAgendamento(string agendamentoId)
+        {
+            return _contaReceberService.BuscarPorAgendamento(agendamentoId);
+        }
 
         [HttpPost]
         public ActionResult<ContaReceber> Salvar(ContaReceber contaReceber)

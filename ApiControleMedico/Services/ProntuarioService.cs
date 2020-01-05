@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
@@ -81,7 +82,7 @@ namespace ApiControleMedico.Services
                     file.CopyTo(stream);
 
                 var pacienteId = file.Name.Split("=")[1];
-                                var paciente = new PacienteService().GetOne(pacienteId);
+                var paciente = new PacienteService().GetOne(pacienteId);
 
                 if (paciente != null)
                 {
@@ -102,6 +103,9 @@ namespace ApiControleMedico.Services
                         string idArquivo = task.Result.ToString();
                         var nomeSplit = fileName.Split(".");
 
+                        if (prontuario.Anexos == null)
+                            prontuario.Anexos = new List<AnexoProntuario>();
+
                         prontuario.Anexos.Add(new AnexoProntuario
                         {
                             Id = idArquivo,
@@ -116,6 +120,36 @@ namespace ApiControleMedico.Services
                 }
 
                 File.Delete(fullPath);
+            }
+
+            return null;
+        }
+
+        internal Prontuario DeletarArquivo(string prontuarioId, string arquivoId)
+        {
+            var prontuario = ContextoProntuarios.Collection.Find(c => c.Id == prontuarioId).FirstOrDefault();
+            if (prontuario != null)
+            {
+                try
+                {                   
+                    var arquivo = prontuario.Anexos.FirstOrDefault(c => c.Id == arquivoId);
+                    if (arquivo != null)
+                    {
+                        var gridFs = new GridFSBucket(ContextoProntuarios.Database);
+                        var objectId = new ObjectId(arquivoId);
+                        gridFs.Delete(objectId);
+
+                        prontuario.Anexos.Remove(arquivo);
+
+                        prontuario = this.SaveOne(prontuario);
+                    }
+
+                }
+                catch (Exception ex)
+                {                    
+                }
+
+                return prontuario;
             }
 
             return null;
@@ -146,7 +180,8 @@ namespace ApiControleMedico.Services
             {
                 prontuario = new Prontuario
                 {
-                    PacienteId = pacienteId
+                    PacienteId = pacienteId,
+                    Anexos = new List<AnexoProntuario>()
                 };
                 prontuario = this.SaveOne(prontuario);
             }

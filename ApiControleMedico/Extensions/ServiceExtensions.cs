@@ -63,6 +63,8 @@ namespace ApiControleMedico.Extensions
             //}
 
             services.AddScoped<PacienteService>();
+            services.AddScoped<ModeloPrescricaoService>();
+            services.AddScoped<PrescricaoPacienteService>();
             services.AddScoped<ContaReceberService>();
             services.AddScoped<ContaPagarService>();
             services.AddScoped<FornecedorService>();

@@ -21,6 +21,10 @@ namespace ApiControleMedico.Services
         public IEnumerable<Agendamento> GetAll()
         {
             var agendamentos = AgendamentoNegocio.GetAll(ContextoAgendamentos.Collection);
+            foreach (var agendamento in agendamentos)
+            {
+                agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+            }
             return agendamentos;
         }
 
@@ -59,9 +63,15 @@ namespace ApiControleMedico.Services
                 }
                 var medicosId = medicoId.Split(",");
 
-                return ContextoAgendamentos.Collection.AsQueryable().Where(c =>
+                var agendamentos = ContextoAgendamentos.Collection.AsQueryable().Where(c =>
                     medicosId.Contains(c.MedicoId) && c.DataAgendamento >= inicioSemana &&
                     c.DataAgendamento <= fimSemana).ToList();
+
+                foreach (var agendamento in agendamentos)
+                {
+                    agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+                }
+                return agendamentos;
             }
             catch (Exception ex)
             {
@@ -140,9 +150,10 @@ namespace ApiControleMedico.Services
             return ContextoAgendamentos.Collection.Find(c => c.LocalId == localId).ToList();
         }
 
-        internal List<Agendamento> BuscarAgendamentosPaciente(string pacienteId)
+        internal List<Agendamento> BuscarAgendamentosPaciente(string pacienteId, string usuarioId, string clinicaId)
         {
-            return ContextoAgendamentos.Collection.Find(c => c.PacienteId == pacienteId).ToList();
+            var medicos = new MedicoService().BuscarMedicosPorUsuario(usuarioId, clinicaId, false).Select(c=> c.Id);
+            return ContextoAgendamentos.Collection.Find(c => c.PacienteId == pacienteId && medicos.Contains(c.MedicoId)).ToList().OrderByDescending(c=> c.DataAgendamento).ThenByDescending(c=> c.HoraInicial).ToList();
         }
 
         internal List<Agendamento> BuscarPagamentoAgendamentoForma(string formaPagamentoId)

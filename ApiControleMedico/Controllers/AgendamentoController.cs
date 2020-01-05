@@ -46,9 +46,11 @@ namespace ApiControleMedico.Controllers
         public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario)
         { return _agendamentoService.BuscarAgendamentosMedico(medicoId, data, tipoCalendario); }
 
-        [HttpGet, Route("buscarAgendamentosPaciente/{pacienteId}")]
-        public List<Agendamento> BuscarAgendamentosPaciente(string pacienteId)
-        { return _agendamentoService.BuscarAgendamentosPaciente(pacienteId); }
+        [HttpGet, Route("buscarAgendamentosPaciente")]
+        public List<Agendamento> BuscarAgendamentosPaciente([FromQuery] string pacienteId, [FromQuery] string usuarioId, [FromQuery] string clinicaId)
+        {
+            return _agendamentoService.BuscarAgendamentosPaciente(pacienteId,usuarioId, clinicaId);
+        }
 
         [HttpGet, Route("buscarAgendamentosFuncionario/{funcionarioId}")]
         public List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
@@ -86,7 +88,7 @@ namespace ApiControleMedico.Controllers
         public List<Agendamento> BuscarAgendamentoMedicoExcluir(string medicoId)
         { return _agendamentoService.BuscarAgendamentoMedicoExcluir(medicoId); }
 
-        
+
         [HttpGet, Route("TodosPorPeriodo")]
         public List<Agendamento> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId)
         { return _agendamentoService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId); }

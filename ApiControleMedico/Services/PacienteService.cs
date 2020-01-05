@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -29,6 +30,11 @@ namespace ApiControleMedico.Services
         public IEnumerable<Paciente> GetAll()
         {
             var pacientes = PacienteNegocio.GetAll(contextoPacientes.Collection).OrderBy(c=> c.NomeCompleto).ToList();
+            foreach (var paciente in pacientes)
+            {
+                paciente.TipoSanguineo = "A+";
+                paciente.EstadoCivil = "Solteiro(a)";
+            }
             return pacientes;
         }
 
@@ -39,6 +45,9 @@ namespace ApiControleMedico.Services
 
         public Paciente SaveOne(Paciente paciente)
         {
+            if (paciente.Id.IsNullOrWhiteSpace())
+                paciente.DataCadastro = DateTime.Now;
+
             PacienteNegocio.SaveOne(contextoPacientes.Collection, paciente);
 
             return paciente;

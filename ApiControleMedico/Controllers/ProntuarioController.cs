@@ -26,11 +26,23 @@ namespace ApiControleMedico.Controllers
             return prontuarios.ToList();
         }
 
+        [HttpGet, Route("buscarPorId/{prontuarioId}")]
+        public ActionResult<Prontuario> BuscarPorId(string prontuarioId)
+        {
+            return _prontuarioService.GetOne(prontuarioId);
+        }
+
         [HttpPost]
         public ActionResult<Prontuario> Salvar(Prontuario prontuario)
         {
             var prontuarioRetorno = _prontuarioService.SaveOne(prontuario);
             return prontuarioRetorno;
+        }
+
+        [HttpGet, Route("deletarArquivo")]
+        public Prontuario DeletarArquivo([FromQuery]string prontuarioId, [FromQuery] string arquivoId)
+        {
+            return _prontuarioService.DeletarArquivo(prontuarioId, arquivoId);
         }
 
         [HttpGet, Route("downloadArquivo/{idArquivo}")]

@@ -53,6 +53,8 @@ namespace ApiControleMedico.Modelos
         public string FotoId { get; set; }
         [BsonElement("Prontuario")]
         public string Prontuario { get; set; }
+        [BsonElement("DataCadastro")]
+        public DateTime? DataCadastro { get; set; }
 
 
 

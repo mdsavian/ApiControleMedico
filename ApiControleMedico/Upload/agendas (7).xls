@@ -1,0 +1,2708 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel" lang="pt-br" xml:lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Test Sheet</x:Name><x:WorksheetOptions><x:Panes></x:Panes></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body><table border='1px'>
+                        <thead>
+                            <tr role="row"><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 64px;">Médico</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Paciente</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 85px;">Data Agendamento</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 52px;">Tipo</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 130px;">Tipos</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 101px;">Convênio</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 86px;">Status</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 79px;">Primeiro Atendimento</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 75px;">OBS</th></tr>
+                        </thead>
+                        <tbody>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        <tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> KATIA LAZZARI</td>
+                                <td>22/11/2019 10:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ODETE MARIA BERNARDI DEINANI</td>
+                                <td>22/11/2019 10:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames, não tinhamos horário antes</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> TATIANA CORA CHIELE CANALI</td>
+                                <td>22/11/2019 10:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ROSANE VEDOVELLI</td>
+                                <td>22/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> ELIANE LONGARAI</td>
+                                <td>22/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> NAIARA CANANI MAFFAZIOLI</td>
+                                <td>22/11/2019 10:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> CLEUSA ZAMBONI AMERICO</td>
+                                <td>22/11/2019 10:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>cauterização</td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FABIOLA ABRUZZI</td>
+                                <td>22/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> FERNANDA FERRAZZA DA SILVA </td>
+                                <td>22/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> CARY CRISTINA MAURINA</td>
+                                <td>22/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LETICIA FALKEMBACK</td>
+                                <td>22/11/2019 11:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> FERNANDA FANTI TISSOT</td>
+                                <td>22/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> GRAZIELE SOUZA PINTO </td>
+                                <td>22/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> TACIANA SEIXAS</td>
+                                <td>22/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    unimed federaçâo
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LISIA JOHAN HEINEN</td>
+                                <td>22/11/2019 11:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> Vanessa Olga Ziliotto Fabian</td>
+                                <td>22/11/2019 13:15</td>
+                                <td>
+                                    
+                                    Cirurgia
+                                    
+                                </td>
+                                <td>CESÁREA, PEDIATRA MARA MENDES, AUXILIO PLANTÃO, USO DE MEIAS PNEUMATICAS</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>- Local: HOSPITAL UNIMED</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> NAO MARCAR</td>
+                                <td>25/11/2019 07:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> DIOVANA MEDEIROS</td>
+                                <td>25/11/2019 09:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CAMILA CZARNOBAI</td>
+                                <td>25/11/2019 09:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    unimed federaçâo
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> DIANA ELISA ARRUDA</td>
+                                <td>25/11/2019 09:50</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> IZALINA DA ROSA TONIETTO</td>
+                                <td>25/11/2019 10:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MARTA PIAMOLINI DE ALMEIDA</td>
+                                <td>25/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Cirurgia
+                                    
+                                </td>
+                                <td>CESÁREA, PEDIATRA RAQUEL VANACOR, AUXILIO PLANTÃO</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>- Local: Hospital Medianeira </td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> SIMONI SPIDO DE OLIVEIRA</td>
+                                <td>25/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> VANESSA MOTA</td>
+                                <td>25/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> MARISA MARIA TREVISO SCHREINER</td>
+                                <td>25/11/2019 11:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> GABRIELLI SILVA MARQUES</td>
+                                <td>25/11/2019 11:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> MARICLEIA MAZZOCHI</td>
+                                <td>25/11/2019 12:10</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> GRAZIELA  CONTE ISOTON</td>
+                                <td>25/11/2019 12:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames, não cobrar reconsulta</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> EVELISE MAGNUN</td>
+                                <td>25/11/2019 12:50</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td>250,00</td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ALINE FERNANDES MORO</td>
+                                <td>25/11/2019 13:10</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MICHELE MARIA SCHNEIDER</td>
+                                <td>25/11/2019 13:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED SEGUROS SAÚDE S/A
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GISELE BACCARIN</td>
+                                <td>25/11/2019 13:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> NAO MARCAR</td>
+                                <td>25/11/2019 13:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JAQUELINE TERESINHA BERNARDI</td>
+                                <td>25/11/2019 13:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LAISA HELENA COSTA</td>
+                                <td>25/11/2019 13:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ROSANE DEINANI</td>
+                                <td>25/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MANUELA NOVELLO BIANCHI</td>
+                                <td>25/11/2019 14:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> VIVIAN SILVEIRA DOS SANTOS</td>
+                                <td>25/11/2019 14:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> DEISE SIMONE ANDRIOLA DE OLIVEIRA</td>
+                                <td>25/11/2019 14:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> QUELEN FRANCIELA PEREIRA SELAU</td>
+                                <td>25/11/2019 14:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> SAMANTA CRISTINA COSTA SILVEIRA</td>
+                                <td>25/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VANESCA FAGUNDES CARDOSO GROSSI</td>
+                                <td>25/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED PORTO ALEGRE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> TATIANE GONÇALVES DE ANDRADE</td>
+                                <td>25/11/2019 15:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> RAFAELA BIASINI BORGES DE MELO</td>
+                                <td>25/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> MARIZA ELIZABETE DIAS FARIAS</td>
+                                <td>25/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LARA FERMIANO BAPTISTA</td>
+                                <td>25/11/2019 15:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GILVANE RAQUEL DOS SANTOS</td>
+                                <td>25/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ALINE RAMPAZZO</td>
+                                <td>25/11/2019 16:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GRAZIELA BRANDALISE RIBEIRO</td>
+                                <td>25/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VIVIANA HENRIQUE DE OLIVEIRA</td>
+                                <td>25/11/2019 16:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LARISSA GONCALVES PRATES PACIFICO</td>
+                                <td>25/11/2019 17:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VANESSA MEZZOMO</td>
+                                <td>25/11/2019 17:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MONIQUE SIRENA MASCHIO</td>
+                                <td>25/11/2019 17:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VIVIANE DOS SANTOS ASSUNÇAO</td>
+                                <td>25/11/2019 17:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> RAQUEL RUSCHEL MIRANDA FERRASSO</td>
+                                <td>26/11/2019 08:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> RENATA SCOLARI</td>
+                                <td>26/11/2019 08:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FABIANA CASTILHOS BORGES</td>
+                                <td>26/11/2019 08:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANA LUIZAZANOL</td>
+                                <td>26/11/2019 08:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> LUANA PIOVESAN</td>
+                                <td>26/11/2019 09:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANDRESSA CECCHIN</td>
+                                <td>26/11/2019 09:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LETICIA DOS REIS SALVALAGGIO </td>
+                                <td>26/11/2019 09:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CAMILE DE OLIVEIRA CALZA</td>
+                                <td>26/11/2019 09:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> FABIANE SEMAIKE SGANZERLA</td>
+                                <td>26/11/2019 09:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> TATIELE BOLSON MORO</td>
+                                <td>26/11/2019 09:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    unimed federaçâo
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MARLENE DE FATIMA RESENDE</td>
+                                <td>26/11/2019 09:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> LARISSA SEVERO SPERAFICO</td>
+                                <td>26/11/2019 10:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JAQUELINE GRANDI</td>
+                                <td>26/11/2019 10:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LARISSA DOS SANTOS PEDROSO</td>
+                                <td>26/11/2019 10:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LAINE DE SOUZA DORNELES</td>
+                                <td>26/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ROSIMERI BERTIN</td>
+                                <td>26/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VANESSA SCHMITZ</td>
+                                <td>26/11/2019 10:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> BARBARA MOURA DE OLIVEIRA </td>
+                                <td>26/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GELVANIA MUSSOI</td>
+                                <td>26/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> CAROLINE FORTUNA  </td>
+                                <td>26/11/2019 11:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FERNANDA RIBEIRO DE SOUZA</td>
+                                <td>26/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JENIFER DA SILVA ALVES</td>
+                                <td>26/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> BRUNA FINATO BAGGIO</td>
+                                <td>26/11/2019 13:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LIAMARA BETT</td>
+                                <td>26/11/2019 13:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> NAO MARCAR</td>
+                                <td>26/11/2019 13:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> SILVANA MARIA FRANSISQUINI MANFROI</td>
+                                <td>26/11/2019 13:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> RAFAELA SANDRI DE CASTILHOS</td>
+                                <td>26/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ROSANE PEREIRA</td>
+                                <td>26/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td>  FLAVIA RODRIGUES FERREIRA</td>
+                                <td>26/11/2019 14:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CAMILA PEREIRA CARDOSO PALAURO</td>
+                                <td>26/11/2019 14:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> BERNARDETE GOBETTI MEZARI</td>
+                                <td>26/11/2019 14:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> EMILY VERONICA DUTRA MACIEL</td>
+                                <td>26/11/2019 14:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> FRANCIELE MONTEIRO</td>
+                                <td>26/11/2019 14:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ERIKA COUTO </td>
+                                <td>26/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> SUELEN MORELATTO MARTELLI</td>
+                                <td>26/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> TACIANE TEIXEIRA SEVERO</td>
+                                <td>26/11/2019 15:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ANA CAROLINA VANZIN PEDRONI</td>
+                                <td>26/11/2019 15:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> DAIANE TAIS BEAL</td>
+                                <td>26/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> TEREZINHA DAMIN VIEIRA</td>
+                                <td>26/11/2019 15:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> DAYANNE MOREIRA GOMES GUERRA</td>
+                                <td>26/11/2019 15:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> SABRINA BARBOSA</td>
+                                <td>26/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> TAIS BERNARDO</td>
+                                <td>26/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> BRUNA VELHO DA SILVA</td>
+                                <td>26/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LARISSA FAVERO FIEDLER</td>
+                                <td>26/11/2019 16:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> VANESSA BERGAMASQUE</td>
+                                <td>26/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANA CLAUDIA ALMEIDA MACHADO DOS SANTOS</td>
+                                <td>26/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr></tbody>
+                    </table></body></html>

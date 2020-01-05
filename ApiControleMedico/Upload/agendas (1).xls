@@ -1,0 +1,2708 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel" lang="pt-br" xml:lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Test Sheet</x:Name><x:WorksheetOptions><x:Panes></x:Panes></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body><table border='1px'>
+                        <thead>
+                            <tr role="row"><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 81px;">Médico</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 119px;">Paciente</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 85px;">Data Agendamento</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 52px;">Tipo</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 33px;">Tipos</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 145px;">Convênio</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 86px;">Status</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 79px;">Primeiro Atendimento</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 92px;">OBS</th></tr>
+                        </thead>
+                        <tbody>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        <tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ARIANE OLIVEIRA DOS REIS</td>
+                                <td>05/11/2019 10:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MELISSA DE LUCENA</td>
+                                <td>05/11/2019 10:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> JOICE FRANCELE  DOS REIS</td>
+                                <td>05/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ADRIANA APARECIDA PEREIRA</td>
+                                <td>05/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> FRANCIELLE IARTO DA SILVA</td>
+                                <td>05/11/2019 10:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ELIANER MARIA LENTZ RODRIGUES</td>
+                                <td>05/11/2019 10:50</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Cancelado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ROBERTA MORAES RAMOS</td>
+                                <td>05/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FABIANA DE LIZ PAIM</td>
+                                <td>05/11/2019 11:10</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANDRESSA GUERRA</td>
+                                <td>05/11/2019 11:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JENNIFER PONTIN</td>
+                                <td>05/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CAREN CRISTINA SASSET</td>
+                                <td>05/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> CAROLINE DOS SANTOS</td>
+                                <td>05/11/2019 13:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td>   RENATA BORILE COSTA</td>
+                                <td>05/11/2019 13:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> RAQUEL SACCANI</td>
+                                <td>05/11/2019 13:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> PALOMA ALBRECHT</td>
+                                <td>05/11/2019 13:35</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LILIANE MARIA WELTER DILKIN</td>
+                                <td>05/11/2019 13:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> LAURA DAROS STEDILE</td>
+                                <td>05/11/2019 13:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ANDIARA SOGARI</td>
+                                <td>05/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> RAFAELA ZANOL RAMOS</td>
+                                <td>05/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> AMANDA CAROLINA TOMASI</td>
+                                <td>05/11/2019 14:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> HELENA BASSO CANALI</td>
+                                <td>05/11/2019 14:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JENNIFER FELIPE DE MELLO</td>
+                                <td>05/11/2019 14:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td>    RAQUEL MARIN</td>
+                                <td>05/11/2019 14:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MARILEI DEON ARRUDA</td>
+                                <td>05/11/2019 14:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GERUSA PERTILE</td>
+                                <td>05/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> LILIAN DEBASTIANI</td>
+                                <td>05/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> YOLETTE MOISE</td>
+                                <td>05/11/2019 15:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> EDIANE BISOTTO SUSIN</td>
+                                <td>05/11/2019 15:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> RAQUEL RABE MACHADO</td>
+                                <td>05/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> ANA GABRIELA BAGGIO</td>
+                                <td>05/11/2019 15:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ALICE SANTOS DE SOUZA SACOMAN</td>
+                                <td>05/11/2019 15:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> JANE PAULA BAGGIO</td>
+                                <td>05/11/2019 15:50</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> PRISCILA LUANA CAMPOS</td>
+                                <td>05/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> LINARA BALBINOT DE MORAES</td>
+                                <td>05/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td>INDICAÇÃO BRUNA BALBINOT</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> SONIA STAHL BURTZLAFF</td>
+                                <td>05/11/2019 16:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CASSI
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CARINA MARIA PELLENZ</td>
+                                <td>05/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> PATRICIA DOS SANTOS BORGES</td>
+                                <td>05/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANDREIA ZIEGLER</td>
+                                <td>05/11/2019 16:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FLAVIA MAIARA DOS REIS CARARO</td>
+                                <td>05/11/2019 17:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> CAROLINE BRANDO CARDOSO</td>
+                                <td>05/11/2019 17:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FRANCIELE NEVES DA SILVA </td>
+                                <td>05/11/2019 17:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> NAO MARCAR</td>
+                                <td>05/11/2019 17:50</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LUCIANA CLARO MACHADO</td>
+                                <td>06/11/2019 08:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td>   RHAYSA RIBEIRO DOS SANTOS</td>
+                                <td>06/11/2019 08:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> PRISCILA LEMOS DE OLIVEIRA</td>
+                                <td>06/11/2019 08:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ALINE MATTE</td>
+                                <td>06/11/2019 08:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CARINA VITORIA DAROS MACHADO</td>
+                                <td>06/11/2019 08:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ARIELE DOS SANTOS</td>
+                                <td>06/11/2019 08:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> SABRINA NELI SUSIN</td>
+                                <td>06/11/2019 08:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> PATRICIA BULLA</td>
+                                <td>06/11/2019 09:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GABRIELA DE CAMARGO RIGOTTO</td>
+                                <td>06/11/2019 09:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> FRANCIELE GALIOTTO VIEIRA DE VARGAS</td>
+                                <td>06/11/2019 09:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VANESSA TRUBIAN</td>
+                                <td>06/11/2019 09:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> DIONE RANDAZZO ANTUNES</td>
+                                <td>06/11/2019 09:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> AMANDA DOS SANTOS SIMONETTO</td>
+                                <td>06/11/2019 09:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CARLA BONELLA BARP</td>
+                                <td>06/11/2019 10:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JEANI GOMES TEIXEIRA</td>
+                                <td>06/11/2019 10:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> NERIS MOREIRA PICCOLI</td>
+                                <td>06/11/2019 10:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CINTIA DA SILVA RIZZON</td>
+                                <td>06/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> JESSICA DA ROSA BEZZERRA</td>
+                                <td>06/11/2019 10:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td>GESTANTE 12 SEMANAS</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GABRIELA GRANDO PINSON</td>
+                                <td>06/11/2019 10:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MORGANA TREIN</td>
+                                <td>06/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FERNANDA ULIAN PISANI</td>
+                                <td>06/11/2019 11:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANA PAULA CORSO</td>
+                                <td>06/11/2019 11:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> TAIS FREITAS DE ANDRADE</td>
+                                <td>06/11/2019 11:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED CENTRAL NACIONAL
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MARTA PIAMOLINI DE ALMEIDA</td>
+                                <td>06/11/2019 13:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    marco saúde
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ABIGAIL CASSIANO IUNG</td>
+                                <td>06/11/2019 13:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ARIANA PATRICIA MONEGO</td>
+                                <td>06/11/2019 13:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VANILDE AGOSTINETTO</td>
+                                <td>06/11/2019 13:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED CENTRAL NACIONAL
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LISIA JOHAN HEINEN</td>
+                                <td>06/11/2019 13:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> RAFAELA SILVEIRA DE SOUZA</td>
+                                <td>06/11/2019 13:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>mostra de exames</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> DAIANE KRAMER MOREIRA SCHENARDIE</td>
+                                <td>06/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    unimed federaçâo
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> NAO MARCAR</td>
+                                <td>06/11/2019 14:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Não confirmado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> LARISSA FAVERO FIEDLER</td>
+                                <td>06/11/2019 14:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    Particular
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> GABRIELA MASSENZ BADO</td>
+                                <td>06/11/2019 14:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> MARIA DOSCIATTI</td>
+                                <td>06/11/2019 14:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Em espera</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ELISANDRA RODRIGUES PACHECO</td>
+                                <td>06/11/2019 14:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> FERNANDA GOMES PREBIANCA</td>
+                                <td>06/11/2019 14:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> MARIA CLARA RODRIGUES PACHECO</td>
+                                <td>06/11/2019 14:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> CRISTIANE PEREIRA DA SILVA</td>
+                                <td>06/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ALINE DE CANDIDO DA SILVA</td>
+                                <td>06/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> DEBORA SANTANA DE ALMEIDA</td>
+                                <td>06/11/2019 15:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    unimed federaçâo
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> CARINE COSTAMILAN LABATUT</td>
+                                <td>06/11/2019 15:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Em espera</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ANDREIA DE FATIMA TEIXEIRA BUENO</td>
+                                <td>06/11/2019 15:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td>GESTANTE 6 SEMANAS</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> PATRICIA  DE MEDEIROS</td>
+                                <td>06/11/2019 15:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> VALERIA DE LIMA FORTUNATTI</td>
+                                <td>06/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> GABRIELA SANTOS </td>
+                                <td>06/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Cancelado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> THAIS DOS SANTOS INCHAUSTE</td>
+                                <td>06/11/2019 15:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> ENOEMIA APARECIDA SOARES PEREIRA</td>
+                                <td>06/11/2019 15:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> SABRINA PERETTI MIRANDA PORTOLAN</td>
+                                <td>06/11/2019 15:50</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> JOCENA PREVA</td>
+                                <td>06/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    unimed federaçâo
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td>AGENDAMENTO DA UNIMED</td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> VIVIANE RADIN</td>
+                                <td>06/11/2019 16:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> CLARA STEDILE ZANANDREA</td>
+                                <td>06/11/2019 16:15</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    IPAM
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-danger">Cancelado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> MARIA AURELIA CISLAGHI MUTTERLE</td>
+                                <td>06/11/2019 16:20</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    coc
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td>-</td>
+                            </tr><tr role="row" class="odd">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> PRISCILA DE LIMA</td>
+                                <td>06/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> GISELE ALVES DE OLIVEIRA</td>
+                                <td>06/11/2019 16:30</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> NATALIA BEARZI CASTRO</td>
+                                <td>06/11/2019 16:40</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    SIM
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Sharon Moura Reisdorfer</td>
+                                <td> BERENICE MARIA DA SILVA  GARCIA</td>
+                                <td>06/11/2019 16:45</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    FATIMA
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="odd">
+                                <td>Fernanda Raymundo Pante </td>
+                                <td> DAIANE ZAMPIERI SARTOR </td>
+                                <td>06/11/2019 17:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED CENTRAL NACIONAL
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Em espera</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr><tr role="row" class="even">
+                                <td>Lissandra Cavalheiro Maioli</td>
+                                <td> JOSIANE PEREIRA </td>
+                                <td>06/11/2019 17:00</td>
+                                <td>
+                                    
+                                    Consulta
+                                    
+                                </td>
+                                <td>-</td>
+                                <td>
+                                    UNIMED NORDESTE
+                                </td>
+                                <td>
+                                    
+                                        <span class="label label-success">Finalizado</span>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    NÃO
+                                    
+                                </td>
+                                
+                                <td></td>
+                            </tr></tbody>
+                    </table></body></html>

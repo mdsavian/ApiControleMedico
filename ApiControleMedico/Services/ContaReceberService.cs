@@ -32,7 +32,21 @@ namespace ApiControleMedico.Services
 
         public ContaReceber GetOne(string id)
         {
-            return ContaReceberNegocio.GetOne(ContextoContasReceber.Collection, id);
+            var contaReceber = ContaReceberNegocio.GetOne(ContextoContasReceber.Collection, id);
+            if (!contaReceber.AgendamentoId.IsNullOrWhiteSpace())
+            {
+                var agendamentoService = new AgendamentoService();
+                var agendamento = agendamentoService.GetOne(contaReceber.AgendamentoId);
+                contaReceber.TipoContaDescricao = agendamentoService.RetornarDescricaoAgendamento(agendamento);
+            }
+            else contaReceber.TipoContaDescricao = "Lançamento Manual";
+
+            return contaReceber;
+        }
+
+        internal ActionResult<ContaReceber> BuscarPorAgendamento(string agendamentoId)
+        {            
+            return this.BuscarAgendamentosParaListagem(agendamentoId).FirstOrDefault();
         }
 
         public ContaReceber SaveOne(ContaReceber context)
@@ -42,16 +56,16 @@ namespace ApiControleMedico.Services
             return context;
         }
 
-        private List<ContaReceber> BuscarAgendamentosParaListagem()
+        private List<ContaReceber> BuscarAgendamentosParaListagem(string agendamentoId = "")
         {
             var lista = new List<ContaReceber>();
             var agendamentoService = new AgendamentoService();
 
-            var agendamentos = agendamentoService.GetAll().Where(c => c.ContemPagamentos).ToList();
+            var agendamentos = agendamentoService.GetAll().Where(c => c.ContemPagamentos && (agendamentoId == "" || c.Id == agendamentoId)).ToList();
 
             foreach (var agendamento in agendamentos)
             {
-                int documento = int.Parse(agendamento.HoraInicial) + int.Parse(agendamento.HoraFinal) + decimal.ToInt32(Math.Truncate(agendamento.Pagamentos.Sum(c=> c.Valor)));
+                int documento = int.Parse(agendamento.HoraInicial) + int.Parse(agendamento.HoraFinal) + (agendamento.Pagamentos.HasItems()? decimal.ToInt32(Math.Truncate(agendamento.Pagamentos.Sum(c=> c.Valor))) : 0);
 
                 var contaReceber = new ContaReceber
                 {
@@ -62,6 +76,7 @@ namespace ApiControleMedico.Services
                     Valor = agendamento.Pagamentos.Sum(c => c.Valor * c.Parcela),
                     ValorTotal = agendamento.Pagamentos.Sum(c => c.Valor * c.Parcela),
                     PacienteId = agendamento.PacienteId,
+                    MedicoId = agendamento.MedicoId,
                     NumeroDocumento =  documento.ToString(),
                     Pagamentos = new List<ContaReceberPagamento>()
                 };
@@ -84,9 +99,7 @@ namespace ApiControleMedico.Services
                 contaReceber.TipoContaDescricao = agendamentoService.RetornarDescricaoAgendamento(agendamento);
 
                 lista.Add(contaReceber);
-
             }
-
 
             return lista;
         }

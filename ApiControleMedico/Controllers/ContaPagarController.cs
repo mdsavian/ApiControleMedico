@@ -20,10 +20,11 @@ namespace ApiControleMedico.Controllers
             _contaPagarService = contaPagarService;
         }
 
-        [HttpGet]
-        public ActionResult<List<ContaPagar>> Get()
+        [HttpGet, Route("Todos")]
+        public List<ContaPagar> Todos([FromQuery] string usuarioId, [FromQuery] string clinicaId)
         {
-            var lista = _contaPagarService.GetAll();
+            var medicos = new MedicoService().BuscarMedicosPorUsuario(usuarioId, clinicaId, false).Select(c => c.Id);
+            var lista = _contaPagarService.GetAll().Where(c => c.ClinicaId == clinicaId && (c.MedicoId == "" || medicos.Contains(c.MedicoId)));
             return lista.ToList();
         }
 
