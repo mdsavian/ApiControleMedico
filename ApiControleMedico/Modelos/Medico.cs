@@ -29,6 +29,9 @@ namespace ApiControleMedico.Modelos
         [BsonElement("FotoId")]
         public string FotoId { get; set; }
 
+        [BsonElement("TempoRenovarSessao")]
+        public int TempoRenovarSessao { get; set; }
+
         [BsonIgnore]
         public List<Clinica> Clinicas { get; set; }
         [BsonIgnore]
@@ -39,5 +42,6 @@ namespace ApiControleMedico.Modelos
         public Especialidade Especialidade { get; set; }
         [BsonIgnore]
         public Usuario Usuario { get; set; }
+
     }
 }

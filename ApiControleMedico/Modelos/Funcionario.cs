@@ -53,5 +53,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("FotoId")]
         public string FotoId { get; set; }
 
+        [BsonElement("TempoRenovarSessao")]
+        public int TempoRenovarSessao { get; set; }
+
     }
 }

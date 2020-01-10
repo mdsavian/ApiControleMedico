@@ -29,12 +29,7 @@ namespace ApiControleMedico.Services
 
         public IEnumerable<Paciente> GetAll()
         {
-            var pacientes = PacienteNegocio.GetAll(contextoPacientes.Collection).OrderBy(c=> c.NomeCompleto).ToList();
-            foreach (var paciente in pacientes)
-            {
-                paciente.TipoSanguineo = "A+";
-                paciente.EstadoCivil = "Solteiro(a)";
-            }
+            var pacientes = PacienteNegocio.GetAll(contextoPacientes.Collection).OrderBy(c=> c.NomeCompleto).ToList();          
             return pacientes;
         }
 

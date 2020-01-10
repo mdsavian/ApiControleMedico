@@ -56,8 +56,6 @@ namespace ApiControleMedico.Modelos
         [BsonElement("DataCadastro")]
         public DateTime? DataCadastro { get; set; }
 
-
-
         public Paciente()
         {
             this.Ativo = true;

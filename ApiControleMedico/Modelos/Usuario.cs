@@ -44,6 +44,9 @@ namespace ApiControleMedico.Modelos
         public Medico Medico { get; set; }
 
         [BsonIgnore]
+        public int TempoRenovarSessao{ get; set; }
+
+        [BsonIgnore]
         public Funcionario Funcionario { get; set; }
 
         //[BsonElement("ClinicasId")]
