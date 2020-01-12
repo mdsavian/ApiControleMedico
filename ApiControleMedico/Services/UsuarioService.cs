@@ -19,6 +19,13 @@ namespace ApiControleMedico.Services
             ContextoUsuario = new DbContexto<Usuario>("usuario");
         }
 
+        public Usuario SaveOne(Usuario usuario)
+        {
+
+            UsuarioNegocio.SaveOne(ContextoUsuario.Collection, usuario);
+            return usuario;
+        }
+
         public IEnumerable<Usuario> GetAll()
         {
             var usuarios = UsuarioNegocio.GetAll(ContextoUsuario.Collection);
@@ -90,6 +97,8 @@ namespace ApiControleMedico.Services
                     FuncionarioId = funcionario.Id
                 };
                 UsuarioNegocio.SaveOne(ContextoUsuario.Collection, usuario);
+
+                
             }
             return usuario;
         }

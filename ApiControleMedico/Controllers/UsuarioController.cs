@@ -21,6 +21,12 @@ namespace ApiControleMedico.Controllers
             _usuarioService = usuarioService;
         }
 
+        [HttpPost]
+        public ActionResult<Usuario> Salvar(Usuario usuario)
+        {
+            return _usuarioService.SaveOne(usuario);
+        }
+
         [HttpPost, Route("alterarSenha")]
         public ActionResult<Usuario> AlterarSenha(AlteraSenha alteraSenha)
         {

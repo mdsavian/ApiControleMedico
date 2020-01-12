@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ApiControleMedico.Modelos.Enums;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
@@ -37,6 +38,9 @@ namespace ApiControleMedico.Modelos
         [BsonElement("SessaoAtiva")]
         public bool SessaoAtiva { get; set; }
 
+        [BsonElement("ConfiguracaoAtalhos")]
+        public List<ConfiguracaoAtalho> ConfiguracaoAtalhos { get; set; }
+
         [BsonIgnore]
         public bool SenhaPadrao { get; set; }
 
@@ -48,6 +52,7 @@ namespace ApiControleMedico.Modelos
 
         [BsonIgnore]
         public Funcionario Funcionario { get; set; }
+
 
         //[BsonElement("ClinicasId")]
         //public List<string> ClinicasId { get; set; }
