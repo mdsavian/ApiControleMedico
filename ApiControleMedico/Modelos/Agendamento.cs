@@ -18,6 +18,10 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("HoraFinal")] public string HoraFinal { get; set; }
 
+        [BsonElement("HoraInicialAtendimento")] public string HoraInicialAtendimento { get; set; }
+
+        [BsonElement("HoraFinalAtendimento")] public string HoraFinalAtendimento { get; set; }
+
         [BsonElement("Observacao")] public string Observacao { get; set; }
 
         [BsonElement("PacienteId")] public string PacienteId { get; set; }
@@ -47,6 +51,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("ClinicaId")] public string ClinicaId { get; set; }
 
         [BsonElement("ContemPagamentos")] public bool ContemPagamentos { get; set; }
+
+        [BsonElement("Encaixado")] public bool Encaixado { get; set; }
 
         [BsonElement("Pagamentos")] public List<AgendamentoPagamento> Pagamentos{ get; set; }
 

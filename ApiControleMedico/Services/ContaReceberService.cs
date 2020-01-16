@@ -27,7 +27,7 @@ namespace ApiControleMedico.Services
                 conta.TipoContaDescricao = "Lançamento Manual";
             }
             contaRecebers.AddRange(this.BuscarAgendamentosParaListagem());
-            return contaRecebers;
+            return contaRecebers.OrderByDescending(c=> c.DataEmissao).ToList();
         }
 
         public ContaReceber GetOne(string id)
@@ -101,7 +101,7 @@ namespace ApiControleMedico.Services
                 lista.Add(contaReceber);
             }
 
-            return lista;
+            return lista.OrderByDescending(c => c.DataEmissao).ToList();
         }
 
         public bool RemoveOne(string id)

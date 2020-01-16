@@ -20,8 +20,7 @@ namespace ApiControleMedico.Services
 
         public IEnumerable<ContaPagar> GetAll()
         {
-            var contaPagars = ContaPagarNegocio.GetAll(ContextoContasPagar.Collection);
-            return contaPagars;
+            return ContaPagarNegocio.GetAll(ContextoContasPagar.Collection).OrderByDescending(c => c.DataEmissao).ToList();
         }
 
         public ContaPagar GetOne(string id)

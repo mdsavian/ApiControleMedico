@@ -130,6 +130,20 @@ namespace ApiControleMedico.Services
 
             configuracoes.Add(new ConfiguracaoAtalho
             {
+                Descricao = "Abrir Caixa",
+                Imagem = "../../../assets/images/icon/abrir-caixa.png",
+                BtnClass = "btn-success btn btn-lg btn-home"
+            });
+
+            configuracoes.Add(new ConfiguracaoAtalho
+            {
+                Descricao = "Fechar Caixa",
+                Imagem = "../../../assets/images/icon/fechar-caixa.png",
+                BtnClass = "btn-warning btn btn-lg btn-home"
+            });
+
+            configuracoes.Add(new ConfiguracaoAtalho
+            {
                 Descricao = "Configurar Atalhos",
                 BtnClass = "btn-info btn btn-lg btn-home",
                 SpanClass = "fa fa-3x fa-cog fa-spin"

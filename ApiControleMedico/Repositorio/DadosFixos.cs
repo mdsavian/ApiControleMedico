@@ -68,7 +68,7 @@ namespace ApiControleMedico.Repositorio
                             {
                                 case "Finalizado":
                                     {
-                                        agendamento.SituacaoAgendamento = ESituacaoAgendamento.PagoFinalizado;
+                                        agendamento.SituacaoAgendamento = ESituacaoAgendamento.Finalizado;
                                         break;
                                     }
                                 case "Em espera":
@@ -146,7 +146,7 @@ namespace ApiControleMedico.Repositorio
                             }
                             agendamento.PacienteId = pacienteCadastrado.Id;
 
-                            if(agendamento.SituacaoAgendamento == ESituacaoAgendamento.PagoFinalizado)
+                            if(agendamento.SituacaoAgendamento == ESituacaoAgendamento.Finalizado)
                             {
                                 agendamento.Pagamentos = new List<AgendamentoPagamento>();
 

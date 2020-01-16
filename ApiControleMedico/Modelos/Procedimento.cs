@@ -19,5 +19,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("CorLetra")]
         public string CorLetra { get; set; }
 
+        [BsonElement("ObrigaPaciente")]
+        public bool ObrigaPaciente { get; set; }
+
     }
 }
