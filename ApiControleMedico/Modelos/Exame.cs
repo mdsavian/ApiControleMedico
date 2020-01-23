@@ -8,16 +8,9 @@ namespace ApiControleMedico.Modelos
     [BsonDiscriminator(Required = true)]
     [BsonKnownTypes(typeof(Exame))]
 
-    public class Exame : Entidade
+    public class Exame : Procedimento
     {
-        [BsonElement("Descricao")]
-        public string Descricao { get; set; }
-
-        [BsonElement("CorFundo")]
-        public string CorFundo { get; set; }
-
-        [BsonElement("CorLetra")]
-        public string CorLetra { get; set; }
+       
 
     }
 }

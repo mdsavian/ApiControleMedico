@@ -87,6 +87,7 @@ namespace ApiControleMedico.Extensions
             services.AddScoped<ExameService>();
             services.AddScoped<AgendamentoService>();
             services.AddScoped<ClinicaService>();
+            services.AddScoped<ExtraCaixaService>();
             services.AddScoped<FormaDePagamentoService>();
             services.AddScoped<ProntuarioService>();
         }

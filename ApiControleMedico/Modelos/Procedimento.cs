@@ -22,5 +22,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("ObrigaPaciente")]
         public bool ObrigaPaciente { get; set; }
 
+        [BsonElement("Valor")]
+        public decimal Valor { get; set; }
+
     }
 }

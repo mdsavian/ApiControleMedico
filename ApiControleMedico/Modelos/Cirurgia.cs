@@ -8,16 +8,8 @@ namespace ApiControleMedico.Modelos
     [BsonDiscriminator(Required = true)]
     [BsonKnownTypes(typeof(Cirurgia))]
 
-    public class Cirurgia : Entidade
-    {
-        [BsonElement("Descricao")]
-        public string Descricao { get; set; }
-
-        [BsonElement("CorFundo")]
-        public string CorFundo { get; set; }
-
-        [BsonElement("CorLetra")]
-        public string CorLetra { get; set; }
+    public class Cirurgia : Procedimento
+    { 
 
     }
 }
