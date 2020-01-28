@@ -115,6 +115,13 @@ namespace ApiControleMedico.Services
 
         }
 
+        internal Agendamento BuscarUltimoAgendamentoPaciente(string pacienteId, string agendamentoId)
+        {
+            var dataHoje = DateTime.Now;
+            return ContextoAgendamentos.Collection.AsQueryable().OrderByDescending(c=> c.DataAgendamento).FirstOrDefault(c => c.PacienteId == pacienteId && (agendamentoId == "" || agendamentoId == null || c.Id != agendamentoId)
+            && c.DataAgendamento <= dataHoje);
+        }
+
         internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId)
         {
             return ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)).ToList();

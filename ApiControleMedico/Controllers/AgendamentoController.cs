@@ -49,7 +49,7 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("buscarAgendamentosPaciente")]
         public List<Agendamento> BuscarAgendamentosPaciente([FromQuery] string pacienteId, [FromQuery] string usuarioId, [FromQuery] string clinicaId)
         {
-            return _agendamentoService.BuscarAgendamentosPaciente(pacienteId,usuarioId, clinicaId);
+            return _agendamentoService.BuscarAgendamentosPaciente(pacienteId, usuarioId, clinicaId);
         }
 
         [HttpGet, Route("buscarAgendamentosFuncionario/{funcionarioId}")]
@@ -87,6 +87,12 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("BuscarAgendamentoMedicoExcluir/{medicoId}")]
         public List<Agendamento> BuscarAgendamentoMedicoExcluir(string medicoId)
         { return _agendamentoService.BuscarAgendamentoMedicoExcluir(medicoId); }
+
+        [HttpGet, Route("BuscarUltimoAgendamentoPaciente")]
+        public Agendamento BuscarUltimoAgendamentoPaciente([FromQuery]string pacienteId, [FromQuery] string agendamentoId)
+        {
+            return _agendamentoService.BuscarUltimoAgendamentoPaciente(pacienteId, agendamentoId);
+        }
 
 
         [HttpGet, Route("TodosPorPeriodo")]

@@ -15,17 +15,26 @@ namespace ApiControleMedico.Modelos
         [BsonElement("CaixaId")]
         public string CaixaId { get; set; }
 
-        [BsonElement("Valor")] public decimal Valor { get; set; }
+        [BsonElement("Valor")]
+        public decimal Valor { get; set; }
 
-        [BsonElement("FormaPagamentoId")] public string FormaPagamentoId { get; set; }
+        [BsonElement("FormaPagamentoId")]
+        public string FormaPagamentoId { get; set; }
 
-        [BsonElement("Data")] public DateTime Data { get; set; }
+        [BsonElement("Data")]
+        public DateTime Data { get; set; }
 
-        [BsonElement("Parcela")] public int Parcela { get; set; }
+        [BsonElement("Parcela")]
+        public int Parcela { get; set; }
 
-        [BsonElement("VistaPrazo")] public ETipoExtraCaixa VistaPrazo { get; set; }
+        [BsonElement("VistaPrazo")]
+        public EVistaPrazo VistaPrazo { get; set; }
 
-        [BsonElement("TipoExtraCaixa")] public int TipoExtraCaixa { get; set; }
+        [BsonElement("TipoExtraCaixa")]
+        public ETipoExtraCaixa TipoExtraCaixa { get; set; }
+
+        [BsonElement("Descricao")]
+        public string Descricao { get; set; }
 
     }
 }
