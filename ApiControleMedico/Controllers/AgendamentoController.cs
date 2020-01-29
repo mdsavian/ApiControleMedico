@@ -94,6 +94,12 @@ namespace ApiControleMedico.Controllers
             return _agendamentoService.BuscarUltimoAgendamentoPaciente(pacienteId, agendamentoId);
         }
 
+        [HttpGet, Route("ProcedimentosRealizados")]
+        public List<Agendamento> ProcedimentosRealizados([FromQuery]string dataInicio, [FromQuery] string dataFim, [FromQuery] string medicoId)
+        {
+            return _agendamentoService.ProcedimentosRealizados(dataInicio.ToDateTime(),dataFim.ToDateTime(), medicoId);
+        }
+
 
         [HttpGet, Route("TodosPorPeriodo")]
         public List<Agendamento> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ApiControleMedico.Modelos;
+using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Repositorio;
 using ApiControleMedico.Uteis;
 using MongoDB.Driver;
@@ -112,7 +113,6 @@ namespace ApiControleMedico.Services
                 return new ProcedimentoService().GetOne(agendamento.ProcedimentoId)?.Descricao;
             else
                 return agendamento.TipoAgendamento.ToString();
-
         }
 
         internal Agendamento BuscarUltimoAgendamentoPaciente(string pacienteId, string agendamentoId)
@@ -171,6 +171,25 @@ namespace ApiControleMedico.Services
         internal List<Agendamento> BuscarAgendamentoMedicoExcluir(string medicoId)
         {
             return ContextoAgendamentos.Collection.AsQueryable().Where(c => c.MedicoId == medicoId).Take(5).ToList();
+        }
+
+        internal List<Agendamento> ProcedimentosRealizados(DateTime dataInicio, DateTime dataFim, string medicoId)
+        {
+            var agendamentos = ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= dataInicio && c.DataAgendamento <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
+            && (c.TipoAgendamento == ETipoAgendamento.Cirurgia || c.TipoAgendamento == ETipoAgendamento.Exame || c.TipoAgendamento == ETipoAgendamento.Procedimento)).ToList().OrderBy(c => c.DataAgendamento).ToList();
+
+            var contextoPaciente = new DbContexto<Paciente>("paciente");
+            var contextoExame = new DbContexto<Exame>("exame");
+            var contextoProcedimento = new DbContexto<Procedimento>("procedimento");
+            var contextoCirurgia = new DbContexto<Cirurgia>("cirurgia");
+
+            foreach (var agendamento in agendamentos)
+            {
+                agendamento.Paciente = contextoPaciente.Collection.Find(c => c.Id == agendamento.PacienteId).FirstOrDefault();
+                agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+            }
+
+            return agendamentos;
         }
     }
 }
