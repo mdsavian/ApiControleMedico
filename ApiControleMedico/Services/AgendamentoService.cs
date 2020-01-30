@@ -83,20 +83,15 @@ namespace ApiControleMedico.Services
         public List<Agendamento> BuscarAgendamentosCaixa(string caixaId, string clinicaId)
         {
             var agendamentos = ContextoAgendamentos.Collection.Find(c => c.ClinicaId == clinicaId && c.Pagamentos.Any(d => d.CaixaId == caixaId)).ToList().OrderByDescending(c => c.DataAgendamento).ThenByDescending(c => c.HoraInicial).ToList();
-
-            var contextoPaciente = new DbContexto<Paciente>("paciente");
-            var contextoMedico = new DbContexto<Medico>("medico");
             var contextoConvenio= new DbContexto<Convenio>("convenio");
             foreach (var agendamento in agendamentos)
             {
-                agendamento.Paciente = contextoPaciente.Collection.Find(c => c.Id == agendamento.PacienteId).FirstOrDefault();
-                agendamento.Medico = contextoMedico.Collection.Find(c => c.Id == agendamento.MedicoId).FirstOrDefault();
+                agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+                agendamento.Medico = RetornarMedico(agendamento.MedicoId);
                 agendamento.Convenio = contextoConvenio.Collection.Find(c => c.Id == agendamento.ConvenioId).FirstOrDefault();
 
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
             }
-            contextoPaciente.Dispose();
-            contextoMedico.Dispose();
             return agendamentos;
         }
 
@@ -185,11 +180,25 @@ namespace ApiControleMedico.Services
 
             foreach (var agendamento in agendamentos)
             {
-                agendamento.Paciente = contextoPaciente.Collection.Find(c => c.Id == agendamento.PacienteId).FirstOrDefault();
+                agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+                agendamento.Medico = RetornarMedico(agendamento.MedicoId);
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
             }
 
             return agendamentos;
+        }
+
+        internal Medico RetornarMedico(string medicoId)
+        {
+            var contextoMedico = new DbContexto<Medico>("medico");
+            return contextoMedico.Collection.Find(c => c.Id == medicoId).FirstOrDefault();
+        }
+
+        internal Paciente RetornarPaciente(string pacienteId)
+        {
+            var contextoPaciente = new DbContexto<Paciente>("paciente");
+            
+            return contextoPaciente.Collection.Find(c => c.Id == pacienteId).FirstOrDefault();
         }
     }
 }
