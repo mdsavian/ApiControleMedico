@@ -108,6 +108,13 @@ namespace ApiControleMedico.Services
 
             configuracoes.Add(new ConfiguracaoAtalho
             {
+                Descricao = "Proced. Realizados",
+                Imagem = "../../../assets/images/icon/procedimentos.png",
+                BtnClass = "btn-primary btn btn-lg btn-home"
+            });
+
+            configuracoes.Add(new ConfiguracaoAtalho
+            {
                 Descricao = "Conta a Pagar",
                 Imagem = "../../../assets/images/icon/contaPagar.png",
                 BtnClass = "btn-danger btn btn-lg btn-home"
