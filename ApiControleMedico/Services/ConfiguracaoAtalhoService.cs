@@ -46,7 +46,7 @@ namespace ApiControleMedico.Services
             var usuario = new UsuarioService().GetOne(usuarioId);
 
             if (usuario.ConfiguracaoAtalhos.HasItems())
-                return usuario.ConfiguracaoAtalhos.Where(c=> c.Ativo).ToList();
+                return usuario.ConfiguracaoAtalhos.Where(c => c.Ativo).ToList();
 
             else return BuscarParaConfiguracao(usuarioId);
         }
@@ -56,7 +56,7 @@ namespace ApiControleMedico.Services
             var configuracoes = new List<ConfiguracaoAtalho>();
 
             var usuario = new UsuarioService().GetOne(usuarioId);
-
+            
             if (usuario.ConfiguracaoAtalhos.HasItems())
                 return usuario.ConfiguracaoAtalhos.ToList();
 

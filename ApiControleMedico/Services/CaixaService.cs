@@ -39,10 +39,10 @@ namespace ApiControleMedico.Services
             return context;
         }
 
-        public Caixa RetornarCaixaAbertoFuncionario(string funcionarioId)
+        public Caixa RetornarCaixaAbertoPessoa(string pessoaId)
         {
             return ContextoCaixas.Collection.Find(c =>
-                    c.FuncionarioId == funcionarioId && !c.DataFechamento.HasValue)
+                    c.PessoaId == pessoaId && !c.DataFechamento.HasValue)
                 .FirstOrDefault();
 
         }

@@ -46,10 +46,10 @@ namespace ApiControleMedico.Controllers
             return _caixaService.RetornarTodosCaixasAbertos();
         }
 
-        [HttpGet, Route("retornarCaixaAbertoFuncionario/{funcionarioId}")]
-        public ActionResult<Caixa> RetornarCaixaAbertoFuncionario(string funcionarioId)
+        [HttpGet, Route("retornarCaixaAbertoPessoa/{pessoaId}")]
+        public ActionResult<Caixa> RetornarCaixaAbertoPessoa(string pessoaId)
         {
-            return _caixaService.RetornarCaixaAbertoFuncionario(funcionarioId);
+            return _caixaService.RetornarCaixaAbertoPessoa(pessoaId);
         }
 
         [HttpDelete, Route("excluirPorId/{caixaId}")]
