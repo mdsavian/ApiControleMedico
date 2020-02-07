@@ -39,7 +39,7 @@ namespace ApiControleMedico.Services
 
             var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
             agendamento.DataAgendamento = new DateTimeOffset(agendamento.DataAgendamento).ToOffset(offset).DateTime;
-
+            agendamento.TipoAgendamentoDescricao = RetornarDescricaoAgendamento(agendamento);
             AgendamentoNegocio.SaveOne(ContextoAgendamentos.Collection, agendamento);
 
             return agendamento;
