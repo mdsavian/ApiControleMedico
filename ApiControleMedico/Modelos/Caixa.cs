@@ -11,6 +11,9 @@ namespace ApiControleMedico.Modelos
         [BsonElement("FuncionarioId")]
         public string FuncionarioId{ get; set; }
 
+        [BsonElement("MedicoId ")]
+        public string MedicoId { get; set; }
+
         [BsonElement("DataAbertura")]
         public DateTime DataAbertura { get; set; }
 
@@ -40,5 +43,6 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("Administrativo")]
         public bool Administrativo { get; set; }
+
     }
 }
