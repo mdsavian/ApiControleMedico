@@ -23,8 +23,8 @@ namespace ApiControleMedico.Services
 
         public IEnumerable<Caixa> GetAll()
         {
-            var caixas =  CaixaNegocio.GetAll(ContextoCaixas.Collection);
-            return caixas.OrderByDescending(c => c.DataAbertura).ToList() ;
+            var caixas = CaixaNegocio.GetAll(ContextoCaixas.Collection);
+            return caixas.OrderByDescending(c => c.DataAbertura).ToList();
         }
 
         public Caixa GetOne(string id)

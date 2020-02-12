@@ -38,5 +38,10 @@ namespace ApiControleMedico.Services
         {
             return ExtraCaixaNegocio.RemoveOne(ContextoExtraCaixas.Collection, id);
         }
+        
+        public List<ExtraCaixa> BuscarPorCaixa(string caixaId)
+        {
+            return ContextoExtraCaixas.Collection.Find(c => c.CaixaId == caixaId).ToList();
+        }
     }
 }

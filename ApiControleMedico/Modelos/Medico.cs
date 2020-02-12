@@ -10,10 +10,6 @@ namespace ApiControleMedico.Modelos
 
         [BsonElement("ConveniosId")]
         public List<string> ConveniosId { get; set; }
-        
-        [BsonElement("UsuarioId")]
-        public string UsuarioId { get; set; }
-
         [BsonElement("EspecialidadeId")]
         public string EspecialidadeId { get; set; }
 

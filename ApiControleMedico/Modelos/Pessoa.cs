@@ -25,8 +25,9 @@ namespace ApiControleMedico.Modelos
         public string Email { get; set; }
         [BsonElement("Ativo")]
         public bool Ativo { get; set; }
+        [BsonElement("UsuarioId ")]
+        public string UsuarioId { get; set; }
 
-        
         [BsonElement("Cep")]
         public string Cep { get; set; }
         [BsonElement("Endereco")]

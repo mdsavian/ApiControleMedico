@@ -44,5 +44,11 @@ namespace ApiControleMedico.Controllers
         {
             return _extraCaixaService.RemoveOne(extraCaixaId);
         }
+
+        [HttpGet, Route("buscarPorCaixa/{caixaId}")]
+        public List<ExtraCaixa> BuscarPorCaixa(string caixaId)
+        {
+            return _extraCaixaService.BuscarPorCaixa(caixaId);
+        }
     }
 }

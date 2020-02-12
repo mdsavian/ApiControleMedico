@@ -15,6 +15,9 @@ namespace ApiControleMedico.Modelos
         [BsonElement("CaixaId")]
         public string CaixaId { get; set; }
 
+        [BsonElement("MedicoId")]
+        public string MedicoId { get; set; }
+
         [BsonElement("Valor")]
         public decimal Valor { get; set; }
 

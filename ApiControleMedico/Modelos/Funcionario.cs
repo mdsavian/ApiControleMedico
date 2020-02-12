@@ -23,9 +23,6 @@ namespace ApiControleMedico.Modelos
         [BsonElement("DataDemissao")]
         public DateTime? DataDemissao { get; set; }
 
-        [BsonElement("UsuarioId")]
-        public string UsuarioId { get; set; }
-
         [BsonIgnore]
         public Usuario Usuario { get; set; }
 
