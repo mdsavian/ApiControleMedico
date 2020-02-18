@@ -117,9 +117,10 @@ namespace ApiControleMedico.Services
              && c.DataAgendamento <= dataHoje);
         }
 
-        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId)
+        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId)
         {
-            return ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)).ToList();
+            return ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
+            && (caixaId.IsNullOrWhiteSpace() || c.Pagamentos.Any(d=> d.CaixaId == caixaId))).ToList();
         }
 
         internal List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
