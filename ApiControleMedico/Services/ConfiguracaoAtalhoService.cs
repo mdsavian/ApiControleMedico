@@ -56,9 +56,13 @@ namespace ApiControleMedico.Services
             var configuracoes = new List<ConfiguracaoAtalho>();
 
             var usuario = new UsuarioService().GetOne(usuarioId);
-            
+
             if (usuario.ConfiguracaoAtalhos.HasItems())
-                return usuario.ConfiguracaoAtalhos.ToList();
+            {
+                usuario.ConfiguracaoAtalhos = new List<ConfiguracaoAtalho>();
+                new UsuarioService().SaveOne(usuario);
+                //return usuario.ConfiguracaoAtalhos.ToList();
+            }
 
             Funcionario funcionario = null;
             Medico medico = null;
@@ -79,7 +83,7 @@ namespace ApiControleMedico.Services
             if (medico != null || (funcionario != null && funcionario.PermissaoAdministrador))
                 configuracoes.Add(new ConfiguracaoAtalho
                 {
-                    Descricao = "Dashboard",
+                    Descricao = "Transações",
                     BtnClass = "btn-warning btn btn-lg btn-home",
                     SpanClass = "fa fa-3x fa-area-chart"
                 });

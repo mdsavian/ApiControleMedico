@@ -46,6 +46,12 @@ namespace ApiControleMedico.Controllers
             return _caixaService.RetornarTodosCaixasAbertos();
         }
 
+        [HttpGet, Route("caixasUltimos7dias/")]
+        public ActionResult<List<Caixa>> CaixasUltimos7dias()
+        {
+            return _caixaService.CaixasUltimos7dias();
+        }
+
         [HttpGet, Route("retornarCaixaAbertoPessoa/{pessoaId}")]
         public ActionResult<Caixa> RetornarCaixaAbertoPessoa(string pessoaId)
         {

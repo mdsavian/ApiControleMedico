@@ -57,5 +57,15 @@ namespace ApiControleMedico.Services
             return ContextoCaixas.Collection.AsQueryable()
                 .Where(c => !c.DataFechamento.HasValue).ToList();
         }
+
+        public List<Caixa> CaixasUltimos7dias()
+        {
+            var dataHoje = DateTime.Now.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+            var dataInicial = dataHoje.AddDays(-7).Date;
+            
+            return ContextoCaixas.Collection.AsQueryable()
+                .Where(c => c.DataAbertura >= dataInicial && c.DataAbertura <= dataHoje).ToList();
+        }
     }
+
 }
