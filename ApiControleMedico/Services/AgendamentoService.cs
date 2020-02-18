@@ -39,6 +39,10 @@ namespace ApiControleMedico.Services
 
             var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
             agendamento.DataAgendamento = new DateTimeOffset(agendamento.DataAgendamento).ToOffset(offset).DateTime;
+
+            TimeSpan ts = new TimeSpan(0, 0, 0);
+
+            agendamento.DataAgendamento = agendamento.DataAgendamento.Date + ts;
             agendamento.TipoAgendamentoDescricao = RetornarDescricaoAgendamento(agendamento);
             AgendamentoNegocio.SaveOne(ContextoAgendamentos.Collection, agendamento);
 
@@ -117,10 +121,11 @@ namespace ApiControleMedico.Services
              && c.DataAgendamento <= dataHoje);
         }
 
-        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId)
+        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId, string funcionarioId)
         {
             return ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
-            && (caixaId.IsNullOrWhiteSpace() || c.Pagamentos.Any(d=> d.CaixaId == caixaId))).ToList();
+                                                             && (caixaId.IsNullOrWhiteSpace() || c.Pagamentos.Any(d => d.CaixaId == caixaId))
+                                                             && (funcionarioId.IsNullOrWhiteSpace() || c.FuncionarioId == funcionarioId)).ToList();
         }
 
         internal List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
