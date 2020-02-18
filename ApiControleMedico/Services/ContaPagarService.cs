@@ -45,9 +45,15 @@ namespace ApiControleMedico.Services
             return ContaPagarNegocio.RemoveOne(ContextoContasPagar.Collection, id);
         }
 
-        internal List<ContaPagar> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId)
+        internal List<ContaPagar> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string funcionarioId)
         {
-            return ContextoContasPagar.Collection.Find(c => c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)).ToList();
+            Usuario usuario = null;
+            if (!funcionarioId.IsNullOrWhiteSpace())
+                usuario = new UsuarioService().GetAll().FirstOrDefault(c => c.FuncionarioId == funcionarioId);
+            
+
+            return ContextoContasPagar.Collection.Find(c => c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId) 
+                                                            && (usuario == null || c.UsuarioId == usuario.Id)).ToList();
         }
     }
 }

@@ -24,8 +24,8 @@ namespace ApiControleMedico.Controllers
         [HttpGet, Route("Todos")]
         public List<ContaReceber> Todos([FromQuery] string usuarioId, [FromQuery] string clinicaId)
         {
-            var medicos = new MedicoService().BuscarMedicosPorUsuario(usuarioId, clinicaId, false).Select(c=> c.Id);
-            var lista = _contaReceberService.GetAll().Where(c=> c.ClinicaId == clinicaId && (c.MedicoId == "" || medicos.Contains(c.MedicoId)));
+            var medicos = new MedicoService().BuscarMedicosPorUsuario(usuarioId, clinicaId, false).Select(c => c.Id);
+            var lista = _contaReceberService.GetAll().Where(c => c.ClinicaId == clinicaId && (c.MedicoId == "" || medicos.Contains(c.MedicoId)));
             return lista.ToList();
         }
 
@@ -54,7 +54,10 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpGet, Route("TodosPorPeriodo")]
-        public List<ContaReceber> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId)
-        { return _contaReceberService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId); }
+        public List<ContaReceber> TodosPorPeriodo([FromQuery] string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId, [FromQuery] string funcionarioId)
+        {
+            return _contaReceberService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, funcionarioId);
+
+        }
     }
 }
