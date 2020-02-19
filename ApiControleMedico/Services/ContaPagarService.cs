@@ -51,8 +51,10 @@ namespace ApiControleMedico.Services
             if (!funcionarioId.IsNullOrWhiteSpace())
                 usuarioId = new UsuarioService().GetAll().FirstOrDefault(c => c.FuncionarioId == funcionarioId)?.Id;
 
+            var ts = new TimeSpan(23, 59, 59);
+            dataHoje = dataHoje + ts;
 
-            return ContextoContasPagar.Collection.Find(c => c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
+            return ContextoContasPagar.Collection.Find(c => c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId || c.MedicoId == "")
                                                             && (usuarioId.IsNullOrWhiteSpace() || c.UsuarioId == usuarioId)).ToList();
         }
     }

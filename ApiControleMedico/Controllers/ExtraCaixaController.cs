@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Services;
 using Microsoft.AspNetCore.Mvc;
+using ApiControleMedico.Uteis;
 
 namespace ApiControleMedico.Controllers
 {
@@ -49,6 +51,13 @@ namespace ApiControleMedico.Controllers
         public List<ExtraCaixa> BuscarPorCaixa(string caixaId)
         {
             return _extraCaixaService.BuscarPorCaixa(caixaId);
+        }
+
+        [HttpGet, Route("TodosPorPeriodo")]
+        public List<ExtraCaixa> TodosPorPeriodo([FromQuery] string dataInicio, [FromQuery] string dataFinal, [FromQuery] string medicoId, [FromQuery] string caixaId, [FromQuery] string funcionarioId)
+        {
+            return _extraCaixaService.TodosPorPeriodo(dataInicio.ToDateTime(), dataFinal.ToDateTime(), medicoId,caixaId, funcionarioId);
+
         }
     }
 }

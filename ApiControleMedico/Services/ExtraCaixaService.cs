@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Repositorio;
+using ApiControleMedico.Uteis;
 using MongoDB.Driver;
 
 namespace ApiControleMedico.Services
@@ -42,6 +45,20 @@ namespace ApiControleMedico.Services
         public List<ExtraCaixa> BuscarPorCaixa(string caixaId)
         {
             return ContextoExtraCaixas.Collection.Find(c => c.CaixaId == caixaId).ToList();
+        }
+
+        internal List<ExtraCaixa> TodosPorPeriodo(DateTime dataInicio, DateTime dataFim, string medicoId, string caixaId, string funcionarioId)
+        {
+            string usuarioId = "";
+            if (!funcionarioId.IsNullOrWhiteSpace())
+                usuarioId = new UsuarioService().GetAll().FirstOrDefault(c => c.FuncionarioId == funcionarioId)?.Id;
+            
+            var ts = new TimeSpan(23,59,59);
+            dataFim = dataFim + ts;
+
+            return ContextoExtraCaixas.Collection.Find(c => c.Data >= dataInicio && c.Data <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
+                                                            && (caixaId.IsNullOrWhiteSpace() || c.CaixaId== caixaId)
+                                                            && (usuarioId.IsNullOrWhiteSpace() || c.UsuarioId == usuarioId)).ToList();
         }
     }
 }
