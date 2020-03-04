@@ -56,9 +56,17 @@ namespace ApiControleMedico.Services
             var ts = new TimeSpan(23,59,59);
             dataFim = dataFim + ts;
 
-            return ContextoExtraCaixas.Collection.Find(c => c.Data >= dataInicio && c.Data <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
-                                                            && (caixaId.IsNullOrWhiteSpace() || c.CaixaId== caixaId)
+            var extras = ContextoExtraCaixas.Collection.Find(c => c.Data >= dataInicio && c.Data <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
+                                                            && (caixaId.IsNullOrWhiteSpace() || c.CaixaId == caixaId)
                                                             && (usuarioId.IsNullOrWhiteSpace() || c.UsuarioId == usuarioId)).ToList();
+            var caixaService = new CaixaService();
+            foreach (var extra in extras)
+            {
+                if (!extra.CaixaId.IsNullOrWhiteSpace())
+                    extra.Caixa = caixaService.GetOne(extra.CaixaId);
+            }
+
+            return extras;
         }
     }
 }

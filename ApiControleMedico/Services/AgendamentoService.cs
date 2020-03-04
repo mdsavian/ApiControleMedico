@@ -123,9 +123,18 @@ namespace ApiControleMedico.Services
 
         internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId, string funcionarioId)
         {
-            return ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
+            var agendamentos = ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
                                                              && (caixaId.IsNullOrWhiteSpace() || c.Pagamentos.Any(d => d.CaixaId == caixaId))
                                                              && (funcionarioId.IsNullOrWhiteSpace() || c.FuncionarioId == funcionarioId)).ToList();
+
+            foreach (var agendamento in agendamentos)
+            {
+                agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+                agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+                agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+            }
+
+            return agendamentos;
         }
 
         internal List<Agendamento> BuscarAgendamentosFuncionario(string funcionarioId)
@@ -178,12 +187,7 @@ namespace ApiControleMedico.Services
         {
             var agendamentos = ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= dataInicio && c.DataAgendamento <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
             && (c.TipoAgendamento == ETipoAgendamento.Cirurgia || c.TipoAgendamento == ETipoAgendamento.Exame || c.TipoAgendamento == ETipoAgendamento.Procedimento)).ToList().OrderBy(c => c.DataAgendamento).ToList();
-
-            var contextoPaciente = new DbContexto<Paciente>("paciente");
-            var contextoExame = new DbContexto<Exame>("exame");
-            var contextoProcedimento = new DbContexto<Procedimento>("procedimento");
-            var contextoCirurgia = new DbContexto<Cirurgia>("cirurgia");
-
+                        
             foreach (var agendamento in agendamentos)
             {
                 agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);

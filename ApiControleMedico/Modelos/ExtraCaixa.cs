@@ -39,5 +39,8 @@ namespace ApiControleMedico.Modelos
         [BsonElement("Descricao")]
         public string Descricao { get; set; }
 
+        [BsonIgnore]
+        public Caixa Caixa { get; set; }
+
     }
 }

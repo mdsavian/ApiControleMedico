@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Repositorio;
@@ -42,7 +43,9 @@ namespace ApiControleMedico.Services
             if (login.Equals("admin"))
                 return TratarUsuarioAdministrador(login, senha);
 
-            var usuario = ContextoUsuarios.Collection.Find(c => c.Login == login && c.Ativo).FirstOrDefault();
+            var xx = ContextoUsuarios.Collection.AsQueryable().ToList();
+
+            var usuario = ContextoUsuarios.Collection.AsQueryable().ToList().Where(c => c.Login.ToUpper().Equals(login.ToUpper()) && c.Ativo).FirstOrDefault();
 
             if (usuario != null)
             {

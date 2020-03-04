@@ -59,9 +59,9 @@ namespace ApiControleMedico.Services
 
             if (usuario.ConfiguracaoAtalhos.HasItems())
             {
-                usuario.ConfiguracaoAtalhos = new List<ConfiguracaoAtalho>();
-                new UsuarioService().SaveOne(usuario);
-                //return usuario.ConfiguracaoAtalhos.ToList();
+                //usuario.ConfiguracaoAtalhos = new List<ConfiguracaoAtalho>();
+                //new UsuarioService().SaveOne(usuario);
+                return usuario.ConfiguracaoAtalhos.ToList();
             }
 
             Funcionario funcionario = null;
