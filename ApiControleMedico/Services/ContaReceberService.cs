@@ -109,7 +109,7 @@ namespace ApiControleMedico.Services
             return ContaReceberNegocio.RemoveOne(ContextoContasReceber.Collection, id);
         }
 
-        internal List<ContaReceber> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string funcionarioId)
+        internal List<ContaReceber> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string funcionarioId, string clinicaId)
         {
             string usuarioId = "";
             if (!funcionarioId.IsNullOrWhiteSpace())
@@ -119,7 +119,7 @@ namespace ApiControleMedico.Services
             dataHoje = dataHoje + ts;
 
             return ContextoContasReceber.Collection.Find(c =>
-                c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje &&
+                c.DataEmissao >= primeiroDiaMes && c.DataEmissao <= dataHoje && c.ClinicaId == clinicaId && 
                 (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId || c.MedicoId == "") && (usuarioId.IsNullOrWhiteSpace() || c.UsuarioId == usuarioId)).ToList();
         }
     }

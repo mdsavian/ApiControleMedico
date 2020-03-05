@@ -43,8 +43,8 @@ namespace ApiControleMedico.Controllers
         { return _agendamentoService.RemoveOne(agendamentoId); }
 
         [HttpGet, Route("buscarAgendamentosMedico")]
-        public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario)
-        { return _agendamentoService.BuscarAgendamentosMedico(medicoId, data, tipoCalendario); }
+        public List<Agendamento> BuscarAgendamentosMedico([FromQuery]string medicoId, [FromQuery] string data, [FromQuery] string tipoCalendario, [FromQuery] string clinicaId)
+        { return _agendamentoService.BuscarAgendamentosMedico(medicoId, data, tipoCalendario, clinicaId); }
 
         [HttpGet, Route("buscarAgendamentosPaciente")]
         public List<Agendamento> BuscarAgendamentosPaciente([FromQuery] string pacienteId, [FromQuery] string usuarioId, [FromQuery] string clinicaId)
@@ -102,7 +102,7 @@ namespace ApiControleMedico.Controllers
 
 
         [HttpGet, Route("TodosPorPeriodo")]
-        public List<Agendamento> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId, [FromQuery] string caixaId, [FromQuery] string funcionarioId)
-        { return _agendamentoService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, caixaId, funcionarioId); }
+        public List<Agendamento> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId, [FromQuery] string caixaId, [FromQuery] string funcionarioId, [FromQuery] string clinicaId)
+        { return _agendamentoService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, caixaId, funcionarioId,clinicaId); }
     }
 }

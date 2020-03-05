@@ -64,7 +64,7 @@ namespace ApiControleMedico.Services
                     {
                         usuario.Funcionario = contextoFuncionario.Collection.Find(c => c.Id == usuario.FuncionarioId).First();
                         usuario.SenhaPadrao = Criptografia.Compara(senhaDigitada, Criptografia.Codifica("@usuario1234"));
-                        usuario.TempoRenovarSessao = usuario.Funcionario.TempoRenovarSessao == 0 ? 4 : usuario.Funcionario.TempoRenovarSessao;
+                        usuario.TempoRenovarSessao = usuario.Funcionario.TempoRenovarSessao == 0 ? 12 : usuario.Funcionario.TempoRenovarSessao;
                     }
                 }
                 else if (!usuario.MedicoId.IsNullOrWhiteSpace())
@@ -73,7 +73,7 @@ namespace ApiControleMedico.Services
                     {
                         usuario.Medico = contextoMedico.Collection.Find(c => c.Id == usuario.MedicoId).First();
                         usuario.SenhaPadrao = Criptografia.Compara(senhaDigitada, Criptografia.Codifica("@medico1234"));
-                        usuario.TempoRenovarSessao = usuario.Medico.TempoRenovarSessao == 0 ? 4 : usuario.Medico.TempoRenovarSessao;
+                        usuario.TempoRenovarSessao = usuario.Medico.TempoRenovarSessao == 0 ? 12 : usuario.Medico.TempoRenovarSessao;
                     }
                 }
             }

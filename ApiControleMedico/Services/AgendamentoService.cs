@@ -54,7 +54,7 @@ namespace ApiControleMedico.Services
             return AgendamentoNegocio.RemoveOne(ContextoAgendamentos.Collection, id);
         }
 
-        public List<Agendamento> BuscarAgendamentosMedico(string medicoId, string data, string tipoCalendario)
+        public List<Agendamento> BuscarAgendamentosMedico(string medicoId, string data, string tipoCalendario, string clinicaId)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace ApiControleMedico.Services
                 var medicosId = medicoId.Split(",");
 
                 var agendamentos = ContextoAgendamentos.Collection.AsQueryable().Where(c =>
-                    medicosId.Contains(c.MedicoId) && c.DataAgendamento >= inicioSemana &&
+                    medicosId.Contains(c.MedicoId) && c.DataAgendamento >= inicioSemana && c.ClinicaId == clinicaId &&
                     c.DataAgendamento <= fimSemana).ToList();
 
                 foreach (var agendamento in agendamentos)
@@ -121,10 +121,11 @@ namespace ApiControleMedico.Services
              && c.DataAgendamento <= dataHoje);
         }
 
-        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId, string funcionarioId)
+        internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId, string funcionarioId, string clinicaId)
         {
             var agendamentos = ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= primeiroDiaMes && c.DataAgendamento <= dataHoje && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
-                                                             && (caixaId.IsNullOrWhiteSpace() || c.Pagamentos.Any(d => d.CaixaId == caixaId))
+                                                             && (caixaId.IsNullOrWhiteSpace() || c.Pagamentos.Any(d => d.CaixaId == caixaId)) && c.ClinicaId == clinicaId
+                                                             && c.TipoAgendamento != ETipoAgendamento.Bloqueio
                                                              && (funcionarioId.IsNullOrWhiteSpace() || c.FuncionarioId == funcionarioId)).ToList();
 
             foreach (var agendamento in agendamentos)

@@ -54,9 +54,9 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpGet, Route("TodosPorPeriodo")]
-        public List<ExtraCaixa> TodosPorPeriodo([FromQuery] string dataInicio, [FromQuery] string dataFim, [FromQuery] string medicoId, [FromQuery] string caixaId, [FromQuery] string funcionarioId)
+        public List<ExtraCaixa> TodosPorPeriodo([FromQuery] string dataInicio, [FromQuery] string dataFim, [FromQuery] string medicoId, [FromQuery] string caixaId, [FromQuery] string funcionarioId, [FromQuery] string clinicaId)
         {
-            return _extraCaixaService.TodosPorPeriodo(dataInicio.ToDateTime(), dataFim.ToDateTime(), medicoId,caixaId, funcionarioId);
+            return _extraCaixaService.TodosPorPeriodo(dataInicio.ToDateTime(), dataFim.ToDateTime(), medicoId,caixaId, funcionarioId,clinicaId);
 
         }
     }
