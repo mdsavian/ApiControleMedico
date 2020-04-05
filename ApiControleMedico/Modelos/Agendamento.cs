@@ -68,6 +68,7 @@ namespace ApiControleMedico.Modelos
         [BsonIgnore] public Exame Exame { get; set; }
         [BsonIgnore] public Local Local { get; set; }
         [BsonIgnore] public Cirurgia Cirurgia { get; set; }
+        [BsonIgnore] public Clinica Clinica { get; set; }
         [BsonIgnore] public Convenio Convenio { get; set; }
         [BsonIgnore] public Procedimento Procedimento { get; set; }
 

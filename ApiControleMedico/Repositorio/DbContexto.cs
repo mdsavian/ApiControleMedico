@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Security.Authentication;
-using ApiControleMedico.Modelos;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
@@ -16,16 +14,21 @@ namespace ApiControleMedico.Repositorio
         public DbContexto(string collectionName, bool abreSecao = false)
         {
             var producao = false;
-             
-            string connectionString = producao ? @"mongodb://controlemedico02:controlemedico@mongodb.controlemedico.kinghost.net:27017/controlemedico02" : "mongodb://localhost:27017";
-            var nomeBase = producao ? "controlemedico02" : "ControleMedicoDb";
+            #if DEBUG
+                producao = false;
+            #else
+                producao = true;
+            #endif
+
+            string connectionString = producao ? @"mongodb://gercli01:gercli01@mongodb.gercli.kinghost.net:27017/gercli01" : "mongodb://localhost:27017";
+            var nomeBase = producao ? "gercli01" : "ControleMedicoDb";
 
             MongoClientSettings settings = MongoClientSettings.FromUrl(
                 new MongoUrl(connectionString)
             );
 
             var client = new MongoClient(settings);
-            
+
             if (abreSecao)
             {
                 Session = client.StartSession();

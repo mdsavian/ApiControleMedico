@@ -25,13 +25,22 @@ namespace ApiControleMedico.Services
             foreach (var agendamento in agendamentos)
             {
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+                agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+                agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+                agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
             }
             return agendamentos;
         }
 
         public Agendamento GetOne(string id)
         {
-            return AgendamentoNegocio.GetOne(ContextoAgendamentos.Collection, id);
+            var agendamento = AgendamentoNegocio.GetOne(ContextoAgendamentos.Collection, id);
+
+            agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+            agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+            agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+            agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
+            return agendamento;
         }
 
         public Agendamento SaveOne(Agendamento agendamento)
@@ -44,6 +53,9 @@ namespace ApiControleMedico.Services
 
             agendamento.DataAgendamento = agendamento.DataAgendamento.Date + ts;
             agendamento.TipoAgendamentoDescricao = RetornarDescricaoAgendamento(agendamento);
+            agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+            agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+            agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
             AgendamentoNegocio.SaveOne(ContextoAgendamentos.Collection, agendamento);
 
             return agendamento;
@@ -75,6 +87,9 @@ namespace ApiControleMedico.Services
                 foreach (var agendamento in agendamentos)
                 {
                     agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+                    agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
+                    agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+                    agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
                 }
                 return agendamentos;
             }
@@ -92,9 +107,11 @@ namespace ApiControleMedico.Services
             {
                 agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
                 agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+                agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
                 agendamento.Convenio = contextoConvenio.Collection.Find(c => c.Id == agendamento.ConvenioId).FirstOrDefault();
 
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
+
             }
             return agendamentos;
         }
@@ -131,6 +148,7 @@ namespace ApiControleMedico.Services
             {
                 agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
                 agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+                agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
             }
 
@@ -192,6 +210,7 @@ namespace ApiControleMedico.Services
             {
                 agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
                 agendamento.Medico = RetornarMedico(agendamento.MedicoId);
+                agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
             }
 
@@ -202,6 +221,12 @@ namespace ApiControleMedico.Services
         {
             var contextoMedico = new DbContexto<Medico>("medico");
             return contextoMedico.Collection.Find(c => c.Id == medicoId).FirstOrDefault();
+        }
+
+        internal Clinica RetornarClinica(string clinicaId)
+        {
+            var contextoClinica = new DbContexto<Clinica>("clinica");
+            return contextoClinica.Collection.Find(c => c.Id == clinicaId).FirstOrDefault();
         }
 
         internal Paciente RetornarPaciente(string pacienteId)

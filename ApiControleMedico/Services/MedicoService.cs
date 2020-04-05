@@ -34,7 +34,10 @@ namespace ApiControleMedico.Services
 
         public Medico GetOne(string id)
         {
-            return MedicoNegocio.GetOne(ContextoMedicos.Collection, id);
+            var medico = MedicoNegocio.GetOne(ContextoMedicos.Collection, id);
+            medico.Especialidade = this.CarregarEspecialidadeMedico(medico);
+
+            return medico;
         }
 
         //public Medico SalvarConfiguracaoMedico(Medico medico)
