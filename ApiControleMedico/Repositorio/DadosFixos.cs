@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using ApiControleMedico.Modelos;
 using ApiControleMedico.Modelos.Enums;
 using ApiControleMedico.Services;
@@ -181,9 +182,7 @@ namespace ApiControleMedico.Repositorio
         private void AlimentaTabelaFormaPagamento()
         {
             var formaService = new FormaDePagamentoService();
-
-            if (formaService.GetAll().HasItems())
-                return;
+            var formasCadastradas = formaService.GetAll().ToList() ;
 
             var csvForma = Resource.formaDePagamento;
             using (var reader = new StringReader(csvForma))
@@ -196,7 +195,7 @@ namespace ApiControleMedico.Repositorio
                 {
                     var registroForma = line.Split(';');
                     //DESCRIÇÃO;TIPO;DIAS;
-                    if (!registroForma[0].Trim().IsNullOrWhiteSpace() && registroForma[1].ToIntOrNull() != null)
+                    if (!registroForma[0].Trim().IsNullOrWhiteSpace() && registroForma[1].ToIntOrNull() != null && !formasCadastradas.Any(c=> c.Descricao == registroForma[0].Trim()))
                         formas.Add(new FormaDePagamento
                         {
                             Descricao = registroForma[0].Trim(),

@@ -19,5 +19,6 @@ namespace ApiControleMedico.Uteis
         {
             return Crypter.CheckPassword(senhaAComparar, hash);
         }
+        
     }
 }

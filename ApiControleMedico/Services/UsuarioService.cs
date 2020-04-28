@@ -114,6 +114,7 @@ namespace ApiControleMedico.Services
 
             if (usuario != null)
             {
+
                 if (!Criptografia.Compara(alteraSenha.SenhaAtual, usuario.Senha))
                     return null;
 

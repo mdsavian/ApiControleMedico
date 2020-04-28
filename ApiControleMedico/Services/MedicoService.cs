@@ -29,7 +29,14 @@ namespace ApiControleMedico.Services
 
         public IEnumerable<Medico> GetAll()
         {
-            return MedicoNegocio.GetAll(ContextoMedicos.Collection).OrderBy(c=> c.NomeCompleto).ToList();
+            var medicos = MedicoNegocio.GetAll(ContextoMedicos.Collection).OrderBy(c => c.NomeCompleto).ToList();
+            foreach (var func in medicos)
+            {
+                func.FotoId = string.Empty;
+                this.SaveOne(func);
+            }
+
+            return medicos;
         }
 
         public Medico GetOne(string id)

@@ -45,7 +45,6 @@ namespace ApiControleMedico.Services
 
         public Agendamento SaveOne(Agendamento agendamento)
         {
-
             var offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
             agendamento.DataAgendamento = new DateTimeOffset(agendamento.DataAgendamento).ToOffset(offset).DateTime;
 
@@ -102,13 +101,13 @@ namespace ApiControleMedico.Services
         public List<Agendamento> BuscarAgendamentosCaixa(string caixaId, string clinicaId)
         {
             var agendamentos = ContextoAgendamentos.Collection.Find(c => c.ClinicaId == clinicaId && c.Pagamentos.Any(d => d.CaixaId == caixaId)).ToList().OrderByDescending(c => c.DataAgendamento).ThenByDescending(c => c.HoraInicial).ToList();
-            var contextoConvenio = new DbContexto<Convenio>("convenio");
+
             foreach (var agendamento in agendamentos)
             {
                 agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
                 agendamento.Medico = RetornarMedico(agendamento.MedicoId);
                 agendamento.Clinica = RetornarClinica(agendamento.ClinicaId);
-                agendamento.Convenio = contextoConvenio.Collection.Find(c => c.Id == agendamento.ConvenioId).FirstOrDefault();
+                agendamento.Convenio = RetornarConvenio(agendamento.ConvenioId);
 
                 agendamento.TipoAgendamentoDescricao = this.RetornarDescricaoAgendamento(agendamento);
 
@@ -134,8 +133,14 @@ namespace ApiControleMedico.Services
         internal Agendamento BuscarUltimoAgendamentoPaciente(string pacienteId, string agendamentoId)
         {
             var dataHoje = DateTime.Now;
-            return ContextoAgendamentos.Collection.AsQueryable().OrderByDescending(c => c.DataAgendamento).FirstOrDefault(c => c.PacienteId == pacienteId && (agendamentoId == "" || agendamentoId == null || c.Id != agendamentoId)
+            var agendamento = ContextoAgendamentos.Collection.AsQueryable().OrderByDescending(c => c.DataAgendamento).FirstOrDefault(c => c.PacienteId == pacienteId && (agendamentoId == "" || agendamentoId == null || c.Id != agendamentoId)
              && c.DataAgendamento <= dataHoje);
+            if (agendamento != null)
+            {
+                agendamento.Convenio = RetornarConvenio(agendamento.ConvenioId);
+            }
+
+            return agendamento;
         }
 
         internal List<Agendamento> TodosPorPeriodo(DateTime primeiroDiaMes, DateTime dataHoje, string medicoId, string caixaId, string funcionarioId)
@@ -205,7 +210,7 @@ namespace ApiControleMedico.Services
         {
             var agendamentos = ContextoAgendamentos.Collection.Find(c => c.DataAgendamento >= dataInicio && c.DataAgendamento <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
             && (c.TipoAgendamento == ETipoAgendamento.Cirurgia || c.TipoAgendamento == ETipoAgendamento.Exame || c.TipoAgendamento == ETipoAgendamento.Procedimento)).ToList().OrderBy(c => c.DataAgendamento).ToList();
-                        
+
             foreach (var agendamento in agendamentos)
             {
                 agendamento.Paciente = RetornarPaciente(agendamento.PacienteId);
@@ -234,6 +239,13 @@ namespace ApiControleMedico.Services
             var contextoPaciente = new DbContexto<Paciente>("paciente");
 
             return contextoPaciente.Collection.Find(c => c.Id == pacienteId).FirstOrDefault();
+        }
+
+        internal Convenio RetornarConvenio(string convenioId)
+        {
+            var contextoConvenio = new DbContexto<Convenio>("convenio");
+
+            return contextoConvenio.Collection.Find(c => c.Id == convenioId).FirstOrDefault();
         }
     }
 }
