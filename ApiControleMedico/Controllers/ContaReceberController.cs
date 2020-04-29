@@ -54,9 +54,9 @@ namespace ApiControleMedico.Controllers
         }
 
         [HttpGet, Route("TodosPorPeriodo")]
-        public List<ContaReceber> TodosPorPeriodo([FromQuery] string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId, [FromQuery] string funcionarioId)
+        public List<ContaReceber> TodosPorPeriodo([FromQuery] string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId, [FromQuery] string funcionarioId, [FromQuery] string clinicaId)
         {
-            return _contaReceberService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, funcionarioId);
+            return _contaReceberService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, funcionarioId,clinicaId);
 
         }
     }

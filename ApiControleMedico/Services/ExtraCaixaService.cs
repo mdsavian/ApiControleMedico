@@ -47,7 +47,7 @@ namespace ApiControleMedico.Services
             return ContextoExtraCaixas.Collection.Find(c => c.CaixaId == caixaId).ToList();
         }
 
-        internal List<ExtraCaixa> TodosPorPeriodo(DateTime dataInicio, DateTime dataFim, string medicoId, string caixaId, string funcionarioId)
+        internal List<ExtraCaixa> TodosPorPeriodo(DateTime dataInicio, DateTime dataFim, string medicoId, string caixaId, string funcionarioId, string clinicaId)
         {
             string usuarioId = "";
             if (!funcionarioId.IsNullOrWhiteSpace())
@@ -57,7 +57,7 @@ namespace ApiControleMedico.Services
             dataFim = dataFim + ts;
 
             var extras = ContextoExtraCaixas.Collection.Find(c => c.Data >= dataInicio && c.Data <= dataFim && (medicoId.IsNullOrWhiteSpace() || c.MedicoId == medicoId)
-                                                            && (caixaId.IsNullOrWhiteSpace() || c.CaixaId == caixaId)
+                                                            && (caixaId.IsNullOrWhiteSpace() || c.CaixaId == caixaId) && c.ClinicaId == clinicaId
                                                             && (usuarioId.IsNullOrWhiteSpace() || c.UsuarioId == usuarioId)).ToList();
             var caixaService = new CaixaService();
             foreach (var extra in extras)
