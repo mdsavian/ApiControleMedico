@@ -100,9 +100,11 @@ namespace ApiControleMedico.Controllers
             return _agendamentoService.ProcedimentosRealizados(dataInicio.ToDateTime(),dataFim.ToDateTime(), medicoId);
         }
 
-
         [HttpGet, Route("TodosPorPeriodo")]
         public List<Agendamento> TodosPorPeriodo([FromQuery]string primeiroDiaMes, [FromQuery] string dataHoje, [FromQuery] string medicoId, [FromQuery] string caixaId, [FromQuery] string funcionarioId, [FromQuery] string clinicaId)
-        { return _agendamentoService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, caixaId, funcionarioId,clinicaId); }
+        {
+            var agendamentos = _agendamentoService.TodosPorPeriodo(primeiroDiaMes.ToDateTime(), dataHoje.ToDateTime(), medicoId, caixaId, funcionarioId, clinicaId);
+            return agendamentos;
+        }
     }
 }
