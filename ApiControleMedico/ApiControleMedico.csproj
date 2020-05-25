@@ -5,6 +5,10 @@
     <UserSecretsId>db367913-4261-4b83-983f-19ce30b2379e</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\especialidades.csv" />
     <None Remove="Resources\formaDePagamento.csv" />
@@ -165,6 +169,10 @@
     <None Include="wwwroot\assets\scss\theme-settings.scss" />
     <None Include="wwwroot\assets\scss\variable.scss" />
     <None Include="wwwroot\assets\scss\widgets.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Upload\" />
   </ItemGroup>
 
 </Project>

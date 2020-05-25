@@ -18,12 +18,19 @@ namespace ApiControleMedico.Repositorio
 
             AlimentaTabelaEspecialidade();
             AlimentaTabelaFormaPagamento();
-            //AlimentaAgendamentos();
+            AlimentaAgendamentos();
         }
 
         private void AlimentaAgendamentos()
         {
             var agendamentoService = new AgendamentoService();
+            var contextoAgendamentos = new DbContexto<Agendamento>("agendamento");
+
+            foreach (var aa in contextoAgendamentos.Collection.AsQueryable().ToList())
+            {
+                agendamentoService.RemoveOne(aa.Id);
+            }
+
             var medicoService = new MedicoService();
             var pacienteService = new PacienteService();
             var convenioService = new ConvenioService();
@@ -34,6 +41,7 @@ namespace ApiControleMedico.Repositorio
             var contextoPaciente = new DbContexto<Paciente>("paciente");
             var contextoConvenio = new DbContexto<Convenio>("convenio");
             var contextoCirurgia = new DbContexto<Cirurgia>("cirurgia");
+            var contextoClinica = new DbContexto<Clinica>("clinica");
             var contextoProcedimento = new DbContexto<Procedimento>("procedimento");
 
             var csvAgendamento = Resource.agendas_novembro_importacao;
@@ -44,46 +52,28 @@ namespace ApiControleMedico.Repositorio
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        //Médico;Paciente;Data Agendamento;Tipo;Descricao;Convênio;Status;OBS;
+                        //Médico;Paciente;Data Agendamento;Tipo;Telefone;Descricao;Convênio;Primeiro;OBS;
                         var linhaAgendamento = line.Split(';');
 
                         if (!linhaAgendamento[0].Trim().IsNullOrWhiteSpace() && linhaAgendamento[2].ToDateTimeOrNull() != null)
                         {
                             var agendamento = new Agendamento();                            
 
-                            var nomeMedico = linhaAgendamento[0];
-                            var nomePaciente = linhaAgendamento[1];
+                            var nomeMedico = linhaAgendamento[0].ToUpper();
+                            var nomePaciente = linhaAgendamento[1].ToUpper();
                             var dataAgendamento = linhaAgendamento[2].ToDateTime();
                             var tipoAgendamento = linhaAgendamento[3];
-                            var descricao = linhaAgendamento[4];
-                            var convenio = linhaAgendamento[5];
-                            var statusAgendamento = linhaAgendamento[6];
+                            var telefone = linhaAgendamento[4];
+                            var descricao = linhaAgendamento[5].ToUpper();
+                            var convenio = linhaAgendamento[6].ToUpper();
+                            var primeiroAtendimento = linhaAgendamento[7];
                             var EnumTipoAgendamento = (ETipoAgendamento)Enum.Parse(typeof(ETipoAgendamento), tipoAgendamento);
-                            
-                            agendamento.Observacao = linhaAgendamento[7];
+
                             agendamento.DataAgendamento = dataAgendamento.Date;
+                            agendamento.Observacao = linhaAgendamento[8];
                             agendamento.HoraInicial = dataAgendamento.FormatarHora24().Replace(":", "");
                             agendamento.HoraFinal = dataAgendamento.AddMinutes(20).FormatarHora24().Replace(":", "");
-
-                            switch (statusAgendamento)
-                            {
-                                case "Finalizado":
-                                    {
-                                        agendamento.SituacaoAgendamento = ESituacaoAgendamento.Finalizado;
-                                        break;
-                                    }
-                                case "Em espera":
-                                case "NAO confirmado":
-                                    {
-                                        agendamento.SituacaoAgendamento = ESituacaoAgendamento.Agendado;
-                                        break;
-                                    }
-                                default:
-                                    {
-                                        agendamento.SituacaoAgendamento = (ESituacaoAgendamento)Enum.Parse(typeof(ESituacaoAgendamento), statusAgendamento);
-                                        break;
-                                    }
-                            }
+                            agendamento.PrimeiraConsulta = primeiroAtendimento == "Não" ? false : true;
 
                             switch (EnumTipoAgendamento)
                             {
@@ -98,7 +88,6 @@ namespace ApiControleMedico.Repositorio
                                         agendamento.CirurgiaId = cirurgiaCadastrada.Id;
                                         agendamento.TipoAgendamento = ETipoAgendamento.Cirurgia;
                                         break;
-
                                     }
                                 case ETipoAgendamento.Procedimento:
                                     {
@@ -110,10 +99,7 @@ namespace ApiControleMedico.Repositorio
                                         }
                                         agendamento.ProcedimentoId = procedimentoCadastrada.Id;
                                         agendamento.TipoAgendamento = ETipoAgendamento.Procedimento;
-
                                         break;
-
-
                                     }
                                 default:
                                     {
@@ -145,24 +131,20 @@ namespace ApiControleMedico.Repositorio
                                 pacienteCadastrado = new Paciente { NomeCompleto = nomePaciente };
                                 pacienteCadastrado = pacienteService.SaveOne(pacienteCadastrado);
                             }
-                            agendamento.PacienteId = pacienteCadastrado.Id;
 
-                            if(agendamento.SituacaoAgendamento == ESituacaoAgendamento.Finalizado)
+                            if (!telefone.IsNullOrWhiteSpace())
                             {
-                                agendamento.Pagamentos = new List<AgendamentoPagamento>();
-
-                                Random random = new Random();
-                                int randomNumber = random.Next(0, 1000);
+                                var telefoneSplit = telefone.Split("|");
+                                pacienteCadastrado.Celular = telefoneSplit[0].RemoverAcentosECaracteresEspeciaisPontosETracos().Trim();
                                 
-                                agendamento.Pagamentos.Add(new AgendamentoPagamento
-                                {
-                                    Valor = new Random().Next(20, 200),
-                                    FormaPagamentoId = "5d6c544f27d733093815c335",
-                                    Data = agendamento.DataAgendamento,
-                                    Parcela = 1,
-                                    VistaPrazo = EVistaPrazo.Vista
-                                });
+                                if (telefoneSplit.Count() > 1)
+                                    pacienteCadastrado.Telefone = telefoneSplit[1].RemoverAcentosECaracteresEspeciaisPontosETracos().Trim();
+
+                                pacienteService.SaveOne(pacienteCadastrado);                                
                             }
+
+                            agendamento.PacienteId = pacienteCadastrado.Id;
+                            agendamento.ClinicaId = contextoClinica.Collection.AsQueryable().First().Id;
 
                             agendamentoService.SaveOne(agendamento);
                         }
