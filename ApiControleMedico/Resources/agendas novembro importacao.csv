@@ -1,39 +1,387 @@
-Medico;Paciente;Data Agendamento;Tipo;Telefone;Tipos;Convênio;Primeiro Atendimento;Obs
-Lissandra Cavalheiro Maioli;ELISETE ANTUNES LIMA;25/05/2020 09:15;Consulta;(54) 32924833 |(54) 98128.1193;-;coc;Não;-
-Lissandra Cavalheiro Maioli;FRANCIELE MACHADO;25/05/2020 09:30;Consulta;(54) 99922.4422;-;UNIMED NORDESTE;Não;-
-Lissandra Cavalheiro Maioli;PHAOLA SARAIVA LOPES HENRIQUES;25/05/2020 10:00;Consulta;(54) 992162344|(51) 991548519;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;
-Lissandra Cavalheiro Maioli;MARIA DE LOURDES DA SILVA;25/05/2020 10:30;Consulta;(54) 991864262;-;UNIMED NORDESTE;Não;
-Lissandra Cavalheiro Maioli;EVANDRA RAQUEL FACHINI;25/05/2020 11:00;Consulta;(54) 30272882|(54) 99956.1122;-;coc;Não;
-Lissandra Cavalheiro Maioli;NATALI GEISLER COSTA CICER;25/05/2020 11:30;Consulta;(54) 991244501;-;UNIMED NORDESTE;Não;
-Lissandra Cavalheiro Maioli;ERICA COUTO PREBIANCA;25/05/2020 12:00;Consulta;(54) 999430901;-;UNIMED NORDESTE;Não;
-Lissandra Cavalheiro Maioli;FABIANE ZAMPIERI;25/05/2020 12:30;Consulta;(54) 991684129;-;coc;Não;
-Lissandra Cavalheiro Maioli;MORGANA LEONCIO SCARMIN;25/05/2020 13:00;Consulta;(54) 99154.1952;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;RAFAELA BIASINI BORGES DE MELO;25/05/2020 13:15;Consulta;(54) 99159.5876;-;coc;Não;
-Sharon Moura Reisdorfer;VIVIANE COLOMBO PIRES;25/05/2020 13:30;Consulta;(54) 99958.7084;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;DAIANA AGOSTINI SALVADOR;25/05/2020 13:30;Consulta;(54) 99168.7055;-;IPAM;Não;mostra de exames
-Sharon Moura Reisdorfer;SAMANTA ZUCCO;25/05/2020 13:45;Consulta;(54) 99958.7084;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;SILVIA ISIS DE SOUZA SILVEIRA;25/05/2020 14:00;Consulta;(55) 98153.4139;-;unimed federaçâo;Não;
-Sharon Moura Reisdorfer;VERONICA MARINHO DE AZEVEDO;25/05/2020 14:00;Consulta;(54) 32044700 | (54) 99270.2439;-;UNIMED NORDESTE;Não;-
-Lissandra Cavalheiro Maioli;DANIELA MARCHI;25/05/2020 14:00;Procedimento;(54) 99982.4989;MIRENA, FEMINA;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;MARJORYE RODRIGUES SOUSA DE AGUIAR;25/05/2020 14:15;Consulta;(54) 99902 8815;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;JAQUELINE GARCIA DE VARGAS;25/05/2020 14:30;Consulta;(51) 99516 4136;-;unimed federaçâo;Não;
-Sharon Moura Reisdorfer;JANAINA FERRO CORREA;25/05/2020 14:30;Consulta;(54) 999355060;-;coc;Não;mostra de exames
-Fernanda Raymundo Pante;VALDIANE DE CASTILHOS;25/05/2020 14:30;Consulta;(54) 996050888 | (54) 99605.0888;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;QUELEN FRANCIELA PEREIRA SELAU;25/05/2020 14:45;Consulta;(54) 99105.7609;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;CLAUDIA REGINA TEIXEIRA DE LACERDA;25/05/2020 15:00;Consulta;(54) 99159.8304;-;coc;Não;
-Fernanda Raymundo Pante;CRISTIANE FERNANDA DE OLIVEIRA;25/05/2020 15:00;Consulta;(54) 98402.9520;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;CRISLAINE PALHANO BORGES;25/05/2020 15:15;Consulta;(54) 99115.3765;-;-;Não;
-Fernanda Raymundo Pante;GRAZZIELA ALVES DOS SANTOS SEBBEN;25/05/2020 15:30;Consulta;(54) 991441404;-;UNIMED NORDESTE;Não;-
-Sharon Moura Reisdorfer;SIRLEI MORAES MATTOS;25/05/2020 15:30;Consulta;(54) 99946.8600;-;coc;Não;
-Sharon Moura Reisdorfer;VATUSA CARVALHO DE MATOS;25/05/2020 15:45;Consulta;(54) 99661.5678;-;unimed federaçâo;Não;
-Sharon Moura Reisdorfer;GRAZIELA KAREN MAZZURANA;25/05/2020 16:00;Consulta;(54) 98151.3343;-;UNIMED NORDESTE;Não;
-Fernanda Raymundo Pante;ROSANGELA APARECIDA MEAZZA;25/05/2020 16:00;Consulta;(54) 99986.7543;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;MARLUCE CESCATO;25/05/2020 16:15;Consulta;(54) 99670-2209;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Sim;
-Sharon Moura Reisdorfer;RAQUEL BARTAIOLI;25/05/2020 16:30;Consulta;(54) 99923.4446;-;UNIMED NORDESTE;Não;
-Fernanda Raymundo Pante;DANIELA MARCON;25/05/2020 16:30;Consulta;(54) 99133-7459;-;UNIMED NORDESTE;Sim;
-Sharon Moura Reisdorfer;PATRICIA MACHADO TOBERO HEUSNER;25/05/2020 16:45;Consulta;(54) 99186-9462;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Sim;
-Sharon Moura Reisdorfer;KAROLINE PACHECO DOS SANTOS TROMBINI;25/05/2020 17:00;Consulta;(51) 99909.1799;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;SIMONE CARDOSO DOS SANTOS;25/05/2020 17:15;Consulta;(55) 99961.3695;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;GABRIELA GROLI;25/05/2020 17:30;Consulta;(54) 99643-5362;-;UNIMED NORDESTE;Sim;
-Fernanda Raymundo Pante;SABRINA MATTE DA SILVA;25/05/2020 17:30;Consulta;(54) 99680.8780;-;UNIMED NORDESTE;Não;
-Sharon Moura Reisdorfer;MARCIA ELISETE TRENTIN;25/05/2020 17:45;Cirurgia;(54) 99186 1767;HISTERECTOMIA, AUXILIO DA DRA. CARLOTA;UNIMED NORDESTE;Não;Local: HOSPITAL UNIMED
+Medico;Paciente;Data Agendamento;Tipo;Tipos;Convênio;Primeiro Atendimento;Obs;
+Sharon Moura Reisdorfer;LUCIMAR FATIMA DOS SANTOS;28/05/2020;Consulta;-;unimed federaçâo;Não;;08:15:00
+Sharon Moura Reisdorfer;DIANE CHAVES BRAZ;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;-;08:30:00
+Lissandra Cavalheiro Maioli;NEIVA FURLAN MANTOVANI PAVAN;28/05/2020;Consulta;-;coc;Não;;08:30:00
+Sharon Moura Reisdorfer;MAYARA LAGNI DE GODOY;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;08:45:00
+Sharon Moura Reisdorfer;PRISCILA DE LIMA ZANOTTO DE CASTILHOS;28/05/2020;Consulta;-;FATIMA;Não;;08:45:00
+Lissandra Cavalheiro Maioli;RENATA ZILIO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;revisão, só pode nas quintas;09:00:00
+Sharon Moura Reisdorfer;WAINE DA ROSA;28/05/2020;Consulta;-;coc;Sim;-;09:00:00
+Sharon Moura Reisdorfer;GABRIELA GRANDO PINSON;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;09:15:00
+Sharon Moura Reisdorfer;WHENNY KAROLLINY PEREIRA DE SOUZA FREITAS;28/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;09:30:00
+Lissandra Cavalheiro Maioli;DANIELE RECH;28/05/2020;Consulta;-;UNIMED NORDESTE;Sim;;09:30:00
+Sharon Moura Reisdorfer;AMANDA DUARTE PIMENTEL;28/05/2020;Consulta;-;unimed federaçâo;Sim;;09:45:00
+Sharon Moura Reisdorfer;HELEN RICHELE PINTO DA COSTA;28/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;10:00:00
+Lissandra Cavalheiro Maioli;MARIANA DILIGENTI MACHADO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;10:00:00
+Sharon Moura Reisdorfer;DANELISE DE ROSSI;28/05/2020;Consulta;-;coc;Não;;10:15:00
+Lissandra Cavalheiro Maioli;JOELMA MARANGONE;28/05/2020;Consulta;-;Particular;Sim;;10:30:00
+Sharon Moura Reisdorfer;GABRIELA ANDREOLA PAVAN;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;10:30:00
+Sharon Moura Reisdorfer;LETICIA HABB;28/05/2020;Consulta;-;CASSI;Não;;10:45:00
+Sharon Moura Reisdorfer;THAIS SCHIAVO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Sharon Moura Reisdorfer;CINDIA LAILA DE AZEREDO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;-;11:00:00
+Lissandra Cavalheiro Maioli;RICHELE VIANA;28/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;11:00:00
+Sharon Moura Reisdorfer;JORDANA NORONHA DE LIMA;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;-;11:15:00
+Sharon Moura Reisdorfer;PAMELA BRISOTO;28/05/2020;Consulta;-;UNIMED NORDESTE;Sim;;11:30:00
+Lissandra Cavalheiro Maioli;OLIVIA SOUZA PEDRO DA SILVA;28/05/2020;Consulta;-;unimed federaçâo;Não;;11:30:00
+Sharon Moura Reisdorfer;NATALIA SELAU DE FRAGA;28/05/2020;Procedimento;CAUTERIZAÇÃO QUIMICA;coc;Não;-;11:45:00
+Sharon Moura Reisdorfer;NÃO MARCAR;28/05/2020;Consulta;-;Particular;Não;;13:00:00
+Lissandra Cavalheiro Maioli;JOANA DE SOUZA SANCHOTENE MOSCHEN;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;13:00:00
+Sharon Moura Reisdorfer;ROBERTA SGUAISSER DA SILVA;28/05/2020;Consulta;-;coc;Não;;13:15:00
+Sharon Moura Reisdorfer;CARLA SALDANHA ANDRADE;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;13:15:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;28/05/2020;Consulta;-;Particular;Não;-;13:30:00
+Sharon Moura Reisdorfer;ANARIANE PEDROSO BASSO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;13:30:00
+Sharon Moura Reisdorfer;FRANCIELE GALIOTTO VIEIRA DE VARGAS;28/05/2020;Consulta;-;FATIMA;Não;;13:45:00
+Sharon Moura Reisdorfer;KARINE MARIA TOMAZINI;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;14:00:00
+Sharon Moura Reisdorfer;FLAVIA RODRIGUES FERREIRA;28/05/2020;Consulta;-;coc;Não;;14:00:00
+Lissandra Cavalheiro Maioli;LUCIANE CAMELLO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;14:00:00
+Sharon Moura Reisdorfer;FRANCIELE GRANADA;28/05/2020;Consulta;-;IPAM;Não;;14:15:00
+Sharon Moura Reisdorfer;ANGELICA VENTURA DOS SANTOS;28/05/2020;Consulta;-;coc;Não;;14:30:00
+Lissandra Cavalheiro Maioli;SIMONE DA SILVA;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;14:30:00
+Sharon Moura Reisdorfer;NICOLLE VARELLA EMER;28/05/2020;Consulta;-;IPAM;Não;;14:45:00
+Lissandra Cavalheiro Maioli;EVELINE DE DORDDI;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;15:00:00
+Sharon Moura Reisdorfer;CHANDRA SOUZA;28/05/2020;Consulta;-;IPAM;Sim;;15:00:00
+Sharon Moura Reisdorfer;TALITA BRANDO;28/05/2020;Consulta;-;coc;Sim;;15:15:00
+Sharon Moura Reisdorfer;DAIANE TEIXEIRA DE PAULA;28/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Sim;;15:30:00
+Lissandra Cavalheiro Maioli;GISA LONDERO;28/05/2020;Consulta;-;coc;Sim;-;15:30:00
+Lissandra Cavalheiro Maioli;LETICIA ANA BASSO;28/05/2020;Consulta;-;coc;Não;-;15:30:00
+Sharon Moura Reisdorfer;MONICA BROLLO;28/05/2020;Consulta;-;coc;Não;;15:45:00
+Lissandra Cavalheiro Maioli;OLENKA EMER GRASSELLI;28/05/2020;Consulta;-;coc;Não;-;16:00:00
+Sharon Moura Reisdorfer;EDUARDA LUCHESE VILASBOAS;28/05/2020;Consulta;-;FATIMA;Não;;16:00:00
+Lissandra Cavalheiro Maioli;SANDRA REGINA LONDERO;28/05/2020;Consulta;-;coc;Sim;-;16:00:00
+Sharon Moura Reisdorfer;MARLI DA SILVA RAPKIEWICZ;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;16:15:00
+Sharon Moura Reisdorfer;SUELEN MORELATTO MARTELLI;28/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;16:30:00
+Lissandra Cavalheiro Maioli;LUCI KELIN DE MENEZES QUIMES;28/05/2020;Consulta;-;UNIMED PORTO ALEGRE;Não;;16:30:00
+Sharon Moura Reisdorfer;RENATA REGIANE DA ROSA;28/05/2020;Consulta;-;coc;Sim;;16:45:00
+Sharon Moura Reisdorfer;FRANCIELI VIDI TOME;28/05/2020;Consulta;-;unimed federaçâo;Não;;17:00:00
+Lissandra Cavalheiro Maioli;NATALIA SCHIMIDT ARRUDA;28/05/2020;Consulta;-;Particular;Não;;17:00:00
+Sharon Moura Reisdorfer;MONIQUE WILLERS;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;17:15:00
+Sharon Moura Reisdorfer;JULIANA DOS SANTOS;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;17:30:00
+Lissandra Cavalheiro Maioli;JUCIANE DALSSASSO;28/05/2020;Consulta;-;UNIMED NORDESTE;Não;;17:30:00
+Lissandra Cavalheiro Maioli;SAMARA SUZIANE MIX;28/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;18:00:00
+Fernanda Raymundo Pante;NAO MARCAR;29/05/2020;Consulta;-;Particular;Não;;08:00:00
+Sharon Moura Reisdorfer;DANIELA FERNANDES;29/05/2020;Consulta;-;IPAM;Não;;08:15:00
+Lissandra Cavalheiro Maioli;SHEILA CORNUTI;29/05/2020;Consulta;-;UNIMED NORDESTE;Sim;150,00 retirada do Mirena;08:30:00
+Lissandra Cavalheiro Maioli;SUELEN BATECINI RAMOS;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;08:30:00
+Sharon Moura Reisdorfer;ALESSANDRA BALDISSARELLI BREMM;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;08:30:00
+Sharon Moura Reisdorfer;DANIELA DOS SANTOS DE OLIVEIRA;29/05/2020;Consulta;-;coc;Não;;08:30:00
+Sharon Moura Reisdorfer;GEIZA HANKE;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;08:45:00
+Sharon Moura Reisdorfer;ROSANE DALL AGNOL PEREIRA;29/05/2020;Consulta;-;coc;Não;;09:00:00
+Sharon Moura Reisdorfer;TATIANE BRANDALISE RIBEIRO;29/05/2020;Consulta;-;FATIMA;Não;-;09:00:00
+Lissandra Cavalheiro Maioli;CAROLINA CAMASSOLA;29/05/2020;Consulta;-;UNIMED NORDESTE;Sim;;09:00:00
+Sharon Moura Reisdorfer;BRUNA LIRA;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;09:15:00
+Fernanda Raymundo Pante;ANA CLAUDIA LUNARDI;29/05/2020;Consulta;-;UNIMED NORDESTE;Sim;;09:30:00
+Sharon Moura Reisdorfer;GELSI TOMAZINI ZANELA;29/05/2020;Consulta;-;coc;Não;;09:30:00
+Lissandra Cavalheiro Maioli;MANUELA MATTE;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Sharon Moura Reisdorfer;MAIRA CANEZ TONETTA;29/05/2020;Consulta;-;coc;Não;;09:45:00
+Lissandra Cavalheiro Maioli;MADALENE GELATI;29/05/2020;Consulta;-;coc;Não;;10:00:00
+Fernanda Raymundo Pante;DEISE MARGARIN NASCIMENTO;29/05/2020;Consulta;-;unimed federaçâo;Não;;10:00:00
+Sharon Moura Reisdorfer;CAROLINE FACCIOLI DAMIANI;29/05/2020;Consulta;-;UNIMED NORDESTE;Sim;;10:15:00
+Fernanda Raymundo Pante;LEILA DENISE SCHENKEL;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;10:30:00
+Sharon Moura Reisdorfer;LISLE PEREIRA;29/05/2020;Consulta;-;marco saúde;Não;;10:30:00
+Lissandra Cavalheiro Maioli;PRISCILA DE SA TENEDINI;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;10:30:00
+Sharon Moura Reisdorfer;BERENICE PEREIRA;29/05/2020;Consulta;-;coc;Não;;10:45:00
+Fernanda Raymundo Pante;LIAMARA BETT;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Lissandra Cavalheiro Maioli;ANA CRISTINA TASSINARI IGNACIO BERTUSSI;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Sharon Moura Reisdorfer;MARIA EDUARDA CHIES GALARDA;29/05/2020;Consulta;-;UNIMED NORDESTE;Sim;;11:00:00
+Sharon Moura Reisdorfer;PAULA CARDOSO DE AZEVEDO;29/05/2020;Consulta;-;unimed federaçâo;Não;;11:15:00
+Sharon Moura Reisdorfer;ANA PAULA NOVELLO;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:30:00
+Fernanda Raymundo Pante;IVETE LESIR SCHAEDLER;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:30:00
+Lissandra Cavalheiro Maioli;BRUNA VARELA FLORES DA SILVA;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:30:00
+Sharon Moura Reisdorfer;JESSICA DA ROSA BEZZERRA;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;11:45:00
+Lissandra Cavalheiro Maioli;TAMARA BONALUME BIANCHI;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;12:00:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;29/05/2020;Consulta;-;Particular;Não;-;12:30:00
+Fernanda Raymundo Pante;manicure;29/05/2020;Consulta;-;Particular;Não;;13:00:00
+Lissandra Cavalheiro Maioli;TATIANA BARDUCCO RODRIGUES;29/05/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;13:00:00
+Lissandra Cavalheiro Maioli;ROSINEIA LANGA;29/05/2020;Consulta;-;marco saúde;Não;;13:30:00
+Lissandra Cavalheiro Maioli;IARA ZANATTA;29/05/2020;Consulta;-;coc;Não;;14:00:00
+Lissandra Cavalheiro Maioli;JANINE SECCO BOEIRA;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;14:30:00
+Lissandra Cavalheiro Maioli;JENIFER TESSARO TODESCATTO;29/05/2020;Consulta;-;coc;Não;;15:00:00
+Lissandra Cavalheiro Maioli;NATALIA FREITAS BELLANDI;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;-;15:30:00
+Lissandra Cavalheiro Maioli;MARILIA TONDO AZAMBUJA;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;16:00:00
+Lissandra Cavalheiro Maioli;SABRINA BERTOLAZZI;29/05/2020;Consulta;-;UNIMED NORDESTE;Não;;16:30:00
+Lissandra Cavalheiro Maioli;JAMILE DOS SANTOS ALEXANDRE;01/06/2020;Consulta;-;coc;Sim;;09:00:00
+Lissandra Cavalheiro Maioli;STEFANIA FERREIRA DE CASTRO;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Lissandra Cavalheiro Maioli;JESSIKA LUANA SANTOS DALLE MOLLE;01/06/2020;Consulta;-;coc;Não;;10:00:00
+Lissandra Cavalheiro Maioli;CAMILE PRADO RAMOS PICCOLI;01/06/2020;Consulta;-;coc;Não;;10:30:00
+Lissandra Cavalheiro Maioli;RAFAELE NOVELLO;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Lissandra Cavalheiro Maioli;DEBORA CRISTINA CARVALHO DA ROSA DA SILVA;01/06/2020;Consulta;-;coc;Não;;11:30:00
+Lissandra Cavalheiro Maioli;BRUNA LEAL MARTINS;01/06/2020;Consulta;-;coc;Não;;12:00:00
+Lissandra Cavalheiro Maioli;LUCIA DA ROCHA;01/06/2020;Consulta;-;coc;Não;;12:30:00
+Sharon Moura Reisdorfer;NÃO MARCAR;01/06/2020;Consulta;-;Particular;Não;;13:00:00
+Lissandra Cavalheiro Maioli;TAIANY DE LIMA SILVEIRA;01/06/2020;Consulta;-;coc;Sim;;13:00:00
+Sharon Moura Reisdorfer;NATASHA BACCIN;01/06/2020;Consulta;-;CASSI;Não;;13:15:00
+Sharon Moura Reisdorfer;DAGMAR MARIA CARDOSO;01/06/2020;Consulta;-;Particular;Sim;250;13:15:00
+Sharon Moura Reisdorfer;LILIANE AGUIRES DA SILVA;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:30:00
+Lissandra Cavalheiro Maioli;CARLA BACK DOS SANTOS;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:30:00
+Sharon Moura Reisdorfer;MONICA PROVENCI RAVANELLO;01/06/2020;Consulta;-;UNIMED NORDESTE;Sim;GESTANTE 6 SEMANAS;13:45:00
+Sharon Moura Reisdorfer;CASSIELE MARTINS NUNES;01/06/2020;Consulta;-;coc;Não;;14:00:00
+Sharon Moura Reisdorfer;LUCIANA FESTUGATO POLETTO;01/06/2020;Consulta;-;coc;Não;;14:00:00
+Lissandra Cavalheiro Maioli;BRUNA CRISTINA PAVAN;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:00:00
+Sharon Moura Reisdorfer;ODILES GEANIZINI FRANZOSI;01/06/2020;Consulta;-;coc;Não;;14:15:00
+Lissandra Cavalheiro Maioli;ALINE ISABEL DETONI;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:30:00
+Sharon Moura Reisdorfer;CRISTIANE FERREIRA;01/06/2020;Consulta;-;coc;Não;Consultava c/ a Fernanda, mas mudou para coc;14:30:00
+Sharon Moura Reisdorfer;GISELE CLAUDIANE BORGES TEGNER;01/06/2020;Consulta;-;coc;Não;;14:45:00
+Sharon Moura Reisdorfer;SIMONE WOICIECOSKSKI;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:00:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;01/06/2020;Consulta;-;Particular;Não;;15:00:00
+Fernanda Raymundo Pante;GRASIELA VARGAS PADILHA;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:00:00
+Sharon Moura Reisdorfer;SABRINA AZEVEDO MODENA;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:15:00
+Sharon Moura Reisdorfer;PRISCILA PERUCH;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:30:00
+Fernanda Raymundo Pante;JOAQUINA ANELLI VIEIRA;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:30:00
+Sharon Moura Reisdorfer;MARIANA DA FONSECA DA SILVA ZULIAN;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:45:00
+Sharon Moura Reisdorfer;ADRIANA LUCIA KUREKE;01/06/2020;Consulta;-;coc;Não;;16:00:00
+Fernanda Raymundo Pante;EMILlY GABRIELLI BOEIRA;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:00:00
+Sharon Moura Reisdorfer;GISELE APARECIDA SOARES;01/06/2020;Consulta;-;coc;Sim;;16:15:00
+Sharon Moura Reisdorfer;ZENILDA GABRIELA BORGES DA SILVA;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:30:00
+Fernanda Raymundo Pante;ROBERTA LABATUT;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:30:00
+Sharon Moura Reisdorfer;GABRIELA CANELA CASAGRANDE;01/06/2020;Consulta;-;coc;Não;;16:45:00
+Sharon Moura Reisdorfer;MARIELE DA SILVA GIL;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:00:00
+Fernanda Raymundo Pante;NICOLE GOMES DA SILVA;01/06/2020;Consulta;-;UNIMED SEGUROS SAÚDE S/A;Não;;17:00:00
+Sharon Moura Reisdorfer;CAMILA KEHL;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:15:00
+Sharon Moura Reisdorfer;VIVIANE FABER;01/06/2020;Consulta;-;coc;Não;;17:15:00
+Sharon Moura Reisdorfer;KETLIN MONIQUE DE CASTRO REIS;01/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:30:00
+Lissandra Cavalheiro Maioli;AMANDA TOMAZONI DE SOUZA;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;08:30:00
+Sharon Moura Reisdorfer;CARINA CRISTIANE SCHILDT;02/06/2020;Consulta;-;coc;Não;;08:45:00
+Sharon Moura Reisdorfer;DYULIA ANTUNES;02/06/2020;Consulta;-;coc;Sim;;09:00:00
+Lissandra Cavalheiro Maioli;KAREN BELIZZA FOCHESATO;02/06/2020;Consulta;-;coc;Sim;;09:00:00
+Sharon Moura Reisdorfer;MONICA ZIMMER;02/06/2020;Consulta;-;CASSI;Não;;09:15:00
+Lissandra Cavalheiro Maioli;ALEXANDRA ARALDI MOLON;02/06/2020;Consulta;-;coc;Não;somente por whats;09:30:00
+Sharon Moura Reisdorfer;FERNANDA PINTO DE MEDEIROS WINTER;02/06/2020;Consulta;-;coc;Não;;09:30:00
+Sharon Moura Reisdorfer;NADIELI KETLIN GROSS;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;REVISÃO POS PARTO;09:30:00
+Sharon Moura Reisdorfer;FERNANDA DA VEIGA LIMA;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:45:00
+Lissandra Cavalheiro Maioli;KARLINE CASSOL;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:50:00
+Lissandra Cavalheiro Maioli;BRUNA TESSARI BALEN;02/06/2020;Consulta;-;coc;Sim;;10:00:00
+Sharon Moura Reisdorfer;CLARISE PEREIRA DA SILVA;02/06/2020;Consulta;-;IPAM;Não;;10:00:00
+Sharon Moura Reisdorfer;AMANDA LARISSA DA CRUZ;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:15:00
+Sharon Moura Reisdorfer;LUCIANA CARVALHO DO CARMO DE FRAGA;02/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;10:30:00
+Lissandra Cavalheiro Maioli;LISIANE KERNI;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;-;10:30:00
+Sharon Moura Reisdorfer;IVANA SUZIN;02/06/2020;Procedimento;CAUTERIZAÇÃO QUIMICA;coc;Não;;10:45:00
+Lissandra Cavalheiro Maioli;ADRIELI APARECIDA DA SILVA;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Sharon Moura Reisdorfer;THAMIRES FERNANDES DE ALMEIDA RANGEL;02/06/2020;Consulta;-;CASSI;Não;;11:00:00
+Sharon Moura Reisdorfer;SUELEN FORNARI MAZZOCHI;02/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;11:15:00
+Lissandra Cavalheiro Maioli;JULIANA GRECHI PARISOTTO;02/06/2020;Consulta;-;unimed federaçâo;Não;consultava com a Sharon;11:30:00
+Sharon Moura Reisdorfer;MAISA ANDREIA DAVILA;02/06/2020;Consulta;-;coc;Não;;11:30:00
+Sharon Moura Reisdorfer;DAIANE FERLA MANZATO;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:45:00
+Lissandra Cavalheiro Maioli;GRACIELA LUCIA HAHN;02/06/2020;Consulta;-;marco saúde;Não;;12:00:00
+Lissandra Cavalheiro Maioli;CAROLINA CAPOANI;02/06/2020;Consulta;-;Particular;Sim;250;12:30:00
+Lissandra Cavalheiro Maioli;SAMANTHA LOUREIRO DA CAS;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:00:00
+Sharon Moura Reisdorfer;JOSIANE PORTO PEIXOTO;02/06/2020;Consulta;-;coc;Não;;13:15:00
+Sharon Moura Reisdorfer;TATIANA SOARES POLICENA;02/06/2020;Consulta;-;Particular;Não;;13:30:00
+Lissandra Cavalheiro Maioli;SANDRA DE SOUZA;02/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;13:30:00
+Sharon Moura Reisdorfer;DIANA MARIA KLAUS THEODORO;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:45:00
+Sharon Moura Reisdorfer;ANDRESSA CRISTIANE NAGILDO;02/06/2020;Consulta;-;unimed federaçâo;Não;;14:00:00
+Lissandra Cavalheiro Maioli;FERNANDA DO CARMO NUNES ALMEIDA;02/06/2020;Consulta;-;coc;Não;;14:00:00
+Sharon Moura Reisdorfer;BRUNA DA SILVA DOS REIS;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:15:00
+Lissandra Cavalheiro Maioli;GIOVANNA BROCCHI MENDONCA;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:30:00
+Sharon Moura Reisdorfer;MILLENA CITON LUCHESI VIEIRA;02/06/2020;Consulta;-;coc;Não;;14:30:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;02/06/2020;Consulta;-;Particular;Não;;14:40:00
+Sharon Moura Reisdorfer;LUANA KEHL;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:45:00
+Sharon Moura Reisdorfer;ANA LETICIA MOHR;02/06/2020;Consulta;-;coc;Não;;15:00:00
+Sharon Moura Reisdorfer;JAKELINE RHEINHEIMER;02/06/2020;Consulta;-;unimed federaçâo;Não;;15:15:00
+Sharon Moura Reisdorfer;MANUELA FREITAS MAFFINI;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:30:00
+Sharon Moura Reisdorfer;JAQUELINE BOHNENBERGER DUPONT;02/06/2020;Consulta;-;coc;Não;;15:45:00
+Sharon Moura Reisdorfer;DAIANA AGOSTINI SALVADOR;02/06/2020;Consulta;-;IPAM;Não;mostra de exames- não cobrar - foi remarcado;16:00:00
+Sharon Moura Reisdorfer;LUANA MAIARA LOPES HORNUNG;02/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:15:00
+Sharon Moura Reisdorfer;RAISSA NORONHA;02/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;16:30:00
+Sharon Moura Reisdorfer;DENISE VICINI;02/06/2020;Consulta;-;FATIMA;Sim;;16:45:00
+Sharon Moura Reisdorfer;FABIANA DA CRUZ BRAGA;02/06/2020;Consulta;-;Particular;Não;;17:00:00
+Sharon Moura Reisdorfer;IFIGENIA GREZANNA;02/06/2020;Consulta;-;IPAM;Não;;17:15:00
+Sharon Moura Reisdorfer;RUBIA MARTINS;02/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Sim;;17:30:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;03/06/2020;Consulta;-;Particular;Não;;08:15:00
+Sharon Moura Reisdorfer;ARIELE DOS SANTOS;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;08:15:00
+Sharon Moura Reisdorfer;GABRIELA PICOLLI;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;-;08:30:00
+Lissandra Cavalheiro Maioli;ANA PAULA OLIVEIRA DUTRA;03/06/2020;Consulta;-;coc;Não;;08:30:00
+Sharon Moura Reisdorfer;ANDRESA REIS;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;08:45:00
+Lissandra Cavalheiro Maioli;LAIDY ANE INDICATTI;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:00:00
+Sharon Moura Reisdorfer;CARLA SIGNORINI;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:00:00
+Sharon Moura Reisdorfer;ERICA RECH;03/06/2020;Consulta;-;coc;Sim;;09:15:00
+Sharon Moura Reisdorfer;GISLAINE PEREIRA FERREIRA;03/06/2020;Consulta;-;IPAM;Não;;09:30:00
+Lissandra Cavalheiro Maioli;SABRINA MELO;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Sharon Moura Reisdorfer;ERICA HELLEN DOS SANTOS;03/06/2020;Consulta;-;coc;Não;;09:30:00
+Sharon Moura Reisdorfer;LUMA DE OLIVEIRA CARDOSO JUSTINO;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:45:00
+Sharon Moura Reisdorfer;ANDREIA DOS SANTOS PERES;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:00:00
+Sharon Moura Reisdorfer;CAMILA DOS SANTOS PERES;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;10:15:00
+Sharon Moura Reisdorfer;FERNANDA MACIEL SPULDARO;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:30:00
+Sharon Moura Reisdorfer;VANISSE SARAIVA DE CASTILHOS PANASSOL;03/06/2020;Consulta;-;IPAM;Não;;10:45:00
+Sharon Moura Reisdorfer;FABIANE CRISTINA WEBER TRENTIN;03/06/2020;Consulta;-;marco saúde;Não;;11:00:00
+Sharon Moura Reisdorfer;GELVANIA WAGNER WAMMES MONSANI;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:15:00
+Sharon Moura Reisdorfer;CAMILLA GRIEP;03/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;11:30:00
+Lissandra Cavalheiro Maioli;ALEXANDRA GARCIA;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;11:30:00
+Sharon Moura Reisdorfer;VIVIAN BESKOW DE SANTANA KNABACH;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:15:00
+Sharon Moura Reisdorfer;DAIANE CAVALHEIRO;03/06/2020;Consulta;-;coc;Não;;13:30:00
+Sharon Moura Reisdorfer;DANIELA BRUCH DOS REIS;03/06/2020;Consulta;-;coc;Não;;13:45:00
+Lissandra Cavalheiro Maioli;DAIANE GONZATTO;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;14:00:00
+Fernanda Raymundo Pante;NAO MARCAR;03/06/2020;Consulta;-;Particular;Não;;14:00:00
+Sharon Moura Reisdorfer;PAMELA CASTAGNA DOS SANTOS;03/06/2020;Consulta;-;unimed federaçâo;Não;;14:00:00
+Sharon Moura Reisdorfer;MARIANA ELISA DOS SANTOS;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;14:15:00
+Sharon Moura Reisdorfer;MARIA DAL MAGRO SIGNORI;03/06/2020;Consulta;-;coc;Não;;14:30:00
+Fernanda Raymundo Pante;BARBARA SILVA DE CASTILHOS;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:30:00
+Sharon Moura Reisdorfer;FRANCIELE KARLINSKI;03/06/2020;Consulta;-;IPAM;Não;;14:45:00
+Fernanda Raymundo Pante;KARINA DEMEDA;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;-;15:00:00
+Sharon Moura Reisdorfer;MAIARA RECH;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;15:00:00
+Sharon Moura Reisdorfer;GECIONE BOFF MELLO;03/06/2020;Consulta;-;IPAM;Não;;15:15:00
+Sharon Moura Reisdorfer;MANUELLY MAGNUS PAZ;03/06/2020;Consulta;-;coc;Não;;15:30:00
+Fernanda Raymundo Pante;RENATA STEDILE;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:30:00
+Sharon Moura Reisdorfer;CLEANE COELHO GRANJA;03/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;15:45:00
+Sharon Moura Reisdorfer;FERNANDA CARDOSO;03/06/2020;Consulta;-;IPAM;Sim;;16:00:00
+Fernanda Raymundo Pante;CHRISTIANE MULLER BARTH;03/06/2020;Consulta;-;unimed federaçâo;Não;;16:00:00
+Sharon Moura Reisdorfer;TATIANE CEARON ANDREETTA;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;-;16:15:00
+Fernanda Raymundo Pante;THAMARA VEDOVELLI;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:30:00
+Sharon Moura Reisdorfer;LUANA VANESSA ESCHIAVO;03/06/2020;Consulta;-;marco saúde;Sim;;16:30:00
+Sharon Moura Reisdorfer;GISELE VARELA MELLO;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:45:00
+Lissandra Cavalheiro Maioli;CARINA GOBBI;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;-;17:00:00
+Fernanda Raymundo Pante;SAMANTA CRISTINA COSTA SILVEIRA;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:00:00
+Sharon Moura Reisdorfer;ALINE DANIELI;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;17:00:00
+Sharon Moura Reisdorfer;CINTHIA CRISTINA MORAIS ROCHA;03/06/2020;Consulta;-;UNIMED CENTRAL NACIONAL;Não;;17:15:00
+Fernanda Raymundo Pante;RAUANA PACHECO PAVAN;03/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:30:00
+Sharon Moura Reisdorfer;CECILIA CALLAI;03/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;17:30:00
+Sharon Moura Reisdorfer;ANDRINE BROGLIATO;04/06/2020;Consulta;-;unimed federaçâo;Não;;08:15:00
+Sharon Moura Reisdorfer;MARCIELE MAYER;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;08:30:00
+Lissandra Cavalheiro Maioli;TASSIANE DALL AGNOL ROESE;04/06/2020;Consulta;-;coc;Não;;08:30:00
+Sharon Moura Reisdorfer;STELLA ROSSATO CAVALLI;04/06/2020;Consulta;-;CASSI;Não;;08:45:00
+Lissandra Cavalheiro Maioli;NATHALIA ROCHA DE SOUZA;04/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;-;09:00:00
+Sharon Moura Reisdorfer;CINTIA RODRIGUES DOS SANTOS;04/06/2020;Consulta;-;coc;Não;;09:00:00
+Sharon Moura Reisdorfer;NATALIA NARDI;04/06/2020;Consulta;-;coc;Não;;09:15:00
+Sharon Moura Reisdorfer;SOLANGE DE FATIMA DE OLIVEIRA PIERI;04/06/2020;Consulta;-;coc;Não;;09:30:00
+Lissandra Cavalheiro Maioli;NEIDE MARIA PLUCINSKI PAULETTI;04/06/2020;Consulta;-;coc;Não;;09:30:00
+Sharon Moura Reisdorfer;SAIONARA REGINA MOREIRA BORGES;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:45:00
+Sharon Moura Reisdorfer;PAMELA DE ARAUJO RIVA;04/06/2020;Consulta;-;Particular;Não;;10:00:00
+Lissandra Cavalheiro Maioli;NATALIA GIOTTI;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:00:00
+Sharon Moura Reisdorfer;MICHELE GUBERT;04/06/2020;Consulta;-;Particular;Não;;10:15:00
+Lissandra Cavalheiro Maioli;ANDRYA DOS PASSOS CONFORTI;04/06/2020;Consulta;-;coc;Não;;10:30:00
+Sharon Moura Reisdorfer;TATIANE GONÇALVES DE ANDRADE;04/06/2020;Consulta;-;FATIMA;Não;;10:30:00
+Sharon Moura Reisdorfer;GABRIELE SPADER;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:45:00
+Sharon Moura Reisdorfer;FERNANDA STOFFELS MAYER;04/06/2020;Consulta;-;unimed federaçâo;Não;-;11:00:00
+Lissandra Cavalheiro Maioli;JULIANA DE OLIVEIRA PINTO CRESPI;04/06/2020;Consulta;-;coc;Não;;11:00:00
+Sharon Moura Reisdorfer;ELIZAINE SILVA DE LIMA MOREIRA;04/06/2020;Consulta;-;coc;Não;;11:15:00
+Sharon Moura Reisdorfer;MAYARA ANGELICA DE SOUZA;04/06/2020;Consulta;-;coc;Não;;11:30:00
+Lissandra Cavalheiro Maioli;SIMONE DUTRA SANTOS;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;-;11:30:00
+Sharon Moura Reisdorfer;PRISCILA CAMASSOLA;04/06/2020;Consulta;-;FATIMA;Não;;11:45:00
+Sharon Moura Reisdorfer;NÃO MARCAR;04/06/2020;Consulta;-;Particular;Não;;13:00:00
+Sharon Moura Reisdorfer;ANA BEATRIZ LANGE;04/06/2020;Consulta;-;IPAM;Não;;13:15:00
+Lissandra Cavalheiro Maioli;SHEILA RIZZON;04/06/2020;Consulta;-;-;Não;;13:30:00
+Sharon Moura Reisdorfer;THIANA BORGUETTI;04/06/2020;Consulta;-;FATIMA;Não;Pct trocou de convênio, vai continuar o pré natal com a Sharon;13:30:00
+Sharon Moura Reisdorfer;VANESSA RAQUIEL POTMIN BRINGMANN;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:45:00
+Sharon Moura Reisdorfer;AMANDA DE OLIVEIRA;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;14:00:00
+Lissandra Cavalheiro Maioli;JULIA HELENA BUTZKE;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:00:00
+Sharon Moura Reisdorfer;CATRINE ROLDAO DE MATOS;04/06/2020;Consulta;-;FATIMA;Não;;14:15:00
+Sharon Moura Reisdorfer;FRANCIELE TRIACA;04/06/2020;Consulta;-;coc;Não;;14:30:00
+Lissandra Cavalheiro Maioli;LILIAN DEBASTIANI;04/06/2020;Consulta;-;coc;Não;;14:30:00
+Sharon Moura Reisdorfer;MELISSA FONSECA DE JESUS PAGANELLA;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:45:00
+Lissandra Cavalheiro Maioli;SIMONE DOS SANTOS PINHEIRO;04/06/2020;Consulta;-;coc;Não;-;15:00:00
+Sharon Moura Reisdorfer;KELLY CRISTINA BARBOSA;04/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;15:00:00
+Sharon Moura Reisdorfer;JESSICA TONINI;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:15:00
+Lissandra Cavalheiro Maioli;ANDRESSA MOLON BIESUTTI;04/06/2020;Consulta;-;coc;Não;;15:30:00
+Sharon Moura Reisdorfer;EVELYN DE PAULA FERREIRA DA LUZ;04/06/2020;Consulta;-;marco saúde;Não;;15:30:00
+Sharon Moura Reisdorfer;GRAZIELA BASTIANI MARAGMA;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;15:45:00
+Sharon Moura Reisdorfer;ADRIANA DE OLIVEIRA;04/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;16:00:00
+Lissandra Cavalheiro Maioli;SILVIA SOUZA CORREA;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;-;16:00:00
+Sharon Moura Reisdorfer;SUELEN TAIRINE ANDRADE DE SIQUEIRA;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:15:00
+Sharon Moura Reisdorfer;AMANDA STEDILE DA SILVA;04/06/2020;Consulta;-;IPAM;Não;;16:30:00
+Lissandra Cavalheiro Maioli;ANTONIELA CORREA DE SOUZA;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;16:30:00
+Sharon Moura Reisdorfer;ADRIANA BORGES DEBARI;04/06/2020;Consulta;-;FATIMA;Sim;;16:45:00
+Sharon Moura Reisdorfer;NATACHA NOVELLO GONÇALVES;04/06/2020;Consulta;-;FATIMA;Não;;17:00:00
+Lissandra Cavalheiro Maioli;HANÁ SABRINA SHAMS ESTORTI;04/06/2020;Consulta;-;UNIMED CENTRAL NACIONAL;Não;;17:00:00
+Sharon Moura Reisdorfer;LINARA GIACOMET;04/06/2020;Consulta;-;marco saúde;Não;;17:00:00
+Sharon Moura Reisdorfer;ANA PAULA ROPKE CAVAGNOLI;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:15:00
+Sharon Moura Reisdorfer;ALINE GUTIER;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;17:30:00
+Lissandra Cavalheiro Maioli;ELIZANDRA STRAPASSON COMERLATO;04/06/2020;Consulta;-;marco saúde;Não;;17:30:00
+Lissandra Cavalheiro Maioli;DENISE FERNANDA PEREIRA;04/06/2020;Consulta;-;UNIMED NORDESTE;Não;;18:00:00
+Lissandra Cavalheiro Maioli;CRISTIANA SOARES;04/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;18:30:00
+Sharon Moura Reisdorfer;NÃO MARCAR;05/06/2020;Consulta;-;Particular;Não;;07:30:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;05/06/2020;Consulta;-;Particular;Não;;07:40:00
+Lissandra Cavalheiro Maioli;CATIUSCIA SILVA LOPES;05/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;08:30:00
+Lissandra Cavalheiro Maioli;ANDRESA CHINELATO;05/06/2020;Consulta;-;coc;Sim;;09:00:00
+Lissandra Cavalheiro Maioli;CAMILLA TIEMANN RIZZO;05/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Fernanda Raymundo Pante;BRUNA ANDRADE VOLPATO;05/06/2020;Consulta;-;unimed federaçâo;Não;;09:30:00
+Fernanda Raymundo Pante;CAROLINA ADAMI;05/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:00:00
+Lissandra Cavalheiro Maioli;LAURA GALVAO NEVES CARVALHO;05/06/2020;Consulta;-;UNIMED SEGUROS SAÚDE S/A;Não;;10:00:00
+Fernanda Raymundo Pante;JESSICA ANDREIS;05/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:30:00
+Lissandra Cavalheiro Maioli;CAROLINE PICOLOTTO;05/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Sharon Moura Reisdorfer;INDIANARA DO NASCIMENTO FINATTO;05/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Lissandra Cavalheiro Maioli;FLAVIA FONTANA DA SILVA;05/06/2020;Consulta;-;UNIMED NORDESTE;Sim;gestante;11:30:00
+Fernanda Raymundo Pante;MAIANDA LEIDENS;05/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;11:30:00
+Lissandra Cavalheiro Maioli;REUNIÃO CLINICA NASCITA;05/06/2020;Consulta;-;Particular;Não;;12:00:00
+Sharon Moura Reisdorfer;REUNIÃO CLINICA NASCITA;05/06/2020;Consulta;-;Particular;Não;;12:00:00
+Fernanda Raymundo Pante;REUNIÃO CLINICA NASCITA;05/06/2020;Consulta;-;Particular;Não;;12:00:00
+Lissandra Cavalheiro Maioli;FERNANDA PORTO DOS SANTOS;05/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Sim;-;14:00:00
+Lissandra Cavalheiro Maioli;THAMIS ALINE ZENI;08/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;08:30:00
+Lissandra Cavalheiro Maioli;LUCIANA PIANEGONDA;08/06/2020;Consulta;-;UNIMED PORTO ALEGRE;Não;;09:00:00
+Lissandra Cavalheiro Maioli;ALINE FABBRO;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Lissandra Cavalheiro Maioli;DOLORES YABEN;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:00:00
+Sharon Moura Reisdorfer;GISLAINE PEREIRA FERREIRA;08/06/2020;Cirurgia;CESÁREA, PEDIATRA LUCIANE DALCIN, AUXILIO PLANTÃO;IPAM;Não;#NOME?;10:30:00
+Lissandra Cavalheiro Maioli;FERNANDA ULIAN PISANI;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:30:00
+Lissandra Cavalheiro Maioli;BRUNA PASTICELI;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;11:00:00
+Lissandra Cavalheiro Maioli;ARIANE DOS SANTOS DE ANDRADE;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:30:00
+Lissandra Cavalheiro Maioli;CARLA BROGLIATO ROSSI;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;12:00:00
+Lissandra Cavalheiro Maioli;TAIANARA FATIMA SOARES MACHADO;08/06/2020;Consulta;-;Particular;Sim;250,00 GESTANTE;12:30:00
+Lissandra Cavalheiro Maioli;NATALIA MEZZOMO;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:00:00
+Sharon Moura Reisdorfer;NÃO MARCAR;08/06/2020;Consulta;-;Particular;Não;;13:00:00
+Sharon Moura Reisdorfer;JAQUELINE FAUSTINO DA SILVA;08/06/2020;Consulta;-;coc;Não;;13:15:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;08/06/2020;Consulta;-;Particular;Não;;13:20:00
+Sharon Moura Reisdorfer;MIRELE GUERRA;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:30:00
+Sharon Moura Reisdorfer;CAMILA FRANCIELE BARCELOS DOS SANTOS SILVESTRIN;08/06/2020;Consulta;-;coc;Não;;13:45:00
+Sharon Moura Reisdorfer;ILONE MARIA KUHN;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;14:00:00
+Sharon Moura Reisdorfer;PERLA BECKER DA LUZ LORANDI;08/06/2020;Consulta;-;FATIMA;Não;;14:15:00
+Fernanda Raymundo Pante;JULIANA ZATTERA;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;14:30:00
+Sharon Moura Reisdorfer;LUANA COMUNELLO DAGNESE;08/06/2020;Consulta;-;unimed federaçâo;Não;;14:30:00
+Sharon Moura Reisdorfer;TANISE SACILOTO SLOMP;08/06/2020;Consulta;-;coc;Não;;14:45:00
+Fernanda Raymundo Pante;PAULA ONZI;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:00:00
+Lissandra Cavalheiro Maioli;UNHA LIS;08/06/2020;Consulta;-;Particular;Não;;15:00:00
+Sharon Moura Reisdorfer;ELISETE VISONA DA SILVA WINTER;08/06/2020;Consulta;-;marco saúde;Não;-;15:00:00
+Sharon Moura Reisdorfer;VANESSA SMIDERLE;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;15:15:00
+Sharon Moura Reisdorfer;EVELIN SABO;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;15:30:00
+Fernanda Raymundo Pante;SABRINA MATTE DA SILVA;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;;15:30:00
+Sharon Moura Reisdorfer;JESSICA THAIS GONZALEZ VARGAS;08/06/2020;Consulta;-;FATIMA;Não;-;15:45:00
+Sharon Moura Reisdorfer;MARCIA CASTILHOS DE ARAUJO POLLA;08/06/2020;Consulta;-;FATIMA;Não;;16:00:00
+Sharon Moura Reisdorfer;PATRICIA DOS SANTOS BORGES;08/06/2020;Consulta;-;coc;Não;-;16:15:00
+Sharon Moura Reisdorfer;LIDIANE CLUNC;08/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;16:30:00
+Sharon Moura Reisdorfer;MELINA FAGUNDES DE MATOS;08/06/2020;Consulta;-;FATIMA;Sim;;16:45:00
+Sharon Moura Reisdorfer;ROSANGELA SEGALLA BRESSAN;08/06/2020;Consulta;-;coc;Não;;17:00:00
+Sharon Moura Reisdorfer;YASMIN DALMORO SCOPEL;08/06/2020;Consulta;-;UNIMED NORDESTE;Não;-;17:15:00
+Sharon Moura Reisdorfer;JESSICA DA COSTA;08/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Sim;;17:30:00
+Sharon Moura Reisdorfer;MELISSA ESTEVES DE OLIVEIRA;09/06/2020;Consulta;-;marco saúde;Não;-;08:15:00
+Lissandra Cavalheiro Maioli;CRISTIANE FORTES BASTOS;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;08:30:00
+Sharon Moura Reisdorfer;NEUSA MARIA SOARES SEZARA;09/06/2020;Consulta;-;coc;Não;;08:30:00
+Sharon Moura Reisdorfer;ANA JULIA OLIVEIRA DA SILVA;09/06/2020;Consulta;-;marco saúde;Não;;08:30:00
+Sharon Moura Reisdorfer;CRISTIANI NUNES OLIVEIRA;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;08:45:00
+Sharon Moura Reisdorfer;FERNANDA NORONHA;09/06/2020;Consulta;-;FATIMA;Sim;;09:00:00
+Lissandra Cavalheiro Maioli;VANESSA SARMENTO SCHREIBE;09/06/2020;Consulta;-;unimed federaçâo;Não;;09:00:00
+Sharon Moura Reisdorfer;GABRIELA GROLI;09/06/2020;Consulta;-;Particular;Não;;09:15:00
+Lissandra Cavalheiro Maioli;BARBARA MOURA DE OLIVEIRA;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Sharon Moura Reisdorfer;MARINA MAZZOCHI;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:30:00
+Sharon Moura Reisdorfer;FRANCIELI BRAGA POLONI;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;09:45:00
+Sharon Moura Reisdorfer;RUBIA MARIA BUENO NOVELLO;09/06/2020;Consulta;-;marco saúde;Não;;10:00:00
+Lissandra Cavalheiro Maioli;ALEXANDRA GOMES DE AZEVEDO;09/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;10:00:00
+Sharon Moura Reisdorfer;MARIA SOUZA DA CRUZ;09/06/2020;Consulta;-;IPAM;Não;;10:15:00
+Lissandra Cavalheiro Maioli;JUCILENE ZIM MOLON;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;-;10:30:00
+Sharon Moura Reisdorfer;LETICIA MATTANA;09/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;10:30:00
+Sharon Moura Reisdorfer;DANIELA POLASTRO;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;10:45:00
+Sharon Moura Reisdorfer;FERNANDA LOPES;09/06/2020;Consulta;-;FATIMA;Não;;11:00:00
+Lissandra Cavalheiro Maioli;MARIANA CORREA OLIVEIRA;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;11:00:00
+Sharon Moura Reisdorfer;KELEN PARIZZOTTO;09/06/2020;Consulta;-;IPAM;Não;;11:15:00
+Sharon Moura Reisdorfer;ELAINE ZEFERINO DA SILVA;09/06/2020;Consulta;-;Particular;Não;;11:30:00
+Lissandra Cavalheiro Maioli;TAMIRES APARECIDA MACIEL;09/06/2020;Consulta;-;UNIMED SEGUROS SAÚDE S/A;Não;;11:30:00
+Lissandra Cavalheiro Maioli;MARCIA BOFF;09/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;250;12:00:00
+Lissandra Cavalheiro Maioli;CRISTIANE SANTANA PAVEGLIO;09/06/2020;Consulta;-;Particular;Não;;12:30:00
+Lissandra Cavalheiro Maioli;FRANCIELE MACHADO;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;13:00:00
+Sharon Moura Reisdorfer;JORDANA RECH DA ROSA FIN;09/06/2020;Consulta;-;IPAM;Não;;13:15:00
+Sharon Moura Reisdorfer;ALICE FABIANA OLIVIERA DA LUZ;09/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;13:30:00
+Lissandra Cavalheiro Maioli;NÃO MARCAR;09/06/2020;Consulta;-;Particular;Não;;13:30:00
+Sharon Moura Reisdorfer;ZENIR CHAVES DA SILVA;09/06/2020;Consulta;-;coc;Não;;13:45:00
+Lissandra Cavalheiro Maioli;ELAINE PAM;09/06/2020;Consulta;-;coc;Não;;14:00:00
+Sharon Moura Reisdorfer;LETICIA VENTURIN;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:00:00
+Sharon Moura Reisdorfer;ELISETE BERTONI;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;14:15:00
+Lissandra Cavalheiro Maioli;ELISETE BONIATTI PAN;09/06/2020;Consulta;-;coc;Não;;14:30:00
+Sharon Moura Reisdorfer;MARIA DO CARMO RIBEIRO;09/06/2020;Consulta;-;UNIMED NORDESTE;Sim;;14:30:00
+Sharon Moura Reisdorfer;LAIS BALTAZAR;09/06/2020;Consulta;-;UNIMED NORDESTE;Sim;GESTANTE 15 SEMANAS;14:45:00
+Sharon Moura Reisdorfer;KAREN CRISTINA BUFFON;09/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;15:00:00
+Sharon Moura Reisdorfer;GLEICE FERNANDA PALAVRO BERNARDI;09/06/2020;Consulta;-;coc;Não;;15:15:00
+Sharon Moura Reisdorfer;DEISE CAMPARA DE LIMA;09/06/2020;Consulta;-;coc;Não;;15:30:00
+Sharon Moura Reisdorfer;STEPHANE ELUSME;09/06/2020;Consulta;-;unimed federaçâo;Sim;;15:45:00
+Sharon Moura Reisdorfer;SILVIA ISIS DE SOUZA SILVEIRA;09/06/2020;Consulta;-;unimed federaçâo;Não;;16:00:00
+Lissandra Cavalheiro Maioli;CARINA ANTUNES NUNES;09/06/2020;Consulta;-;CAIXA DE ASSISTÊNCIA SISTEMA SAÚDE INTEGRAL-SSI SAUDE;Não;;16:00:00
+Sharon Moura Reisdorfer;MARJORYE RODRIGUES SOUSA DE AGUIAR;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;16:15:00
+Sharon Moura Reisdorfer;RHAUANA SILVEIRA DE SOUZA;09/06/2020;Consulta;-;coc;Sim;;16:30:00
+Sharon Moura Reisdorfer;SANDRA ROGERIA DA SILVEIRA;09/06/2020;Consulta;-;coc;Sim;;16:45:00
+Sharon Moura Reisdorfer;LUCIANA CLARO MACHADO;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:00:00
+Sharon Moura Reisdorfer;AMANDA TAVARES LEAL;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:15:00
+Sharon Moura Reisdorfer;DEBORA CASSIANE FINKLER TELES;09/06/2020;Consulta;-;UNIMED NORDESTE;Não;;17:30:00

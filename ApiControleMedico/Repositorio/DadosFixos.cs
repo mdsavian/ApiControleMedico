@@ -19,8 +19,58 @@ namespace ApiControleMedico.Repositorio
             AlimentaTabelaEspecialidade();
             AlimentaTabelaFormaPagamento();
             AlimentaAgendamentos();
+            //AlimentarPacientes();
         }
 
+        private void AlimentarPacientes()
+        {
+            var contextoPaciente = new DbContexto<Paciente>("paciente");
+            var pacienteService = new PacienteService();
+
+            //var csvPacientes = Resource.pacientes;
+            //using (var reader = new StringReader(csvPacientes))
+            //{
+            //    string line;
+            //    try
+            //    {
+            //        while ((line = reader.ReadLine()) != null)
+            //        {
+            //            //Nome Completo;CPF;Telefone;Celular;E-mail;Nascimento;Ocupação;Data cadastro
+            //            var linhaAgendamento = line.Split(';');
+
+            //            if (!linhaAgendamento[0].Trim().IsNullOrWhiteSpace() && linhaAgendamento[0].Trim() != "Nome Completo")
+            //            {
+            //                var nomePaciente = linhaAgendamento[0].ToUpper();
+            //                var paciente = contextoPaciente.Collection.AsQueryable()
+            //                    .FirstOrDefault(c => c.NomeCompleto == nomePaciente);
+
+            //                if (paciente != null)
+            //                    continue;
+
+            //                paciente = new Paciente
+            //                {
+            //                    NomeCompleto = linhaAgendamento[0],
+            //                    CpfCnpj = linhaAgendamento[1],
+            //                    Telefone = linhaAgendamento[2].RemoverAcentosECaracteresEspeciaisPontosETracos().Replace(" ", string.Empty).Trim(),
+            //                    Celular = linhaAgendamento[3].RemoverAcentosECaracteresEspeciaisPontosETracos().Replace(" ", string.Empty).Trim(),
+            //                    Email = linhaAgendamento[4],
+            //                    DataNascimento = linhaAgendamento[5].ToDateTimeOrNull(),
+            //                    Ocupacao = linhaAgendamento[6],
+            //                    DataCadastro = linhaAgendamento[0].ToDateTimeOrNull()
+            //                };
+
+            //                pacienteService.SaveOne(paciente);
+
+            //            }
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //    }
+            //}
+        }
+        
         private void AlimentaAgendamentos()
         {
             var agendamentoService = new AgendamentoService();
@@ -52,29 +102,32 @@ namespace ApiControleMedico.Repositorio
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        //Médico;Paciente;Data Agendamento;Tipo;Telefone;Descricao;Convênio;Primeiro;OBS;
+                        //Médico;Paciente;Data Agendamento;Tipo;Descricao;Convênio;Primeiro;OBS;Hora.
                         var linhaAgendamento = line.Split(';');
 
                         if (!linhaAgendamento[0].Trim().IsNullOrWhiteSpace() && linhaAgendamento[2].ToDateTimeOrNull() != null)
                         {
-                            var agendamento = new Agendamento();                            
+                            var agendamento = new Agendamento();
 
                             var nomeMedico = linhaAgendamento[0].ToUpper();
                             var nomePaciente = linhaAgendamento[1].ToUpper();
                             var dataAgendamento = linhaAgendamento[2].ToDateTime();
                             var tipoAgendamento = linhaAgendamento[3];
-                            var telefone = linhaAgendamento[4];
-                            var descricao = linhaAgendamento[5].ToUpper();
-                            var convenio = linhaAgendamento[6].ToUpper();
-                            var primeiroAtendimento = linhaAgendamento[7];
+                            var descricao = linhaAgendamento[4].ToUpper();
+                            var convenio = linhaAgendamento[5].ToUpper();
+                            var primeiroAtendimento = linhaAgendamento[6];
+                            var horaAtendimento = linhaAgendamento[8].Trim().Replace(":", "").Substring(0,4);
                             var EnumTipoAgendamento = (ETipoAgendamento)Enum.Parse(typeof(ETipoAgendamento), tipoAgendamento);
 
-                            agendamento.DataAgendamento = dataAgendamento.Date;
-                            agendamento.Observacao = linhaAgendamento[8];
-                            agendamento.HoraInicial = dataAgendamento.FormatarHora24().Replace(":", "");
-                            agendamento.HoraFinal = dataAgendamento.AddMinutes(20).FormatarHora24().Replace(":", "");
-                            agendamento.PrimeiraConsulta = primeiroAtendimento == "Não" ? false : true;
+                            var data = new DateTime();
+                            data = data.AddHours(horaAtendimento.Substring(0, 2).ToInt()).AddMinutes(horaAtendimento.Substring(2, 2).ToInt());
 
+                            agendamento.DataAgendamento = dataAgendamento.Date;
+                            agendamento.Observacao = linhaAgendamento[7];
+                            agendamento.HoraInicial = horaAtendimento;
+                            agendamento.HoraFinal = data.AddMinutes(20).FormatarHora24().Replace(":", "");
+                            agendamento.PrimeiraConsulta = primeiroAtendimento == "Não" ? false : true;
+                            
                             switch (EnumTipoAgendamento)
                             {
                                 case ETipoAgendamento.Cirurgia:
@@ -83,7 +136,7 @@ namespace ApiControleMedico.Repositorio
                                         if (cirurgiaCadastrada == null)
                                         {
                                             cirurgiaCadastrada = new Cirurgia { Descricao = descricao };
-                                            cirurgiaCadastrada = cirurgiaService.SaveOne(cirurgiaCadastrada);                                            
+                                            cirurgiaCadastrada = cirurgiaService.SaveOne(cirurgiaCadastrada);
                                         }
                                         agendamento.CirurgiaId = cirurgiaCadastrada.Id;
                                         agendamento.TipoAgendamento = ETipoAgendamento.Cirurgia;
@@ -95,7 +148,7 @@ namespace ApiControleMedico.Repositorio
                                         if (procedimentoCadastrada == null)
                                         {
                                             procedimentoCadastrada = new Procedimento { Descricao = descricao };
-                                            procedimentoCadastrada = procedimentoService.SaveOne(procedimentoCadastrada);                                            
+                                            procedimentoCadastrada = procedimentoService.SaveOne(procedimentoCadastrada);
                                         }
                                         agendamento.ProcedimentoId = procedimentoCadastrada.Id;
                                         agendamento.TipoAgendamento = ETipoAgendamento.Procedimento;
@@ -132,17 +185,6 @@ namespace ApiControleMedico.Repositorio
                                 pacienteCadastrado = pacienteService.SaveOne(pacienteCadastrado);
                             }
 
-                            if (!telefone.IsNullOrWhiteSpace())
-                            {
-                                var telefoneSplit = telefone.Split("|");
-                                pacienteCadastrado.Celular = telefoneSplit[0].RemoverAcentosECaracteresEspeciaisPontosETracos().Trim();
-                                
-                                if (telefoneSplit.Count() > 1)
-                                    pacienteCadastrado.Telefone = telefoneSplit[1].RemoverAcentosECaracteresEspeciaisPontosETracos().Trim();
-
-                                pacienteService.SaveOne(pacienteCadastrado);                                
-                            }
-
                             agendamento.PacienteId = pacienteCadastrado.Id;
                             agendamento.ClinicaId = contextoClinica.Collection.AsQueryable().First().Id;
 
@@ -164,7 +206,7 @@ namespace ApiControleMedico.Repositorio
         private void AlimentaTabelaFormaPagamento()
         {
             var formaService = new FormaDePagamentoService();
-            var formasCadastradas = formaService.GetAll().ToList() ;
+            var formasCadastradas = formaService.GetAll().ToList();
 
             var csvForma = Resource.formaDePagamento;
             using (var reader = new StringReader(csvForma))
@@ -177,7 +219,7 @@ namespace ApiControleMedico.Repositorio
                 {
                     var registroForma = line.Split(';');
                     //DESCRIÇÃO;TIPO;DIAS;
-                    if (!registroForma[0].Trim().IsNullOrWhiteSpace() && registroForma[1].ToIntOrNull() != null && !formasCadastradas.Any(c=> c.Descricao == registroForma[0].Trim()))
+                    if (!registroForma[0].Trim().IsNullOrWhiteSpace() && registroForma[1].ToIntOrNull() != null && !formasCadastradas.Any(c => c.Descricao == registroForma[0].Trim()))
                         formas.Add(new FormaDePagamento
                         {
                             Descricao = registroForma[0].Trim(),
